@@ -1,0 +1,3885 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Minilib.Net.Router/">
+      
+      
+        <link rel="next" href="../Minilib.Net.URL/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Minilib.Net.Tcp - Fix Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#minilibnettcp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Fix Documentation" class="md-header__button md-logo" aria-label="Fix Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fix Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Minilib.Net.Tcp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Fix Documentation" class="md-nav__button md-logo" aria-label="Fix Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fix Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AsyncTask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AsyncTask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap.BinaryArrayTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BinaryHeap.BinaryArrayTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BinaryHeap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashSet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashSet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.App.Clap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.App.Clap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.Deque
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.OrderedMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.OrderedMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.RBTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.RBTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.TreeMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeSet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.TreeSet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Assert/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.Assert
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Common/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.Common
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.RandomEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.RandomEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.TimeEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.TimeEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Env/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.Env
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.IdentityC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.IdentityC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Traced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.Traced
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES.GCM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.AES.GCM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.AES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacMD5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacMD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacSHA1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA256/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacSHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.MD5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.MD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA256/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA512/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA512
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SecureRandom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SecureRandom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Base64/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Base64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Binary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Binary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonDecoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json.JsonDecoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonEncoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json.JsonEncoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlHelpers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml.XmlHelpers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlParser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml.XmlParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Functor.Pair/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Functor.Pair
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Errno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Errno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.FileSystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.FileSystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Signal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Signal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigFloat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigFloat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigInt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigInt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigNat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigNat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Complex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Complex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Euclid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Modular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Modular
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Polynomial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Polynomial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Rational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Rational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Ring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Ring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Png/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Png
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Svg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Svg
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Cont/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Cont
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Error/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Error
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.FreeRandom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.FreeRandom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.IO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.IO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Identity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Reader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Result/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Result
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.State/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Trans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Trans
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Writer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Writer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HTML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.HTML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HttpServer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.HttpServer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Router/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Tcp
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Tcp
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect_to_tcp_server-stdstring-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect_to_tcp_server : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listen_tcp_server-stdstring-stdi64-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      listen_tcp_server : Std::String -&gt; Std::I64 -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::BufferedSocket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_bufsize-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      _BUFSIZE : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flush-minilibnettcpbufferedsocket-stdioiofail-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      flush : Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-minilibnettcpsocket-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : Minilib.Net.Tcp::Socket -&gt; Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_line-minilibnettcpbufferedsocket-stdioiofail-stdstring-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_line : Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail (Std::String, Minilib.Net.Tcp::BufferedSocket)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write_str-stdstring-minilibnettcpbufferedsocket-stdioiofail-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_str : Std::String -&gt; Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::IpAddress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_resolve_ipaddress_v4-stdstring-stdioiofail-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      _resolve_ipaddress_v4 : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_u32-stdu32-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_U32 : Std::U32 -&gt; Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_array-stdarray-stdu8-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_array : Std::Array Std::U8 -&gt; Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolve-stdstring-stdioiofail-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      resolve : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_u32-minilibnettcpipaddress-stdu32" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_U32 : Minilib.Net.Tcp::IpAddress -&gt; Std::U32
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpport" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::Port
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::Port">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from_u16-stdu16-minilibnettcpport" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_U16 : Std::U16 -&gt; Minilib.Net.Tcp::Port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_u16-minilibnettcpport-stdu16" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_U16 : Minilib.Net.Tcp::Port -&gt; Std::U16
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::Socket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_unsafe_from_fd-stdfficint-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      _unsafe_from_fd : Std::FFI::CInt -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accept-minilibnettcpsocket-stdioiofail-minilibnettcpsocket-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      accept : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Minilib.Net.Tcp::Socket, Minilib.Net.Tcp::SocketAddress::SocketAddress)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accept_fd-minilibnettcpsocket-stdioiofail-stdfficint-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      accept_fd : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Std::FFI::CInt, Minilib.Net.Tcp::SocketAddress::SocketAddress)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-minilibnettcpsocketaddresssocketaddress-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      bind : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrow_fd_io-stdfficint-stdio-a-minilibnettcpsocket-stdio-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      borrow_fd_io : (Std::FFI::CInt -&gt; Std::IO a) -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO a
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-minilibnettcpsocketaddresssocketaddress-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listen-stdi64-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      listen : Std::I64 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_tcp_socket-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      make_tcp_socket : () -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recv-stdi64-minilibnettcpsocket-stdioiofail-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      recv : Std::I64 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Std::Array Std::U8)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-stdarray-stdu8-minilibnettcpsocket-stdioiofail-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      send : Std::Array Std::U8 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsockopt_reuseaddr-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      setsockopt_reuseaddr : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpsocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::SocketAddress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::SocketAddress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_unsafe_from_sockaddr_in-stdptr-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      _unsafe_from_sockaddr_in : Std::Ptr -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ipaddress-minilibnettcpsocketaddresssocketaddress-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ipaddress : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_port-minilibnettcpsocketaddresssocketaddress-minilibnettcpport" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_port : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-minilibnettcpipaddress-minilibnettcpport-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : Minilib.Net.Tcp::IpAddress -&gt; Minilib.Net.Tcp::Port -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolve-stdstring-stdioiofail-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      resolve : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::SocketAddress::SocketAddress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-bufferedsocket-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type BufferedSocket = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type BufferedSocket = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-socket-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      field socket : Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-write_buf-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      field write_buf : Std::Array Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-read_buf-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      field read_buf : Std::Array Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-eof-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      field eof : Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-ipaddress-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type IpAddress = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type IpAddress = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-addr-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      field addr : Std::Array Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-port-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Port = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type Port = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-port-stdu16" class="md-nav__link">
+    <span class="md-ellipsis">
+      field port : Std::U16
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-socket-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Socket = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type Socket = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-data-stdffidestructor-stdfficint" class="md-nav__link">
+    <span class="md-ellipsis">
+      field data : Std::FFI::Destructor Std::FFI::CInt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpsocketaddress_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::SocketAddress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::SocketAddress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-socketaddress-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type SocketAddress = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type SocketAddress = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-dtor-stdffidestructor-stdptr" class="md-nav__link">
+    <span class="md-ellipsis">
+      field dtor : Std::FFI::Destructor Std::Ptr
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpipaddress-stdfromstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::IpAddress : Std::FromString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpipaddress-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::IpAddress : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpport-stdfromstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::Port : Std::FromString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpport-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::Port : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpsocket-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::Socket : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpsocketaddresssocketaddress-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::SocketAddress::SocketAddress : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.URL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.URL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Random.XorShift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Random.XorShift
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Testing.UnitTest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Testing.UnitTest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Hex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.Hex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.SimpleParser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.SimpleParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.StringEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.StringEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Unicode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.Unicode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Channel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.Channel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Future/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.Future
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.TaskPool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.TaskPool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Comonad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Comonad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Lifter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Lifter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Monoid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Monoid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Rng/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Rng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Semigroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Semigroup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Traversable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Traversable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpNFA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpNFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpPattern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpPattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.SimpleParser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.SimpleParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.StringEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.StringEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Std/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Std
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subprocess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subprocess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect_to_tcp_server-stdstring-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect_to_tcp_server : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listen_tcp_server-stdstring-stdi64-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      listen_tcp_server : Std::String -&gt; Std::I64 -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::BufferedSocket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_bufsize-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      _BUFSIZE : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flush-minilibnettcpbufferedsocket-stdioiofail-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      flush : Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-minilibnettcpsocket-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : Minilib.Net.Tcp::Socket -&gt; Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_line-minilibnettcpbufferedsocket-stdioiofail-stdstring-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_line : Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail (Std::String, Minilib.Net.Tcp::BufferedSocket)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write_str-stdstring-minilibnettcpbufferedsocket-stdioiofail-minilibnettcpbufferedsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_str : Std::String -&gt; Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::IpAddress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_resolve_ipaddress_v4-stdstring-stdioiofail-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      _resolve_ipaddress_v4 : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_u32-stdu32-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_U32 : Std::U32 -&gt; Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_array-stdarray-stdu8-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_array : Std::Array Std::U8 -&gt; Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolve-stdstring-stdioiofail-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      resolve : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_u32-minilibnettcpipaddress-stdu32" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_U32 : Minilib.Net.Tcp::IpAddress -&gt; Std::U32
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpport" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::Port
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::Port">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from_u16-stdu16-minilibnettcpport" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_U16 : Std::U16 -&gt; Minilib.Net.Tcp::Port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_u16-minilibnettcpport-stdu16" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_U16 : Minilib.Net.Tcp::Port -&gt; Std::U16
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::Socket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_unsafe_from_fd-stdfficint-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      _unsafe_from_fd : Std::FFI::CInt -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accept-minilibnettcpsocket-stdioiofail-minilibnettcpsocket-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      accept : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Minilib.Net.Tcp::Socket, Minilib.Net.Tcp::SocketAddress::SocketAddress)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accept_fd-minilibnettcpsocket-stdioiofail-stdfficint-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      accept_fd : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Std::FFI::CInt, Minilib.Net.Tcp::SocketAddress::SocketAddress)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-minilibnettcpsocketaddresssocketaddress-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      bind : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrow_fd_io-stdfficint-stdio-a-minilibnettcpsocket-stdio-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      borrow_fd_io : (Std::FFI::CInt -&gt; Std::IO a) -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO a
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-minilibnettcpsocketaddresssocketaddress-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listen-stdi64-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      listen : Std::I64 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_tcp_socket-stdioiofail-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      make_tcp_socket : () -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recv-stdi64-minilibnettcpsocket-stdioiofail-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      recv : Std::I64 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Std::Array Std::U8)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-stdarray-stdu8-minilibnettcpsocket-stdioiofail-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      send : Std::Array Std::U8 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsockopt_reuseaddr-minilibnettcpsocket-stdioiofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      setsockopt_reuseaddr : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpsocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::SocketAddress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::SocketAddress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_unsafe_from_sockaddr_in-stdptr-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      _unsafe_from_sockaddr_in : Std::Ptr -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ipaddress-minilibnettcpsocketaddresssocketaddress-minilibnettcpipaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ipaddress : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::IpAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_port-minilibnettcpsocketaddresssocketaddress-minilibnettcpport" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_port : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-minilibnettcpipaddress-minilibnettcpport-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : Minilib.Net.Tcp::IpAddress -&gt; Minilib.Net.Tcp::Port -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolve-stdstring-stdioiofail-minilibnettcpsocketaddresssocketaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      resolve : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::SocketAddress::SocketAddress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-bufferedsocket-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type BufferedSocket = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type BufferedSocket = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-socket-minilibnettcpsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      field socket : Minilib.Net.Tcp::Socket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-write_buf-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      field write_buf : Std::Array Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-read_buf-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      field read_buf : Std::Array Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-eof-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      field eof : Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-ipaddress-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type IpAddress = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type IpAddress = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-addr-stdarray-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      field addr : Std::Array Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-port-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Port = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type Port = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-port-stdu16" class="md-nav__link">
+    <span class="md-ellipsis">
+      field port : Std::U16
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-socket-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Socket = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type Socket = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-data-stdffidestructor-stdfficint" class="md-nav__link">
+    <span class="md-ellipsis">
+      field data : Std::FFI::Destructor Std::FFI::CInt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibnettcpsocketaddress_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Net.Tcp::SocketAddress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::SocketAddress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-socketaddress-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type SocketAddress = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type SocketAddress = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-dtor-stdffidestructor-stdptr" class="md-nav__link">
+    <span class="md-ellipsis">
+      field dtor : Std::FFI::Destructor Std::Ptr
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpipaddress-stdfromstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::IpAddress : Std::FromString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpipaddress-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::IpAddress : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpport-stdfromstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::Port : Std::FromString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpport-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::Port : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpsocket-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::Socket : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibnettcpsocketaddresssocketaddress-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Net.Tcp::SocketAddress::SocketAddress : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="minilibnettcp">Minilib.Net.Tcp</h1>
+<p>IPv4 TCP Socket operations.</p>
+<p>Features:
+- IP address, port number
+- Resolves IP address from hostname
+- IPv4 Socket address
+- IPv4 TCP Socket</p>
+<p>Tested platform: x86_64-linux-gnu, aarch64-linux-gnu
+WARNING: IPv6 is not supported yet.</p>
+<h2 id="values">Values</h2>
+<h3 id="namespace-minilibnettcp"><code>namespace Minilib.Net.Tcp</code></h3>
+<h4 id="connect_to_tcp_server-stdstring-stdioiofail-minilibnettcpsocket"><code>connect_to_tcp_server : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket</code></h4>
+<p>Connects to a remote TCP server as a client.
+The first argument is <code>{host}:{port}</code>, where <code>{host}</code> is an IP Address (eg. <code>192.168.0.1</code>),
+or a FQDN host name (eg. <code>www.example.com</code>), and <code>{port}</code> is a port number (eg. <code>8080</code>).
+If the port number is omitted, the default port number is 80.</p>
+<h4 id="listen_tcp_server-stdstring-stdi64-stdioiofail-minilibnettcpsocket"><code>listen_tcp_server : Std::String -&gt; Std::I64 -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket</code></h4>
+<p>Listens at the specified address as a server.</p>
+<p>The first argument is <code>{host}:{port}</code>, where <code>{host}</code> is an IP Address (typically, <code>127.0.0.1</code>),
+or a FQDN host name (typically, <code>localhost</code>), and <code>{port}</code> is a port number (eg. <code>8080</code>).
+If the port number is omitted, the default port number is 80.</p>
+<p>The second argument (<code>backlog</code>) is the maximum length to which the queue of pending connections
+for the socket may grow.</p>
+<h3 id="namespace-minilibnettcpbufferedsocket"><code>namespace Minilib.Net.Tcp::BufferedSocket</code></h3>
+<h4 id="_bufsize-stdi64"><code>_BUFSIZE : Std::I64</code></h4>
+<h4 id="flush-minilibnettcpbufferedsocket-stdioiofail-minilibnettcpbufferedsocket"><code>flush : Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket</code></h4>
+<p>Sends the contents of the writer buffer to the socket and cleans the write buffer.</p>
+<h4 id="make-minilibnettcpsocket-minilibnettcpbufferedsocket"><code>make : Minilib.Net.Tcp::Socket -&gt; Minilib.Net.Tcp::BufferedSocket</code></h4>
+<p>Makes a <code>BufferedSocket</code> from a <code>Socket</code>.</p>
+<h4 id="read_line-minilibnettcpbufferedsocket-stdioiofail-stdstring-minilibnettcpbufferedsocket"><code>read_line : Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail (Std::String, Minilib.Net.Tcp::BufferedSocket)</code></h4>
+<p>Reads out a line (ie. a string that ends with a newline) from the read buffer.
+When the read buffer does not contain a newline, it will read some bytes upto
+_BUFSIZE from the socket, and search for a newline again.
+When the connection is closed, the return value may or may not contain a newline.
+The next call of <code>read_line()</code> returns an empty string, which represents that the connection is closed.</p>
+<h4 id="write_str-stdstring-minilibnettcpbufferedsocket-stdioiofail-minilibnettcpbufferedsocket"><code>write_str : Std::String -&gt; Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket</code></h4>
+<p>Writes a string to the write buffer. The contents of the write buffer is not sent
+until the size of the write buffer is equal to or greater than <code>_BUFSIZE</code>, or <code>flush()</code> is called.</p>
+<h3 id="namespace-minilibnettcpipaddress"><code>namespace Minilib.Net.Tcp::IpAddress</code></h3>
+<h4 id="_resolve_ipaddress_v4-stdstring-stdioiofail-minilibnettcpipaddress"><code>_resolve_ipaddress_v4 : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress</code></h4>
+<h4 id="from_u32-stdu32-minilibnettcpipaddress"><code>from_U32 : Std::U32 -&gt; Minilib.Net.Tcp::IpAddress</code></h4>
+<p>Converts U32 to an <code>IpAddress</code>, for example 0x7f000001_U32 -&gt; 127.0.0.1.</p>
+<h4 id="from_array-stdarray-stdu8-minilibnettcpipaddress"><code>from_array : Std::Array Std::U8 -&gt; Minilib.Net.Tcp::IpAddress</code></h4>
+<p>Converts a byte array to an <code>IpAddress</code>. The length of the byte array must be 4.</p>
+<h4 id="resolve-stdstring-stdioiofail-minilibnettcpipaddress"><code>resolve : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress</code></h4>
+<p>Resolve a hostname such as "127.0.0.1" or "www.example.com".</p>
+<h4 id="to_u32-minilibnettcpipaddress-stdu32"><code>to_U32 : Minilib.Net.Tcp::IpAddress -&gt; Std::U32</code></h4>
+<h3 id="namespace-minilibnettcpport"><code>namespace Minilib.Net.Tcp::Port</code></h3>
+<h4 id="from_u16-stdu16-minilibnettcpport"><code>from_U16 : Std::U16 -&gt; Minilib.Net.Tcp::Port</code></h4>
+<h4 id="to_u16-minilibnettcpport-stdu16"><code>to_U16 : Minilib.Net.Tcp::Port -&gt; Std::U16</code></h4>
+<h3 id="namespace-minilibnettcpsocket"><code>namespace Minilib.Net.Tcp::Socket</code></h3>
+<h4 id="_unsafe_from_fd-stdfficint-stdioiofail-minilibnettcpsocket"><code>_unsafe_from_fd : Std::FFI::CInt -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket</code></h4>
+<p>Creates <code>Socket</code> from a file descriptor of a socket.
+The socket will be automatically closed when <code>Socket</code> is deallocated.</p>
+<h4 id="accept-minilibnettcpsocket-stdioiofail-minilibnettcpsocket-minilibnettcpsocketaddresssocketaddress"><code>accept : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Minilib.Net.Tcp::Socket, Minilib.Net.Tcp::SocketAddress::SocketAddress)</code></h4>
+<p>Waits for an incoming connection request. If an incoming connection arrives, accept it,
+and returns a socket of accepted connection and the remote socket address.</p>
+<h4 id="accept_fd-minilibnettcpsocket-stdioiofail-stdfficint-minilibnettcpsocketaddresssocketaddress"><code>accept_fd : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Std::FFI::CInt, Minilib.Net.Tcp::SocketAddress::SocketAddress)</code></h4>
+<p>Same as <code>accept()</code>, except that it returns the accepted socket's file descriptor instead of <code>Socket</code>.</p>
+<h4 id="bind-minilibnettcpsocketaddresssocketaddress-minilibnettcpsocket-stdioiofail"><code>bind : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()</code></h4>
+<p>Assigns an IPv4 ip address and a port number to the socket.</p>
+<h4 id="borrow_fd_io-stdfficint-stdio-a-minilibnettcpsocket-stdio-a"><code>borrow_fd_io : (Std::FFI::CInt -&gt; Std::IO a) -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO a</code></h4>
+<p>Call an IO action with a file descriptor of a socket.</p>
+<h4 id="connect-minilibnettcpsocketaddresssocketaddress-minilibnettcpsocket-stdioiofail"><code>connect : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()</code></h4>
+<p>Connects to the specified address.</p>
+<h4 id="listen-stdi64-minilibnettcpsocket-stdioiofail"><code>listen : Std::I64 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()</code></h4>
+<p>Listens the socket for incoming connection requests.
+The first argument (backlog) is the maximum length to which the queue of pending connections for sockfd may grow.</p>
+<h4 id="make_tcp_socket-stdioiofail-minilibnettcpsocket"><code>make_tcp_socket : () -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket</code></h4>
+<p>Creates new tcp socket.
+The socket will be automatically closed when <code>Socket</code> is deallocated.</p>
+<h4 id="recv-stdi64-minilibnettcpsocket-stdioiofail-stdarray-stdu8"><code>recv : Std::I64 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Std::Array Std::U8)</code></h4>
+<p>Receives messages from a socket.
+The first argument is the maximum number of bytes to receive.
+If no message are available at the socket, <code>recv()</code> waits for a message to arrive.
+Returns the number of bytes received.
+When the socket has been shutdown, the return value will be 0.</p>
+<h4 id="send-stdarray-stdu8-minilibnettcpsocket-stdioiofail-stdi64"><code>send : Std::Array Std::U8 -&gt; Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail Std::I64</code></h4>
+<p>Transmits a message to another socket.
+May be used only when the socket is in a connected state.
+Returns the number of bytes sent.</p>
+<h4 id="setsockopt_reuseaddr-minilibnettcpsocket-stdioiofail"><code>setsockopt_reuseaddr : Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()</code></h4>
+<h3 id="namespace-minilibnettcpsocketaddress"><code>namespace Minilib.Net.Tcp::SocketAddress</code></h3>
+<h4 id="_unsafe_from_sockaddr_in-stdptr-minilibnettcpsocketaddresssocketaddress"><code>_unsafe_from_sockaddr_in : Std::Ptr -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress</code></h4>
+<p>Creates a <code>SocketAddress</code> from an allocated pointer to <code>struct sockaddr_in</code>.</p>
+<h4 id="get_ipaddress-minilibnettcpsocketaddresssocketaddress-minilibnettcpipaddress"><code>get_ipaddress : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::IpAddress</code></h4>
+<p>Extracts an ip address from the socket address.</p>
+<h4 id="get_port-minilibnettcpsocketaddresssocketaddress-minilibnettcpport"><code>get_port : Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::Port</code></h4>
+<p>Extracts a port number from the socket address.</p>
+<h4 id="make-minilibnettcpipaddress-minilibnettcpport-minilibnettcpsocketaddresssocketaddress"><code>make : Minilib.Net.Tcp::IpAddress -&gt; Minilib.Net.Tcp::Port -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress</code></h4>
+<p>Creates a <code>SocketAddress</code> from an ip address and a port.</p>
+<h4 id="resolve-stdstring-stdioiofail-minilibnettcpsocketaddresssocketaddress"><code>resolve : Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::SocketAddress::SocketAddress</code></h4>
+<p>Splits the first argument into a host name and a port number, then resolves the host
+name to an ip address, then creates a <code>SocketAddress</code> from the ip address and
+the port number.</p>
+<p>The first argument is <code>{host}:{port}</code>, where <code>{host}</code> is an IP Address (eg. <code>192.168.0.1</code>),
+or a FQDN host name (eg. <code>www.example.com</code>), and <code>{port}</code> is a port number (eg. <code>8080</code>).
+If the port number is omitted, the default port number is 80.</p>
+<h2 id="types-and-aliases">Types and aliases</h2>
+<h3 id="namespace-minilibnettcp_1"><code>namespace Minilib.Net.Tcp</code></h3>
+<h4 id="type-bufferedsocket-unbox-struct-fields"><code>type BufferedSocket = unbox struct { ...fields... }</code></h4>
+<p>This type is a structure that wraps a <code>Socket</code> and maintains a write buffer, a read buffer and an EOF flag.</p>
+<h5 id="field-socket-minilibnettcpsocket">field <code>socket : Minilib.Net.Tcp::Socket</code></h5>
+<h5 id="field-write_buf-stdarray-stdu8">field <code>write_buf : Std::Array Std::U8</code></h5>
+<h5 id="field-read_buf-stdarray-stdu8">field <code>read_buf : Std::Array Std::U8</code></h5>
+<h5 id="field-eof-stdbool">field <code>eof : Std::Bool</code></h5>
+<h4 id="type-ipaddress-unbox-struct-fields"><code>type IpAddress = unbox struct { ...fields... }</code></h4>
+<p>This type represents IPv4 ip address,
+eg. 127.0.0.1, 192.168.0.1 etc.</p>
+<h5 id="field-addr-stdarray-stdu8">field <code>addr : Std::Array Std::U8</code></h5>
+<h4 id="type-port-unbox-struct-fields"><code>type Port = unbox struct { ...fields... }</code></h4>
+<p>This type reprents IPv4 port number, 0-65535.</p>
+<h5 id="field-port-stdu16">field <code>port : Std::U16</code></h5>
+<h4 id="type-socket-unbox-struct-fields"><code>type Socket = unbox struct { ...fields... }</code></h4>
+<p>This type represents an IPv4 socket.
+It consists of a socket file descriptor.
+The socket file descripter is closed automatically when Socket is deallocated.</p>
+<h5 id="field-data-stdffidestructor-stdfficint">field <code>data : Std::FFI::Destructor Std::FFI::CInt</code></h5>
+<h3 id="namespace-minilibnettcpsocketaddress_1"><code>namespace Minilib.Net.Tcp::SocketAddress</code></h3>
+<h4 id="type-socketaddress-unbox-struct-fields"><code>type SocketAddress = unbox struct { ...fields... }</code></h4>
+<p>This type represents IPv4 ip address and port number.</p>
+<h5 id="field-dtor-stdffidestructor-stdptr">field <code>dtor : Std::FFI::Destructor Std::Ptr</code></h5>
+<h2 id="traits-and-aliases">Traits and aliases</h2>
+<h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-minilibnettcpipaddress-stdfromstring"><code>impl Minilib.Net.Tcp::IpAddress : Std::FromString</code></h3>
+<h3 id="impl-minilibnettcpipaddress-stdtostring"><code>impl Minilib.Net.Tcp::IpAddress : Std::ToString</code></h3>
+<h3 id="impl-minilibnettcpport-stdfromstring"><code>impl Minilib.Net.Tcp::Port : Std::FromString</code></h3>
+<h3 id="impl-minilibnettcpport-stdtostring"><code>impl Minilib.Net.Tcp::Port : Std::ToString</code></h3>
+<h3 id="impl-minilibnettcpsocket-stdtostring"><code>impl Minilib.Net.Tcp::Socket : Std::ToString</code></h3>
+<h3 id="impl-minilibnettcpsocketaddresssocketaddress-stdtostring"><code>impl Minilib.Net.Tcp::SocketAddress::SocketAddress : Std::ToString</code></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

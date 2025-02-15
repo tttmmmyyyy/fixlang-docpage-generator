@@ -1,0 +1,5040 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Random/">
+      
+      
+        <link rel="next" href="../RegExp.RegExpPattern/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>RegExp.RegExpNFA - Fix Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regexpregexpnfa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Fix Documentation" class="md-header__button md-logo" aria-label="Fix Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fix Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RegExp.RegExpNFA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Fix Documentation" class="md-nav__button md-logo" aria-label="Fix Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fix Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AsyncTask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AsyncTask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap.BinaryArrayTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BinaryHeap.BinaryArrayTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BinaryHeap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashSet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashSet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.App.Clap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.App.Clap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.Deque
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.OrderedMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.OrderedMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.RBTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.RBTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.TreeMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeSet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.TreeSet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Assert/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.Assert
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Common/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.Common
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.RandomEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.RandomEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.TimeEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Common.TimeEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Env/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.Env
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.IdentityC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.IdentityC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Traced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.Traced
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES.GCM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.AES.GCM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.AES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacMD5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacMD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacSHA1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA256/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacSHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.MD5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.MD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA256/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA512/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA512
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SecureRandom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SecureRandom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Base64/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Base64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Binary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Binary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonDecoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json.JsonDecoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonEncoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json.JsonEncoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlHelpers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml.XmlHelpers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlParser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml.XmlParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Functor.Pair/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Functor.Pair
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Errno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Errno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.FileSystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.FileSystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Signal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Signal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigFloat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigFloat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigInt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigInt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigNat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigNat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Complex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Complex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Euclid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Modular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Modular
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Polynomial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Polynomial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Rational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Rational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Ring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Ring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Png/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Png
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Svg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Svg
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Cont/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Cont
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Error/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Error
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.FreeRandom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.FreeRandom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.IO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.IO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Identity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Reader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Result/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Result
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.State/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Trans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Trans
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Writer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Writer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HTML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.HTML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HttpServer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.HttpServer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Router/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Tcp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.URL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Net.URL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Random.XorShift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Random.XorShift
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Testing.UnitTest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Testing.UnitTest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Hex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.Hex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.SimpleParser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.SimpleParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.StringEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.StringEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Unicode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Text.Unicode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Channel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.Channel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Future/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.Future
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.TaskPool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.TaskPool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Comonad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Comonad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Lifter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Lifter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Monoid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Monoid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Rng/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Rng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Semigroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Semigroup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Traversable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Traversable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpNFA
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpNFA
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compile-regexpregexppatternpattern-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      compile : RegExp.RegExpPattern::Pattern -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-stdstring-regexpregexpnfanfa-" class="md-nav__link">
+    <span class="md-ellipsis">
+      debug : Std::String -&gt; RegExp.RegExpNFA::NFA -&gt; ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty : RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-stdstring-regexpregexpnfanfa-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      execute : Std::String -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_node-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_node : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mod_node-regexpregexpnfanodeid-regexpregexpnfanfanode-regexpregexpnfanfanode-regexpregexpnfanfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      mod_node : RegExp.RegExpNFA::NodeID -&gt; (RegExp.RegExpNFA::NFANode -&gt; RegExp.RegExpNFA::NFANode) -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_node-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_node : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NodeID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_quant-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfaquantid" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_quant : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::QuantID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_frag_output-regexpregexpnfanfafrag-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_frag_output : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAExecutor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_add_to_state_set_and_stack-regexpregexpnfanfastate-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _add_to_state_set_and_stack : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_check_for_accepting_state-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _check_for_accepting_state : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_pop_stack-regexpregexpnfanfaexecutor-stdoption-regexpregexpnfanfastate-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _pop_stack : RegExp.RegExpNFA::NFAExecutor -&gt; Std::Option (RegExp.RegExpNFA::NFAState, RegExp.RegExpNFA::NFAExecutor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_transition_on_action-regexpregexpnfanfanode-regexpregexpnfanfastate-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _transition_on_action : RegExp.RegExpNFA::NFANode -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_transition_with_char-stdu8-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _transition_with_char : Std::U8 -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_transition_with_empty_string-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _transition_with_empty_string : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      execute : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-regexpsimpleparserstreamstream-regexpregexpnfanfa-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : RegExp.SimpleParser::Stream::Stream -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAFrag
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAFrag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_compile_action-regexpregexpnfanfanodeaction-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_action : RegExp.RegExpNFA::NFANodeAction -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_either-regexpregexpnfanfafrag-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_either : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_null_sequence-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_null_sequence : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_one_or_more-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_one_or_more : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_seq-regexpregexpnfanfafrag-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_seq : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_special_quant-regexpregexpnfanfafrag-stdi64-stdi64-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_special_quant : RegExp.RegExpNFA::NFAFrag -&gt; Std::I64 -&gt; Std::I64 -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_zero_or_more-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_zero_or_more : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_zero_or_once-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_zero_or_once : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile_pattern-regexpregexppatternpattern-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      compile_pattern : RegExp.RegExpPattern::Pattern -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFANode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_invalid_node_id-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      _INVALID_NODE_ID : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty : RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAState">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_sort_by_group0_begin_and_length-stdarray-regexpregexpnfanfastate-stdarray-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      _sort_by_group0_begin_and_length : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Array RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collect_all_non_overlapping-stdarray-regexpregexpnfanfastate-stdarray-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_all_non_overlapping : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Array RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collect_first_match-stdarray-regexpregexpnfanfastate-stdoption-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_first_match : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Option RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_group-stdi64-regexpregexpnfanfastate-regexpregexpnfagroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_group : Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_quant-regexpregexpnfaquantid-regexpregexpnfanfastate-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_quant : RegExp.RegExpNFA::QuantID -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_length-stdi64-regexpregexpnfanfastate-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      group_length : Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-regexpregexpnfanodeid-regexpregexpnfagroups-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::Groups -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mod_group-stdi64-regexpregexpnfagroup-regexpregexpnfagroup-regexpregexpnfanfastate-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      mod_group : Std::I64 -&gt; (RegExp.RegExpNFA::Group -&gt; RegExp.RegExpNFA::Group) -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlaps-regexpregexpnfanfastate-regexpregexpnfanfastate-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      overlaps : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_quant-regexpregexpnfaquantid-stdi64-regexpregexpnfanfastate-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_quant : RegExp.RegExpNFA::QuantID -&gt; Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition-regexpregexpnfanodeid-regexpregexpnfanfastate-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      transition : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAStateSet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-regexpregexpnfanfastate-regexpregexpnfanfastateset-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      add : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAStateSet -&gt; RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains-regexpregexpnfanfastate-regexpregexpnfanfastateset-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      contains : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAStateSet -&gt; Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-stdi64-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty : Std::I64 -&gt; RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_empty-regexpregexpnfanfastateset-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_empty : RegExp.RegExpNFA::NFAStateSet -&gt; Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iter-regexpregexpnfanfastateset-stditeratordyniterator-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_iter : RegExp.RegExpNFA::NFAStateSet -&gt; Std::Iterator::DynIterator RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfareplacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::Replacement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::Replacement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_parse_dollar-regexpsimpleparserparser-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _parse_dollar : RegExp.SimpleParser::Parser RegExp.RegExpNFA::ReplaceFrag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_parse_literal-regexpsimpleparserparser-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _parse_literal : RegExp.SimpleParser::Parser RegExp.RegExpNFA::ReplaceFrag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_parse_replacement_seq-regexpsimpleparserparser-stdarray-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _parse_replacement_seq : RegExp.SimpleParser::Parser (Std::Array RegExp.RegExpNFA::ReplaceFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calc_replacement-stdstring-stdarray-regexpregexpnfareplacefrag-regexpregexpnfanfastate-stdstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_replacement : Std::String -&gt; Std::Array RegExp.RegExpNFA::ReplaceFrag -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-stdstring-stdarray-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      compile : Std::String -&gt; Std::Array RegExp.RegExpNFA::ReplaceFrag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-group-stdi64-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Group = (Std::I64, Std::I64)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-groups-stdarray-regexpregexpnfagroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Groups = Std::Array RegExp.RegExpNFA::Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfa-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFA = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFA = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-nodes-stdarray-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      field nodes : Std::Array RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-initial_node-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field initial_node : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-accepting_node-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field accepting_node : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-group_count-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field group_count : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-quant_count-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field quant_count : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-debug-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      field debug : Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfaexecutor-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAExecutor = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAExecutor = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-stream-regexpsimpleparserstreamstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      field stream : RegExp.SimpleParser::Stream::Stream
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-nfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      field nfa : RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-empty_state_set-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      field empty_state_set : RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state_set-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      field state_set : RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-stack-stditeratordyniterator-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      field stack : Std::Iterator::DynIterator RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-accepted_states-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      field accepted_states : RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfafrag-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAFrag = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAFrag = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-input-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field input : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-set_output-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      field set_output : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-label-stdstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      field label : Std::String
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfanode-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFANode = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFANode = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-id-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field id : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-action-regexpregexpnfanfanodeaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      field action : RegExp.RegExpNFA::NFANodeAction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-output_on_action-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field output_on_action : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-output-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field output : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-output2-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field output2 : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-label-stdstring_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      field label : Std::String
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfanodeaction-unbox-union-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFANodeAction = unbox union { ...variants... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFANodeAction = unbox union { ...variants... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_none" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_none : ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_char_match-regexpregexppatterncharclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_char_match : RegExp.RegExpPattern::CharClass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_assert-regexpregexppatternpassertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_assert : RegExp.RegExpPattern::PAssertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_group_begin-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_group_begin : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_group_end-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_group_end : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_quant_begin-regexpregexpnfaquantid" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_quant_begin : RegExp.RegExpNFA::QuantID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_quant_loop-regexpregexpnfaquantid" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_quant_loop : RegExp.RegExpNFA::QuantID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_quant_end-regexpregexpnfaquantid-stdi64-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_quant_end : (RegExp.RegExpNFA::QuantID, Std::I64, Std::I64)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfastate-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAState = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAState = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-id-regexpregexpnfanodeid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      field id : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-groups-regexpregexpnfagroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      field groups : RegExp.RegExpNFA::Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-quants-stdarray-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field quants : Std::Array Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfastateset-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAStateSet = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAStateSet = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-array-stdarray-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      field array : Std::Array RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-map-hashmaphashmap-regexpregexpnfanfastate-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      field map : HashMap::HashMap RegExp.RegExpNFA::NFAState Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nodeid-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NodeID = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NodeID = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-val-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field val : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-quantid-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      type QuantID = Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-replacefrag-unbox-union-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      type ReplaceFrag = unbox union { ...variants... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type ReplaceFrag = unbox union { ...variants... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-rep_literal-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant rep_literal : Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-rep_group-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant rep_group : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfa-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFA : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfanode-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFANode : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfanodeaction-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFANodeAction : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfastate-hashhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFAState : Hash::Hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfastate-stdeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFAState : Std::Eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfastate-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFAState : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanodeid-hashhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NodeID : Hash::Hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanodeid-stdeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NodeID : Std::Eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanodeid-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NodeID : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpPattern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpPattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.SimpleParser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.SimpleParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.StringEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp.StringEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RegExp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Std/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Std
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subprocess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subprocess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compile-regexpregexppatternpattern-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      compile : RegExp.RegExpPattern::Pattern -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-stdstring-regexpregexpnfanfa-" class="md-nav__link">
+    <span class="md-ellipsis">
+      debug : Std::String -&gt; RegExp.RegExpNFA::NFA -&gt; ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty : RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-stdstring-regexpregexpnfanfa-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      execute : Std::String -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_node-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_node : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mod_node-regexpregexpnfanodeid-regexpregexpnfanfanode-regexpregexpnfanfanode-regexpregexpnfanfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      mod_node : RegExp.RegExpNFA::NodeID -&gt; (RegExp.RegExpNFA::NFANode -&gt; RegExp.RegExpNFA::NFANode) -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_node-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_node : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NodeID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_quant-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfaquantid" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_quant : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::QuantID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_frag_output-regexpregexpnfanfafrag-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_frag_output : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAExecutor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_add_to_state_set_and_stack-regexpregexpnfanfastate-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _add_to_state_set_and_stack : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_check_for_accepting_state-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _check_for_accepting_state : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_pop_stack-regexpregexpnfanfaexecutor-stdoption-regexpregexpnfanfastate-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _pop_stack : RegExp.RegExpNFA::NFAExecutor -&gt; Std::Option (RegExp.RegExpNFA::NFAState, RegExp.RegExpNFA::NFAExecutor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_transition_on_action-regexpregexpnfanfanode-regexpregexpnfanfastate-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _transition_on_action : RegExp.RegExpNFA::NFANode -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_transition_with_char-stdu8-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _transition_with_char : Std::U8 -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_transition_with_empty_string-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      _transition_with_empty_string : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      execute : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-regexpsimpleparserstreamstream-regexpregexpnfanfa-regexpregexpnfanfaexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : RegExp.SimpleParser::Stream::Stream -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFAExecutor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAFrag
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAFrag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_compile_action-regexpregexpnfanfanodeaction-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_action : RegExp.RegExpNFA::NFANodeAction -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_either-regexpregexpnfanfafrag-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_either : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_null_sequence-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_null_sequence : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_one_or_more-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_one_or_more : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_seq-regexpregexpnfanfafrag-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_seq : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_special_quant-regexpregexpnfanfafrag-stdi64-stdi64-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_special_quant : RegExp.RegExpNFA::NFAFrag -&gt; Std::I64 -&gt; Std::I64 -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_zero_or_more-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_zero_or_more : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_compile_zero_or_once-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _compile_zero_or_once : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile_pattern-regexpregexppatternpattern-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      compile_pattern : RegExp.RegExpPattern::Pattern -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFANode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_invalid_node_id-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      _INVALID_NODE_ID : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty : RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAState">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_sort_by_group0_begin_and_length-stdarray-regexpregexpnfanfastate-stdarray-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      _sort_by_group0_begin_and_length : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Array RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collect_all_non_overlapping-stdarray-regexpregexpnfanfastate-stdarray-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_all_non_overlapping : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Array RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collect_first_match-stdarray-regexpregexpnfanfastate-stdoption-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_first_match : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Option RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_group-stdi64-regexpregexpnfanfastate-regexpregexpnfagroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_group : Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_quant-regexpregexpnfaquantid-regexpregexpnfanfastate-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_quant : RegExp.RegExpNFA::QuantID -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_length-stdi64-regexpregexpnfanfastate-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      group_length : Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-regexpregexpnfanodeid-regexpregexpnfagroups-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      make : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::Groups -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mod_group-stdi64-regexpregexpnfagroup-regexpregexpnfagroup-regexpregexpnfanfastate-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      mod_group : Std::I64 -&gt; (RegExp.RegExpNFA::Group -&gt; RegExp.RegExpNFA::Group) -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlaps-regexpregexpnfanfastate-regexpregexpnfanfastate-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      overlaps : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_quant-regexpregexpnfaquantid-stdi64-regexpregexpnfanfastate-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_quant : RegExp.RegExpNFA::QuantID -&gt; Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition-regexpregexpnfanodeid-regexpregexpnfanfastate-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      transition : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::NFAStateSet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-regexpregexpnfanfastate-regexpregexpnfanfastateset-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      add : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAStateSet -&gt; RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains-regexpregexpnfanfastate-regexpregexpnfanfastateset-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      contains : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAStateSet -&gt; Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-stdi64-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty : Std::I64 -&gt; RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_empty-regexpregexpnfanfastateset-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_empty : RegExp.RegExpNFA::NFAStateSet -&gt; Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iter-regexpregexpnfanfastateset-stditeratordyniterator-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_iter : RegExp.RegExpNFA::NFAStateSet -&gt; Std::Iterator::DynIterator RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfareplacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA::Replacement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA::Replacement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_parse_dollar-regexpsimpleparserparser-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _parse_dollar : RegExp.SimpleParser::Parser RegExp.RegExpNFA::ReplaceFrag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_parse_literal-regexpsimpleparserparser-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _parse_literal : RegExp.SimpleParser::Parser RegExp.RegExpNFA::ReplaceFrag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_parse_replacement_seq-regexpsimpleparserparser-stdarray-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      _parse_replacement_seq : RegExp.SimpleParser::Parser (Std::Array RegExp.RegExpNFA::ReplaceFrag)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calc_replacement-stdstring-stdarray-regexpregexpnfareplacefrag-regexpregexpnfanfastate-stdstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_replacement : Std::String -&gt; Std::Array RegExp.RegExpNFA::ReplaceFrag -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-stdstring-stdarray-regexpregexpnfareplacefrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      compile : Std::String -&gt; Std::Array RegExp.RegExpNFA::ReplaceFrag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-regexpregexpnfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace RegExp.RegExpNFA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace RegExp.RegExpNFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-group-stdi64-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Group = (Std::I64, Std::I64)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-groups-stdarray-regexpregexpnfagroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      type Groups = Std::Array RegExp.RegExpNFA::Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfa-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFA = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFA = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-nodes-stdarray-regexpregexpnfanfanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      field nodes : Std::Array RegExp.RegExpNFA::NFANode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-initial_node-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field initial_node : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-accepting_node-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field accepting_node : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-group_count-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field group_count : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-quant_count-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field quant_count : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-debug-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      field debug : Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfaexecutor-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAExecutor = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAExecutor = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-stream-regexpsimpleparserstreamstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      field stream : RegExp.SimpleParser::Stream::Stream
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-nfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      field nfa : RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-empty_state_set-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      field empty_state_set : RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state_set-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      field state_set : RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-stack-stditeratordyniterator-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      field stack : Std::Iterator::DynIterator RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-accepted_states-regexpregexpnfanfastateset" class="md-nav__link">
+    <span class="md-ellipsis">
+      field accepted_states : RegExp.RegExpNFA::NFAStateSet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfafrag-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAFrag = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAFrag = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-input-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field input : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-set_output-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      field set_output : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-label-stdstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      field label : Std::String
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfanode-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFANode = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFANode = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-id-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field id : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-action-regexpregexpnfanfanodeaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      field action : RegExp.RegExpNFA::NFANodeAction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-output_on_action-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field output_on_action : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-output-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field output : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-output2-regexpregexpnfanodeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      field output2 : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-label-stdstring_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      field label : Std::String
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfanodeaction-unbox-union-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFANodeAction = unbox union { ...variants... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFANodeAction = unbox union { ...variants... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_none" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_none : ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_char_match-regexpregexppatterncharclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_char_match : RegExp.RegExpPattern::CharClass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_assert-regexpregexppatternpassertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_assert : RegExp.RegExpPattern::PAssertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_group_begin-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_group_begin : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_group_end-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_group_end : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_quant_begin-regexpregexpnfaquantid" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_quant_begin : RegExp.RegExpNFA::QuantID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_quant_loop-regexpregexpnfaquantid" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_quant_loop : RegExp.RegExpNFA::QuantID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-sa_quant_end-regexpregexpnfaquantid-stdi64-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant sa_quant_end : (RegExp.RegExpNFA::QuantID, Std::I64, Std::I64)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfastate-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAState = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAState = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-id-regexpregexpnfanodeid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      field id : RegExp.RegExpNFA::NodeID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-groups-regexpregexpnfagroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      field groups : RegExp.RegExpNFA::Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-quants-stdarray-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field quants : Std::Array Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nfastateset-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NFAStateSet = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NFAStateSet = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-array-stdarray-regexpregexpnfanfastate" class="md-nav__link">
+    <span class="md-ellipsis">
+      field array : Std::Array RegExp.RegExpNFA::NFAState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-map-hashmaphashmap-regexpregexpnfanfastate-stdbool" class="md-nav__link">
+    <span class="md-ellipsis">
+      field map : HashMap::HashMap RegExp.RegExpNFA::NFAState Std::Bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-nodeid-unbox-struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      type NodeID = unbox struct { ...fields... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type NodeID = unbox struct { ...fields... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-val-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      field val : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-quantid-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      type QuantID = Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-replacefrag-unbox-union-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      type ReplaceFrag = unbox union { ...variants... }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="type ReplaceFrag = unbox union { ...variants... }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-rep_literal-stdu8" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant rep_literal : Std::U8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-rep_group-stdi64" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant rep_group : Std::I64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfa-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFA : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfanode-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFANode : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfanodeaction-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFANodeAction : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfastate-hashhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFAState : Hash::Hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfastate-stdeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFAState : Std::Eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanfastate-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NFAState : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanodeid-hashhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NodeID : Hash::Hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanodeid-stdeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NodeID : Std::Eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-regexpregexpnfanodeid-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl RegExp.RegExpNFA::NodeID : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="regexpregexpnfa">RegExp.RegExpNFA</h1>
+<p>NFA (Nondeterministic Finite Automaton). This is internal module of <code>RegExp</code>.</p>
+<p>For details, see web pages below.
+- https://swtch.com/~rsc/regexp/regexp1.html
+- https://zenn.dev/canalun/articles/regexp_and_automaton</p>
+<h2 id="values">Values</h2>
+<h3 id="namespace-regexpregexpnfanfa"><code>namespace RegExp.RegExpNFA::NFA</code></h3>
+<h4 id="compile-regexpregexppatternpattern-regexpregexpnfanfa"><code>compile : RegExp.RegExpPattern::Pattern -&gt; RegExp.RegExpNFA::NFA</code></h4>
+<p><code>NFA::compile(pattern)</code> compiles a pattern to NFA.</p>
+<h4 id="debug-stdstring-regexpregexpnfanfa-"><code>debug : Std::String -&gt; RegExp.RegExpNFA::NFA -&gt; ()</code></h4>
+<h4 id="empty-regexpregexpnfanfa"><code>empty : RegExp.RegExpNFA::NFA</code></h4>
+<p>An empty NFA.</p>
+<h4 id="execute-stdstring-regexpregexpnfanfa-regexpregexpnfanfaexecutor"><code>execute : Std::String -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p><code>nfa.execute(target)</code> executes matching.</p>
+<h4 id="get_node-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfanode"><code>get_node : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFANode</code></h4>
+<p><code>nfa.get_node(id)</code> gets the node whose @id is <code>id</code>.</p>
+<h4 id="mod_node-regexpregexpnfanodeid-regexpregexpnfanfanode-regexpregexpnfanfanode-regexpregexpnfanfa-regexpregexpnfanfa"><code>mod_node : RegExp.RegExpNFA::NodeID -&gt; (RegExp.RegExpNFA::NFANode -&gt; RegExp.RegExpNFA::NFANode) -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA</code></h4>
+<p><code>nfa.mod_node(id, f)</code> modifies the node whose @id is <code>id</code>.</p>
+<h4 id="new_node-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanodeid"><code>new_node : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NodeID)</code></h4>
+<p>Creates new node. Returns the new node id.</p>
+<h4 id="new_quant-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfaquantid"><code>new_quant : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::QuantID)</code></h4>
+<p>Creates new quant. Returns the new quant id.</p>
+<h4 id="set_frag_output-regexpregexpnfanfafrag-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfa"><code>set_frag_output : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA</code></h4>
+<p><code>nfa.set_frag_output(frag, out)</code> sets the output of the fragment to <code>out</code>.</p>
+<h3 id="namespace-regexpregexpnfanfaexecutor"><code>namespace RegExp.RegExpNFA::NFAExecutor</code></h3>
+<h4 id="_add_to_state_set_and_stack-regexpregexpnfanfastate-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor"><code>_add_to_state_set_and_stack : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Adds a state to the state set if not added yet, then pushes the state to the stack.</p>
+<h4 id="_check_for_accepting_state-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor"><code>_check_for_accepting_state : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Checks for accepting state</p>
+<h4 id="_pop_stack-regexpregexpnfanfaexecutor-stdoption-regexpregexpnfanfastate-regexpregexpnfanfaexecutor"><code>_pop_stack : RegExp.RegExpNFA::NFAExecutor -&gt; Std::Option (RegExp.RegExpNFA::NFAState, RegExp.RegExpNFA::NFAExecutor)</code></h4>
+<h4 id="_transition_on_action-regexpregexpnfanfanode-regexpregexpnfanfastate-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor"><code>_transition_on_action : RegExp.RegExpNFA::NFANode -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Applies transitions on an action with empty string.</p>
+<h4 id="_transition_with_char-stdu8-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor"><code>_transition_with_char : Std::U8 -&gt; RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Applies transitions with a string of one character.</p>
+<h4 id="_transition_with_empty_string-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor"><code>_transition_with_empty_string : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Applies transitions with an empty string.</p>
+<h4 id="execute-regexpregexpnfanfaexecutor-regexpregexpnfanfaexecutor"><code>execute : RegExp.RegExpNFA::NFAExecutor -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Make transitions until end of stream is reached, or the state set becomes empty.</p>
+<h4 id="make-regexpsimpleparserstreamstream-regexpregexpnfanfa-regexpregexpnfanfaexecutor"><code>make : RegExp.SimpleParser::Stream::Stream -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFAExecutor</code></h4>
+<p>Creates an executor.</p>
+<h3 id="namespace-regexpregexpnfanfafrag"><code>namespace RegExp.RegExpNFA::NFAFrag</code></h3>
+<h4 id="_compile_action-regexpregexpnfanfanodeaction-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_action : RegExp.RegExpNFA::NFANodeAction -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles an action to a fragment.</p>
+<h4 id="_compile_either-regexpregexpnfanfafrag-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_either : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles an alternative of two fragments (<code>e1|e2</code>) to a fragment.</p>
+<h4 id="_compile_null_sequence-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_null_sequence : RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles null sequence (``) to a fragment.</p>
+<h4 id="_compile_one_or_more-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_one_or_more : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles one or more occurrence (<code>e+</code>) to a fragment.</p>
+<h4 id="_compile_seq-regexpregexpnfanfafrag-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_seq : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles a sequence of two fragments (<code>e1 e2</code>) to a fragment.</p>
+<h4 id="_compile_special_quant-regexpregexpnfanfafrag-stdi64-stdi64-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_special_quant : RegExp.RegExpNFA::NFAFrag -&gt; Std::I64 -&gt; Std::I64 -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles special quant (<code>e{min,max}</code>) to a fragment.</p>
+<h4 id="_compile_zero_or_more-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_zero_or_more : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles zero or more occurrence (<code>e*</code>) to a fragment.</p>
+<h4 id="_compile_zero_or_once-regexpregexpnfanfafrag-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>_compile_zero_or_once : RegExp.RegExpNFA::NFAFrag -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p>Compiles zero or once occurrence (<code>e?</code>) to a fragment.</p>
+<h4 id="compile_pattern-regexpregexppatternpattern-regexpregexpnfanfa-regexpregexpnfanfa-regexpregexpnfanfafrag"><code>compile_pattern : RegExp.RegExpPattern::Pattern -&gt; RegExp.RegExpNFA::NFA -&gt; (RegExp.RegExpNFA::NFA, RegExp.RegExpNFA::NFAFrag)</code></h4>
+<p><code>nfa.compile_pattern(pattern)</code> compiles a pattern to a fragment.</p>
+<h3 id="namespace-regexpregexpnfanfanode"><code>namespace RegExp.RegExpNFA::NFANode</code></h3>
+<h4 id="_invalid_node_id-regexpregexpnfanodeid"><code>_INVALID_NODE_ID : RegExp.RegExpNFA::NodeID</code></h4>
+<p>An invalid node ID.</p>
+<h4 id="empty-regexpregexpnfanfanode"><code>empty : RegExp.RegExpNFA::NFANode</code></h4>
+<p>An empty node</p>
+<h3 id="namespace-regexpregexpnfanfastate"><code>namespace RegExp.RegExpNFA::NFAState</code></h3>
+<h4 id="_sort_by_group0_begin_and_length-stdarray-regexpregexpnfanfastate-stdarray-regexpregexpnfanfastate"><code>_sort_by_group0_begin_and_length : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Array RegExp.RegExpNFA::NFAState</code></h4>
+<p>Sorts states by beginning of group 0 (ascending order)
+and length of group 0 (descending order).</p>
+<h4 id="collect_all_non_overlapping-stdarray-regexpregexpnfanfastate-stdarray-regexpregexpnfanfastate"><code>collect_all_non_overlapping : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Array RegExp.RegExpNFA::NFAState</code></h4>
+<p>Collects all non overlapping matches.</p>
+<h4 id="collect_first_match-stdarray-regexpregexpnfanfastate-stdoption-regexpregexpnfanfastate"><code>collect_first_match : Std::Array RegExp.RegExpNFA::NFAState -&gt; Std::Option RegExp.RegExpNFA::NFAState</code></h4>
+<p>Collects first match.</p>
+<h4 id="get_group-stdi64-regexpregexpnfanfastate-regexpregexpnfagroup"><code>get_group : Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::Group</code></h4>
+<p>Gets specified group. If group index is out of range, returns (-1, -1).</p>
+<h4 id="get_quant-regexpregexpnfaquantid-regexpregexpnfanfastate-stdi64"><code>get_quant : RegExp.RegExpNFA::QuantID -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::I64</code></h4>
+<p>get quant loop count</p>
+<h4 id="group_length-stdi64-regexpregexpnfanfastate-stdi64"><code>group_length : Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::I64</code></h4>
+<p>Gets the length of specified group.</p>
+<h4 id="make-regexpregexpnfanodeid-regexpregexpnfagroups-regexpregexpnfanfastate"><code>make : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::Groups -&gt; RegExp.RegExpNFA::NFAState</code></h4>
+<p>Creates a NFA state.</p>
+<h4 id="mod_group-stdi64-regexpregexpnfagroup-regexpregexpnfagroup-regexpregexpnfanfastate-regexpregexpnfanfastate"><code>mod_group : Std::I64 -&gt; (RegExp.RegExpNFA::Group -&gt; RegExp.RegExpNFA::Group) -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState</code></h4>
+<p>Modify specified group.</p>
+<h4 id="overlaps-regexpregexpnfanfastate-regexpregexpnfanfastate-stdbool"><code>overlaps : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::Bool</code></h4>
+<h4 id="set_quant-regexpregexpnfaquantid-stdi64-regexpregexpnfanfastate-regexpregexpnfanfastate"><code>set_quant : RegExp.RegExpNFA::QuantID -&gt; Std::I64 -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState</code></h4>
+<p>set quant loop count</p>
+<h4 id="transition-regexpregexpnfanodeid-regexpregexpnfanfastate-regexpregexpnfanfastate"><code>transition : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAState</code></h4>
+<p>Makes transition to next node.</p>
+<h3 id="namespace-regexpregexpnfanfastateset"><code>namespace RegExp.RegExpNFA::NFAStateSet</code></h3>
+<h4 id="add-regexpregexpnfanfastate-regexpregexpnfanfastateset-regexpregexpnfanfastateset"><code>add : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAStateSet -&gt; RegExp.RegExpNFA::NFAStateSet</code></h4>
+<p>Adds a state to the state set.</p>
+<h4 id="contains-regexpregexpnfanfastate-regexpregexpnfanfastateset-stdbool"><code>contains : RegExp.RegExpNFA::NFAState -&gt; RegExp.RegExpNFA::NFAStateSet -&gt; Std::Bool</code></h4>
+<p>Checks whether the state set contains a state.</p>
+<h4 id="empty-stdi64-regexpregexpnfanfastateset"><code>empty : Std::I64 -&gt; RegExp.RegExpNFA::NFAStateSet</code></h4>
+<p><code>NFAStateSet::empty(node_count)</code> creates an empty state set.
+<code>node_count</code> is number of NFA nodes.</p>
+<h4 id="is_empty-regexpregexpnfanfastateset-stdbool"><code>is_empty : RegExp.RegExpNFA::NFAStateSet -&gt; Std::Bool</code></h4>
+<p>Checks whether the state set is empty.</p>
+<h4 id="to_iter-regexpregexpnfanfastateset-stditeratordyniterator-regexpregexpnfanfastate"><code>to_iter : RegExp.RegExpNFA::NFAStateSet -&gt; Std::Iterator::DynIterator RegExp.RegExpNFA::NFAState</code></h4>
+<p>Returns an iterator of the states.</p>
+<h3 id="namespace-regexpregexpnfareplacement"><code>namespace RegExp.RegExpNFA::Replacement</code></h3>
+<h4 id="_parse_dollar-regexpsimpleparserparser-regexpregexpnfareplacefrag"><code>_parse_dollar : RegExp.SimpleParser::Parser RegExp.RegExpNFA::ReplaceFrag</code></h4>
+<h4 id="_parse_literal-regexpsimpleparserparser-regexpregexpnfareplacefrag"><code>_parse_literal : RegExp.SimpleParser::Parser RegExp.RegExpNFA::ReplaceFrag</code></h4>
+<h4 id="_parse_replacement_seq-regexpsimpleparserparser-stdarray-regexpregexpnfareplacefrag"><code>_parse_replacement_seq : RegExp.SimpleParser::Parser (Std::Array RegExp.RegExpNFA::ReplaceFrag)</code></h4>
+<h4 id="calc_replacement-stdstring-stdarray-regexpregexpnfareplacefrag-regexpregexpnfanfastate-stdstring"><code>calc_replacement : Std::String -&gt; Std::Array RegExp.RegExpNFA::ReplaceFrag -&gt; RegExp.RegExpNFA::NFAState -&gt; Std::String</code></h4>
+<p>Calculates actual replacement string.</p>
+<h4 id="compile-stdstring-stdarray-regexpregexpnfareplacefrag"><code>compile : Std::String -&gt; Std::Array RegExp.RegExpNFA::ReplaceFrag</code></h4>
+<p>Compiles a replacement string to fragments.</p>
+<h2 id="types-and-aliases">Types and aliases</h2>
+<h3 id="namespace-regexpregexpnfa"><code>namespace RegExp.RegExpNFA</code></h3>
+<h4 id="type-group-stdi64-stdi64"><code>type Group = (Std::I64, Std::I64)</code></h4>
+<p>Type of a matched group.
+The group is represented as two stream positions: <code>(begin, end)</code>.
+<code>-1</code> means that the stream position is undefined.</p>
+<h4 id="type-groups-stdarray-regexpregexpnfagroup"><code>type Groups = Std::Array RegExp.RegExpNFA::Group</code></h4>
+<p>Type of the array of matched groups.</p>
+<h4 id="type-nfa-unbox-struct-fields"><code>type NFA = unbox struct { ...fields... }</code></h4>
+<p>NFA</p>
+<h5 id="field-nodes-stdarray-regexpregexpnfanfanode">field <code>nodes : Std::Array RegExp.RegExpNFA::NFANode</code></h5>
+<h5 id="field-initial_node-regexpregexpnfanodeid">field <code>initial_node : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-accepting_node-regexpregexpnfanodeid">field <code>accepting_node : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-group_count-stdi64">field <code>group_count : Std::I64</code></h5>
+<h5 id="field-quant_count-stdi64">field <code>quant_count : Std::I64</code></h5>
+<h5 id="field-debug-stdbool">field <code>debug : Std::Bool</code></h5>
+<h4 id="type-nfaexecutor-unbox-struct-fields"><code>type NFAExecutor = unbox struct { ...fields... }</code></h4>
+<p>The NFA executor</p>
+<h5 id="field-stream-regexpsimpleparserstreamstream">field <code>stream : RegExp.SimpleParser::Stream::Stream</code></h5>
+<h5 id="field-nfa-regexpregexpnfanfa">field <code>nfa : RegExp.RegExpNFA::NFA</code></h5>
+<h5 id="field-empty_state_set-regexpregexpnfanfastateset">field <code>empty_state_set : RegExp.RegExpNFA::NFAStateSet</code></h5>
+<h5 id="field-state_set-regexpregexpnfanfastateset">field <code>state_set : RegExp.RegExpNFA::NFAStateSet</code></h5>
+<h5 id="field-stack-stditeratordyniterator-regexpregexpnfanfastate">field <code>stack : Std::Iterator::DynIterator RegExp.RegExpNFA::NFAState</code></h5>
+<h5 id="field-accepted_states-regexpregexpnfanfastateset">field <code>accepted_states : RegExp.RegExpNFA::NFAStateSet</code></h5>
+<h4 id="type-nfafrag-unbox-struct-fields"><code>type NFAFrag = unbox struct { ...fields... }</code></h4>
+<p>NFA Fragment</p>
+<p>NFA Fragment is a collection of nodes. It exports one input,
+And a function to set the output.
+Internally, the output of a fragment is a collection of outputs of one or more nodes.
+Calling <code>set_output()</code> will change them all.</p>
+<h5 id="field-input-regexpregexpnfanodeid">field <code>input : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-set_output-regexpregexpnfanodeid-regexpregexpnfanfa-regexpregexpnfanfa">field <code>set_output : RegExp.RegExpNFA::NodeID -&gt; RegExp.RegExpNFA::NFA -&gt; RegExp.RegExpNFA::NFA</code></h5>
+<h5 id="field-label-stdstring">field <code>label : Std::String</code></h5>
+<h4 id="type-nfanode-unbox-struct-fields"><code>type NFANode = unbox struct { ...fields... }</code></h4>
+<p>NFA node</p>
+<p>NFA node has one input (ID of this node) and three outputs
+(one output guarded by the action, and two outputs with no guard).</p>
+<h5 id="field-id-regexpregexpnfanodeid">field <code>id : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-action-regexpregexpnfanfanodeaction">field <code>action : RegExp.RegExpNFA::NFANodeAction</code></h5>
+<h5 id="field-output_on_action-regexpregexpnfanodeid">field <code>output_on_action : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-output-regexpregexpnfanodeid">field <code>output : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-output2-regexpregexpnfanodeid">field <code>output2 : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-label-stdstring_1">field <code>label : Std::String</code></h5>
+<h4 id="type-nfanodeaction-unbox-union-variants"><code>type NFANodeAction = unbox union { ...variants... }</code></h4>
+<p>Actions that has to be performed before the state makes a transition to <code>node.@out_on_action</code>.</p>
+<h5 id="variant-sa_none">variant <code>sa_none : ()</code></h5>
+<h5 id="variant-sa_char_match-regexpregexppatterncharclass">variant <code>sa_char_match : RegExp.RegExpPattern::CharClass</code></h5>
+<h5 id="variant-sa_assert-regexpregexppatternpassertion">variant <code>sa_assert : RegExp.RegExpPattern::PAssertion</code></h5>
+<h5 id="variant-sa_group_begin-stdi64">variant <code>sa_group_begin : Std::I64</code></h5>
+<h5 id="variant-sa_group_end-stdi64">variant <code>sa_group_end : Std::I64</code></h5>
+<h5 id="variant-sa_quant_begin-regexpregexpnfaquantid">variant <code>sa_quant_begin : RegExp.RegExpNFA::QuantID</code></h5>
+<h5 id="variant-sa_quant_loop-regexpregexpnfaquantid">variant <code>sa_quant_loop : RegExp.RegExpNFA::QuantID</code></h5>
+<h5 id="variant-sa_quant_end-regexpregexpnfaquantid-stdi64-stdi64">variant <code>sa_quant_end : (RegExp.RegExpNFA::QuantID, Std::I64, Std::I64)</code></h5>
+<h4 id="type-nfastate-unbox-struct-fields"><code>type NFAState = unbox struct { ...fields... }</code></h4>
+<p>NFA state</p>
+<h5 id="field-id-regexpregexpnfanodeid_1">field <code>id : RegExp.RegExpNFA::NodeID</code></h5>
+<h5 id="field-groups-regexpregexpnfagroups">field <code>groups : RegExp.RegExpNFA::Groups</code></h5>
+<h5 id="field-quants-stdarray-stdi64">field <code>quants : Std::Array Std::I64</code></h5>
+<h4 id="type-nfastateset-unbox-struct-fields"><code>type NFAStateSet = unbox struct { ...fields... }</code></h4>
+<p>NFA state set, used for NFA state transition</p>
+<h5 id="field-array-stdarray-regexpregexpnfanfastate">field <code>array : Std::Array RegExp.RegExpNFA::NFAState</code></h5>
+<h5 id="field-map-hashmaphashmap-regexpregexpnfanfastate-stdbool">field <code>map : HashMap::HashMap RegExp.RegExpNFA::NFAState Std::Bool</code></h5>
+<h4 id="type-nodeid-unbox-struct-fields"><code>type NodeID = unbox struct { ...fields... }</code></h4>
+<p>ID of NFA node. -1 is invalid value.</p>
+<h5 id="field-val-stdi64">field <code>val : Std::I64</code></h5>
+<h4 id="type-quantid-stdi64"><code>type QuantID = Std::I64</code></h4>
+<p>Type of special quantifiers ID.
+Special quantifiers are quantifieres other than <code>X?</code> <code>X*</code> <code>X+</code>.
+In other words, they are <code>X{n}</code> <code>X{n,}</code> <code>X{n,m}</code> etc.
+Special quantifiers are hard to implement only using node transition,
+so its iteration count are stored in the NFA state, and managed by <code>sa_quant_*</code> actions.</p>
+<h4 id="type-replacefrag-unbox-union-variants"><code>type ReplaceFrag = unbox union { ...variants... }</code></h4>
+<p>A replacement fragment</p>
+<h5 id="variant-rep_literal-stdu8">variant <code>rep_literal : Std::U8</code></h5>
+<h5 id="variant-rep_group-stdi64">variant <code>rep_group : Std::I64</code></h5>
+<h2 id="traits-and-aliases">Traits and aliases</h2>
+<h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-regexpregexpnfanfa-stdtostring"><code>impl RegExp.RegExpNFA::NFA : Std::ToString</code></h3>
+<h3 id="impl-regexpregexpnfanfanode-stdtostring"><code>impl RegExp.RegExpNFA::NFANode : Std::ToString</code></h3>
+<h3 id="impl-regexpregexpnfanfanodeaction-stdtostring"><code>impl RegExp.RegExpNFA::NFANodeAction : Std::ToString</code></h3>
+<h3 id="impl-regexpregexpnfanfastate-hashhash"><code>impl RegExp.RegExpNFA::NFAState : Hash::Hash</code></h3>
+<h3 id="impl-regexpregexpnfanfastate-stdeq"><code>impl RegExp.RegExpNFA::NFAState : Std::Eq</code></h3>
+<h3 id="impl-regexpregexpnfanfastate-stdtostring"><code>impl RegExp.RegExpNFA::NFAState : Std::ToString</code></h3>
+<h3 id="impl-regexpregexpnfanodeid-hashhash"><code>impl RegExp.RegExpNFA::NodeID : Hash::Hash</code></h3>
+<h3 id="impl-regexpregexpnfanodeid-stdeq"><code>impl RegExp.RegExpNFA::NodeID : Std::Eq</code></h3>
+<h3 id="impl-regexpregexpnfanodeid-stdtostring"><code>impl RegExp.RegExpNFA::NodeID : Std::ToString</code></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
