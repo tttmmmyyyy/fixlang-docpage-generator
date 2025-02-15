@@ -34,7 +34,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: run
-          args: --release --manifest-path fixlang -- run
+          args: --release --manifest-path fixlang/Cargo.toml -- run
 
       - name: Build HTML files
         run: mkdocs build --verbose --clean --strict
