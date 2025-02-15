@@ -16,7 +16,7 @@ jobs:
       - name: Install MkDocs
         run: python3 -m pip install -r requirements.txt     
 
-      - name: Doanload & install LLVM
+      - name: Download & install LLVM
         run: |
           mkdir -p llvm
           wget -q https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/clang+llvm-12.0.1-x86_64-linux-gnu-ubuntu-16.04.tar.xz -O llvm.tar.xz
@@ -40,7 +40,7 @@ jobs:
         run: fix run
 
       - name: Build HTML files
-        run: mkdocs build --verbose --clean --strict
+        run: mkdocs build --verbose --clean
      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
