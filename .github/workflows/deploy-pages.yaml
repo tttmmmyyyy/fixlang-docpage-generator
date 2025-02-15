@@ -30,11 +30,14 @@ jobs:
           repository: tttmmmyyyy/fixlang
           path: fixlang
 
-      - name: Build Markdown files
+      - name: Install Fixlang
         uses: actions-rs/cargo@v1
         with:
-          command: run
-          args: --release --manifest-path fixlang/Cargo.toml -- run
+          command: install
+          args: --locked --path . --manifest-path fixlang/Cargo.toml
+
+      - name: Build Markdown files
+        run: fix run
 
       - name: Build HTML files
         run: mkdocs build --verbose --clean --strict
