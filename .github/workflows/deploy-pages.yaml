@@ -1,0 +1,32 @@
+name: Deploy documentation to GitHub Pages
+
+on:
+  push:
+    branch:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+     
+      - name: Install MkDocs
+        run: python3 -m pip install -r requirements.txt     
+
+      - name: Build Markdown files
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: --release -- run
+
+      - name: Build HTML files
+        run: mkdocs build --verbose --clean --strict
+     
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./site
