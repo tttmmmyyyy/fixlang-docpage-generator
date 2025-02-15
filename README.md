@@ -2,6 +2,8 @@
 
 This script clones all of your Fix projects in your Fixlang registry, generates the documentation for those projects, and generates a static site using [mkdocs](https://www.mkdocs.org/).
 
+The documentation for modules in the default registry is deployed at [https://tttmmmyyyy.github.io/fixlang-docpage-generator/](https://tttmmmyyyy.github.io/fixlang-docpage-generator/).
+
 ## Prerequisites
 
 1. Install [Fixlang](https://github.com/tttmmmyyyy/fixlang). This script assumes that the Fix compiler is installed as the `fix` command.
