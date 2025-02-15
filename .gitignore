@@ -1,0 +1,5 @@
+.fixlang
+*.out
+fixprojs
+docs
+tmpdocs
