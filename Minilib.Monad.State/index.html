@@ -3277,7 +3277,7 @@ change_foo = change_bar.lens_state_t(Foo::act_bar);
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibmonadstate_1">namespace Minilib.Monad.State</h3>
 <h4 id="state_1">State</h4>
-<p>Defined as: <code>type State = Minilib.Monad.State::StateT s Minilib.Monad.Identity::Identity</code></p>
+<p>Defined as: <code>type State s = Minilib.Monad.State::StateT s Minilib.Monad.Identity::Identity</code></p>
 <h4 id="statet">StateT</h4>
 <p>Defined as: <code>type [m : *-&gt;*] StateT s m a = unbox struct { ...fields... }</code></p>
 <p>State monad wraps a function from a initial state to a pair of a value and a final state.</p>

@@ -22441,7 +22441,7 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <h5 id="field-runner">field <code>runner</code></h5>
 <p>Type: <code>Std::IO::IOState -&gt; (Std::IO::IOState, a)</code></p>
 <h4 id="lazy">Lazy</h4>
-<p>Defined as: <code>type Lazy = () -&gt; a</code></p>
+<p>Defined as: <code>type Lazy a = () -&gt; a</code></p>
 <p>The type of lazily generated values.</p>
 <p>You can create a lazy value by <code>|_| (...an expression to generate the value...)</code>,
 and you can evaluate a lazy value <code>v</code> by <code>v()</code>.</p>
@@ -22632,7 +22632,7 @@ consider converting it to an <code>ArrayIterator</code> using <code>bang</code> 
 <h5 id="field-f">field <code>f</code></h5>
 <p>Type: <code>a -&gt; Std::Option b</code></p>
 <h4 id="flatmapiterator">FlatMapIterator</h4>
-<p>Defined as: <code>type FlatMapIterator = Std::Iterator::FlattenIterator (Std::Iterator::MapIterator i1 a i2) i2</code></p>
+<p>Defined as: <code>type FlatMapIterator i1 a i2 = Std::Iterator::FlattenIterator (Std::Iterator::MapIterator i1 a i2) i2</code></p>
 <h4 id="flatteniterator">FlattenIterator</h4>
 <p>Defined as: <code>type FlattenIterator i2 i1 = unbox struct { ...fields... }</code></p>
 <h5 id="field-i2">field <code>i2</code></h5>
