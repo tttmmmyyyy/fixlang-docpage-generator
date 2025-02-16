@@ -3,6 +3,9 @@ name: Deploy documentation to GitHub Pages
 on:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
