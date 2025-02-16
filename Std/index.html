@@ -20609,9 +20609,11 @@
 
 <h1 id="std">Std</h1>
 <p>Module <code>Std</code> provides basic types, traits and values.</p>
-<p>This module is special in the sense that:
-- It is always imported implicitly. If you don't want to import some or all of entities in this module, you should write <code>import Std {...entities...}</code> explicitly.
-- It contains built-in types or values which are defined or implemented directly by Fix compiler, not by Fix source code.</p>
+<p>This module is special in the sense that:</p>
+<ul>
+<li>It is always imported implicitly. If you don't want to import some or all of entities in this module, you should write <code>import Std {...entities...}</code> explicitly.</li>
+<li>It contains built-in types or values which are defined or implemented directly by Fix compiler, not by Fix source code.</li>
+</ul>
 <p>NOTE on tuples:
 The tuple types <code>Std::TupleN</code> are defined on demand, i.e., if the user uses N-tuple in the source code,
 the compiler generates definition <code>TupleN</code> and related functions / trait implementations.

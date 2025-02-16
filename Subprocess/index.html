@@ -2843,10 +2843,12 @@
 <h4 id="exitstatus">ExitStatus</h4>
 <p>Defined as: <code>type ExitStatus = box union { ...variants... }</code></p>
 <p>This type represents the exit status of a subprocess.</p>
-<p>This type is the union of following variants:
-* <code>exit : U8</code> - Means that the subprocess successfully exited (i.e., the main function returned or <code>exit()</code> was called) and stores the exit status code.
-* <code>signaled : U8</code> - Means that the subprocess was terminated by a signal and stores the signal number which caused the termination.
-* <code>wait_failed : ()</code> - Means that the <code>run*</code> function failed to wait the subprocess to exit.</p>
+<p>This type is the union of following variants:</p>
+<ul>
+<li><code>exit : U8</code> - Means that the subprocess successfully exited (i.e., the main function returned or <code>exit()</code> was called) and stores the exit status code.</li>
+<li><code>signaled : U8</code> - Means that the subprocess was terminated by a signal and stores the signal number which caused the termination.</li>
+<li><code>wait_failed : ()</code> - Means that the <code>run*</code> function failed to wait the subprocess to exit.</li>
+</ul>
 <h5 id="variant-exit">variant <code>exit</code></h5>
 <p>Type: <code>Std::U8</code></p>
 <h5 id="variant-signaled">variant <code>signaled</code></h5>
