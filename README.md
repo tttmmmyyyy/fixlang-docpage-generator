@@ -1,8 +1,11 @@
 # fixlang-docpage-generator
 
-This script clones all of your Fix projects in your Fixlang registry, generates the documentation for those projects, and generates a static site using [mkdocs](https://www.mkdocs.org/).
+This script generates documentation for all Fix projects found in `fix deps list` and for the `Std` module.
+The generated markdown files can be easily convertible into a static website using [mkdocs](https://www.mkdocs.org/).
 
-The documentation for modules in the default registry is deployed at [https://tttmmmyyyy.github.io/fixlang-docpage-generator/](https://tttmmmyyyy.github.io/fixlang-docpage-generator/).
+The documentation for modules in the [default registry](https://github.com/tttmmmyyyy/fixlang-registry/blob/main/registry.toml) (and `Std`) is deployed [here](https://tttmmmyyyy.github.io/fixlang-docpage-generator/).
+
+If you add registries other than the default one in [.fixconfig.toml](https://github.com/tttmmmyyyy/fixlang/blob/main/Document.md#configuration-file), this script will also generate documentation for modules registered in them.
 
 ## Prerequisites
 
@@ -12,7 +15,8 @@ The documentation for modules in the default registry is deployed at [https://tt
 
 ## Usage
 
-- `fix run` at the root of this repository to generate markdown files.
+- `git clone https://github.com/tttmmmyyyy/fixlang-docpage-generator.git && cd fixlang-docpage-generator` 
+- `fix run` to generate markdown files.
   - This will clone all Fix projects listed in `fix deps list` and so may take a long time.
-- `mkdocs serve` to serve the documentation locally.
-- `mkdocs build` to build the static site.
+- `mkdocs serve` to serve the documentation page locally.
+- `mkdocs build` to build the static website.
