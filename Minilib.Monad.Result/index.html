@@ -1687,18 +1687,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#result_t-m-stdresult-e-a-minilibmonadresultresultt-e-m-a" class="md-nav__link">
+  <a href="#result_t" class="md-nav__link">
     <span class="md-ellipsis">
-      result_t : m (Std::Result e a) -&gt; Minilib.Monad.Result::ResultT e m a
+      result_t
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run_result_t-minilibmonadresultresultt-e-m-a-m-stdresult-e-a" class="md-nav__link">
+  <a href="#run_result_t" class="md-nav__link">
     <span class="md-ellipsis">
-      run_result_t : Minilib.Monad.Result::ResultT e m a -&gt; m (Std::Result e a)
+      run_result_t
     </span>
   </a>
   
@@ -1735,19 +1735,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-m-resultt-e-m-a-unbox-struct-fields" class="md-nav__link">
+  <a href="#resultt" class="md-nav__link">
     <span class="md-ellipsis">
-      type [m : *-&gt;*] ResultT e m a = unbox struct { ...fields... }
+      ResultT
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="type [m : *->*] ResultT e m a = unbox struct { ...fields... }">
+    <nav class="md-nav" aria-label="ResultT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-data-m-stdresult-e-a" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
-      field data : m (Std::Result e a)
+      field data
     </span>
   </a>
   
@@ -2594,18 +2594,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#result_t-m-stdresult-e-a-minilibmonadresultresultt-e-m-a" class="md-nav__link">
+  <a href="#result_t" class="md-nav__link">
     <span class="md-ellipsis">
-      result_t : m (Std::Result e a) -&gt; Minilib.Monad.Result::ResultT e m a
+      result_t
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run_result_t-minilibmonadresultresultt-e-m-a-m-stdresult-e-a" class="md-nav__link">
+  <a href="#run_result_t" class="md-nav__link">
     <span class="md-ellipsis">
-      run_result_t : Minilib.Monad.Result::ResultT e m a -&gt; m (Std::Result e a)
+      run_result_t
     </span>
   </a>
   
@@ -2642,19 +2642,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-m-resultt-e-m-a-unbox-struct-fields" class="md-nav__link">
+  <a href="#resultt" class="md-nav__link">
     <span class="md-ellipsis">
-      type [m : *-&gt;*] ResultT e m a = unbox struct { ...fields... }
+      ResultT
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="type [m : *->*] ResultT e m a = unbox struct { ...fields... }">
+    <nav class="md-nav" aria-label="ResultT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-data-m-stdresult-e-a" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
-      field data : m (Std::Result e a)
+      field data
     </span>
   </a>
   
@@ -2772,28 +2772,32 @@
 <h1 id="minilibmonadresult">Minilib.Monad.Result</h1>
 <p>A monad transformer that wraps <code>m (Result e a)</code>.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibmonadresult"><code>namespace Minilib.Monad.Result</code></h3>
-<h4 id="result_t-m-stdresult-e-a-minilibmonadresultresultt-e-m-a"><code>result_t : m (Std::Result e a) -&gt; Minilib.Monad.Result::ResultT e m a</code></h4>
+<h3 id="namespace-minilibmonadresult">namespace Minilib.Monad.Result</h3>
+<h4 id="result_t">result_t</h4>
+<p>Type: <code>m (Std::Result e a) -&gt; Minilib.Monad.Result::ResultT e m a</code></p>
 <p>Creates a ResultT monad from an operation result.</p>
-<h4 id="run_result_t-minilibmonadresultresultt-e-m-a-m-stdresult-e-a"><code>run_result_t : Minilib.Monad.Result::ResultT e m a -&gt; m (Std::Result e a)</code></h4>
+<h4 id="run_result_t">run_result_t</h4>
+<p>Type: <code>Minilib.Monad.Result::ResultT e m a -&gt; m (Std::Result e a)</code></p>
 <p>Gets the operation result.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-minilibmonadresult_1"><code>namespace Minilib.Monad.Result</code></h3>
-<h4 id="type-m-resultt-e-m-a-unbox-struct-fields"><code>type [m : *-&gt;*] ResultT e m a = unbox struct { ...fields... }</code></h4>
+<h3 id="namespace-minilibmonadresult_1">namespace Minilib.Monad.Result</h3>
+<h4 id="resultt">ResultT</h4>
+<p>Defined as: <code>type [m : *-&gt;*] ResultT e m a = unbox struct { ...fields... }</code></p>
 <p>A monad transformer that wraps <code>m (Result e a)</code>.
 This represents an operation result (success or error).
 <code>e</code> is a type of an error if the operation fails.
 <code>m</code> is a type of an underlying monad.
 <code>a</code> is a type of an operation result if operation is successful.</p>
-<h5 id="field-data-m-stdresult-e-a">field <code>data : m (Std::Result e a)</code></h5>
+<h5 id="field-data">field <code>data</code></h5>
+<p>Type: <code>m (Std::Result e a)</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-m-stdmonad-minilibmonadresultresultt-stdstring-m-minilibmonaderrormonaderrorif"><code>impl [m : Std::Monad] Minilib.Monad.Result::ResultT Std::String m : Minilib.Monad.Error::MonadErrorIF</code></h3>
-<h3 id="impl-minilibmonadresultresultt-e-minilibmonadtransmonadtrans"><code>impl Minilib.Monad.Result::ResultT e : Minilib.Monad.Trans::MonadTrans</code></h3>
-<h3 id="impl-m-minilibmonadiomonadiofail-minilibmonadresultresultt-e-m-minilibmonadiomonadiofailif"><code>impl [m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Result::ResultT e m : Minilib.Monad.IO::MonadIOFailIF</code></h3>
-<h3 id="impl-m-minilibmonadiomonadio-minilibmonadresultresultt-e-m-minilibmonadiomonadioif"><code>impl [m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Result::ResultT e m : Minilib.Monad.IO::MonadIOIF</code></h3>
-<h3 id="impl-m-stdfunctor-minilibmonadresultresultt-e-m-stdfunctor"><code>impl [m : Std::Functor] Minilib.Monad.Result::ResultT e m : Std::Functor</code></h3>
-<h3 id="impl-m-stdmonad-minilibmonadresultresultt-e-m-stdmonad"><code>impl [m : Std::Monad] Minilib.Monad.Result::ResultT e m : Std::Monad</code></h3>
+<h3 id="impl-m-stdmonad-minilibmonadresultresultt-stdstring-m-minilibmonaderrormonaderrorif">impl <code>[m : Std::Monad] Minilib.Monad.Result::ResultT Std::String m : Minilib.Monad.Error::MonadErrorIF</code></h3>
+<h3 id="impl-minilibmonadresultresultt-e-minilibmonadtransmonadtrans">impl <code>Minilib.Monad.Result::ResultT e : Minilib.Monad.Trans::MonadTrans</code></h3>
+<h3 id="impl-m-minilibmonadiomonadiofail-minilibmonadresultresultt-e-m-minilibmonadiomonadiofailif">impl <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Result::ResultT e m : Minilib.Monad.IO::MonadIOFailIF</code></h3>
+<h3 id="impl-m-minilibmonadiomonadio-minilibmonadresultresultt-e-m-minilibmonadiomonadioif">impl <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Result::ResultT e m : Minilib.Monad.IO::MonadIOIF</code></h3>
+<h3 id="impl-m-stdfunctor-minilibmonadresultresultt-e-m-stdfunctor">impl <code>[m : Std::Functor] Minilib.Monad.Result::ResultT e m : Std::Functor</code></h3>
+<h3 id="impl-m-stdmonad-minilibmonadresultresultt-e-m-stdmonad">impl <code>[m : Std::Monad] Minilib.Monad.Result::ResultT e m : Std::Monad</code></h3>
 
 
 

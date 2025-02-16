@@ -1435,9 +1435,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#divmod-a-minilibmathtypesdivmod-a-a-a-a" class="md-nav__link">
+  <a href="#divmod" class="md-nav__link">
     <span class="md-ellipsis">
-      divmod : [a : Minilib.Math.Types::DivMod] a -&gt; a -&gt; (a, a)
+      divmod
     </span>
   </a>
   
@@ -1459,9 +1459,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#one-a-minilibmathtypesone-a" class="md-nav__link">
+  <a href="#one" class="md-nav__link">
     <span class="md-ellipsis">
-      one : [a : Minilib.Math.Types::One] a
+      one
     </span>
   </a>
   
@@ -1517,9 +1517,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-divmod-a-a-a-a" class="md-nav__link">
+  <a href="#method-divmod" class="md-nav__link">
     <span class="md-ellipsis">
-      method divmod : a -&gt; a -&gt; (a, a)
+      method divmod
     </span>
   </a>
   
@@ -1541,9 +1541,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-one-a" class="md-nav__link">
+  <a href="#method-one" class="md-nav__link">
     <span class="md-ellipsis">
-      method one : a
+      method one
     </span>
   </a>
   
@@ -2624,9 +2624,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#divmod-a-minilibmathtypesdivmod-a-a-a-a" class="md-nav__link">
+  <a href="#divmod" class="md-nav__link">
     <span class="md-ellipsis">
-      divmod : [a : Minilib.Math.Types::DivMod] a -&gt; a -&gt; (a, a)
+      divmod
     </span>
   </a>
   
@@ -2648,9 +2648,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#one-a-minilibmathtypesone-a" class="md-nav__link">
+  <a href="#one" class="md-nav__link">
     <span class="md-ellipsis">
-      one : [a : Minilib.Math.Types::One] a
+      one
     </span>
   </a>
   
@@ -2706,9 +2706,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-divmod-a-a-a-a" class="md-nav__link">
+  <a href="#method-divmod" class="md-nav__link">
     <span class="md-ellipsis">
-      method divmod : a -&gt; a -&gt; (a, a)
+      method divmod
     </span>
   </a>
   
@@ -2730,9 +2730,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-one-a" class="md-nav__link">
+  <a href="#method-one" class="md-nav__link">
     <span class="md-ellipsis">
-      method one : a
+      method one
     </span>
   </a>
   
@@ -2832,27 +2832,31 @@
 <h1 id="minilibmathtypes">Minilib.Math.Types</h1>
 <p>Type definitions for mathematical concepts, for example AdditiveGroup, Ring, Field.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibmathtypesdivmod"><code>namespace Minilib.Math.Types::DivMod</code></h3>
-<h4 id="divmod-a-minilibmathtypesdivmod-a-a-a-a"><code>divmod : [a : Minilib.Math.Types::DivMod] a -&gt; a -&gt; (a, a)</code></h4>
+<h3 id="namespace-minilibmathtypesdivmod">namespace Minilib.Math.Types::DivMod</h3>
+<h4 id="divmod">divmod</h4>
+<p>Type: <code>[a : Minilib.Math.Types::DivMod] a -&gt; a -&gt; (a, a)</code></p>
 <p><code>divmod(a, b)</code> returns <code>(a/b, a%b)</code>.</p>
-<h3 id="namespace-minilibmathtypesone"><code>namespace Minilib.Math.Types::One</code></h3>
-<h4 id="one-a-minilibmathtypesone-a"><code>one : [a : Minilib.Math.Types::One] a</code></h4>
+<h3 id="namespace-minilibmathtypesone">namespace Minilib.Math.Types::One</h3>
+<h4 id="one">one</h4>
+<p>Type: <code>[a : Minilib.Math.Types::One] a</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
-<h3 id="namespace-minilibmathtypes"><code>namespace Minilib.Math.Types</code></h3>
+<h3 id="namespace-minilibmathtypes">namespace Minilib.Math.Types</h3>
 <h4 id="trait-a-divmod">trait <code>a : DivMod</code></h4>
 <p>A trait for division-with-remainder.</p>
-<h5 id="method-divmod-a-a-a-a">method <code>divmod : a -&gt; a -&gt; (a, a)</code></h5>
+<h5 id="method-divmod">method <code>divmod</code></h5>
+<p>Type: <code>a -&gt; a -&gt; (a, a)</code></p>
 <p><code>divmod(a, b)</code> returns <code>(a/b, a%b)</code>.</p>
 <h4 id="trait-a-one">trait <code>a : One</code></h4>
 <p>A trait that represents a multiplicative unit.</p>
-<h5 id="method-one-a">method <code>one : a</code></h5>
+<h5 id="method-one">method <code>one</code></h5>
+<p>Type: <code>a</code></p>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-stdf32-minilibmathtypesone"><code>impl Std::F32 : Minilib.Math.Types::One</code></h3>
-<h3 id="impl-stdf64-minilibmathtypesone"><code>impl Std::F64 : Minilib.Math.Types::One</code></h3>
-<h3 id="impl-stdi64-minilibmathtypesdivmod"><code>impl Std::I64 : Minilib.Math.Types::DivMod</code></h3>
-<h3 id="impl-stdi64-minilibmathtypesone"><code>impl Std::I64 : Minilib.Math.Types::One</code></h3>
-<h3 id="impl-stdu64-minilibmathtypesdivmod"><code>impl Std::U64 : Minilib.Math.Types::DivMod</code></h3>
+<h3 id="impl-stdf32-minilibmathtypesone">impl <code>Std::F32 : Minilib.Math.Types::One</code></h3>
+<h3 id="impl-stdf64-minilibmathtypesone">impl <code>Std::F64 : Minilib.Math.Types::One</code></h3>
+<h3 id="impl-stdi64-minilibmathtypesdivmod">impl <code>Std::I64 : Minilib.Math.Types::DivMod</code></h3>
+<h3 id="impl-stdi64-minilibmathtypesone">impl <code>Std::I64 : Minilib.Math.Types::One</code></h3>
+<h3 id="impl-stdu64-minilibmathtypesdivmod">impl <code>Std::U64 : Minilib.Math.Types::DivMod</code></h3>
 
 
 

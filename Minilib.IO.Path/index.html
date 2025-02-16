@@ -1183,45 +1183,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basename-stdstring-stdstring" class="md-nav__link">
+  <a href="#basename" class="md-nav__link">
     <span class="md-ellipsis">
-      basename : Std::String -&gt; Std::String
+      basename
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dirname-stdstring-stdstring" class="md-nav__link">
+  <a href="#dirname" class="md-nav__link">
     <span class="md-ellipsis">
-      dirname : Std::String -&gt; Std::String
+      dirname
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#is_path_sep-stdu8-stdbool" class="md-nav__link">
+  <a href="#is_path_sep" class="md-nav__link">
     <span class="md-ellipsis">
-      is_path_sep : Std::U8 -&gt; Std::Bool
+      is_path_sep
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#join_paths-stdarray-stdstring-stdstring" class="md-nav__link">
+  <a href="#join_paths" class="md-nav__link">
     <span class="md-ellipsis">
-      join_paths : Std::Array Std::String -&gt; Std::String
+      join_paths
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#relativize-stdstring-stdstring-stdresult-stderrmsg-stdstring" class="md-nav__link">
+  <a href="#relativize" class="md-nav__link">
     <span class="md-ellipsis">
-      relativize : Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String
+      relativize
     </span>
   </a>
   
@@ -2516,45 +2516,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basename-stdstring-stdstring" class="md-nav__link">
+  <a href="#basename" class="md-nav__link">
     <span class="md-ellipsis">
-      basename : Std::String -&gt; Std::String
+      basename
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dirname-stdstring-stdstring" class="md-nav__link">
+  <a href="#dirname" class="md-nav__link">
     <span class="md-ellipsis">
-      dirname : Std::String -&gt; Std::String
+      dirname
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#is_path_sep-stdu8-stdbool" class="md-nav__link">
+  <a href="#is_path_sep" class="md-nav__link">
     <span class="md-ellipsis">
-      is_path_sep : Std::U8 -&gt; Std::Bool
+      is_path_sep
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#join_paths-stdarray-stdstring-stdstring" class="md-nav__link">
+  <a href="#join_paths" class="md-nav__link">
     <span class="md-ellipsis">
-      join_paths : Std::Array Std::String -&gt; Std::String
+      join_paths
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#relativize-stdstring-stdstring-stdresult-stderrmsg-stdstring" class="md-nav__link">
+  <a href="#relativize" class="md-nav__link">
     <span class="md-ellipsis">
-      relativize : Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String
+      relativize
     </span>
   </a>
   
@@ -2616,17 +2616,22 @@
 <h1 id="minilibiopath">Minilib.IO.Path</h1>
 <p>File Path handling, such as joining paths and retrieving directory name.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibiopath"><code>namespace Minilib.IO.Path</code></h3>
-<h4 id="basename-stdstring-stdstring"><code>basename : Std::String -&gt; Std::String</code></h4>
+<h3 id="namespace-minilibiopath">namespace Minilib.IO.Path</h3>
+<h4 id="basename">basename</h4>
+<p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p><code>basename(path)</code> returns the last non-slash component. The trailing slashes are removed.</p>
-<h4 id="dirname-stdstring-stdstring"><code>dirname : Std::String -&gt; Std::String</code></h4>
+<h4 id="dirname">dirname</h4>
+<p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p><code>dirname(path)</code> returns the path with its last non-slash component and trailing slashes removed.
 if <code>path</code> contains no <code>/</code>s, returns <code>"."</code>.</p>
-<h4 id="is_path_sep-stdu8-stdbool"><code>is_path_sep : Std::U8 -&gt; Std::Bool</code></h4>
+<h4 id="is_path_sep">is_path_sep</h4>
+<p>Type: <code>Std::U8 -&gt; Std::Bool</code></p>
 <p>Checks if the byte is a path separator. Currently only '/' is supported.</p>
-<h4 id="join_paths-stdarray-stdstring-stdstring"><code>join_paths : Std::Array Std::String -&gt; Std::String</code></h4>
+<h4 id="join_paths">join_paths</h4>
+<p>Type: <code>Std::Array Std::String -&gt; Std::String</code></p>
 <p><code>join_paths(path_segments)</code> joins segments into a path.</p>
-<h4 id="relativize-stdstring-stdstring-stdresult-stderrmsg-stdstring"><code>relativize : Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String</code></h4>
+<h4 id="relativize">relativize</h4>
+<p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String</code></p>
 <p><code>base.relativize(target)</code> constructs a relative path from <code>base</code> to <code>target</code>.
 <code>base</code> and <code>target</code> should have the same type (i.e. relative path or absolute path).
 If only one of <code>base</code> and <code>target</code> is an absolute path, "different type of path" error is returned.

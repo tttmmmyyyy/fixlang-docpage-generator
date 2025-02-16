@@ -1624,27 +1624,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lift_option-m-stdmonad-stdoption-a-minilibmonadoptionoptiont-m-a" class="md-nav__link">
+  <a href="#lift_option" class="md-nav__link">
     <span class="md-ellipsis">
-      lift_option : [m : Std::Monad] Std::Option a -&gt; Minilib.Monad.Option::OptionT m a
+      lift_option
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option_t-m-stdoption-a-minilibmonadoptionoptiont-m-a" class="md-nav__link">
+  <a href="#option_t" class="md-nav__link">
     <span class="md-ellipsis">
-      option_t : m (Std::Option a) -&gt; Minilib.Monad.Option::OptionT m a
+      option_t
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run_option_t-minilibmonadoptionoptiont-m-a-m-stdoption-a" class="md-nav__link">
+  <a href="#run_option_t" class="md-nav__link">
     <span class="md-ellipsis">
-      run_option_t : Minilib.Monad.Option::OptionT m a -&gt; m (Std::Option a)
+      run_option_t
     </span>
   </a>
   
@@ -1681,19 +1681,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-m-optiont-m-a-unbox-struct-fields" class="md-nav__link">
+  <a href="#optiont" class="md-nav__link">
     <span class="md-ellipsis">
-      type [m : *-&gt;*] OptionT m a = unbox struct { ...fields... }
+      OptionT
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="type [m : *->*] OptionT m a = unbox struct { ...fields... }">
+    <nav class="md-nav" aria-label="OptionT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-data-m-stdoption-a" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
-      field data : m (Std::Option a)
+      field data
     </span>
   </a>
   
@@ -2603,27 +2603,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lift_option-m-stdmonad-stdoption-a-minilibmonadoptionoptiont-m-a" class="md-nav__link">
+  <a href="#lift_option" class="md-nav__link">
     <span class="md-ellipsis">
-      lift_option : [m : Std::Monad] Std::Option a -&gt; Minilib.Monad.Option::OptionT m a
+      lift_option
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option_t-m-stdoption-a-minilibmonadoptionoptiont-m-a" class="md-nav__link">
+  <a href="#option_t" class="md-nav__link">
     <span class="md-ellipsis">
-      option_t : m (Std::Option a) -&gt; Minilib.Monad.Option::OptionT m a
+      option_t
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run_option_t-minilibmonadoptionoptiont-m-a-m-stdoption-a" class="md-nav__link">
+  <a href="#run_option_t" class="md-nav__link">
     <span class="md-ellipsis">
-      run_option_t : Minilib.Monad.Option::OptionT m a -&gt; m (Std::Option a)
+      run_option_t
     </span>
   </a>
   
@@ -2660,19 +2660,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-m-optiont-m-a-unbox-struct-fields" class="md-nav__link">
+  <a href="#optiont" class="md-nav__link">
     <span class="md-ellipsis">
-      type [m : *-&gt;*] OptionT m a = unbox struct { ...fields... }
+      OptionT
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="type [m : *->*] OptionT m a = unbox struct { ...fields... }">
+    <nav class="md-nav" aria-label="OptionT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-data-m-stdoption-a" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
-      field data : m (Std::Option a)
+      field data
     </span>
   </a>
   
@@ -2790,29 +2790,34 @@
 <h1 id="minilibmonadoption">Minilib.Monad.Option</h1>
 <p>A monad transformer that wraps <code>m (Option a)</code>.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibmonadoption"><code>namespace Minilib.Monad.Option</code></h3>
-<h4 id="lift_option-m-stdmonad-stdoption-a-minilibmonadoptionoptiont-m-a"><code>lift_option : [m : Std::Monad] Std::Option a -&gt; Minilib.Monad.Option::OptionT m a</code></h4>
+<h3 id="namespace-minilibmonadoption">namespace Minilib.Monad.Option</h3>
+<h4 id="lift_option">lift_option</h4>
+<p>Type: <code>[m : Std::Monad] Std::Option a -&gt; Minilib.Monad.Option::OptionT m a</code></p>
 <p>Lifts an optional value to an <code>OptionT</code> monad.</p>
-<h4 id="option_t-m-stdoption-a-minilibmonadoptionoptiont-m-a"><code>option_t : m (Std::Option a) -&gt; Minilib.Monad.Option::OptionT m a</code></h4>
+<h4 id="option_t">option_t</h4>
+<p>Type: <code>m (Std::Option a) -&gt; Minilib.Monad.Option::OptionT m a</code></p>
 <p>Creates an OptionT monad from an optional value.</p>
-<h4 id="run_option_t-minilibmonadoptionoptiont-m-a-m-stdoption-a"><code>run_option_t : Minilib.Monad.Option::OptionT m a -&gt; m (Std::Option a)</code></h4>
+<h4 id="run_option_t">run_option_t</h4>
+<p>Type: <code>Minilib.Monad.Option::OptionT m a -&gt; m (Std::Option a)</code></p>
 <p>Gets the optional value.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-minilibmonadoption_1"><code>namespace Minilib.Monad.Option</code></h3>
-<h4 id="type-m-optiont-m-a-unbox-struct-fields"><code>type [m : *-&gt;*] OptionT m a = unbox struct { ...fields... }</code></h4>
+<h3 id="namespace-minilibmonadoption_1">namespace Minilib.Monad.Option</h3>
+<h4 id="optiont">OptionT</h4>
+<p>Defined as: <code>type [m : *-&gt;*] OptionT m a = unbox struct { ...fields... }</code></p>
 <p>A monad transformer that wraps <code>m (Option a)</code>.
 This represents an optional value which may or may not exist.
 <code>m</code> is a type of an underlying monad.
 <code>a</code> is a type of a value.</p>
-<h5 id="field-data-m-stdoption-a">field <code>data : m (Std::Option a)</code></h5>
+<h5 id="field-data">field <code>data</code></h5>
+<p>Type: <code>m (Std::Option a)</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-minilibmonadoptionoptiont-minilibmonadtransmonadtrans"><code>impl Minilib.Monad.Option::OptionT : Minilib.Monad.Trans::MonadTrans</code></h3>
-<h3 id="impl-m-minilibmonaderrormonaderror-minilibmonadoptionoptiont-m-minilibmonaderrormonaderrorif"><code>impl [m : Minilib.Monad.Error::MonadError] Minilib.Monad.Option::OptionT m : Minilib.Monad.Error::MonadErrorIF</code></h3>
-<h3 id="impl-m-minilibmonadiomonadiofail-minilibmonadoptionoptiont-m-minilibmonadiomonadiofailif"><code>impl [m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Option::OptionT m : Minilib.Monad.IO::MonadIOFailIF</code></h3>
-<h3 id="impl-m-minilibmonadiomonadio-minilibmonadoptionoptiont-m-minilibmonadiomonadioif"><code>impl [m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Option::OptionT m : Minilib.Monad.IO::MonadIOIF</code></h3>
-<h3 id="impl-m-stdfunctor-minilibmonadoptionoptiont-m-stdfunctor"><code>impl [m : Std::Functor] Minilib.Monad.Option::OptionT m : Std::Functor</code></h3>
-<h3 id="impl-m-stdmonad-minilibmonadoptionoptiont-m-stdmonad"><code>impl [m : Std::Monad] Minilib.Monad.Option::OptionT m : Std::Monad</code></h3>
+<h3 id="impl-minilibmonadoptionoptiont-minilibmonadtransmonadtrans">impl <code>Minilib.Monad.Option::OptionT : Minilib.Monad.Trans::MonadTrans</code></h3>
+<h3 id="impl-m-minilibmonaderrormonaderror-minilibmonadoptionoptiont-m-minilibmonaderrormonaderrorif">impl <code>[m : Minilib.Monad.Error::MonadError] Minilib.Monad.Option::OptionT m : Minilib.Monad.Error::MonadErrorIF</code></h3>
+<h3 id="impl-m-minilibmonadiomonadiofail-minilibmonadoptionoptiont-m-minilibmonadiomonadiofailif">impl <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Option::OptionT m : Minilib.Monad.IO::MonadIOFailIF</code></h3>
+<h3 id="impl-m-minilibmonadiomonadio-minilibmonadoptionoptiont-m-minilibmonadiomonadioif">impl <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Option::OptionT m : Minilib.Monad.IO::MonadIOIF</code></h3>
+<h3 id="impl-m-stdfunctor-minilibmonadoptionoptiont-m-stdfunctor">impl <code>[m : Std::Functor] Minilib.Monad.Option::OptionT m : Std::Functor</code></h3>
+<h3 id="impl-m-stdmonad-minilibmonadoptionoptiont-m-stdmonad">impl <code>[m : Std::Monad] Minilib.Monad.Option::OptionT m : Std::Monad</code></h3>
 
 
 

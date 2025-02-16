@@ -1414,27 +1414,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pow_by_u64-a-stdmul-a-minilibmathtypesone-stdu64-a-a" class="md-nav__link">
+  <a href="#pow_by_u64" class="md-nav__link">
     <span class="md-ellipsis">
-      pow_by_U64 : [a : Std::Mul, a : Minilib.Math.Types::One] Std::U64 -&gt; a -&gt; a
+      pow_by_U64
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#repeat_by_u64-a-a-a-a-a-stdu64-a" class="md-nav__link">
+  <a href="#repeat_by_u64" class="md-nav__link">
     <span class="md-ellipsis">
-      repeat_by_U64 : (a -&gt; a -&gt; a) -&gt; a -&gt; a -&gt; Std::U64 -&gt; a
+      repeat_by_U64
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#times_by_u64-a-stdadd-a-stdzero-stdu64-a-a" class="md-nav__link">
+  <a href="#times_by_u64" class="md-nav__link">
     <span class="md-ellipsis">
-      times_by_U64 : [a : Std::Add, a : Std::Zero] Std::U64 -&gt; a -&gt; a
+      times_by_U64
     </span>
   </a>
   
@@ -2498,27 +2498,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pow_by_u64-a-stdmul-a-minilibmathtypesone-stdu64-a-a" class="md-nav__link">
+  <a href="#pow_by_u64" class="md-nav__link">
     <span class="md-ellipsis">
-      pow_by_U64 : [a : Std::Mul, a : Minilib.Math.Types::One] Std::U64 -&gt; a -&gt; a
+      pow_by_U64
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#repeat_by_u64-a-a-a-a-a-stdu64-a" class="md-nav__link">
+  <a href="#repeat_by_u64" class="md-nav__link">
     <span class="md-ellipsis">
-      repeat_by_U64 : (a -&gt; a -&gt; a) -&gt; a -&gt; a -&gt; Std::U64 -&gt; a
+      repeat_by_U64
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#times_by_u64-a-stdadd-a-stdzero-stdu64-a-a" class="md-nav__link">
+  <a href="#times_by_u64" class="md-nav__link">
     <span class="md-ellipsis">
-      times_by_U64 : [a : Std::Add, a : Std::Zero] Std::U64 -&gt; a -&gt; a
+      times_by_U64
     </span>
   </a>
   
@@ -2584,15 +2584,18 @@ additive inverse(<code>neg</code>), additive unit(<code>zero</code>),
 multiplication(<code>mul</code>), multiplicative unit(<code>one</code>).</p>
 <p>For details, see <a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">Wikipedia: Ring</a>.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibmathring"><code>namespace Minilib.Math.Ring</code></h3>
-<h4 id="pow_by_u64-a-stdmul-a-minilibmathtypesone-stdu64-a-a"><code>pow_by_U64 : [a : Std::Mul, a : Minilib.Math.Types::One] Std::U64 -&gt; a -&gt; a</code></h4>
+<h3 id="namespace-minilibmathring">namespace Minilib.Math.Ring</h3>
+<h4 id="pow_by_u64">pow_by_U64</h4>
+<p>Type: <code>[a : Std::Mul, a : Minilib.Math.Types::One] Std::U64 -&gt; a -&gt; a</code></p>
 <p><code>a.pow_by_U64(n)</code> calculates <code>a ^ n</code>.</p>
-<h4 id="repeat_by_u64-a-a-a-a-a-stdu64-a"><code>repeat_by_U64 : (a -&gt; a -&gt; a) -&gt; a -&gt; a -&gt; Std::U64 -&gt; a</code></h4>
+<h4 id="repeat_by_u64">repeat_by_U64</h4>
+<p>Type: <code>(a -&gt; a -&gt; a) -&gt; a -&gt; a -&gt; Std::U64 -&gt; a</code></p>
 <p><code>repeat_by_U64(op, x, a, n)</code> calculates <code>x.op(a).op(a)...</code> for <code>n</code> times.
 <code>op</code> is an associative binary operation.
 This function returns the same result as <code>Iterator::range(0, n).fold(x, |_, x| x.op(a))</code>,
 but faster.</p>
-<h4 id="times_by_u64-a-stdadd-a-stdzero-stdu64-a-a"><code>times_by_U64 : [a : Std::Add, a : Std::Zero] Std::U64 -&gt; a -&gt; a</code></h4>
+<h4 id="times_by_u64">times_by_U64</h4>
+<p>Type: <code>[a : Std::Add, a : Std::Zero] Std::U64 -&gt; a -&gt; a</code></p>
 <p><code>a.times_by_U64(n)</code> calculates <code>a * n</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>

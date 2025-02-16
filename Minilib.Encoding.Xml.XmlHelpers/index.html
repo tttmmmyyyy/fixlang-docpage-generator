@@ -1057,27 +1057,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_match_char_reference-stdarray-stdu8-stdi64-stdoption-stdu32-stdi64" class="md-nav__link">
+  <a href="#_match_char_reference" class="md-nav__link">
     <span class="md-ellipsis">
-      _match_char_reference : Std::Array Std::U8 -&gt; Std::I64 -&gt; Std::Option (Std::U32, Std::I64)
+      _match_char_reference
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#escape_special-stdstring-stdstring" class="md-nav__link">
+  <a href="#escape_special" class="md-nav__link">
     <span class="md-ellipsis">
-      escape_special : Std::String -&gt; Std::String
+      escape_special
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#unescape_special-stdstring-stdstring" class="md-nav__link">
+  <a href="#unescape_special" class="md-nav__link">
     <span class="md-ellipsis">
-      unescape_special : Std::String -&gt; Std::String
+      unescape_special
     </span>
   </a>
   
@@ -2498,27 +2498,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_match_char_reference-stdarray-stdu8-stdi64-stdoption-stdu32-stdi64" class="md-nav__link">
+  <a href="#_match_char_reference" class="md-nav__link">
     <span class="md-ellipsis">
-      _match_char_reference : Std::Array Std::U8 -&gt; Std::I64 -&gt; Std::Option (Std::U32, Std::I64)
+      _match_char_reference
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#escape_special-stdstring-stdstring" class="md-nav__link">
+  <a href="#escape_special" class="md-nav__link">
     <span class="md-ellipsis">
-      escape_special : Std::String -&gt; Std::String
+      escape_special
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#unescape_special-stdstring-stdstring" class="md-nav__link">
+  <a href="#unescape_special" class="md-nav__link">
     <span class="md-ellipsis">
-      unescape_special : Std::String -&gt; Std::String
+      unescape_special
     </span>
   </a>
   
@@ -2580,12 +2580,15 @@
 <h1 id="minilibencodingxmlxmlhelpers">Minilib.Encoding.Xml.XmlHelpers</h1>
 <p>XML helpers, such as escaping/unescaping special characters.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibencodingxmlxmlhelpers"><code>namespace Minilib.Encoding.Xml.XmlHelpers</code></h3>
-<h4 id="_match_char_reference-stdarray-stdu8-stdi64-stdoption-stdu32-stdi64"><code>_match_char_reference : Std::Array Std::U8 -&gt; Std::I64 -&gt; Std::Option (Std::U32, Std::I64)</code></h4>
-<h4 id="escape_special-stdstring-stdstring"><code>escape_special : Std::String -&gt; Std::String</code></h4>
+<h3 id="namespace-minilibencodingxmlxmlhelpers">namespace Minilib.Encoding.Xml.XmlHelpers</h3>
+<h4 id="_match_char_reference">_match_char_reference</h4>
+<p>Type: <code>Std::Array Std::U8 -&gt; Std::I64 -&gt; Std::Option (Std::U32, Std::I64)</code></p>
+<h4 id="escape_special">escape_special</h4>
+<p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p>Escapes XML special characters.
 eg. <code>&amp;</code> -&gt; <code>&amp;amp;</code>, <code>&lt;</code> -&gt; <code>&amp;lt;</code>, <code>&gt;</code> -&gt; <code>&amp;gt;</code>, <code>\"</code> -&gt; <code>&amp;quot;</code>, <code>'</code> -&gt; <code>&amp;#039;</code></p>
-<h4 id="unescape_special-stdstring-stdstring"><code>unescape_special : Std::String -&gt; Std::String</code></h4>
+<h4 id="unescape_special">unescape_special</h4>
+<p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p>Unescapes XML special characters.
 eg. <code>&amp;amp;</code> -&gt; <code>&amp;</code>, <code>&amp;lt;</code> -&gt; <code>&lt;</code>, <code>&amp;gt;</code> -&gt; <code>&gt;</code>, <code>&amp;quot;</code> -&gt; <code>\"</code>, <code>&amp;#039;</code> -&gt; <code>'</code>.
 NOTE: Other character references is also converted.</p>

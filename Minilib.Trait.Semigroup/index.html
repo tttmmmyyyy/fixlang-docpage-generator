@@ -2170,9 +2170,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sappend-a-minilibtraitsemigroupsemigroup-a-a-a" class="md-nav__link">
+  <a href="#sappend" class="md-nav__link">
     <span class="md-ellipsis">
-      sappend : [a : Minilib.Trait.Semigroup::Semigroup] a -&gt; a -&gt; a
+      sappend
     </span>
   </a>
   
@@ -2228,9 +2228,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-sappend-a-a-a" class="md-nav__link">
+  <a href="#method-sappend" class="md-nav__link">
     <span class="md-ellipsis">
-      method sappend : a -&gt; a -&gt; a
+      method sappend
     </span>
   </a>
   
@@ -2576,9 +2576,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sappend-a-minilibtraitsemigroupsemigroup-a-a-a" class="md-nav__link">
+  <a href="#sappend" class="md-nav__link">
     <span class="md-ellipsis">
-      sappend : [a : Minilib.Trait.Semigroup::Semigroup] a -&gt; a -&gt; a
+      sappend
     </span>
   </a>
   
@@ -2634,9 +2634,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-sappend-a-a-a" class="md-nav__link">
+  <a href="#method-sappend" class="md-nav__link">
     <span class="md-ellipsis">
-      method sappend : a -&gt; a -&gt; a
+      method sappend
     </span>
   </a>
   
@@ -2739,26 +2739,28 @@
 It may or may not have an identity.</p>
 <p>For details, see <a href="https://en.wikipedia.org/wiki/Semigroup">Wikipedia: Semigroup</a>.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibtraitsemigroupsemigroup"><code>namespace Minilib.Trait.Semigroup::Semigroup</code></h3>
-<h4 id="sappend-a-minilibtraitsemigroupsemigroup-a-a-a"><code>sappend : [a : Minilib.Trait.Semigroup::Semigroup] a -&gt; a -&gt; a</code></h4>
+<h3 id="namespace-minilibtraitsemigroupsemigroup">namespace Minilib.Trait.Semigroup::Semigroup</h3>
+<h4 id="sappend">sappend</h4>
+<p>Type: <code>[a : Minilib.Trait.Semigroup::Semigroup] a -&gt; a -&gt; a</code></p>
 <p><code>a.sappend(b)</code> appends <code>b</code> after <code>a</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
-<h3 id="namespace-minilibtraitsemigroup"><code>namespace Minilib.Trait.Semigroup</code></h3>
+<h3 id="namespace-minilibtraitsemigroup">namespace Minilib.Trait.Semigroup</h3>
 <h4 id="trait-a-semigroup">trait <code>a : Semigroup</code></h4>
 <p>A trait that represents a semigroup.</p>
-<h5 id="method-sappend-a-a-a">method <code>sappend : a -&gt; a -&gt; a</code></h5>
+<h5 id="method-sappend">method <code>sappend</code></h5>
+<p>Type: <code>a -&gt; a -&gt; a</code></p>
 <p><code>a.sappend(b)</code> appends <code>b</code> after <code>a</code>.</p>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-minilibtraitsemigroupsemigroup"><code>impl () : Minilib.Trait.Semigroup::Semigroup</code></h3>
+<h3 id="impl-minilibtraitsemigroupsemigroup">impl <code>() : Minilib.Trait.Semigroup::Semigroup</code></h3>
 <p><code>()</code> does not change with <code>sappend</code>.</p>
-<h3 id="impl-stdarray-a-minilibtraitsemigroupsemigroup"><code>impl Std::Array a : Minilib.Trait.Semigroup::Semigroup</code></h3>
+<h3 id="impl-stdarray-a-minilibtraitsemigroupsemigroup">impl <code>Std::Array a : Minilib.Trait.Semigroup::Semigroup</code></h3>
 <p>For arrays, <code>sappend</code> appends two arrays.</p>
-<h3 id="impl-stditeratordyniterator-a-minilibtraitsemigroupsemigroup"><code>impl Std::Iterator::DynIterator a : Minilib.Trait.Semigroup::Semigroup</code></h3>
+<h3 id="impl-stditeratordyniterator-a-minilibtraitsemigroupsemigroup">impl <code>Std::Iterator::DynIterator a : Minilib.Trait.Semigroup::Semigroup</code></h3>
 <p>For iterators, <code>sappend</code> appends two iterators.</p>
-<h3 id="impl-a-minilibtraitsemigroupsemigroup-stdoption-a-minilibtraitsemigroupsemigroup"><code>impl [a : Minilib.Trait.Semigroup::Semigroup] Std::Option a : Minilib.Trait.Semigroup::Semigroup</code></h3>
+<h3 id="impl-a-minilibtraitsemigroupsemigroup-stdoption-a-minilibtraitsemigroupsemigroup">impl <code>[a : Minilib.Trait.Semigroup::Semigroup] Std::Option a : Minilib.Trait.Semigroup::Semigroup</code></h3>
 <p>For options, <code>sappand</code> appends two values if both is some.</p>
-<h3 id="impl-stdstring-minilibtraitsemigroupsemigroup"><code>impl Std::String : Minilib.Trait.Semigroup::Semigroup</code></h3>
+<h3 id="impl-stdstring-minilibtraitsemigroupsemigroup">impl <code>Std::String : Minilib.Trait.Semigroup::Semigroup</code></h3>
 <p>For strings, <code>sappend</code> concats two strings.</p>
 
 

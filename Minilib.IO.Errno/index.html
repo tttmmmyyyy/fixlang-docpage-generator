@@ -1141,27 +1141,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get_last_error-stdio-stdstring" class="md-nav__link">
+  <a href="#get_last_error" class="md-nav__link">
     <span class="md-ellipsis">
-      get_last_error : Std::IO Std::String
+      get_last_error
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#strerror-stdi32-stdio-stdstring" class="md-nav__link">
+  <a href="#strerror" class="md-nav__link">
     <span class="md-ellipsis">
-      strerror : Std::I32 -&gt; Std::IO Std::String
+      strerror
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#strerror_r-stdi32-stdio-stdstring" class="md-nav__link">
+  <a href="#strerror_r" class="md-nav__link">
     <span class="md-ellipsis">
-      strerror_r : Std::I32 -&gt; Std::IO Std::String
+      strerror_r
     </span>
   </a>
   
@@ -2498,27 +2498,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get_last_error-stdio-stdstring" class="md-nav__link">
+  <a href="#get_last_error" class="md-nav__link">
     <span class="md-ellipsis">
-      get_last_error : Std::IO Std::String
+      get_last_error
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#strerror-stdi32-stdio-stdstring" class="md-nav__link">
+  <a href="#strerror" class="md-nav__link">
     <span class="md-ellipsis">
-      strerror : Std::I32 -&gt; Std::IO Std::String
+      strerror
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#strerror_r-stdi32-stdio-stdstring" class="md-nav__link">
+  <a href="#strerror_r" class="md-nav__link">
     <span class="md-ellipsis">
-      strerror_r : Std::I32 -&gt; Std::IO Std::String
+      strerror_r
     </span>
   </a>
   
@@ -2580,13 +2580,16 @@
 <h1 id="minilibioerrno">Minilib.IO.Errno</h1>
 <p>Functions for <code>errno</code> which is set by system calls and some library functions.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibioerrno"><code>namespace Minilib.IO.Errno</code></h3>
-<h4 id="get_last_error-stdio-stdstring"><code>get_last_error : Std::IO Std::String</code></h4>
+<h3 id="namespace-minilibioerrno">namespace Minilib.IO.Errno</h3>
+<h4 id="get_last_error">get_last_error</h4>
+<p>Type: <code>Std::IO Std::String</code></p>
 <p>Gets the error message corresponding to the last error number.</p>
-<h4 id="strerror-stdi32-stdio-stdstring"><code>strerror : Std::I32 -&gt; Std::IO Std::String</code></h4>
+<h4 id="strerror">strerror</h4>
+<p>Type: <code>Std::I32 -&gt; Std::IO Std::String</code></p>
 <p>Converts the error number returned by <code>get_errno</code> to a string.
 This function may have race conditions, but is more portable.</p>
-<h4 id="strerror_r-stdi32-stdio-stdstring"><code>strerror_r : Std::I32 -&gt; Std::IO Std::String</code></h4>
+<h4 id="strerror_r">strerror_r</h4>
+<p>Type: <code>Std::I32 -&gt; Std::IO Std::String</code></p>
 <p>Converts the error number returned by <code>get_errno</code> to a string.
 This function has no race conditions, but is less portable.  (This function is GNU C library specific)</p>
 <h2 id="types-and-aliases">Types and aliases</h2>

@@ -1225,36 +1225,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kill_process-stdi64-stdstring-stdioiofail" class="md-nav__link">
+  <a href="#kill_process" class="md-nav__link">
     <span class="md-ellipsis">
-      kill_process : Std::I64 -&gt; Std::String -&gt; Std::IO::IOFail ()
+      kill_process
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#set_signal_handler-stdstring-stdstring-stdioiofail" class="md-nav__link">
+  <a href="#set_signal_handler" class="md-nav__link">
     <span class="md-ellipsis">
-      set_signal_handler : Std::String -&gt; Std::String -&gt; Std::IO::IOFail ()
+      set_signal_handler
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sighandler_names-stdarray-stdstring" class="md-nav__link">
+  <a href="#sighandler_names" class="md-nav__link">
     <span class="md-ellipsis">
-      sighandler_names : Std::Array Std::String
+      sighandler_names
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#signal_names-stdarray-stdstring" class="md-nav__link">
+  <a href="#signal_names" class="md-nav__link">
     <span class="md-ellipsis">
-      signal_names : Std::Array Std::String
+      signal_names
     </span>
   </a>
   
@@ -2507,36 +2507,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kill_process-stdi64-stdstring-stdioiofail" class="md-nav__link">
+  <a href="#kill_process" class="md-nav__link">
     <span class="md-ellipsis">
-      kill_process : Std::I64 -&gt; Std::String -&gt; Std::IO::IOFail ()
+      kill_process
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#set_signal_handler-stdstring-stdstring-stdioiofail" class="md-nav__link">
+  <a href="#set_signal_handler" class="md-nav__link">
     <span class="md-ellipsis">
-      set_signal_handler : Std::String -&gt; Std::String -&gt; Std::IO::IOFail ()
+      set_signal_handler
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sighandler_names-stdarray-stdstring" class="md-nav__link">
+  <a href="#sighandler_names" class="md-nav__link">
     <span class="md-ellipsis">
-      sighandler_names : Std::Array Std::String
+      sighandler_names
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#signal_names-stdarray-stdstring" class="md-nav__link">
+  <a href="#signal_names" class="md-nav__link">
     <span class="md-ellipsis">
-      signal_names : Std::Array Std::String
+      signal_names
     </span>
   </a>
   
@@ -2598,15 +2598,19 @@
 <h1 id="minilibiosignal">Minilib.IO.Signal</h1>
 <p>Unix signal handling</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibiosignal"><code>namespace Minilib.IO.Signal</code></h3>
-<h4 id="kill_process-stdi64-stdstring-stdioiofail"><code>kill_process : Std::I64 -&gt; Std::String -&gt; Std::IO::IOFail ()</code></h4>
-<h4 id="set_signal_handler-stdstring-stdstring-stdioiofail"><code>set_signal_handler : Std::String -&gt; Std::String -&gt; Std::IO::IOFail ()</code></h4>
+<h3 id="namespace-minilibiosignal">namespace Minilib.IO.Signal</h3>
+<h4 id="kill_process">kill_process</h4>
+<p>Type: <code>Std::I64 -&gt; Std::String -&gt; Std::IO::IOFail ()</code></p>
+<h4 id="set_signal_handler">set_signal_handler</h4>
+<p>Type: <code>Std::String -&gt; Std::String -&gt; Std::IO::IOFail ()</code></p>
 <p><code>set_signal_handler(signal_name, sighandle_name)</code> sets the handler for the signal.
 <code>signal_name</code> should be one of <code>signal_names</code>.
 <code>sighandle_name</code> should be one of <code>sighandler_names</code>.</p>
-<h4 id="sighandler_names-stdarray-stdstring"><code>sighandler_names : Std::Array Std::String</code></h4>
+<h4 id="sighandler_names">sighandler_names</h4>
+<p>Type: <code>Std::Array Std::String</code></p>
 <p>An array of supported signal handler names.</p>
-<h4 id="signal_names-stdarray-stdstring"><code>signal_names : Std::Array Std::String</code></h4>
+<h4 id="signal_names">signal_names</h4>
+<p>Type: <code>Std::Array Std::String</code></p>
 <p>An array of supported signal names.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>

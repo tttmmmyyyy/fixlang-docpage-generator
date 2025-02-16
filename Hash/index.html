@@ -364,9 +364,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#combine_hash-stdu64-stdu64-stdu64" class="md-nav__link">
+  <a href="#combine_hash" class="md-nav__link">
     <span class="md-ellipsis">
-      combine_hash : Std::U64 -&gt; Std::U64 -&gt; Std::U64
+      combine_hash
     </span>
   </a>
   
@@ -388,9 +388,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hash-a-hashhash-a-stdu64" class="md-nav__link">
+  <a href="#hash_1" class="md-nav__link">
     <span class="md-ellipsis">
-      hash : [a : Hash::Hash] a -&gt; Std::U64
+      hash
     </span>
   </a>
   
@@ -446,9 +446,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-hash-a-stdu64" class="md-nav__link">
+  <a href="#method-hash" class="md-nav__link">
     <span class="md-ellipsis">
-      method hash : a -&gt; Std::U64
+      method hash
     </span>
   </a>
   
@@ -2609,9 +2609,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#combine_hash-stdu64-stdu64-stdu64" class="md-nav__link">
+  <a href="#combine_hash" class="md-nav__link">
     <span class="md-ellipsis">
-      combine_hash : Std::U64 -&gt; Std::U64 -&gt; Std::U64
+      combine_hash
     </span>
   </a>
   
@@ -2633,9 +2633,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hash-a-hashhash-a-stdu64" class="md-nav__link">
+  <a href="#hash_1" class="md-nav__link">
     <span class="md-ellipsis">
-      hash : [a : Hash::Hash] a -&gt; Std::U64
+      hash
     </span>
   </a>
   
@@ -2691,9 +2691,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-hash-a-stdu64" class="md-nav__link">
+  <a href="#method-hash" class="md-nav__link">
     <span class="md-ellipsis">
-      method hash : a -&gt; Std::U64
+      method hash
     </span>
   </a>
   
@@ -2802,25 +2802,28 @@
 <h1 id="hash">Hash</h1>
 <p>Provides the <code>Hash</code> trait and related traits, and basic hashing functions.</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-hash"><code>namespace Hash</code></h3>
-<h4 id="combine_hash-stdu64-stdu64-stdu64"><code>combine_hash : Std::U64 -&gt; Std::U64 -&gt; Std::U64</code></h4>
+<h3 id="namespace-hash">namespace Hash</h3>
+<h4 id="combine_hash">combine_hash</h4>
+<p>Type: <code>Std::U64 -&gt; Std::U64 -&gt; Std::U64</code></p>
 <p>Combines two hashes.</p>
 <p>Using method described in https://stackoverflow.com/questions/5889238/why-is-xor-the-default-way-to-combine-hashes.</p>
-<h3 id="namespace-hashhash"><code>namespace Hash::Hash</code></h3>
-<h4 id="hash-a-hashhash-a-stdu64"><code>hash : [a : Hash::Hash] a -&gt; Std::U64</code></h4>
+<h3 id="namespace-hashhash">namespace Hash::Hash</h3>
+<h4 id="hash_1">hash</h4>
+<p>Type: <code>[a : Hash::Hash] a -&gt; Std::U64</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
-<h3 id="namespace-hash_1"><code>namespace Hash</code></h3>
+<h3 id="namespace-hash_1">namespace Hash</h3>
 <h4 id="trait-a-hash">trait <code>a : Hash</code></h4>
 <p>Hashable types.</p>
-<h5 id="method-hash-a-stdu64">method <code>hash : a -&gt; Std::U64</code></h5>
+<h5 id="method-hash">method <code>hash</code></h5>
+<p>Type: <code>a -&gt; Std::U64</code></p>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-a-hashhash-b-hashhash-a-b-hashhash"><code>impl [a : Hash::Hash, b : Hash::Hash] (a, b) : Hash::Hash</code></h3>
-<h3 id="impl-a-hashhash-stdarray-a-hashhash"><code>impl [a : Hash::Hash] Std::Array a : Hash::Hash</code></h3>
-<h3 id="impl-stdi64-hashhash"><code>impl Std::I64 : Hash::Hash</code></h3>
-<h3 id="impl-stdstring-hashhash"><code>impl Std::String : Hash::Hash</code></h3>
-<h3 id="impl-stdu64-hashhash"><code>impl Std::U64 : Hash::Hash</code></h3>
-<h3 id="impl-stdu8-hashhash"><code>impl Std::U8 : Hash::Hash</code></h3>
+<h3 id="impl-a-hashhash-b-hashhash-a-b-hashhash">impl <code>[a : Hash::Hash, b : Hash::Hash] (a, b) : Hash::Hash</code></h3>
+<h3 id="impl-a-hashhash-stdarray-a-hashhash">impl <code>[a : Hash::Hash] Std::Array a : Hash::Hash</code></h3>
+<h3 id="impl-stdi64-hashhash">impl <code>Std::I64 : Hash::Hash</code></h3>
+<h3 id="impl-stdstring-hashhash">impl <code>Std::String : Hash::Hash</code></h3>
+<h3 id="impl-stdu64-hashhash">impl <code>Std::U64 : Hash::Hash</code></h3>
+<h3 id="impl-stdu8-hashhash">impl <code>Std::U8 : Hash::Hash</code></h3>
 
 
 
