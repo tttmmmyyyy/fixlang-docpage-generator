@@ -7,6 +7,16 @@ import Minilib.Collection.OrderedMap;
 
 type ProcessName = String;
 
+easy_run : Array String -> IO String;
+easy_run = |commands| (
+    let commands_str = commands.to_iter.join(" ");
+    eprintln(commands_str);;
+    let ((out, err), status) = *Subprocess::run_string(commands.@(0), commands, "").try(exit_with_msg(1));
+    when(err.get_size > 0, eprintln(err));;
+    check_exit_staus(status, "`" + commands_str + "`");;
+    pure(out)
+);
+
 check_exit_staus : ExitStatus -> ProcessName -> IO ();
 check_exit_staus = |status, process_name| (
     match status {
@@ -63,28 +73,18 @@ build_docs : IO ();
 build_docs = (
     // Prepare a directory to store the documentation.
     let docs_dir = "docs";
-    // Remove the directory if it exists.
-    let commands = ["rm", "-rf", docs_dir];
-    let command_str = commands.to_iter.join(" ");
-    let (_, status) = *Subprocess::run_string("rm", commands, "").try(exit_with_msg(1));
-    check_exit_staus(status, "`" + command_str + "`");;
-    // Create the directory.
-    let commands = ["mkdir", "-p", docs_dir];
-    let command_str = commands.to_iter.join(" ");
-    let (_, status) = *Subprocess::run_string("mkdir", commands, "").try(exit_with_msg(1));
-    check_exit_staus(status, "`" + command_str + "`");;
+    ["rm", "-rf", docs_dir].easy_run;;    // Remove the directory if it exists.
+    ["mkdir", "-p", docs_dir].easy_run;;    // Create the directory.
 
-    // Download `https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md`.
+    // Download the standard library documentation.
     let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md";
     let std_doc = docs_dir + "/" + "Std.md";
-    let (_, status) = *Subprocess::run_string("wget", ["wget", "-q", std_doc_url, "-O", std_doc], "").try(exit_with_msg(1));
+    ["wget", "-q", std_doc_url, "-O", std_doc].easy_run;;
 
     // Run `fix deps list --json` to get the list of all available fix projects.
-    let ((packages, err), status) = *Subprocess::run_string("fix", ["fix", "deps", "list", "--json"], "").try(exit_with_msg(1));
-    when(err.get_size > 0, eprintln(err));;
-    check_exit_staus(status, "`fix deps list --locs-only`");;
+    let packages = *["fix", "deps", "list", "--json"].easy_run;
 
-    // Parse `deps_list`.
+    // Parse `packages`.
     let packages = JsonDecoder::decode(packages);
     if packages.is_err {
         eprintln("error: failed to parse the output of `fix deps list --json`: ");;
@@ -127,97 +127,57 @@ build_docs = (
 
     // Remove the working directory if it exists.
     let packages_dir = "packages";
-    let commands = ["rm", "-rf", packages_dir];
-    let (_, status) = *Subprocess::run_string("rm", commands, "").try(exit_with_msg(1));
-    check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
+    ["rm", "-rf", packages_dir].easy_run;;
 
     // Create working directory.
-    let commands = ["mkdir", "-p", packages_dir];
-    let (_, status) = *Subprocess::run_string("mkdir", commands, "").try(exit_with_msg(1));
-    check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
+    ["mkdir", "-p", packages_dir].easy_run;;
 
-    // cd to working directory.
+    // Move to working directory.
     change_dir(packages_dir);;
 
     // Clone each projects.
     let packages = *packages.to_iter.loop_iter_m([], |prj_info, packages|
-        // Create working directory using `idx`.
+        // Create the directory to clone the repository.
         let work_dir = prj_info.@name;
-        let (_, status) = *Subprocess::run_string("mkdir", ["mkdir", "-p", work_dir], "").try(exit_with_msg(1));
-        check_exit_staus(status, "`mkdir -p " + work_dir + "`");;
+        ["mkdir", "-p", work_dir].easy_run;;
 
         // Clone the repository.
-        let commands = ["git", "clone", "--quiet", "--tags", prj_info.@loc, work_dir];
-        let commands_str = commands.to_iter.join(" ");
-        println(commands_str);;
-        let ((out, err), status) = *Subprocess::run_string("git", commands, "").try(exit_with_msg(1));
-        when(err.get_size > 0, eprintln(err));;
-        check_exit_staus(status, "`" + commands_str + "`");;
+        ["git", "clone", "--quiet", "--tags", prj_info.@loc, work_dir].easy_run;;
 
         // cd to the working directory.
         change_dir(work_dir);;
 
-        // Get the latest tag by `git describe --tags --abbrev=0`.
-        let commands = ["git", "describe", "--tags", "--abbrev=0"];
-        let ((tag, err), status) = *Subprocess::run_string("git", commands, "").try(exit_with_msg(1));
-        when(err.get_size > 0, eprintln(err));;
-        check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
+        // Get the latest tag.
+        let tag = *["git", "describe", "--tags", "--abbrev=0"].easy_run;
         let tag = tag.strip_spaces;
 
         // If the latest tag found, checkout it.
-        when(status.is_exit_status_ok, 
-            when(tag.get_size > 0, 
-                let commands = ["git", "checkout", "--quiet", tag];
-                let commands_str = commands.to_iter.join(" ");
-                println(commands_str);;
-                let ((out, err), status) = *Subprocess::run_string("git", commands, "").try(exit_with_msg(1));
-                when(err.get_size > 0, eprintln(err));;
-                check_exit_staus(status, "`" + commands_str + "`")
-            )
+        when(tag.get_size > 0, 
+            ["git", "checkout", "--quiet", tag].easy_run.forget
         );;
 
-        // Run `fix deps install`
-        let commands = ["fix", "deps", "install"];
-        let commands_str = commands.to_iter.join(" ");
-        println(commands_str);;
-        let ((out, err), status) = *Subprocess::run_string("fix", commands, "").try(exit_with_msg(1));
-        when(err.get_size > 0, eprintln(err));;
-        check_exit_staus(status, "`" + commands_str + "`");;
+        // Install dependencies.
+        ["fix", "deps", "install"].easy_run;;
 
         // Prepare empty `tmp` directory.
         let tmp = "../../tmp";
-        let commands = ["rm", "-rf", tmp];
-        let (_, status) = *Subprocess::run_string("rm", commands, "").try(exit_with_msg(1));
-        check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
-        let commands = ["mkdir", "-p", tmp];
-        let (_, status) = *Subprocess::run_string("mkdir", commands, "").try(exit_with_msg(1));
-        check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
+        ["rm", "-rf", tmp].easy_run;; // Remove the directory if it exists.
+        ["mkdir", "-p", tmp].easy_run;; // Create the directory.
 
-        // Run `fix docs -o ../../tmp`.
-        let commands = ["fix", "docs", "-o", tmp];
-        let commands_str = commands.to_iter.join(" ");
-        println(commands_str);;
-        let ((out, err), status) = *Subprocess::run_string("fix", commands, "").try(exit_with_msg(1));
-        when(err.get_size > 0, eprintln(err));;
-        check_exit_staus(status, "`" + commands_str + "`");;
+        // Generate documentation in `tmp`.
+        ["fix", "docs", "-o", tmp].easy_run;;
 
-        // Get the list of markdown files in "../../tmp" by `find ../../tmp -name "*.md"`.
-        let commands = ["find", tmp, "-name", "*.md"];
-        let ((md_files, err), status) = *Subprocess::run_string("find", commands, "").try(exit_with_msg(1));
-        when(err.get_size > 0, eprintln(err));;
-        check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
+        // Get the list of markdown files in `tmp`.
+        let md_files = *["find", tmp, "-name", "*.md"].easy_run;
 
-        // Parse md_files to get the list of module names.
+        // Parse `md_files` to get the list of module names.
         let md_files = md_files.split("\n").map(strip_spaces).filter(|s| s.get_size > 0);
         let modules = md_files.map(|md_file| md_file.get_sub((tmp + "/").get_size, md_file.get_size - ".md".get_size));
         let modules = modules.to_array.sort_by(|(a, b)| a < b);
 
         // Move all contents in `tmp` to `docs_dir`.
         modules.to_iter.fold_m((), |mod, _|
-            let commands = ["mv", tmp + "/" + mod + ".md", "../../" + docs_dir];
-            let commands_str = commands.to_iter.join(" ");
-            let (_, status) = *Subprocess::run_string("mv", commands, "").try(exit_with_msg(1));
-            check_exit_staus(status, "`" + commands_str + "`")
+            ["mv", tmp + "/" + mod + ".md", "../../" + docs_dir].easy_run.forget
         );;
 
         // Pop the working directory.
