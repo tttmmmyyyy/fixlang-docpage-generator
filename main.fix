@@ -83,22 +83,22 @@ build_docs = (
     let (_, status) = *Subprocess::run_string("wget", ["wget", "-q", std_doc_url, "-O", std_doc], "").try(exit_with_msg(1));
 
     // Run `fix deps list --json` to get the list of all available fix projects.
-    let ((deps_list, err), status) = *Subprocess::run_string("fix", ["fix", "deps", "list", "--json"], "").try(exit_with_msg(1));
+    let ((packages, err), status) = *Subprocess::run_string("fix", ["fix", "deps", "list", "--json"], "").try(exit_with_msg(1));
     when(err.get_size > 0, eprintln(err));;
     check_exit_staus(status, "`fix deps list --locs-only`");;
 
     // Parse `deps_list`.
-    let deps_list = JsonDecoder::decode(deps_list);
-    if deps_list.is_err {
+    let packages = JsonDecoder::decode(packages);
+    if packages.is_err {
         eprintln("error: failed to parse the output of `fix deps list --json`: ");;
-        eprintln(deps_list.as_err);;
+        eprintln(packages.as_err);;
         exit(1)
     };
-    let deps_list = deps_list.as_ok;
-    let deps_list : Result ErrMsg (Array ProjInfo) = do {
-        match deps_list {
-            Json::array(deps_list) => (
-                Result::ok $ *deps_list.to_iter.loop_iter_m([], |entry, deps_list|
+    let packages = packages.as_ok;
+    let packages : Result ErrMsg (Array ProjInfo) = do {
+        match packages {
+            Json::array(packages) => (
+                Result::ok $ *packages.to_iter.loop_iter_m([], |entry, packages|
                     if !entry.is_object { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected an array of objects" };
                     let entry = entry.as_object;
 
@@ -115,35 +115,35 @@ build_docs = (
                     let loc = loc.as_string;
 
                     let prj_info = ProjInfo { name : name, loc : loc, ver : "" };
-                    let deps_list = deps_list.push_back(prj_info);
+                    let deps_list = packages.push_back(prj_info);
                     continue_m $ deps_list
                 )
             ),
             _ => Result::err $ "error: failed to parse the output of `fix deps list --json`: expected an array",
         }
     };
-    if deps_list.is_err {
-        eprintln(deps_list.as_err);;
+    if packages.is_err {
+        eprintln(packages.as_err);;
         exit(1)
     };
-    let deps_list = deps_list.as_ok;
+    let packages = packages.as_ok;
 
     // Remove the working directory if it exists.
-    let work_dir = "fixprojs";
-    let commands = ["rm", "-rf", work_dir];
+    let packages_dir = "packages";
+    let commands = ["rm", "-rf", packages_dir];
     let (_, status) = *Subprocess::run_string("rm", commands, "").try(exit_with_msg(1));
     check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
 
     // Create working directory.
-    let commands = ["mkdir", "-p", work_dir];
+    let commands = ["mkdir", "-p", packages_dir];
     let (_, status) = *Subprocess::run_string("mkdir", commands, "").try(exit_with_msg(1));
     check_exit_staus(status, "`" + commands.to_iter.join(" ") + "`");;
 
     // cd to working directory.
-    change_dir(work_dir);;
+    change_dir(packages_dir);;
 
     // Clone each projects.
-    deps_list.to_iter.loop_iter_m((), |prj_info, _|
+    packages.to_iter.loop_iter_m((), |prj_info, _|
         // Create working directory using `idx`.
         let work_dir = prj_info.@name;
         let (_, status) = *Subprocess::run_string("mkdir", ["mkdir", "-p", work_dir], "").try(exit_with_msg(1));
