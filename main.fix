@@ -69,6 +69,36 @@ type ProjInfo = box struct {
     modules : Array String
 };
 
+namespace ProjInfo {
+    structure : Json -> Result ErrMsg (Array ProjInfo);
+    structure = |json| (
+        let errmsg_base = "error: failed to parse the output of `fix deps list --json`: ";
+        match json {
+            Json::array(packages) => (
+                packages.to_iter.map(|entry|
+                    if !entry.is_object { Result::err $ errmsg_base + "expected an array of objects" };
+                    let entry = entry.as_object;
+
+                    let name = entry.find("name");
+                    if name.is_none { Result::err $ errmsg_base + "expected a field `name`" };
+                    let name = name.as_some;
+                    if !name.is_string { Result::err $ errmsg_base + "expected a string for the field `name`" };
+                    let name = name.as_string;
+
+                    let loc = entry.find("git");
+                    if loc.is_none { Result::err $ errmsg_base + "expected a field `git`" };
+                    let loc = loc.as_some;
+                    if !loc.is_string { Result::err $ errmsg_base + "expected a string for the field `git`" };
+                    let loc = loc.as_string;
+
+                    Result::ok $ ProjInfo { name : name, loc : loc, ver : "", modules : [] }
+                ).collect_m
+            ),
+            _ => Result::err $ errmsg_base + "expected an array",
+        }
+    );
+}
+
 build_docs : IO ();
 build_docs = (
     // Prepare a directory to store the documentation.
@@ -92,33 +122,7 @@ build_docs = (
         exit(1)
     };
     let packages = packages.as_ok;
-    let packages : Result ErrMsg (Array ProjInfo) = do {
-        match packages {
-            Json::array(packages) => (
-                Result::ok $ *packages.to_iter.loop_iter_m([], |entry, packages|
-                    if !entry.is_object { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected an array of objects" };
-                    let entry = entry.as_object;
-
-                    let name = entry.find("name");
-                    if name.is_none { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a field `name`" };
-                    let name = name.as_some;
-                    if !name.is_string { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a string for the field `name`" };
-                    let name = name.as_string;
-
-                    let loc = entry.find("git");
-                    if loc.is_none { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a field `git`" };
-                    let loc = loc.as_some;
-                    if !loc.is_string { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a string for the field `git`" };
-                    let loc = loc.as_string;
-
-                    let prj_info = ProjInfo { name : name, loc : loc, ver : "", modules : [] };
-                    let deps_list = packages.push_back(prj_info);
-                    continue_m $ deps_list
-                )
-            ),
-            _ => Result::err $ "error: failed to parse the output of `fix deps list --json`: expected an array",
-        }
-    };
+    let packages = packages.structure;
     if packages.is_err {
         eprintln(packages.as_err);;
         exit(1)
