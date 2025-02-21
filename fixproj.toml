@@ -92,3 +92,8 @@ files = ["main.fix"]
 name = "subprocess"
 version = "1.0.1"
 git = { url = "https://github.com/tttmmmyyyy/fixlang-subprocess.git" }
+
+[[dependencies]]
+name = "minilib-json"
+version = "0.5.1"
+git = { url = "https://github.com/pt9999/fixlang-minilib-json.git" }

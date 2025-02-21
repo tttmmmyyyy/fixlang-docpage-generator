@@ -1,5 +1,9 @@
 module Main;
+
 import Subprocess;
+import Minilib.Encoding.Json.JsonDecoder;
+import Minilib.Encoding.Json;
+import Minilib.Collection.OrderedMap;
 
 type ProcessName = String;
 
@@ -51,6 +55,13 @@ change_dir = |dir| (
 c_docs_dir : String;
 c_docs_dir = "docs";
 
+// Information of a project.
+type ProjInfo = box struct {
+    name : String,
+    loc : String,
+    ver : String,
+};
+
 build_docs : IO ();
 build_docs = (
     // Prepare a directory to store the documentation temporarily.
@@ -71,13 +82,51 @@ build_docs = (
     let std_doc = docs_dir + "/" + "Std.md";
     let (_, status) = *Subprocess::run_string("wget", ["wget", "-q", std_doc_url, "-O", std_doc], "").try(exit_with_msg(1));
 
-    // Run `fix deps list --locs-only` to get the locations of all available fix projects.
-    let ((locs_list, err), status) = *Subprocess::run_string("fix", ["fix", "deps", "list", "--locs-only"], "").try(exit_with_msg(1));
+    // Run `fix deps list --json` to get the list of all available fix projects.
+    let ((deps_list, err), status) = *Subprocess::run_string("fix", ["fix", "deps", "list", "--json"], "").try(exit_with_msg(1));
     when(err.get_size > 0, eprintln(err));;
     check_exit_staus(status, "`fix deps list --locs-only`");;
 
-    // Parse `locs_list`.
-    let locs = locs_list.split("\n").map(strip_spaces).filter(|s| s.get_size > 0);
+    // Parse `deps_list`.
+    let deps_list = JsonDecoder::decode(deps_list);
+    if deps_list.is_err {
+        eprintln("error: failed to parse the output of `fix deps list --json`: ");;
+        eprintln(deps_list.as_err);;
+        exit(1)
+    };
+    let deps_list = deps_list.as_ok;
+    let deps_list : Result ErrMsg (Array ProjInfo) = do {
+        match deps_list {
+            Json::array(deps_list) => (
+                Result::ok $ *deps_list.to_iter.loop_iter_m([], |entry, deps_list|
+                    if !entry.is_object { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected an array of objects" };
+                    let entry = entry.as_object;
+
+                    let name = entry.find("name");
+                    if name.is_none { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a field `name`" };
+                    let name = name.as_some;
+                    if !name.is_string { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a string for the field `name`" };
+                    let name = name.as_string;
+
+                    let loc = entry.find("git");
+                    if loc.is_none { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a field `git`" };
+                    let loc = loc.as_some;
+                    if !loc.is_string { Result::err $ "error: failed to parse the output of `fix deps list --json`: expected a string for the field `git`" };
+                    let loc = loc.as_string;
+
+                    let prj_info = ProjInfo { name : name, loc : loc, ver : "" };
+                    let deps_list = deps_list.push_back(prj_info);
+                    continue_m $ deps_list
+                )
+            ),
+            _ => Result::err $ "error: failed to parse the output of `fix deps list --json`: expected an array",
+        }
+    };
+    if deps_list.is_err {
+        eprintln(deps_list.as_err);;
+        exit(1)
+    };
+    let deps_list = deps_list.as_ok;
 
     // Remove the working directory if it exists.
     let work_dir = "fixprojs";
@@ -94,14 +143,14 @@ build_docs = (
     change_dir(work_dir);;
 
     // Clone each projects.
-    locs.zip(count_up(0)).loop_iter_m((), |(loc, idx), _|
+    deps_list.to_iter.loop_iter_m((), |prj_info, _|
         // Create working directory using `idx`.
-        let work_dir = "proj_" + idx.to_string;
+        let work_dir = prj_info.@name;
         let (_, status) = *Subprocess::run_string("mkdir", ["mkdir", "-p", work_dir], "").try(exit_with_msg(1));
         check_exit_staus(status, "`mkdir -p " + work_dir + "`");;
 
         // Clone the repository.
-        let commands = ["git", "clone", "--quiet", "--tags", loc, work_dir];
+        let commands = ["git", "clone", "--quiet", "--tags", prj_info.@loc, work_dir];
         let commands_str = commands.to_iter.join(" ");
         println(commands_str);;
         let ((out, err), status) = *Subprocess::run_string("git", commands, "").try(exit_with_msg(1));
@@ -171,14 +220,14 @@ build_docs = (
     let index_md = "index.md";
     with_file(index_md, "w", |file|
         write_string(file, "# Index\n\n");;
-        write_string(file, "This document contains the documentation of the following modules: ");;
+        write_string(file, "This page contains the documentation of the following modules: ");;
         let mod_links = md_files.to_iter.map(|md_file| 
             let module_name = md_file.get_sub("./".get_size, md_file.get_size - ".md".get_size);
             "[" + module_name + "](" + md_file + ")"
         );
         let mod_links = mod_links.join(", ");
         write_string(file, mod_links + ".\n\n");;
-        write_string(file, "This document was generated by [fixlang-docpage-generator](https://github.com/tttmmmyyyy/fixlang-docpage-generator/).\n\n")
+        write_string(file, "This page was generated by [fixlang-docpage-generator](https://github.com/tttmmmyyyy/fixlang-docpage-generator/).\n\n")
     ).try(exit_with_msg(1));;
 
     // Pop the working directory.
