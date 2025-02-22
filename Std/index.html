@@ -20933,10 +20933,10 @@ If the assertion failed, prints a message to the stderr and aborts the program.<
 <p>Type: <code>Std::F32 -&gt; Std::I8</code></p>
 <p>Casts a value of <code>F32</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble">to_CDouble</h4>
-<p>Type: <code>Std::F32 -&gt; Std::F64</code></p>
+<p>Type: <code>Std::F32 -&gt; Std::FFI::CDouble</code></p>
 <p>Casts a value of <code>F32</code> into a value of <code>CDouble</code>.</p>
 <h4 id="to_cfloat">to_CFloat</h4>
-<p>Type: <code>Std::F32 -&gt; Std::F32</code></p>
+<p>Type: <code>Std::F32 -&gt; Std::FFI::CFloat</code></p>
 <p>Casts a value of <code>F32</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint">to_CInt</h4>
 <p>Type: <code>Std::F32 -&gt; Std::I32</code></p>
@@ -21020,10 +21020,10 @@ If the assertion failed, prints a message to the stderr and aborts the program.<
 <p>Type: <code>Std::F64 -&gt; Std::I8</code></p>
 <p>Casts a value of <code>F64</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_1">to_CDouble</h4>
-<p>Type: <code>Std::F64 -&gt; Std::F64</code></p>
+<p>Type: <code>Std::F64 -&gt; Std::FFI::CDouble</code></p>
 <p>Casts a value of <code>F64</code> into a value of <code>CDouble</code>.</p>
 <h4 id="to_cfloat_1">to_CFloat</h4>
-<p>Type: <code>Std::F64 -&gt; Std::F32</code></p>
+<p>Type: <code>Std::F64 -&gt; Std::FFI::CFloat</code></p>
 <p>Casts a value of <code>F64</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_1">to_CInt</h4>
 <p>Type: <code>Std::F64 -&gt; Std::I32</code></p>
@@ -21229,7 +21229,7 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I16 -&gt; Std::I16 -&gt; Std::I16</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_2">to_CChar</h4>
-<p>Type: <code>Std::I16 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_2">to_CDouble</h4>
 <p>Type: <code>Std::I16 -&gt; Std::F64</code></p>
@@ -21238,34 +21238,34 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I16 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_2">to_CInt</h4>
-<p>Type: <code>Std::I16 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_2">to_CLong</h4>
-<p>Type: <code>Std::I16 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_2">to_CLongLong</h4>
-<p>Type: <code>Std::I16 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_2">to_CShort</h4>
-<p>Type: <code>Std::I16 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_2">to_CSizeT</h4>
-<p>Type: <code>Std::I16 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_2">to_CUnsignedChar</h4>
-<p>Type: <code>Std::I16 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_2">to_CUnsignedInt</h4>
-<p>Type: <code>Std::I16 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_2">to_CUnsignedLong</h4>
-<p>Type: <code>Std::I16 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_2">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::I16 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_2">to_CUnsignedShort</h4>
-<p>Type: <code>Std::I16 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::I16 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>I16</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_2">to_F32</h4>
 <p>Type: <code>Std::I16 -&gt; Std::F32</code></p>
@@ -21320,7 +21320,7 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I32 -&gt; Std::I32 -&gt; Std::I32</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_3">to_CChar</h4>
-<p>Type: <code>Std::I32 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_3">to_CDouble</h4>
 <p>Type: <code>Std::I32 -&gt; Std::F64</code></p>
@@ -21329,34 +21329,34 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I32 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_3">to_CInt</h4>
-<p>Type: <code>Std::I32 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_3">to_CLong</h4>
-<p>Type: <code>Std::I32 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_3">to_CLongLong</h4>
-<p>Type: <code>Std::I32 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_3">to_CShort</h4>
-<p>Type: <code>Std::I32 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_3">to_CSizeT</h4>
-<p>Type: <code>Std::I32 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_3">to_CUnsignedChar</h4>
-<p>Type: <code>Std::I32 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_3">to_CUnsignedInt</h4>
-<p>Type: <code>Std::I32 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_3">to_CUnsignedLong</h4>
-<p>Type: <code>Std::I32 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_3">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::I32 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_3">to_CUnsignedShort</h4>
-<p>Type: <code>Std::I32 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::I32 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>I32</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_3">to_F32</h4>
 <p>Type: <code>Std::I32 -&gt; Std::F32</code></p>
@@ -21411,7 +21411,7 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_4">to_CChar</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_4">to_CDouble</h4>
 <p>Type: <code>Std::I64 -&gt; Std::F64</code></p>
@@ -21420,34 +21420,34 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I64 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_4">to_CInt</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_4">to_CLong</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_4">to_CLongLong</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_4">to_CShort</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_4">to_CSizeT</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_4">to_CUnsignedChar</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_4">to_CUnsignedInt</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_4">to_CUnsignedLong</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_4">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_4">to_CUnsignedShort</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::I64 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>I64</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_4">to_F32</h4>
 <p>Type: <code>Std::I64 -&gt; Std::F32</code></p>
@@ -21502,7 +21502,7 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I8 -&gt; Std::I8 -&gt; Std::I8</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_5">to_CChar</h4>
-<p>Type: <code>Std::I8 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_5">to_CDouble</h4>
 <p>Type: <code>Std::I8 -&gt; Std::F64</code></p>
@@ -21511,34 +21511,34 @@ Also, <code>ctor</code> should be a "copy constructor" (e.g., memcpy) of the ext
 <p>Type: <code>Std::I8 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_5">to_CInt</h4>
-<p>Type: <code>Std::I8 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_5">to_CLong</h4>
-<p>Type: <code>Std::I8 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_5">to_CLongLong</h4>
-<p>Type: <code>Std::I8 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_5">to_CShort</h4>
-<p>Type: <code>Std::I8 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_5">to_CSizeT</h4>
-<p>Type: <code>Std::I8 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_5">to_CUnsignedChar</h4>
-<p>Type: <code>Std::I8 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_5">to_CUnsignedInt</h4>
-<p>Type: <code>Std::I8 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_5">to_CUnsignedLong</h4>
-<p>Type: <code>Std::I8 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_5">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::I8 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_5">to_CUnsignedShort</h4>
-<p>Type: <code>Std::I8 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::I8 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>I8</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_5">to_F32</h4>
 <p>Type: <code>Std::I8 -&gt; Std::F32</code></p>
@@ -22061,7 +22061,7 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U16 -&gt; Std::U16 -&gt; Std::U16</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_6">to_CChar</h4>
-<p>Type: <code>Std::U16 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_6">to_CDouble</h4>
 <p>Type: <code>Std::U16 -&gt; Std::F64</code></p>
@@ -22070,34 +22070,34 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U16 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_6">to_CInt</h4>
-<p>Type: <code>Std::U16 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_6">to_CLong</h4>
-<p>Type: <code>Std::U16 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_6">to_CLongLong</h4>
-<p>Type: <code>Std::U16 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_6">to_CShort</h4>
-<p>Type: <code>Std::U16 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_6">to_CSizeT</h4>
-<p>Type: <code>Std::U16 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_6">to_CUnsignedChar</h4>
-<p>Type: <code>Std::U16 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_6">to_CUnsignedInt</h4>
-<p>Type: <code>Std::U16 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_6">to_CUnsignedLong</h4>
-<p>Type: <code>Std::U16 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_6">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::U16 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_6">to_CUnsignedShort</h4>
-<p>Type: <code>Std::U16 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::U16 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>U16</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_6">to_F32</h4>
 <p>Type: <code>Std::U16 -&gt; Std::F32</code></p>
@@ -22150,7 +22150,7 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U32 -&gt; Std::U32 -&gt; Std::U32</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_7">to_CChar</h4>
-<p>Type: <code>Std::U32 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_7">to_CDouble</h4>
 <p>Type: <code>Std::U32 -&gt; Std::F64</code></p>
@@ -22159,34 +22159,34 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U32 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_7">to_CInt</h4>
-<p>Type: <code>Std::U32 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_7">to_CLong</h4>
-<p>Type: <code>Std::U32 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_7">to_CLongLong</h4>
-<p>Type: <code>Std::U32 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_7">to_CShort</h4>
-<p>Type: <code>Std::U32 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_7">to_CSizeT</h4>
-<p>Type: <code>Std::U32 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_7">to_CUnsignedChar</h4>
-<p>Type: <code>Std::U32 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_7">to_CUnsignedInt</h4>
-<p>Type: <code>Std::U32 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_7">to_CUnsignedLong</h4>
-<p>Type: <code>Std::U32 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_7">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::U32 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_7">to_CUnsignedShort</h4>
-<p>Type: <code>Std::U32 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::U32 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>U32</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_7">to_F32</h4>
 <p>Type: <code>Std::U32 -&gt; Std::F32</code></p>
@@ -22239,7 +22239,7 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U64 -&gt; Std::U64 -&gt; Std::U64</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_8">to_CChar</h4>
-<p>Type: <code>Std::U64 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_8">to_CDouble</h4>
 <p>Type: <code>Std::U64 -&gt; Std::F64</code></p>
@@ -22248,34 +22248,34 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U64 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_8">to_CInt</h4>
-<p>Type: <code>Std::U64 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_8">to_CLong</h4>
-<p>Type: <code>Std::U64 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_8">to_CLongLong</h4>
-<p>Type: <code>Std::U64 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_8">to_CShort</h4>
-<p>Type: <code>Std::U64 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_8">to_CSizeT</h4>
-<p>Type: <code>Std::U64 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_8">to_CUnsignedChar</h4>
-<p>Type: <code>Std::U64 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_8">to_CUnsignedInt</h4>
-<p>Type: <code>Std::U64 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_8">to_CUnsignedLong</h4>
-<p>Type: <code>Std::U64 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_8">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::U64 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_8">to_CUnsignedShort</h4>
-<p>Type: <code>Std::U64 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::U64 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>U64</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_8">to_F32</h4>
 <p>Type: <code>Std::U64 -&gt; Std::F32</code></p>
@@ -22328,7 +22328,7 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U8 -&gt; Std::U8 -&gt; Std::U8</code></p>
 <p><code>v.shift_right(w)</code> shifts <code>v</code> to right by <code>w</code> bits.</p>
 <h4 id="to_cchar_9">to_CChar</h4>
-<p>Type: <code>Std::U8 -&gt; Std::I8</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CChar</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CChar</code>.</p>
 <h4 id="to_cdouble_9">to_CDouble</h4>
 <p>Type: <code>Std::U8 -&gt; Std::F64</code></p>
@@ -22337,34 +22337,34 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Type: <code>Std::U8 -&gt; Std::F32</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CFloat</code>.</p>
 <h4 id="to_cint_9">to_CInt</h4>
-<p>Type: <code>Std::U8 -&gt; Std::I32</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CInt</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CInt</code>.</p>
 <h4 id="to_clong_9">to_CLong</h4>
-<p>Type: <code>Std::U8 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CLong</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CLong</code>.</p>
 <h4 id="to_clonglong_9">to_CLongLong</h4>
-<p>Type: <code>Std::U8 -&gt; Std::I64</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CLongLong</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CLongLong</code>.</p>
 <h4 id="to_cshort_9">to_CShort</h4>
-<p>Type: <code>Std::U8 -&gt; Std::I16</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CShort</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CShort</code>.</p>
 <h4 id="to_csizet_9">to_CSizeT</h4>
-<p>Type: <code>Std::U8 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CSizeT</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CSizeT</code>.</p>
 <h4 id="to_cunsignedchar_9">to_CUnsignedChar</h4>
-<p>Type: <code>Std::U8 -&gt; Std::U8</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CUnsignedChar</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CUnsignedChar</code>.</p>
 <h4 id="to_cunsignedint_9">to_CUnsignedInt</h4>
-<p>Type: <code>Std::U8 -&gt; Std::U32</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CUnsignedInt</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CUnsignedInt</code>.</p>
 <h4 id="to_cunsignedlong_9">to_CUnsignedLong</h4>
-<p>Type: <code>Std::U8 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CUnsignedLong</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CUnsignedLong</code>.</p>
 <h4 id="to_cunsignedlonglong_9">to_CUnsignedLongLong</h4>
-<p>Type: <code>Std::U8 -&gt; Std::U64</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CUnsignedLongLong</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CUnsignedLongLong</code>.</p>
 <h4 id="to_cunsignedshort_9">to_CUnsignedShort</h4>
-<p>Type: <code>Std::U8 -&gt; Std::U16</code></p>
+<p>Type: <code>Std::U8 -&gt; Std::FFI::CUnsignedShort</code></p>
 <p>Casts a value of <code>U8</code> into a value of <code>CUnsignedShort</code>.</p>
 <h4 id="to_f32_9">to_F32</h4>
 <p>Type: <code>Std::U8 -&gt; Std::F32</code></p>

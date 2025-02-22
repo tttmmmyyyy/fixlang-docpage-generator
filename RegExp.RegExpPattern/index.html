@@ -3621,8 +3621,10 @@ The <code>[</code> itself is parsed already.</p>
 <p>Type of a character class.</p>
 <h5 id="field-label">field <code>label</code></h5>
 <p>Type: <code>Std::String</code></p>
+<p>A label that describes this class (for debugging only)</p>
 <h5 id="field-f">field <code>f</code></h5>
 <p>Type: <code>Std::U8 -&gt; Std::Bool</code></p>
+<p>A member function that judges whether a character is contained in this class or not</p>
 <h4 id="passertion">PAssertion</h4>
 <p>Defined as: <code>type PAssertion = unbox union { ...variants... }</code></p>
 <p>Type of an assertion for regular expressions, such as <code>^</code>, <code>$</code>.</p>
@@ -3635,16 +3637,22 @@ The <code>[</code> itself is parsed already.</p>
 <p>Type of a parsed regular expression.</p>
 <h5 id="variant-pclass">variant <code>pclass</code></h5>
 <p>Type: <code>RegExp.RegExpPattern::CharClass</code></p>
+<p>Character class pattern, eg. <code>a</code>, <code>[a-z]</code>, <code>\d</code> etc.</p>
 <h5 id="variant-passert">variant <code>passert</code></h5>
 <p>Type: <code>RegExp.RegExpPattern::PAssertion</code></p>
+<p>Assertion pattern, eg. <code>^</code>, <code>$</code></p>
 <h5 id="variant-psequence">variant <code>psequence</code></h5>
 <p>Type: <code>Std::Array RegExp.RegExpPattern::Pattern</code></p>
+<p>Sequence of patterns, eg. <code>XYZ</code></p>
 <h5 id="variant-peither">variant <code>peither</code></h5>
 <p>Type: <code>(RegExp.RegExpPattern::Pattern, RegExp.RegExpPattern::Pattern)</code></p>
+<p>Either pattern, eg. <code>X|Y</code></p>
 <h5 id="variant-pquant">variant <code>pquant</code></h5>
 <p>Type: <code>(RegExp.RegExpPattern::Pattern, Std::I64, Std::I64)</code></p>
+<p>Quantified pattern, eg. <code>X?</code>, <code>X*</code>, <code>X+</code>, <code>X{n,m}</code></p>
 <h5 id="variant-pgroup">variant <code>pgroup</code></h5>
 <p>Type: <code>(Std::I64, RegExp.RegExpPattern::Pattern)</code></p>
+<p>Grouped pattern, eg. <code>(X)</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 <h3 id="impl-regexpregexppatterncharclass-stdtostring">impl <code>RegExp.RegExpPattern::CharClass : Std::ToString</code></h3>
