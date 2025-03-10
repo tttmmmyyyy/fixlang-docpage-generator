@@ -2635,29 +2635,62 @@
 
 
 <h1 id="minilibiopath">Minilib.IO.Path</h1>
-<p>Defined in minilib-io@0.6.0</p>
+<p>Defined in minilib-io@0.6.1</p>
 <p>File Path handling, such as joining paths and retrieving directory name.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibiopath">namespace Minilib.IO.Path</h3>
 <h4 id="basename">basename</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
-<p><code>basename(path)</code> returns the last non-slash component. The trailing slashes are removed.</p>
+<p><code>basename(path)</code> returns the last non-slash component. The trailing slashes are removed.
+Example:</p>
+<pre><code>basename(&quot;foo/bar/&quot;)
+==&gt; &quot;bar&quot;
+basename(&quot;foo/bar/baz&quot;)
+==&gt; &quot;baz&quot;
+basename(&quot;foo&quot;)
+==&gt; &quot;foo&quot;
+basename(&quot;/you/can/specify/absolute/path&quot;)
+==&gt; &quot;path&quot;
+</code></pre>
 <h4 id="dirname">dirname</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p><code>dirname(path)</code> returns the path with its last non-slash component and trailing slashes removed.
-if <code>path</code> contains no <code>/</code>s, returns <code>"."</code>.</p>
+if <code>path</code> contains no <code>/</code>s, returns <code>"."</code>.
+Example:</p>
+<pre><code>dirname(&quot;foo/bar/&quot;)
+==&gt; &quot;foo&quot;
+dirname(&quot;foo/bar/baz&quot;)
+==&gt; &quot;foo/bar&quot;
+dirname(&quot;foo&quot;)
+==&gt; &quot;.&quot;
+dirname(&quot;/you/can/specify/absolute/path&quot;)
+==&gt; &quot;/you/can/specify/absolute&quot;
+</code></pre>
 <h4 id="is_path_sep">is_path_sep</h4>
 <p>Type: <code>Std::U8 -&gt; Std::Bool</code></p>
 <p>Checks if the byte is a path separator. Currently only '/' is supported.</p>
 <h4 id="join_paths">join_paths</h4>
 <p>Type: <code>Std::Array Std::String -&gt; Std::String</code></p>
-<p><code>join_paths(path_segments)</code> joins segments into a path.</p>
+<p><code>join_paths(path_segments)</code> joins segments into a path.
+Example:</p>
+<pre><code>join_paths([&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;])
+==&gt; &quot;foo/bar/baz&quot;
+join_paths([&quot;/usr/&quot;, &quot;local&quot;, &quot;bin/fix&quot;])
+==&gt; &quot;/usr/local/bin/fix&quot;
+</code></pre>
 <h4 id="relativize">relativize</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String</code></p>
 <p><code>base.relativize(target)</code> constructs a relative path from <code>base</code> to <code>target</code>.
 <code>base</code> and <code>target</code> should have the same type (i.e. relative path or absolute path).
 If only one of <code>base</code> and <code>target</code> is an absolute path, "different type of path" error is returned.
 If <code>base</code> == <code>target</code>, then an empty string is returned.</p>
+<pre><code>&quot;/usr/&quot;.relativize(&quot;/usr/bin/ls&quot;)
+==&gt; &quot;bin/ls&quot;
+&quot;/usr/local&quot;.relativize(&quot;/usr/bin/ls&quot;)
+==&gt; &quot;../bin/ls&quot;
+&quot;foo/bar/baz&quot;.relativize(&quot;abc/def&quot;)
+==&gt; &quot;../../../abc/def&quot;
+</code></pre>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
