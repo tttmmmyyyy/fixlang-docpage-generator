@@ -1556,6 +1556,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#subst0" class="md-nav__link">
+    <span class="md-ellipsis">
+      subst0
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1640,9 +1649,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#impl-minilibmathpolynomialpolynomial-stdfunctor" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Math.Polynomial::Polynomial : Std::Functor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-a-minilibmathtypesfield-minilibmathpolynomialpolynomial-a-minilibmathtypesdivmod" class="md-nav__link">
     <span class="md-ellipsis">
       impl [a : Minilib.Math.Types::Field] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::DivMod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-a-minilibmathtypesring-minilibmathpolynomialpolynomial-a-minilibmathtypesmulscalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl [a : Minilib.Math.Types::Ring] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::MulScalar
     </span>
   </a>
   
@@ -2961,6 +2988,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#subst0" class="md-nav__link">
+    <span class="md-ellipsis">
+      subst0
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3045,9 +3081,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#impl-minilibmathpolynomialpolynomial-stdfunctor" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.Math.Polynomial::Polynomial : Std::Functor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-a-minilibmathtypesfield-minilibmathpolynomialpolynomial-a-minilibmathtypesdivmod" class="md-nav__link">
     <span class="md-ellipsis">
       impl [a : Minilib.Math.Types::Field] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::DivMod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-a-minilibmathtypesring-minilibmathpolynomialpolynomial-a-minilibmathtypesmulscalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl [a : Minilib.Math.Types::Ring] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::MulScalar
     </span>
   </a>
   
@@ -3165,7 +3219,7 @@
 
 
 <h1 id="minilibmathpolynomial">Minilib.Math.Polynomial</h1>
-<p>Defined in minilib-math@0.5.1</p>
+<p>Defined in minilib-math@0.6.1</p>
 <p>Polynomial of one variable, for example <code>x^2 + 2x + 1</code>. The coefficients can be any ring.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmathpolynomial">namespace Minilib.Math.Polynomial</h3>
@@ -3206,8 +3260,12 @@ truncated so that the coefficient of highest degree is not zero.</p>
 <p>Type: <code>[a : Minilib.Math.Types::Ring] Std::I64 -&gt; a -&gt; Minilib.Math.Polynomial::Polynomial a -&gt; Minilib.Math.Polynomial::Polynomial a</code></p>
 <p><code>f.set(i, a)</code> sets the coefficient of degree <code>i</code>.</p>
 <h4 id="subst">subst</h4>
-<p>Type: <code>Std::I64 -&gt; Minilib.Math.Polynomial::Polynomial (Minilib.Math.Modular::Modular Std::I64) -&gt; Std::I64</code></p>
+<p>Type: <code>[a : Minilib.Math.Types::Ring] a -&gt; Minilib.Math.Polynomial::Polynomial a -&gt; a</code></p>
 <p><code>f.subst(x)</code> substitutes the indeterminate of a polynomial with <code>x</code>.</p>
+<h4 id="subst0">subst0</h4>
+<p>Type: <code>[a : Minilib.Math.Types::Ring] a -&gt; (c -&gt; a -&gt; a) -&gt; Minilib.Math.Polynomial::Polynomial c -&gt; a</code></p>
+<p><code>f.subst0(x, mul_coeff)</code> substitutes the indeterminate of a polynomial with <code>x</code>.
+<code>mul_coeff</code> is a function that multiplies a value of type <code>a</code> by a coefficient of type <code>c</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibmathpolynomial_1">namespace Minilib.Math.Polynomial</h3>
 <h4 id="polynomial_1">Polynomial</h4>
@@ -3219,6 +3277,7 @@ For example, <code>[1,2,3]</code> means a polynomial <code>3x^2 + 2x + 1</code>.
 <p>Type: <code>Std::Array a</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-minilibmathpolynomialpolynomial-stdfunctor">impl <code>Minilib.Math.Polynomial::Polynomial : Std::Functor</code></h3>
 <h3 id="impl-a-minilibmathtypesfield-minilibmathpolynomialpolynomial-a-minilibmathtypesdivmod">impl <code>[a : Minilib.Math.Types::Field] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::DivMod</code></h3>
 <p><code>divmod(num, den)</code> calculates a quotient <code>quo = num / den</code>
 and a reminder <code>rem = num % den</code>.
@@ -3227,6 +3286,7 @@ The type of coefficients must be a field.
 If the division of the field does not fulfill the requirement
 (ie. <code>forall a b, a == a / b * b</code>),
 this function may return an incorrect result.</p>
+<h3 id="impl-a-minilibmathtypesring-minilibmathpolynomialpolynomial-a-minilibmathtypesmulscalar">impl <code>[a : Minilib.Math.Types::Ring] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::MulScalar</code></h3>
 <h3 id="impl-a-minilibmathtypesring-minilibmathpolynomialpolynomial-a-minilibmathtypesone">impl <code>[a : Minilib.Math.Types::Ring] Minilib.Math.Polynomial::Polynomial a : Minilib.Math.Types::One</code></h3>
 <h3 id="impl-a-minilibmathtypesring-minilibmathpolynomialpolynomial-a-stdadd">impl <code>[a : Minilib.Math.Types::Ring] Minilib.Math.Polynomial::Polynomial a : Std::Add</code></h3>
 <h3 id="impl-a-minilibmathtypesfield-minilibmathpolynomialpolynomial-a-stddiv">impl <code>[a : Minilib.Math.Types::Field] Minilib.Math.Polynomial::Polynomial a : Std::Div</code></h3>

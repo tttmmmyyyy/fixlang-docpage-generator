@@ -1529,6 +1529,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#namespace-minilibmathtypesmulscalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Math.Types::MulScalar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Math.Types::MulScalar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mul_scalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      mul_scalar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#namespace-minilibmathtypesone" class="md-nav__link">
     <span class="md-ellipsis">
       namespace Minilib.Math.Types::One
@@ -1600,6 +1624,39 @@
   <a href="#method-divmod" class="md-nav__link">
     <span class="md-ellipsis">
       method divmod
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-a-mulscalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait a : MulScalar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait a : MulScalar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-scalartype" class="md-nav__link">
+    <span class="md-ellipsis">
+      type ScalarType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-mul_scalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      method mul_scalar
     </span>
   </a>
   
@@ -2763,6 +2820,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#namespace-minilibmathtypesmulscalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.Math.Types::MulScalar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Math.Types::MulScalar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mul_scalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      mul_scalar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#namespace-minilibmathtypesone" class="md-nav__link">
     <span class="md-ellipsis">
       namespace Minilib.Math.Types::One
@@ -2834,6 +2915,39 @@
   <a href="#method-divmod" class="md-nav__link">
     <span class="md-ellipsis">
       method divmod
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-a-mulscalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait a : MulScalar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait a : MulScalar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-scalartype" class="md-nav__link">
+    <span class="md-ellipsis">
+      type ScalarType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-mul_scalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      method mul_scalar
     </span>
   </a>
   
@@ -2955,13 +3069,16 @@
 
 
 <h1 id="minilibmathtypes">Minilib.Math.Types</h1>
-<p>Defined in minilib-math@0.5.1</p>
+<p>Defined in minilib-math@0.6.1</p>
 <p>Type definitions for mathematical concepts, for example AdditiveGroup, Ring, Field.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmathtypesdivmod">namespace Minilib.Math.Types::DivMod</h3>
 <h4 id="divmod">divmod</h4>
 <p>Type: <code>[a : Minilib.Math.Types::DivMod] a -&gt; a -&gt; (a, a)</code></p>
 <p><code>divmod(a, b)</code> returns <code>(a/b, a%b)</code>.</p>
+<h3 id="namespace-minilibmathtypesmulscalar">namespace Minilib.Math.Types::MulScalar</h3>
+<h4 id="mul_scalar">mul_scalar</h4>
+<p>Type: <code>[a : Minilib.Math.Types::MulScalar] Minilib.Math.Types::MulScalar::ScalarType a -&gt; a -&gt; a</code></p>
 <h3 id="namespace-minilibmathtypesone">namespace Minilib.Math.Types::One</h3>
 <h4 id="one">one</h4>
 <p>Type: <code>[a : Minilib.Math.Types::One] a</code></p>
@@ -2973,6 +3090,12 @@
 <h5 id="method-divmod">method <code>divmod</code></h5>
 <p>Type: <code>a -&gt; a -&gt; (a, a)</code></p>
 <p><code>divmod(a, b)</code> returns <code>(a/b, a%b)</code>.</p>
+<h4 id="trait-a-mulscalar">trait <code>a : MulScalar</code></h4>
+<p>A trait that represents scalar multiplication.</p>
+<h5 id="type-scalartype">type <code>ScalarType</code></h5>
+<p>Defined as: <code>ScalarType a</code></p>
+<h5 id="method-mul_scalar">method <code>mul_scalar</code></h5>
+<p>Type: <code>Minilib.Math.Types::MulScalar::ScalarType a -&gt; a -&gt; a</code></p>
 <h4 id="trait-a-one">trait <code>a : One</code></h4>
 <p>A trait that represents a multiplicative unit.</p>
 <h5 id="method-one">method <code>one</code></h5>
