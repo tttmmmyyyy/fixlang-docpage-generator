@@ -3291,8 +3291,8 @@ Raises <code>_NotMatch</code> if it matches.</p>
 <h4 id="_parse_cdsect">_parse_cdsect</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Minilib.Encoding.Xml::XmlNode</code></p>
 <p>[18]    CDSect     ::=      CDStart CData CDEnd
-[19]    CDStart    ::=      '&lt;![CDATA['
-[20]    CData      ::=      (Char<em> - (Char</em> ']]&gt;' Char*))
+[19]    CDStart    ::=      '<![CDATA['
+[20]    CData      ::=      (Char* - (Char* ']]>' Char*))
 [21]    CDEnd      ::=      ']]&gt;'</p>
 <h4 id="_parse_char_data">_parse_char_data</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Std::String</code></p>
@@ -3354,7 +3354,7 @@ Raises <code>_NotMatch</code> if it matches.</p>
              [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]</p>
 <h4 id="_parse_pi">_parse_pi</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Minilib.Encoding.Xml::XmlNode</code></p>
-<p>[16]    PI     ::=      '&lt;?' PITarget (S (Char<em> - (Char</em> '?&gt;' Char*)))? '?&gt;'
+<p>[16]    PI     ::=      '<?' PITarget (S (Char* - (Char* '?>' Char*)))? '?&gt;'
 [17]    PITarget       ::=      Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))</p>
 <h4 id="_parse_prolog">_parse_prolog</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Minilib.Encoding.Xml::XmlDocument</code></p>
@@ -3379,7 +3379,7 @@ Raises <code>_NotMatch</code> if it matches.</p>
 <p>[24]    VersionInfo    ::=      S 'version' Eq ("'" VersionNum "'" | '"' VersionNum '"')</p>
 <h4 id="_parse_xml_declaration">_parse_xml_declaration</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Minilib.Encoding.Xml::XmlDeclaration</code></p>
-<p>[23]    XMLDecl    ::=      '&lt;?xml' VersionInfo EncodingDecl? SDDecl? S? '?&gt;'</p>
+<p>[23]    XMLDecl    ::=      '<?xml' VersionInfo EncodingDecl? SDDecl? S? '?>'</p>
 <h4 id="_whitespace">_whitespace</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Minilib.Text.SimpleParser::Char</code></p>
 <h4 id="parse_document_from_string">parse_document_from_string</h4>
