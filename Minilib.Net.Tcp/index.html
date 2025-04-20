@@ -1991,15 +1991,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_bufsize" class="md-nav__link">
-    <span class="md-ellipsis">
-      _BUFSIZE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#flush" class="md-nav__link">
     <span class="md-ellipsis">
       flush
@@ -2049,15 +2040,6 @@
   
     <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::IpAddress">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_resolve_ipaddress_v4" class="md-nav__link">
-    <span class="md-ellipsis">
-      _resolve_ipaddress_v4
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#from_u32" class="md-nav__link">
@@ -2142,15 +2124,6 @@
   
     <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::Socket">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_unsafe_from_fd" class="md-nav__link">
-    <span class="md-ellipsis">
-      _unsafe_from_fd
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#accept" class="md-nav__link">
@@ -2256,15 +2229,6 @@
   
     <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::SocketAddress">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_unsafe_from_sockaddr_in" class="md-nav__link">
-    <span class="md-ellipsis">
-      _unsafe_from_sockaddr_in
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#get_ipaddress" class="md-nav__link">
@@ -3220,15 +3184,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_bufsize" class="md-nav__link">
-    <span class="md-ellipsis">
-      _BUFSIZE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#flush" class="md-nav__link">
     <span class="md-ellipsis">
       flush
@@ -3278,15 +3233,6 @@
   
     <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::IpAddress">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_resolve_ipaddress_v4" class="md-nav__link">
-    <span class="md-ellipsis">
-      _resolve_ipaddress_v4
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#from_u32" class="md-nav__link">
@@ -3371,15 +3317,6 @@
   
     <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::Socket">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_unsafe_from_fd" class="md-nav__link">
-    <span class="md-ellipsis">
-      _unsafe_from_fd
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#accept" class="md-nav__link">
@@ -3485,15 +3422,6 @@
   
     <nav class="md-nav" aria-label="namespace Minilib.Net.Tcp::SocketAddress">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_unsafe_from_sockaddr_in" class="md-nav__link">
-    <span class="md-ellipsis">
-      _unsafe_from_sockaddr_in
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#get_ipaddress" class="md-nav__link">
@@ -3854,8 +3782,6 @@ If the port number is omitted, the default port number is 80.</p>
 <p>The second argument (<code>backlog</code>) is the maximum length to which the queue of pending connections
 for the socket may grow.</p>
 <h3 id="namespace-minilibnettcpbufferedsocket">namespace Minilib.Net.Tcp::BufferedSocket</h3>
-<h4 id="_bufsize">_BUFSIZE</h4>
-<p>Type: <code>Std::I64</code></p>
 <h4 id="flush">flush</h4>
 <p>Type: <code>Minilib.Net.Tcp::BufferedSocket -&gt; Std::IO::IOFail Minilib.Net.Tcp::BufferedSocket</code></p>
 <p>Sends the contents of the writer buffer to the socket and cleans the write buffer.</p>
@@ -3874,8 +3800,6 @@ The next call of <code>read_line()</code> returns an empty string, which represe
 <p>Writes a string to the write buffer. The contents of the write buffer is not sent
 until the size of the write buffer is equal to or greater than <code>_BUFSIZE</code>, or <code>flush()</code> is called.</p>
 <h3 id="namespace-minilibnettcpipaddress">namespace Minilib.Net.Tcp::IpAddress</h3>
-<h4 id="_resolve_ipaddress_v4">_resolve_ipaddress_v4</h4>
-<p>Type: <code>Std::String -&gt; Std::IO::IOFail Minilib.Net.Tcp::IpAddress</code></p>
 <h4 id="from_u32">from_U32</h4>
 <p>Type: <code>Std::U32 -&gt; Minilib.Net.Tcp::IpAddress</code></p>
 <p>Converts U32 to an <code>IpAddress</code>, for example 0x7f000001_U32 -&gt; 127.0.0.1.</p>
@@ -3893,10 +3817,6 @@ until the size of the write buffer is equal to or greater than <code>_BUFSIZE</c
 <h4 id="to_u16">to_U16</h4>
 <p>Type: <code>Minilib.Net.Tcp::Port -&gt; Std::U16</code></p>
 <h3 id="namespace-minilibnettcpsocket">namespace Minilib.Net.Tcp::Socket</h3>
-<h4 id="_unsafe_from_fd">_unsafe_from_fd</h4>
-<p>Type: <code>Std::FFI::CInt -&gt; Std::IO::IOFail Minilib.Net.Tcp::Socket</code></p>
-<p>Creates <code>Socket</code> from a file descriptor of a socket.
-The socket will be automatically closed when <code>Socket</code> is deallocated.</p>
 <h4 id="accept">accept</h4>
 <p>Type: <code>Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail (Minilib.Net.Tcp::Socket, Minilib.Net.Tcp::SocketAddress::SocketAddress)</code></p>
 <p>Waits for an incoming connection request. If an incoming connection arrives, accept it,
@@ -3936,9 +3856,6 @@ Returns the number of bytes sent.</p>
 <h4 id="setsockopt_reuseaddr">setsockopt_reuseaddr</h4>
 <p>Type: <code>Minilib.Net.Tcp::Socket -&gt; Std::IO::IOFail ()</code></p>
 <h3 id="namespace-minilibnettcpsocketaddress">namespace Minilib.Net.Tcp::SocketAddress</h3>
-<h4 id="_unsafe_from_sockaddr_in">_unsafe_from_sockaddr_in</h4>
-<p>Type: <code>Std::Ptr -&gt; Minilib.Net.Tcp::SocketAddress::SocketAddress</code></p>
-<p>Creates a <code>SocketAddress</code> from an allocated pointer to <code>struct sockaddr_in</code>.</p>
 <h4 id="get_ipaddress">get_ipaddress</h4>
 <p>Type: <code>Minilib.Net.Tcp::SocketAddress::SocketAddress -&gt; Minilib.Net.Tcp::IpAddress</code></p>
 <p>Extracts an ip address from the socket address.</p>

@@ -1012,33 +1012,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_b64_to_u8_table" class="md-nav__link">
-    <span class="md-ellipsis">
-      _b64_to_u8_table
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_filter_array" class="md-nav__link">
-    <span class="md-ellipsis">
-      _filter_array
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_u8_to_b64_table" class="md-nav__link">
-    <span class="md-ellipsis">
-      _u8_to_b64_table
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#base64_decode" class="md-nav__link">
     <span class="md-ellipsis">
       base64_decode
@@ -2644,33 +2617,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_b64_to_u8_table" class="md-nav__link">
-    <span class="md-ellipsis">
-      _b64_to_u8_table
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_filter_array" class="md-nav__link">
-    <span class="md-ellipsis">
-      _filter_array
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_u8_to_b64_table" class="md-nav__link">
-    <span class="md-ellipsis">
-      _u8_to_b64_table
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#base64_decode" class="md-nav__link">
     <span class="md-ellipsis">
       base64_decode
@@ -2746,15 +2692,6 @@
 <p>BASE64 encoding and decoding</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibencodingbase64">namespace Minilib.Encoding.Base64</h3>
-<h4 id="_b64_to_u8_table">_b64_to_u8_table</h4>
-<p>Type: <code>Std::Array Std::U8</code></p>
-<p>[0..63] -&gt; [0..255]</p>
-<h4 id="_filter_array">_filter_array</h4>
-<p>Type: <code>(a -&gt; Std::Bool) -&gt; Std::Array a -&gt; Std::Array a</code></p>
-<p>Same as <code>to_iter &gt;&gt; filter(f) &gt;&gt; to_array</code>, but faster.</p>
-<h4 id="_u8_to_b64_table">_u8_to_b64_table</h4>
-<p>Type: <code>Std::Array Std::U8</code></p>
-<p>[0..255] -&gt; [0..63], or 0xFF if not a BASE64 char</p>
 <h4 id="base64_decode">base64_decode</h4>
 <p>Type: <code>Std::String -&gt; Std::Array Std::U8</code></p>
 <p>Decodes a string which contains BASE64 characters to a byte array.

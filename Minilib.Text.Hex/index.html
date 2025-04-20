@@ -2046,33 +2046,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_array_from_string_hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      _array_from_string_hex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_from_string_hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      _from_string_hex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_to_string_hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      _to_string_hex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#decode_hex_char" class="md-nav__link">
     <span class="md-ellipsis">
       decode_hex_char
@@ -2857,33 +2830,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_array_from_string_hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      _array_from_string_hex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_from_string_hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      _from_string_hex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_to_string_hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      _to_string_hex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#decode_hex_char" class="md-nav__link">
     <span class="md-ellipsis">
       decode_hex_char
@@ -3172,19 +3118,6 @@
 <p>Hexadecimal string conversion</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtexthex">namespace Minilib.Text.Hex</h3>
-<h4 id="_array_from_string_hex">_array_from_string_hex</h4>
-<p>Type: <code>[a : Minilib.Text.Hex::FromStringHex] Std::I64 -&gt; Std::String -&gt; Std::Result Std::ErrMsg (Std::Array a)</code></p>
-<p><code>input._array_from_string_hex(n)</code> splits the input string
-to <code>n</code> characters each, then converts each component to numbers.
-Whitespaces are ignored.</p>
-<h4 id="_from_string_hex">_from_string_hex</h4>
-<p>Type: <code>Std::I64 -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::U64</code></p>
-<p><code>input._from_string_hex(n)</code> converts a hex string of <code>1..n</code> characters
-to a 64bit number.</p>
-<h4 id="_to_string_hex">_to_string_hex</h4>
-<p>Type: <code>Std::I64 -&gt; Std::U64 -&gt; Std::String</code></p>
-<p><code>input._to_string_hex(n)</code> converts least significant <code>4 * n</code> bits of <code>input</code>
-to a hex string of <code>n</code> characters.</p>
 <h4 id="decode_hex_char">decode_hex_char</h4>
 <p>Type: <code>Std::U8 -&gt; Std::Result Std::ErrMsg Std::U8</code></p>
 <p>Converts a hex character ('0'..'9', 'A'..'F' or 'a'..'f') to a 4bit number (0..15).</p>
