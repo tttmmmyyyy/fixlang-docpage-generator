@@ -21,10 +21,10 @@ jobs:
       - name: Download & install LLVM
         run: |
           mkdir -p llvm
-          wget -q https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/clang+llvm-12.0.1-x86_64-linux-gnu-ubuntu-16.04.tar.xz -O llvm.tar.xz
+          wget -q https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz -O llvm.tar.xz
           tar -xf llvm.tar.xz -C llvm --strip-components=1
           LLVM_PATH="${GITHUB_WORKSPACE}/llvm"
-          echo "LLVM_SYS_120_PREFIX=$LLVM_PATH" >> $GITHUB_ENV
+          echo "LLVM_SYS_170_PREFIX=$LLVM_PATH" >> $GITHUB_ENV
 
       - name: Download Fixlang
         uses: actions/checkout@v3
