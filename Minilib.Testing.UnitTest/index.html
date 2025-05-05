@@ -2057,6 +2057,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="make_table_test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2065,6 +2080,21 @@
       make_test
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="make_test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2083,6 +2113,21 @@
       run_tests
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="run_tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2131,6 +2176,21 @@
       run
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2782,6 +2842,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="make_table_test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2790,6 +2865,21 @@
       make_test
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="make_test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2808,6 +2898,21 @@
       run_tests
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="run_tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2856,6 +2961,21 @@
       run
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2952,7 +3072,7 @@
 
 
 <h1 id="minilibtestingunittest">Minilib.Testing.UnitTest</h1>
-<p>Defined in minilib-common@0.6.0</p>
+<p>Defined in minilib-common@0.6.1</p>
 <p>Unit Test Framework</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtestingunittest">namespace Minilib.Testing.UnitTest</h3>
@@ -2968,9 +3088,23 @@
 <h4 id="make_table_test">make_table_test</h4>
 <p>Type: <code>[a : Std::ToString] Std::String -&gt; Std::Array a -&gt; (a -&gt; Std::IO::IOFail ()) -&gt; Minilib.Testing.UnitTest::TestCase</code></p>
 <p>Creates a set of test cases from parameters and a lazy <code>IOFail ()</code>.</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>test_name</code>: the name of the test case.</li>
+<li><code>params</code>: an array of parameters to be passed to the test case.</li>
+<li><code>body</code>: a lazy <code>IOFail ()</code> that will be executed when the test case is run.</li>
+</ul>
+<p>Returns an aggregated test case.</p>
 <h4 id="make_test">make_test</h4>
 <p>Type: <code>Std::String -&gt; Std::Lazy (Std::IO::IOFail ()) -&gt; Minilib.Testing.UnitTest::TestCase</code></p>
 <p>Creates a named test case from a lazy <code>IOFail ()</code>.</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>test_name</code>: the name of the test case.</li>
+<li><code>body</code>: a lazy <code>IOFail ()</code> that will be executed when the test case is run.</li>
+</ul>
+<p>Returns a test case that will execute the <code>body</code> when run.
+The test case will print the name of the test case and the result (success or failure) to <code>stderr</code>.</p>
 <h4 id="run_test_driver">run_test_driver</h4>
 <p>Type: <code>Std::Array Minilib.Testing.UnitTest::TestCase -&gt; Std::IO ()</code></p>
 <p>Executes all test cases. This function:
@@ -2981,7 +3115,13 @@
 - If all test cases passed, returns <code>pure()</code>.</p>
 <h4 id="run_tests">run_tests</h4>
 <p>Type: <code>Std::Array Minilib.Testing.UnitTest::TestCase -&gt; Minilib.Testing.UnitTest::TestCase</code></p>
-<p>Executes all test cases and treat the results as one test case.</p>
+<p>Executes all test cases and treat the results as one test case.
+It is used to run all test cases in a single test case.</p>
+<h5 id="parameters_2">Parameters</h5>
+<ul>
+<li><code>tests</code>: an array of test cases.</li>
+</ul>
+<p>Returns a test case that will execute all test cases.</p>
 <h3 id="namespace-minilibtestingunittesttestcase">namespace Minilib.Testing.UnitTest::TestCase</h3>
 <h4 id="empty">empty</h4>
 <p>Type: <code>Minilib.Testing.UnitTest::TestCase</code></p>
@@ -2990,6 +3130,11 @@ Can be used as a placeholder at the end of an array of test cases.</p>
 <h3 id="namespace-minilibtestingunittesttestsuite">namespace Minilib.Testing.UnitTest::TestSuite</h3>
 <h4 id="run">run</h4>
 <p>Type: <code>Minilib.Testing.UnitTest::TestSuite -&gt; Std::IO ()</code></p>
+<p>Run a test suite.</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>testsuite</code>: a test suite.</li>
+</ul>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibtestingunittest_1">namespace Minilib.Testing.UnitTest</h3>
 <h4 id="testcase">TestCase</h4>
