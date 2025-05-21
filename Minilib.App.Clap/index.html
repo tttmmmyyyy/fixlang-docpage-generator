@@ -1,0 +1,4673 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Math/">
+      
+      
+        <link rel="next" href="../Minilib.Collection.Deque/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Minilib.App.Clap - Fix DocPage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#minilibappclap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Fix DocPage" class="md-header__button md-logo" aria-label="Fix DocPage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fix DocPage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Minilib.App.Clap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Fix DocPage" class="md-nav__button md-logo" aria-label="Fix DocPage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fix DocPage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AsyncTask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AsyncTask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap.BinaryArrayTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BinaryHeap.BinaryArrayTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BinaryHeap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HashMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HashSet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Minilib.App.Clap
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.App.Clap
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclaparg" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::Arg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::Arg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      default_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long" class="md-nav__link">
+    <span class="md-ellipsis">
+      long
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new" class="md-nav__link">
+    <span class="md-ellipsis">
+      new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short" class="md-nav__link">
+    <span class="md-ellipsis">
+      short
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takes_multiple_values" class="md-nav__link">
+    <span class="md-ellipsis">
+      takes_multiple_values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takes_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      takes_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      value_name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargmatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgMatches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgMatches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_many
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_one" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_one
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      subcommand
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgParser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance" class="md-nav__link">
+    <span class="md-ellipsis">
+      advance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      append_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_required_args_present" class="md-nav__link">
+    <span class="md-ellipsis">
+      check_required_args_present
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    <span class="md-ellipsis">
+      make
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no_inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      no_inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse_args" class="md-nav__link">
+    <span class="md-ellipsis">
+      parse_args
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_default_if_not_present" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_default_if_not_present
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      about
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arg" class="md-nav__link">
+    <span class="md-ellipsis">
+      arg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      author
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bin_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      bin_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      display_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_matches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_matches_from" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_matches_from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render_help" class="md-nav__link">
+    <span class="md-ellipsis">
+      render_help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      render_version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subcommand_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      subcommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclaphelptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::HelpTemplate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::HelpTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      new
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclap" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arg_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      field id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      field short
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      field long
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      field required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-takes_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      field takes_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-multiple_values" class="md-nav__link">
+    <span class="md-ellipsis">
+      field multiple_values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-default_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      field default_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-value_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field value_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      field help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      field action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argmatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgMatches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgMatches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-subcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      field subcommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      field map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-bin_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field bin_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-display_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field display_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-subcommand_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      field subcommand_path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      field version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      field author
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      field about
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-subcommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      field subcommands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-args" class="md-nav__link">
+    <span class="md-ellipsis">
+      field args
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-help_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      field help_template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-version_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      field version_template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      HelpTemplate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HelpTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      field data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgAction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgAction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant append
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-set_true" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant set_true
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-set_false" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant set_false
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-increment" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant increment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargparser_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgParser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgParser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      field command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-remaining_args" class="md-nav__link">
+    <span class="md-ellipsis">
+      field remaining_args
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      field matches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      field inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-positional_only" class="md-nav__link">
+    <span class="md-ellipsis">
+      field positional_only
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibappclaparg-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.App.Clap::Arg : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Deque/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.Deque
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.OrderedMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.OrderedMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.RBTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.RBTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.TreeMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Collection.TreeSet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Assert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Common.Assert
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Common.Common
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IOEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Common.IOEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.RandomEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Common.RandomEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.TimeEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Common.TimeEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.Env
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.IdentityC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.IdentityC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Traced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Comonad.Traced
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES.GCM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.AES.GCM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.AES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacMD5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacMD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacSHA1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC.HmacSHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.HMAC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.MD5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.MD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SHA512
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SecureRandom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Crypto.SecureRandom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Base64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Base64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Binary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Binary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonDecoder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json.JsonDecoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonEncoder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json.JsonEncoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlHelpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml.XmlHelpers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml.XmlParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Encoding.Xml
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Functor.Pair/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Functor.Pair
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Errno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Errno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.FileSystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.IO.FileSystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Signal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.IO.Signal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigFloat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigFloat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigInt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigInt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigNat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.BigNat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Complex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Complex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Modular
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Polynomial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Rational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Rational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Ring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Math.Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Png/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Png
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Svg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Media.Svg
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Cont/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Cont
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Error
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.FreeRandom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.FreeRandom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.IO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Identity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Option/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Reader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Reader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Result/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Result
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.State/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Trans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Trans
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Writer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Monad.Writer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HTML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Net.HTML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HttpServer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Net.HttpServer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Net.Tcp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.URL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Net.URL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Random.XorShift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Random.XorShift
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Testing.UnitTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Testing.UnitTest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Hex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Text.Hex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.SimpleParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Text.SimpleParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.StringEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Text.StringEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Unicode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Text.Unicode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.Channel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.Future
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.TaskPool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Thread.TaskPool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Comonad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Comonad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Lifter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Lifter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Monoid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Monoid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Rng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Rng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Semigroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Semigroup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Traversable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minilib.Trait.Traversable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpNFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpNFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpPattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegExp.RegExpPattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.SimpleParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegExp.SimpleParser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.StringEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegExp.StringEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegExp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Std/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Std
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subprocess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclaparg" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::Arg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::Arg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      default_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long" class="md-nav__link">
+    <span class="md-ellipsis">
+      long
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new" class="md-nav__link">
+    <span class="md-ellipsis">
+      new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short" class="md-nav__link">
+    <span class="md-ellipsis">
+      short
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takes_multiple_values" class="md-nav__link">
+    <span class="md-ellipsis">
+      takes_multiple_values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takes_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      takes_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      value_name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargmatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgMatches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgMatches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      empty
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_many
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_one" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_one
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      subcommand
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgParser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance" class="md-nav__link">
+    <span class="md-ellipsis">
+      advance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      append_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_required_args_present" class="md-nav__link">
+    <span class="md-ellipsis">
+      check_required_args_present
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    <span class="md-ellipsis">
+      make
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no_inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      no_inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse_args" class="md-nav__link">
+    <span class="md-ellipsis">
+      parse_args
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_default_if_not_present" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_default_if_not_present
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      about
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arg" class="md-nav__link">
+    <span class="md-ellipsis">
+      arg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      author
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bin_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      bin_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      display_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_matches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_matches_from" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_matches_from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render_help" class="md-nav__link">
+    <span class="md-ellipsis">
+      render_help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      render_version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subcommand_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      subcommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclaphelptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::HelpTemplate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::HelpTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      new
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclap" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arg_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      field id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      field short
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      field long
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      field required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-takes_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      field takes_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-multiple_values" class="md-nav__link">
+    <span class="md-ellipsis">
+      field multiple_values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-default_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      field default_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-value_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field value_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      field help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      field action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argmatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgMatches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgMatches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-subcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      field subcommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      field map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-bin_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field bin_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-display_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      field display_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-subcommand_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      field subcommand_path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      field version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      field author
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      field about
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-subcommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      field subcommands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-args" class="md-nav__link">
+    <span class="md-ellipsis">
+      field args
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-help_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      field help_template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-version_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      field version_template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      HelpTemplate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HelpTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      field data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgAction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgAction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant append
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-set_true" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant set_true
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-set_false" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant set_false
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-increment" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant increment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      variant version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibappclapargparser_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace Minilib.App.Clap::ArgParser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.App.Clap::ArgParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgParser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      field command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-remaining_args" class="md-nav__link">
+    <span class="md-ellipsis">
+      field remaining_args
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      field matches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      field inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-positional_only" class="md-nav__link">
+    <span class="md-ellipsis">
+      field positional_only
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibappclaparg-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl Minilib.App.Clap::Arg : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="minilibappclap">Minilib.App.Clap</h1>
+<p>Defined in minilib-app@0.5.1</p>
+<p>Command line argument parser.
+Inspired by <a href="https://docs.rs/clap/3.2.0/clap/index.html"><code>clap</code> crate of Rust</a>.</p>
+<h2 id="values">Values</h2>
+<h3 id="namespace-minilibappclaparg">namespace Minilib.App.Clap::Arg</h3>
+<h4 id="default_value">default_value</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@default_value</code>.</p>
+<h4 id="help">help</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@help</code>.</p>
+<h4 id="long">long</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@long</code>.</p>
+<h4 id="new">new</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Creates new argument.</p>
+<h4 id="required">required</h4>
+<p>Type: <code>Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@required</code> to true.</p>
+<h4 id="short">short</h4>
+<p>Type: <code>Std::U8 -&gt; Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@short</code>.</p>
+<h4 id="takes_multiple_values">takes_multiple_values</h4>
+<p>Type: <code>Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@takes_value</code> to true, <code>@multiple_values</code> to true, and <code>@action</code> to <code>append()</code>.</p>
+<h4 id="takes_value">takes_value</h4>
+<p>Type: <code>Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@takes_value</code> to true, and <code>@action</code> to <code>set()</code>.</p>
+<h4 id="value_name">value_name</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Arg</code></p>
+<p>Sets <code>@value_name</code>.</p>
+<h3 id="namespace-minilibappclapargmatches">namespace Minilib.App.Clap::ArgMatches</h3>
+<h4 id="empty">empty</h4>
+<p>Type: <code>Minilib.App.Clap::ArgMatches</code></p>
+<p>An empty <code>ArgMatches</code> structure.</p>
+<h4 id="get_many">get_many</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::ArgMatches -&gt; Std::Option (Std::Array Std::String)</code></p>
+<p>Gets the array of argument values with the specified ID.</p>
+<h4 id="get_one">get_one</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::ArgMatches -&gt; Std::Option Std::String</code></p>
+<p>Gets the value of the argument with the specified ID.</p>
+<h4 id="subcommand">subcommand</h4>
+<p>Type: <code>Minilib.App.Clap::ArgMatches -&gt; Std::Option (Std::String, Minilib.App.Clap::ArgMatches)</code></p>
+<h3 id="namespace-minilibappclapargparser">namespace Minilib.App.Clap::ArgParser</h3>
+<h4 id="advance">advance</h4>
+<p>Type: <code>Minilib.App.Clap::ArgParser::ArgParser -&gt; Std::Result Std::ErrMsg (Std::String, Minilib.App.Clap::ArgParser::ArgParser)</code></p>
+<p>Proceed to next input.</p>
+<h4 id="append_value">append_value</h4>
+<p>Type: <code>Minilib.App.Clap::Arg -&gt; Std::String -&gt; Minilib.App.Clap::ArgParser::ArgParser -&gt; Minilib.App.Clap::ArgParser::ArgParser</code></p>
+<p>Adds a value to the array of values in <code>arg</code>.</p>
+<h4 id="check_required_args_present">check_required_args_present</h4>
+<p>Type: <code>Minilib.App.Clap::ArgParser::ArgParser -&gt; Std::Result Std::ErrMsg Minilib.App.Clap::ArgParser::ArgParser</code></p>
+<p>Check whether the required argument values are set. Reports an error if the value is not set.</p>
+<h4 id="get_input">get_input</h4>
+<p>Type: <code>Minilib.App.Clap::ArgParser::ArgParser -&gt; Std::Result Std::ErrMsg Std::String</code></p>
+<p>Get the current input.</p>
+<h4 id="make">make</h4>
+<p>Type: <code>Std::Array Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::ArgParser::ArgParser</code></p>
+<p>Creates an <code>ArgParser</code> based on the input array and command.</p>
+<h4 id="no_inputs">no_inputs</h4>
+<p>Type: <code>Minilib.App.Clap::ArgParser::ArgParser -&gt; Std::Bool</code></p>
+<p>Returns True if there are no more inputs. Returns False if there is more input.</p>
+<h4 id="parse_args">parse_args</h4>
+<p>Type: <code>Minilib.App.Clap::ArgParser::ArgParser -&gt; Std::Result Std::ErrMsg Minilib.App.Clap::ArgParser::ArgParser</code></p>
+<p>Parse the actual command line argument array and set the value of <code>Arg</code>.</p>
+<h4 id="set_default_if_not_present">set_default_if_not_present</h4>
+<p>Type: <code>Minilib.App.Clap::ArgParser::ArgParser -&gt; Std::Result Std::ErrMsg Minilib.App.Clap::ArgParser::ArgParser</code></p>
+<p>If no value is set for the argument, set the default value.</p>
+<h4 id="set_value">set_value</h4>
+<p>Type: <code>Minilib.App.Clap::Arg -&gt; Std::String -&gt; Minilib.App.Clap::ArgParser::ArgParser -&gt; Minilib.App.Clap::ArgParser::ArgParser</code></p>
+<p>Set the value to <code>arg</code>.</p>
+<h3 id="namespace-minilibappclapcommand">namespace Minilib.App.Clap::Command</h3>
+<h4 id="about">about</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Sets the description about the command.</p>
+<h4 id="arg">arg</h4>
+<p>Type: <code>Minilib.App.Clap::Arg -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Add an argument definition to the command.</p>
+<h4 id="author">author</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Sets the author of the command.</p>
+<h4 id="bin_name">bin_name</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Sets the name of the executable binary of the command.</p>
+<h4 id="display_name">display_name</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Sets the display name of the command.</p>
+<h4 id="get_matches">get_matches</h4>
+<p>Type: <code>Minilib.App.Clap::Command -&gt; Std::IO::IOFail Minilib.App.Clap::ArgMatches</code></p>
+<p>Parse command line arguments based on <code>IO::get_args</code>.
+If <code>--help</code> or <code>--version</code> is specified, the help string or version string will be returned as <code>throw</code>.</p>
+<h4 id="get_matches_from">get_matches_from</h4>
+<p>Type: <code>Std::Array Std::String -&gt; Minilib.App.Clap::Command -&gt; Std::Result Std::ErrMsg Minilib.App.Clap::ArgMatches</code></p>
+<p>Parses command line arguments based on the specified input array.
+If <code>--help</code> or <code>--version</code> is specified, the help string or version string will be returned as the error message.</p>
+<h4 id="name">name</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Sets the name of the command.</p>
+<h4 id="new_1">new</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command</code></p>
+<p>Creates a command structure by specifying the command name.</p>
+<h4 id="render_help">render_help</h4>
+<p>Type: <code>Minilib.App.Clap::Command -&gt; Std::String</code></p>
+<p>Generates a help string based on the help template.</p>
+<h4 id="render_version">render_version</h4>
+<p>Type: <code>Minilib.App.Clap::Command -&gt; Std::String</code></p>
+<p>Generates a version string based on the version template.</p>
+<h4 id="subcommand_1">subcommand</h4>
+<p>Type: <code>Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Add a subcommand to the command.</p>
+<h4 id="version">version</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::Command -&gt; Minilib.App.Clap::Command</code></p>
+<p>Sets the version of the command.</p>
+<h3 id="namespace-minilibappclaphelptemplate">namespace Minilib.App.Clap::HelpTemplate</h3>
+<h4 id="format">format</h4>
+<p>Type: <code>Minilib.App.Clap::Command -&gt; Minilib.App.Clap::HelpTemplate -&gt; Std::String</code></p>
+<h4 id="new_2">new</h4>
+<p>Type: <code>Std::String -&gt; Minilib.App.Clap::HelpTemplate</code></p>
+<h2 id="types-and-aliases">Types and aliases</h2>
+<h3 id="namespace-minilibappclap">namespace Minilib.App.Clap</h3>
+<h4 id="arg_1">Arg</h4>
+<p>Defined as: <code>type Arg = unbox struct { ...fields... }</code></p>
+<p>A structure that defines arguments.
+Arguments can be either optional or positional arguments.
+If either <code>short</code> or <code>long</code> is set, it becomes an optional argument.
+Otherwise, it is a positional argument.</p>
+<h5 id="field-id">field <code>id</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-short">field <code>short</code></h5>
+<p>Type: <code>Std::U8</code></p>
+<h5 id="field-long">field <code>long</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-required">field <code>required</code></h5>
+<p>Type: <code>Std::Bool</code></p>
+<h5 id="field-takes_value">field <code>takes_value</code></h5>
+<p>Type: <code>Std::Bool</code></p>
+<h5 id="field-multiple_values">field <code>multiple_values</code></h5>
+<p>Type: <code>Std::Bool</code></p>
+<h5 id="field-default_value">field <code>default_value</code></h5>
+<p>Type: <code>Std::Option Std::String</code></p>
+<h5 id="field-value_name">field <code>value_name</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-help">field <code>help</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-action">field <code>action</code></h5>
+<p>Type: <code>Minilib.App.Clap::ArgAction::ArgAction</code></p>
+<h4 id="argmatches">ArgMatches</h4>
+<p>Defined as: <code>type ArgMatches = box struct { ...fields... }</code></p>
+<p>A structure representing the result of parsing command line arguments.</p>
+<h5 id="field-subcommand">field <code>subcommand</code></h5>
+<p>Type: <code>Std::Option (Std::String, Minilib.App.Clap::ArgMatches)</code></p>
+<h5 id="field-map">field <code>map</code></h5>
+<p>Type: <code>HashMap::HashMap Std::String (Std::Array Std::String)</code></p>
+<h4 id="command">Command</h4>
+<p>Defined as: <code>type Command = box struct { ...fields... }</code></p>
+<p>A structure representing a command (ie. application).</p>
+<h5 id="field-name">field <code>name</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-bin_name">field <code>bin_name</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-display_name">field <code>display_name</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-subcommand_path">field <code>subcommand_path</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-version">field <code>version</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-author">field <code>author</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-about">field <code>about</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h5 id="field-subcommands">field <code>subcommands</code></h5>
+<p>Type: <code>Std::Array Minilib.App.Clap::Command</code></p>
+<h5 id="field-args">field <code>args</code></h5>
+<p>Type: <code>Std::Array Minilib.App.Clap::Arg</code></p>
+<h5 id="field-help_template">field <code>help_template</code></h5>
+<p>Type: <code>Minilib.App.Clap::HelpTemplate</code></p>
+<h5 id="field-version_template">field <code>version_template</code></h5>
+<p>Type: <code>Minilib.App.Clap::HelpTemplate</code></p>
+<h4 id="helptemplate">HelpTemplate</h4>
+<p>Defined as: <code>type HelpTemplate = unbox struct { ...fields... }</code></p>
+<h5 id="field-data">field <code>data</code></h5>
+<p>Type: <code>Std::String</code></p>
+<h3 id="namespace-minilibappclapargaction">namespace Minilib.App.Clap::ArgAction</h3>
+<h4 id="argaction">ArgAction</h4>
+<p>Defined as: <code>type ArgAction = unbox union { ...variants... }</code></p>
+<p>The action taken when the argument is parsed.</p>
+<h5 id="variant-set">variant <code>set</code></h5>
+<p>Type: <code>()</code></p>
+<h5 id="variant-append">variant <code>append</code></h5>
+<p>Type: <code>()</code></p>
+<h5 id="variant-set_true">variant <code>set_true</code></h5>
+<p>Type: <code>()</code></p>
+<h5 id="variant-set_false">variant <code>set_false</code></h5>
+<p>Type: <code>()</code></p>
+<h5 id="variant-increment">variant <code>increment</code></h5>
+<p>Type: <code>()</code></p>
+<h5 id="variant-help">variant <code>help</code></h5>
+<p>Type: <code>()</code></p>
+<h5 id="variant-version">variant <code>version</code></h5>
+<p>Type: <code>()</code></p>
+<h3 id="namespace-minilibappclapargparser_1">namespace Minilib.App.Clap::ArgParser</h3>
+<h4 id="argparser">ArgParser</h4>
+<p>Defined as: <code>type ArgParser = unbox struct { ...fields... }</code></p>
+<h5 id="field-command">field <code>command</code></h5>
+<p>Type: <code>Minilib.App.Clap::Command</code></p>
+<h5 id="field-remaining_args">field <code>remaining_args</code></h5>
+<p>Type: <code>Std::Iterator::DynIterator Minilib.App.Clap::Arg</code></p>
+<h5 id="field-matches">field <code>matches</code></h5>
+<p>Type: <code>Minilib.App.Clap::ArgMatches</code></p>
+<h5 id="field-inputs">field <code>inputs</code></h5>
+<p>Type: <code>Std::Iterator::DynIterator Std::String</code></p>
+<h5 id="field-positional_only">field <code>positional_only</code></h5>
+<p>Type: <code>Std::Bool</code></p>
+<h2 id="traits-and-aliases">Traits and aliases</h2>
+<h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-minilibappclaparg-stdtostring">impl <code>Minilib.App.Clap::Arg : Std::ToString</code></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
