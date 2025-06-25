@@ -4,62 +4,7 @@ import Subprocess;
 import Minilib.Encoding.Json.JsonDecoder;
 import Minilib.Encoding.Json;
 import Minilib.Collection.OrderedMap;
-
-type ProcessName = String;
-
-easy_run : Array String -> IO String;
-easy_run = |commands| (
-    let commands_str = commands.to_iter.join(" ");
-    eprintln(commands_str);;
-    let ((out, err), status) = *Subprocess::run_string(commands.@(0), commands, "").try(exit_with_msg(1));
-    when(err.get_size > 0, eprintln(err));;
-    check_exit_staus(status, "`" + commands_str + "`");;
-    pure(out)
-);
-
-check_exit_staus : ExitStatus -> ProcessName -> IO ();
-check_exit_staus = |status, process_name| (
-    match status {
-        exit(code) => (
-            if code == 0_U8 {
-                pure()
-            } else {
-                let msg = "error: " + process_name + " exited with code " + code.to_string;
-                eprintln(msg);;
-                exit(1)
-            }
-        ),
-        signaled(signal) => (
-            let msg = "error: " + process_name + " terminated by signal " + signal.to_string;
-            eprintln(msg);;
-            exit(1)
-        ),
-        wait_failed() => (
-            let msg = "error: " + "failed to waiting termination of " + process_name;
-            eprintln(msg);;
-            exit(1)
-        )
-    }
-);
-
-is_exit_status_ok : ExitStatus -> Bool;
-is_exit_status_ok = |status| (
-    match status {
-        exit(code) => code == 0_U8,
-        _ => false
-    }
-);
-
-change_dir : String -> IO ();
-change_dir = |dir| (
-    let code = *dir.borrow_c_str_io(|c_str| FFI_CALL_IO[CInt chdir(Ptr), c_str]);
-    when(code != 0.to_CInt, 
-        let msg = "error: failed to change directory to " + dir;
-        eprintln(msg);;
-        exit(1)
-    );;
-    pure()
-);
+import EZS;
 
 // Information of a package.
 type ProjInfo = box struct {
@@ -101,18 +46,20 @@ namespace ProjInfo {
 
 build_docs : IO ();
 build_docs = (
+    let ezsc = EZSConfig::default.set_eprint_stderr(true).set_execution_trace(true);
+
     // Prepare a directory to store the documentation.
     let docs_dir = "docs";
-    ["rm", "-rf", docs_dir].easy_run;;    // Remove the directory if it exists.
-    ["mkdir", "-p", docs_dir].easy_run;;    // Create the directory.
+    ["rm", "-rf", docs_dir].ez_run_o(ezsc);;    // Remove the directory if it exists.
+    ["mkdir", "-p", docs_dir].ez_run_o(ezsc);;    // Create the directory.
 
     // Download the standard library documentation.
     let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md";
     let std_doc = docs_dir + "/" + "Std.md";
-    ["wget", "-q", std_doc_url, "-O", std_doc].easy_run;;
+    ["wget", "-q", std_doc_url, "-O", std_doc].ez_run_o(ezsc);;
 
     // Run `fix deps list --json` to get the list of all available fix projects.
-    let packages = *["fix", "deps", "list", "--json"].easy_run;
+    let packages = *["fix", "deps", "list", "--json"].ez_run_o(ezsc);
 
     // Parse `packages`.
     let packages = JsonDecoder::decode(packages);
@@ -131,48 +78,48 @@ build_docs = (
 
     // Remove the working directory if it exists.
     let packages_dir = "packages";
-    ["rm", "-rf", packages_dir].easy_run;;
+    ["rm", "-rf", packages_dir].ez_run_o(ezsc);;
 
     // Create working directory.
-    ["mkdir", "-p", packages_dir].easy_run;;
+    ["mkdir", "-p", packages_dir].ez_run_o(ezsc);;
 
     // Move to working directory.
-    change_dir(packages_dir);;
+    ez_cd(packages_dir);;
 
     // Clone each projects.
     let packages = *packages.to_iter.loop_iter_m([], |prj_info, packages|
         // Create the directory to clone the repository.
         let work_dir = prj_info.@name;
-        ["mkdir", "-p", work_dir].easy_run;;
+        ["mkdir", "-p", work_dir].ez_run_o(ezsc);;
 
         // Clone the repository.
-        ["git", "clone", "--quiet", "--tags", prj_info.@loc, work_dir].easy_run;;
+        ["git", "clone", "--quiet", "--tags", prj_info.@loc, work_dir].ez_run_o(ezsc);;
 
         // cd to the working directory.
-        change_dir(work_dir);;
+        ez_cd(work_dir);;
 
         // Get the latest tag.
-        let tag = *["git", "describe", "--tags", "--abbrev=0"].easy_run;
+        let tag = *["git", "describe", "--tags", "--abbrev=0"].ez_run_o(ezsc);
         let tag = tag.strip_spaces;
 
         // If the latest tag found, checkout it.
         when(tag.get_size > 0, 
-            ["git", "checkout", "--quiet", tag].easy_run.forget
+            ["git", "checkout", "--quiet", tag].ez_run_o(ezsc).forget
         );;
 
         // Install dependencies.
-        ["fix", "deps", "install"].easy_run;;
+        ["fix", "deps", "install"].ez_run_o(ezsc);;
 
         // Prepare empty `tmp` directory.
         let tmp = "../../tmp";
-        ["rm", "-rf", tmp].easy_run;; // Remove the directory if it exists.
-        ["mkdir", "-p", tmp].easy_run;; // Create the directory.
+        ["rm", "-rf", tmp].ez_run_o(ezsc);; // Remove the directory if it exists.
+        ["mkdir", "-p", tmp].ez_run_o(ezsc);; // Create the directory.
 
         // Generate documentation in `tmp`.
-        ["fix", "docs", "-o", tmp].easy_run;;
+        ["fix", "docs", "-o", tmp].ez_run_o(ezsc);;
 
         // Get the list of markdown files in `tmp`.
-        let md_files = *["find", tmp, "-name", "*.md"].easy_run;
+        let md_files = *["find", tmp, "-name", "*.md"].ez_run_o(ezsc);
 
         // Parse `md_files` to get the list of module names.
         let md_files = md_files.split("\n").map(strip_spaces).filter(|s| s.get_size > 0);
@@ -181,11 +128,11 @@ build_docs = (
 
         // Move all contents in `tmp` to `docs_dir`.
         modules.to_iter.fold_m((), |mod, _|
-            ["mv", tmp + "/" + mod + ".md", "../../" + docs_dir].easy_run.forget
+            ["mv", tmp + "/" + mod + ".md", "../../" + docs_dir].ez_run_o(ezsc).forget
         );;
 
         // Pop the working directory.
-        change_dir("..");;
+        ez_cd("..");;
 
         let prj_info = prj_info.set_ver(tag).set_modules(modules);
         let packages = packages.push_back(prj_info);
@@ -194,7 +141,7 @@ build_docs = (
     );
 
     // Pop the working directory.
-    change_dir("..");;
+    ez_cd("..");;
 
     // Create `index.md`.
     println("Creating index.md...");;

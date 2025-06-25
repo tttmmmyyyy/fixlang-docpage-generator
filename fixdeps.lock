@@ -1,4 +1,4 @@
-proj_file_hash = "6c5976f286dc4d7d6465aedba88d72ff"
+proj_file_hash = "6bc4f56815a657705af3e3caff9e4223"
 
 [[dependencies]]
 name = "minilib-json"
@@ -20,12 +20,12 @@ rev = "d920c72f6db5f2cc1fe3f78c29ca6d9152c887f7"
 
 [[dependencies]]
 name = "minilib-common"
-version = "0.5.2"
-path = ".fixlang/deps/minilib-common_0.5.2"
+version = "0.6.1"
+path = ".fixlang/deps/minilib-common_0.6.1"
 
 [dependencies.git]
 repo = "https://github.com/pt9999/fixlang-minilib-common.git"
-rev = "083d1d3f7f1b835813fe76409effb42bb2be5e74"
+rev = "e1bb3f196a44834af8fced954e686e7f64ec1b59"
 
 [[dependencies]]
 name = "character"
@@ -74,12 +74,12 @@ rev = "33da33ecb5d95d45c29feaeee5dea454fecc89b9"
 
 [[dependencies]]
 name = "hash"
-version = "1.0.1"
-path = ".fixlang/deps/hash_1.0.1"
+version = "1.1.0"
+path = ".fixlang/deps/hash_1.1.0"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-hash.git"
-rev = "abff072996c8c62d0c130201126b67f1e2dad405"
+rev = "40d5d04e9b5f5a11c46151d00a98acb6dfdb4e48"
 
 [[dependencies]]
 name = "random"
@@ -91,10 +91,19 @@ repo = "https://github.com/tttmmmyyyy/fixlang-random.git"
 rev = "b4f83ee48564e714c0918513dd431f9135493dce"
 
 [[dependencies]]
+name = "ez-scripting"
+version = "0.1.0"
+path = ".fixlang/deps/ez-scripting_0.1.0"
+
+[dependencies.git]
+repo = "https://github.com/tttmmmyyyy/ez_scripting.git"
+rev = "1c2e7be5b8d5a97ff475456a0596736bacb6e9e9"
+
+[[dependencies]]
 name = "subprocess"
-version = "1.0.4"
-path = ".fixlang/deps/subprocess_1.0.4"
+version = "1.0.5"
+path = ".fixlang/deps/subprocess_1.0.5"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-subprocess.git"
-rev = "96553be52581a3e747b5822549d389622f9ae246"
+rev = "61244ff47c586f0a39d325b5e9948c98203e8dd0"

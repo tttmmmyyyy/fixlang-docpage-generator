@@ -3,7 +3,7 @@
 name = "docpage-generator"
 
 ## Project version (in semver). This is a required field.
-version = "0.1.0"
+version = "0.1.1"
 
 ## Project authors.
 # authors = ["Alice", "Bob"]
@@ -97,3 +97,9 @@ git = { url = "https://github.com/tttmmmyyyy/fixlang-subprocess.git" }
 name = "minilib-json"
 version = "0.5.1"
 git = { url = "https://github.com/pt9999/fixlang-minilib-json.git" }
+
+
+[[dependencies]]
+name = "ez-scripting"
+version = "0.1.0"
+git = { url = "https://github.com/tttmmmyyyy/ez_scripting.git" }
