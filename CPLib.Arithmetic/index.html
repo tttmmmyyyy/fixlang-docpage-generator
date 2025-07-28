@@ -455,6 +455,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#isqrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      isqrt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="isqrt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pmod" class="md-nav__link">
     <span class="md-ellipsis">
       pmod
@@ -465,7 +489,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -489,7 +513,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_4" class="md-nav__link">
+  <a href="#parameters_5" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3073,6 +3097,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#isqrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      isqrt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="isqrt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pmod" class="md-nav__link">
     <span class="md-ellipsis">
       pmod
@@ -3083,7 +3131,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3107,7 +3155,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_4" class="md-nav__link">
+  <a href="#parameters_5" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3174,7 +3222,7 @@
 
 
 <h1 id="cplibarithmetic">CPLib.Arithmetic</h1>
-<p>Defined in cp-library@0.1.5</p>
+<p>Defined in cp-library@0.1.6</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-cplibarithmetic">namespace CPLib.Arithmetic</h3>
 <h4 id="calc_gcd">calc_gcd</h4>
@@ -3205,11 +3253,18 @@
 <li><code>a</code>: 整数</li>
 <li><code>m</code>: 法</li>
 </ul>
+<h4 id="isqrt">isqrt</h4>
+<p>Type: <code>Std::U64 -&gt; Std::U64</code></p>
+<p>64ビット整数の平方根の整数部分を計算する</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>x</code>: 64ビット整数</li>
+</ul>
 <h4 id="pmod">pmod</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
 <p><code>x</code>を<code>m</code>で割った余りを非負で返す</p>
 <p>C言語の%演算子とは異なり、負の数に対しても正の余りを返す</p>
-<h5 id="parameters_3">Parameters</h5>
+<h5 id="parameters_4">Parameters</h5>
 <ul>
 <li><code>m</code>: 除数</li>
 <li><code>x</code>: 被除数</li>
@@ -3217,7 +3272,7 @@
 <h4 id="pow_mod">pow_mod</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
 <p><code>x^e</code>を<code>n</code>で割った余りを計算する</p>
-<h5 id="parameters_4">Parameters</h5>
+<h5 id="parameters_5">Parameters</h5>
 <ul>
 <li><code>x</code>: 底</li>
 <li><code>e</code>: 指数 &gt;= 0</li>
