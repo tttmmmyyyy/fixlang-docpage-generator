@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Minilib.App.Clap/">
+        <link rel="prev" href="../CPLib.DSegtree/">
       
       
-        <link rel="next" href="../Minilib.Collection.OrderedMap/">
+        <link rel="next" href="../CPLib.IO/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Minilib.Collection.Deque - Fix DocPage</title>
+        <title>CPLib.Graph - Fix DocPage</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#minilibcollectiondeque" class="md-skip">
+        <a href="#cplibgraph" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Minilib.Collection.Deque
+              CPLib.Graph
             
           </span>
         </div>
@@ -345,10 +345,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../CPLib.Graph/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CPLib.Graph
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -359,6 +381,377 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add_edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute_sccs" class="md-nav__link">
+    <span class="md-ellipsis">
+      compute_sccs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compute_sccs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      dijkstra
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dijkstra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_size
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibgraphedge" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.Graph::Edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.Graph::Edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    <span class="md-ellipsis">
+      make
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibgraphnodedistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.Graph::NodeDistance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.Graph::NodeDistance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      make
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibgraph_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      field to
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      field cost
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      field edges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodedistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      NodeDistance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NodeDistance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      field node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-dist" class="md-nav__link">
+    <span class="md-ellipsis">
+      field dist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-c-stdlessthan-cplibgraphnodedistance-c-stdlessthan" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl [c : Std::LessThan] CPLib.Graph::NodeDistance c : Std::LessThan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -675,32 +1068,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Minilib.Collection.Deque
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Deque/" class="md-nav__link">
         
   
   
@@ -711,251 +1082,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondequedeque" class="md-nav__link">
-    <span class="md-ellipsis">
-      namespace Minilib.Collection.Deque::Deque
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque::Deque">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#empty" class="md-nav__link">
-    <span class="md-ellipsis">
-      empty
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_back" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_back
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_front" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_front
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_size" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_size
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is_empty" class="md-nav__link">
-    <span class="md-ellipsis">
-      is_empty
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pop_back" class="md-nav__link">
-    <span class="md-ellipsis">
-      pop_back
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pop_front" class="md-nav__link">
-    <span class="md-ellipsis">
-      pop_front
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#push_back" class="md-nav__link">
-    <span class="md-ellipsis">
-      push_back
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#push_front" class="md-nav__link">
-    <span class="md-ellipsis">
-      push_front
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      to_iter
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types-and-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types and aliases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types and aliases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondeque" class="md-nav__link">
-    <span class="md-ellipsis">
-      namespace Minilib.Collection.Deque
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deque" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deque
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deque">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-front" class="md-nav__link">
-    <span class="md-ellipsis">
-      field front
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-back" class="md-nav__link">
-    <span class="md-ellipsis">
-      field back
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondequedeque_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      namespace Minilib.Collection.Deque::Deque
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque::Deque">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dequeiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      DequeIterator
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traits-and-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Traits and aliases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trait-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trait implementations
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3043,39 +3169,108 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondequedeque" class="md-nav__link">
+  <a href="#namespace-cplibgraph" class="md-nav__link">
     <span class="md-ellipsis">
-      namespace Minilib.Collection.Deque::Deque
+      namespace CPLib.Graph
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque::Deque">
+    <nav class="md-nav" aria-label="namespace CPLib.Graph">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#empty" class="md-nav__link">
+  <a href="#add_edge" class="md-nav__link">
     <span class="md-ellipsis">
-      empty
+      add_edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add_edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#get_back" class="md-nav__link">
+  <a href="#compute_sccs" class="md-nav__link">
     <span class="md-ellipsis">
-      get_back
+      compute_sccs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compute_sccs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#get_front" class="md-nav__link">
+  <a href="#create" class="md-nav__link">
     <span class="md-ellipsis">
-      get_front
+      create
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      dijkstra
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dijkstra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3086,57 +3281,66 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="get_size">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#is_empty" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
-      is_empty
+      Parameters
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#pop_back" class="md-nav__link">
+  <a href="#namespace-cplibgraphedge" class="md-nav__link">
     <span class="md-ellipsis">
-      pop_back
+      namespace CPLib.Graph::Edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.Graph::Edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    <span class="md-ellipsis">
+      make
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#pop_front" class="md-nav__link">
-    <span class="md-ellipsis">
-      pop_front
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#push_back" class="md-nav__link">
+  <a href="#namespace-cplibgraphnodedistance" class="md-nav__link">
     <span class="md-ellipsis">
-      push_back
+      namespace CPLib.Graph::NodeDistance
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="namespace CPLib.Graph::NodeDistance">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#push_front" class="md-nav__link">
+  <a href="#make_1" class="md-nav__link">
     <span class="md-ellipsis">
-      push_front
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      to_iter
+      make
     </span>
   </a>
   
@@ -3163,38 +3367,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondeque" class="md-nav__link">
+  <a href="#namespace-cplibgraph_1" class="md-nav__link">
     <span class="md-ellipsis">
-      namespace Minilib.Collection.Deque
+      namespace CPLib.Graph
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque">
+    <nav class="md-nav" aria-label="namespace CPLib.Graph">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deque" class="md-nav__link">
+  <a href="#edge" class="md-nav__link">
     <span class="md-ellipsis">
-      Deque
+      Edge
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deque">
+    <nav class="md-nav" aria-label="Edge">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-front" class="md-nav__link">
+  <a href="#field-to" class="md-nav__link">
     <span class="md-ellipsis">
-      field front
+      field to
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-back" class="md-nav__link">
+  <a href="#field-cost" class="md-nav__link">
     <span class="md-ellipsis">
-      field back
+      field cost
     </span>
   </a>
   
@@ -3205,27 +3409,60 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      field edges
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondequedeque_1" class="md-nav__link">
+  <a href="#nodedistance" class="md-nav__link">
     <span class="md-ellipsis">
-      namespace Minilib.Collection.Deque::Deque
+      NodeDistance
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque::Deque">
+    <nav class="md-nav" aria-label="NodeDistance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dequeiterator" class="md-nav__link">
+  <a href="#field-node" class="md-nav__link">
     <span class="md-ellipsis">
-      DequeIterator
+      field node
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-dist" class="md-nav__link">
+    <span class="md-ellipsis">
+      field dist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3255,6 +3492,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-c-stdlessthan-cplibgraphnodedistance-c-stdlessthan" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl [c : Std::LessThan] CPLib.Graph::NodeDistance c : Std::LessThan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3273,58 +3525,88 @@
 
 
 
-<h1 id="minilibcollectiondeque">Minilib.Collection.Deque</h1>
-<p>Defined in minilib-collection@0.5.1</p>
-<p>Deque (double-ended queue).
-Deque can be used as a FIFO such as a message queue.
-When used as a FIFO, the amortized costs of <code>push_back()</code> and
-<code>pop_front()</code> are <code>O(1)</code>.</p>
+<h1 id="cplibgraph">CPLib.Graph</h1>
+<p>Defined in cp-library@0.2.1</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibcollectiondequedeque">namespace Minilib.Collection.Deque::Deque</h3>
-<h4 id="empty">empty</h4>
-<p>Type: <code>Std::I64 -&gt; Minilib.Collection.Deque::Deque a</code></p>
-<p>Creates an empty double-ended queue.</p>
-<h4 id="get_back">get_back</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::Option a</code></p>
-<p>Gets the back element of the queue.</p>
-<h4 id="get_front">get_front</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::Option a</code></p>
-<p>Gets the front element of the queue.</p>
+<h3 id="namespace-cplibgraph">namespace CPLib.Graph</h3>
+<h4 id="add_edge">add_edge</h4>
+<p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; c -&gt; CPLib.Graph::Graph c -&gt; CPLib.Graph::Graph c</code></p>
+<p>グラフに辺を追加する</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>g</code> : グラフ</li>
+<li><code>from</code> : 始点の頂点番号</li>
+<li><code>to</code> : 終点の頂点番号</li>
+<li><code>c</code> : 辺の重み</li>
+</ul>
+<h4 id="compute_sccs">compute_sccs</h4>
+<p>Type: <code>CPLib.Graph::Graph c -&gt; Std::Array (Std::Array Std::I64)</code></p>
+<p>グラフの強連結成分分解を求める</p>
+<p>戻り値は、各強連結成分を構成する頂点のリストの配列です。
+また、戻り値はトポロジカルソートされています：uとvが異なる強連結成分cu, cvに属するとき、uからvに到達できるなら、cuはcvの前に現れます。</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>g</code> : グラフ</li>
+</ul>
+<h4 id="create">create</h4>
+<p>Type: <code>Std::I64 -&gt; CPLib.Graph::Graph c</code></p>
+<p>離散的なグラフを作成する</p>
+<h5 id="parameters_2">Parameters</h5>
+<ul>
+<li><code>n</code> : 頂点数</li>
+</ul>
+<h4 id="dijkstra">dijkstra</h4>
+<p>Type: <code>[c : Std::Additive, c : Std::LessThan] Std::I64 -&gt; c -&gt; CPLib.Graph::Graph c -&gt; Std::Array c</code></p>
+<p>グラフと開始ノードが与えられたとき、開始ノードから各ノードに到達するまでの最小コストの配列を返す。</p>
+<p>各辺のコストは非負である必要があります。</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>start</code> : 開始ノードの番号</li>
+<li><code>inf</code> : 無限大のコストとして用いる値。到達不可能なノードのコストとして使われる。</li>
+<li><code>graph</code> : グラフ</li>
+</ul>
 <h4 id="get_size">get_size</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::I64</code></p>
-<p>Gets the size of the queue.</p>
-<h4 id="is_empty">is_empty</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::Bool</code></p>
-<p>Returns true iff the queue is empty.</p>
-<h4 id="pop_back">pop_back</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque a</code></p>
-<p>Pops an element from the back of the queue. If the queue is empty, it does nothing.</p>
-<h4 id="pop_front">pop_front</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque a</code></p>
-<p>Pops an element from the front of the queue. If the queue is empty, it does nothing.</p>
-<h4 id="push_back">push_back</h4>
-<p>Type: <code>a -&gt; Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque a</code></p>
-<p>Pushes an element to the back of the queue.</p>
-<h4 id="push_front">push_front</h4>
-<p>Type: <code>a -&gt; Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque a</code></p>
-<p>Pushes an element to the front of the queue.</p>
-<h4 id="to_iter">to_iter</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque::DequeIterator a</code></p>
-<p>Returns an iterator of elements.</p>
+<p>Type: <code>CPLib.Graph::Graph c -&gt; Std::I64</code></p>
+<p>グラフの頂点数を取得する</p>
+<h5 id="parameters_4">Parameters</h5>
+<ul>
+<li><code>g</code> : グラフ</li>
+</ul>
+<h3 id="namespace-cplibgraphedge">namespace CPLib.Graph::Edge</h3>
+<h4 id="make">make</h4>
+<p>Type: <code>Std::I64 -&gt; c -&gt; CPLib.Graph::Edge c</code></p>
+<p>辺を作成する</p>
+<h3 id="namespace-cplibgraphnodedistance">namespace CPLib.Graph::NodeDistance</h3>
+<h4 id="make_1">make</h4>
+<p>Type: <code>Std::I64 -&gt; c -&gt; CPLib.Graph::NodeDistance c</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-minilibcollectiondeque">namespace Minilib.Collection.Deque</h3>
-<h4 id="deque">Deque</h4>
-<p>Defined as: <code>type Deque a = unbox struct { ...fields... }</code></p>
-<p>A type that represents a double-ended queue.</p>
-<h5 id="field-front">field <code>front</code></h5>
-<p>Type: <code>Std::Array a</code></p>
-<h5 id="field-back">field <code>back</code></h5>
-<p>Type: <code>Std::Array a</code></p>
-<h3 id="namespace-minilibcollectiondequedeque_1">namespace Minilib.Collection.Deque::Deque</h3>
-<h4 id="dequeiterator">DequeIterator</h4>
-<p>Defined as: <code>type DequeIterator a = Std::Iterator::AppendIterator (Std::Iterator::ReverseIterator (Std::Iterator::ArrayIterator a) a) (Std::Iterator::ArrayIterator a)</code></p>
+<h3 id="namespace-cplibgraph_1">namespace CPLib.Graph</h3>
+<h4 id="edge">Edge</h4>
+<p>Defined as: <code>type Edge c = unbox struct { ...fields... }</code></p>
+<p>グラフの辺を表す型（始点番号はなし）</p>
+<h5 id="field-to">field <code>to</code></h5>
+<p>Type: <code>Std::I64</code></p>
+<p>終点の頂点番号</p>
+<h5 id="field-cost">field <code>cost</code></h5>
+<p>Type: <code>c</code></p>
+<p>辺の重み</p>
+<h4 id="graph">Graph</h4>
+<p>Defined as: <code>type Graph c = unbox struct { ...fields... }</code></p>
+<p>グラフの隣接リストによる表現</p>
+<p>型パラメータ<code>c</code>は辺の重みの型です。不要な場合はユニット型<code>()</code>や自分で作ったempty typeなどを指定するとメモリの節約になります。</p>
+<h5 id="field-edges">field <code>edges</code></h5>
+<p>Type: <code>Std::Array (Std::Array (CPLib.Graph::Edge c))</code></p>
+<p><code>edges.@(s)</code> は頂点<code>s</code>から出る辺のリストです。</p>
+<h4 id="nodedistance">NodeDistance</h4>
+<p>Defined as: <code>type NodeDistance c = unbox struct { ...fields... }</code></p>
+<p>ノードとその距離を表す型（ダイクストラ法などで使用）</p>
+<h5 id="field-node">field <code>node</code></h5>
+<p>Type: <code>Std::I64</code></p>
+<h5 id="field-dist">field <code>dist</code></h5>
+<p>Type: <code>c</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-c-stdlessthan-cplibgraphnodedistance-c-stdlessthan">impl <code>[c : Std::LessThan] CPLib.Graph::NodeDistance c : Std::LessThan</code></h3>
 
 
 
