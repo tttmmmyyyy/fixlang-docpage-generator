@@ -3394,7 +3394,7 @@
 
 
 <h1 id="cplibldsegtree">CPLib.LDSegtree</h1>
-<p>Defined in cp-library@0.2.1</p>
+<p>Defined in cp-library@0.2.2</p>
 <p>モノイド構造および作用が動的に決められる遅延伝搬セグメント木</p>
 <p>コンストラクタでモノイドおよび作用を指定する点以外は、<code>CPLib.LSegtree</code>と同じです。
 モノイド構造・作用が静的に決まる場合は<code>CPLib.LSegtree</code>の方が高速です。</p>
@@ -3430,6 +3430,7 @@
 <ul>
 <li><code>l</code> : 区間の左端 (0-indexed)</li>
 <li><code>r</code> : 区間の右端 (0-indexed, exclusive)</li>
+<li><code>tree</code> : セグメント木</li>
 </ul>
 <h4 id="init">init</h4>
 <p>Type: <code>Std::I64 -&gt; m -&gt; ((m, m) -&gt; m) -&gt; a -&gt; ((a, a) -&gt; a) -&gt; ((m, a) -&gt; m) -&gt; CPLib.LDSegtree::LDSegtree m a</code></p>
