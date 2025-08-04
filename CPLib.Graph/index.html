@@ -326,6 +326,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../CPLib.Bipartite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPLib.Bipartite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../CPLib.Convolution/" class="md-nav__link">
         
   
@@ -464,13 +486,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#compute_sccs" class="md-nav__link">
+  <a href="#calc_sccs" class="md-nav__link">
     <span class="md-ellipsis">
-      compute_sccs
+      calc_sccs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="compute_sccs">
+    <nav class="md-nav" aria-label="calc_sccs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -657,9 +679,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-cost" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
-      field cost
+      field data
     </span>
   </a>
   
@@ -851,6 +873,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../CPLib.MaxFlow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPLib.MaxFlow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../CPLib.Segtree/" class="md-nav__link">
         
   
@@ -879,6 +923,28 @@
   
   <span class="md-ellipsis">
     CPLib.Trait
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.TwoSat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPLib.TwoSat
     
   </span>
   
@@ -3225,13 +3291,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#compute_sccs" class="md-nav__link">
+  <a href="#calc_sccs" class="md-nav__link">
     <span class="md-ellipsis">
-      compute_sccs
+      calc_sccs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="compute_sccs">
+    <nav class="md-nav" aria-label="calc_sccs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3418,9 +3484,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-cost" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
-      field cost
+      field data
     </span>
   </a>
   
@@ -3548,7 +3614,7 @@
 
 
 <h1 id="cplibgraph">CPLib.Graph</h1>
-<p>Defined in cp-library@0.3.3</p>
+<p>Defined in cp-library@0.4.1</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-cplibgraph">namespace CPLib.Graph</h3>
 <h4 id="add_edge">add_edge</h4>
@@ -3556,12 +3622,12 @@
 <p>グラフに辺を追加する</p>
 <h5 id="parameters">Parameters</h5>
 <ul>
-<li><code>g</code> : グラフ</li>
 <li><code>from</code> : 始点の頂点番号</li>
 <li><code>to</code> : 終点の頂点番号</li>
-<li><code>c</code> : 辺の重み</li>
+<li><code>data</code> : 辺のデータ</li>
+<li><code>graph</code> : グラフ</li>
 </ul>
-<h4 id="compute_sccs">compute_sccs</h4>
+<h4 id="calc_sccs">calc_sccs</h4>
 <p>Type: <code>CPLib.Graph::Graph c -&gt; Std::Array (Std::Array Std::I64)</code></p>
 <p>グラフの強連結成分分解を求める</p>
 <p>戻り値は、各強連結成分を構成する頂点のリストの配列です。
@@ -3609,13 +3675,13 @@
 <h5 id="field-to">field <code>to</code></h5>
 <p>Type: <code>Std::I64</code></p>
 <p>終点の頂点番号</p>
-<h5 id="field-cost">field <code>cost</code></h5>
+<h5 id="field-data">field <code>data</code></h5>
 <p>Type: <code>c</code></p>
-<p>辺の重み</p>
+<p>辺のデータ</p>
 <h4 id="graph">Graph</h4>
 <p>Defined as: <code>type Graph c = unbox struct { ...fields... }</code></p>
 <p>グラフの隣接リストによる表現</p>
-<p>型パラメータ<code>c</code>は辺の重みの型です。不要な場合はユニット型<code>()</code>や自分で作ったempty typeなどを指定するとメモリの節約になります。</p>
+<p>型パラメータ<code>c</code>は辺に付随するデータの型です（例：ダイクストラ法に使うときはコスト）。不要な場合はユニット型<code>()</code>や自分で作ったempty typeなどを指定するとメモリの節約になります。</p>
 <h5 id="field-edges">field <code>edges</code></h5>
 <p>Type: <code>Std::Array (Std::Array (CPLib.Graph::Edge c))</code></p>
 <p><code>edges.@(s)</code> は頂点<code>s</code>から出る辺のリストです。</p>

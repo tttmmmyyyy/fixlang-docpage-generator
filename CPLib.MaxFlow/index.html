@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Minilib.Crypto.HMAC/">
+        <link rel="prev" href="../CPLib.LSegtree/">
       
       
-        <link rel="next" href="../Minilib.Crypto.SHA1/">
+        <link rel="next" href="../CPLib.Segtree/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Minilib.Crypto.MD5 - Fix DocPage</title>
+        <title>CPLib.MaxFlow - Fix DocPage</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#minilibcryptomd5" class="md-skip">
+        <a href="#cplibmaxflow" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Minilib.Crypto.MD5
+              CPLib.MaxFlow
             
           </span>
         </div>
@@ -477,10 +477,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../CPLib.MaxFlow/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CPLib.MaxFlow
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -491,6 +513,386 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibmaxflowdinic" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.MaxFlow::Dinic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.MaxFlow::Dinic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      bfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      dfs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset_iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      reset_iter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      reset_level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      solve
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibmaxflowmaxflowgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.MaxFlow::MaxFlowGraph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.MaxFlow::MaxFlowGraph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add_edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_min_cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_min_cut
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_min_cut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximize_flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      maximize_flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maximize_flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibmaxflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.MaxFlow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.MaxFlow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edgeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      EdgeId
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxflowgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      MaxFlowGraph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MaxFlowGraph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      field graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-max_cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      field max_cap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      field s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      field t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      field level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      field iter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      field queue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traits and aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait implementations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1181,32 +1583,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Minilib.Crypto.MD5
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.MD5/" class="md-nav__link">
         
   
   
@@ -1217,182 +1597,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcryptomd5" class="md-nav__link">
-    <span class="md-ellipsis">
-      namespace Minilib.Crypto.MD5
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Crypto.MD5">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#digest" class="md-nav__link">
-    <span class="md-ellipsis">
-      digest
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#empty" class="md-nav__link">
-    <span class="md-ellipsis">
-      empty
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finalize" class="md-nav__link">
-    <span class="md-ellipsis">
-      finalize
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      update
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types-and-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types and aliases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types and aliases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcryptomd5_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      namespace Minilib.Crypto.MD5
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Crypto.MD5">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#md5" class="md-nav__link">
-    <span class="md-ellipsis">
-      MD5
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MD5">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      field hash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-msglen" class="md-nav__link">
-    <span class="md-ellipsis">
-      field msglen
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-msgbuf" class="md-nav__link">
-    <span class="md-ellipsis">
-      field msgbuf
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traits-and-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Traits and aliases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trait-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trait implementations
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3062,48 +3266,207 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcryptomd5" class="md-nav__link">
+  <a href="#namespace-cplibmaxflowdinic" class="md-nav__link">
     <span class="md-ellipsis">
-      namespace Minilib.Crypto.MD5
+      namespace CPLib.MaxFlow::Dinic
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Crypto.MD5">
+    <nav class="md-nav" aria-label="namespace CPLib.MaxFlow::Dinic">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#digest" class="md-nav__link">
+  <a href="#bfs" class="md-nav__link">
     <span class="md-ellipsis">
-      digest
+      bfs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#empty" class="md-nav__link">
+  <a href="#dfs" class="md-nav__link">
     <span class="md-ellipsis">
-      empty
+      dfs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset_iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      reset_iter
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#finalize" class="md-nav__link">
+  <a href="#reset_level" class="md-nav__link">
     <span class="md-ellipsis">
-      finalize
+      reset_level
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
+  <a href="#solve" class="md-nav__link">
     <span class="md-ellipsis">
-      update
+      solve
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cplibmaxflowmaxflowgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace CPLib.MaxFlow::MaxFlowGraph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace CPLib.MaxFlow::MaxFlowGraph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add_edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_min_cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_min_cut
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_min_cut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximize_flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      maximize_flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maximize_flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3128,47 +3491,92 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcryptomd5_1" class="md-nav__link">
+  <a href="#namespace-cplibmaxflow" class="md-nav__link">
     <span class="md-ellipsis">
-      namespace Minilib.Crypto.MD5
+      namespace CPLib.MaxFlow
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Crypto.MD5">
+    <nav class="md-nav" aria-label="namespace CPLib.MaxFlow">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#md5" class="md-nav__link">
+  <a href="#edgeid" class="md-nav__link">
     <span class="md-ellipsis">
-      MD5
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MD5">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      field hash
+      EdgeId
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-msglen" class="md-nav__link">
+  <a href="#maxflowgraph" class="md-nav__link">
     <span class="md-ellipsis">
-      field msglen
+      MaxFlowGraph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MaxFlowGraph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      field graph
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-msgbuf" class="md-nav__link">
+  <a href="#field-max_cap" class="md-nav__link">
     <span class="md-ellipsis">
-      field msgbuf
+      field max_cap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      field s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      field t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      field level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      field iter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      field queue
     </span>
   </a>
   
@@ -3223,37 +3631,111 @@
 
 
 
-<h1 id="minilibcryptomd5">Minilib.Crypto.MD5</h1>
-<p>Defined in minilib-crypto@0.5.1</p>
-<p>MD5 secure hash function.</p>
-<p>Implemented from specification of RFC 1321:
-https://www.rfc-editor.org/rfc/rfc1321.txt</p>
+<h1 id="cplibmaxflow">CPLib.MaxFlow</h1>
+<p>Defined in cp-library@0.4.1</p>
+<p>最大フロー問題、最小カット問題</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibcryptomd5">namespace Minilib.Crypto.MD5</h3>
-<h4 id="digest">digest</h4>
-<p>Type: <code>Std::Array Std::U8 -&gt; Std::Array Std::U8</code></p>
-<p><code>MD5::digest(bytes)</code> computes MD5 secure hash function of <code>bytes</code>.</p>
-<h4 id="empty">empty</h4>
-<p>Type: <code>Minilib.Crypto.MD5::MD5</code></p>
-<p>An empty MD5 hasher.</p>
-<h4 id="finalize">finalize</h4>
-<p>Type: <code>Minilib.Crypto.MD5::MD5 -&gt; Std::Array Std::U8</code></p>
-<p><code>md5.finalize</code> retrieves a final MD5 hash value.</p>
-<h4 id="update">update</h4>
-<p>Type: <code>Std::Array Std::U8 -&gt; Minilib.Crypto.MD5::MD5 -&gt; Minilib.Crypto.MD5::MD5</code></p>
-<p><code>md5.update(bytes)</code> processes <code>bytes</code>, and updates its internal state.</p>
+<h3 id="namespace-cplibmaxflowdinic">namespace CPLib.MaxFlow::Dinic</h3>
+<h4 id="bfs">bfs</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] CPLib.MaxFlow::MaxFlowGraph c -&gt; CPLib.MaxFlow::MaxFlowGraph c</code></p>
+<p>残余グラフ上でBFSしてレベルを更新する</p>
+<h4 id="dfs">dfs</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] Std::I64 -&gt; c -&gt; CPLib.MaxFlow::MaxFlowGraph c -&gt; (CPLib.MaxFlow::MaxFlowGraph c, c)</code></p>
+<p>開始地点からの最短経路DAG（<code>level</code>から得られる）においてDFSして経路を一つ発見し、フロー・残余グラフを更新する。</p>
+<p>更新された残余グラフと、新たに流されたフローの量を返す。</p>
+<p>一度調べた辺を次の<code>dfs</code>で調べないよう、<code>iter</code>を更新する。</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>v</code> : 現在の頂点</li>
+<li><code>f</code> : 流してよいフローの量</li>
+</ul>
+<h4 id="reset_iter">reset_iter</h4>
+<p>Type: <code>CPLib.MaxFlow::MaxFlowGraph c -&gt; CPLib.MaxFlow::MaxFlowGraph c</code></p>
+<p><code>iter</code>をすべて0にリセットする。</p>
+<h4 id="reset_level">reset_level</h4>
+<p>Type: <code>CPLib.MaxFlow::MaxFlowGraph c -&gt; CPLib.MaxFlow::MaxFlowGraph c</code></p>
+<p><code>level</code>をすべて-1にリセットする。</p>
+<h4 id="solve">solve</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] CPLib.MaxFlow::MaxFlowGraph c -&gt; (CPLib.MaxFlow::MaxFlowGraph c, c)</code></p>
+<p>最大フローを求める</p>
+<h3 id="namespace-cplibmaxflowmaxflowgraph">namespace CPLib.MaxFlow::MaxFlowGraph</h3>
+<h4 id="add_edge">add_edge</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] Std::I64 -&gt; Std::I64 -&gt; c -&gt; CPLib.MaxFlow::MaxFlowGraph c -&gt; (CPLib.MaxFlow::MaxFlowGraph c, CPLib.MaxFlow::EdgeId)</code></p>
+<p>グラフに辺を追加する</p>
+<p>追加された辺の識別子を返す。</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>graph</code> : グラフ</li>
+<li><code>from</code> : 始点の頂点番号</li>
+<li><code>to</code> : 終点の頂点番号</li>
+<li><code>cap</code> : 辺の容量</li>
+</ul>
+<h4 id="create">create</h4>
+<p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64 -&gt; c -&gt; CPLib.MaxFlow::MaxFlowGraph c</code></p>
+<p>グラフを作成する</p>
+<h5 id="parameters_2">Parameters</h5>
+<ul>
+<li><code>n</code> : 頂点数</li>
+<li><code>s</code> : 開始頂点番号</li>
+<li><code>t</code> : 終了頂点番号</li>
+<li><code>max_cap</code> : 容量の型<code>c</code>の最大値</li>
+</ul>
+<h4 id="get_flow">get_flow</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] CPLib.MaxFlow::EdgeId -&gt; CPLib.MaxFlow::MaxFlowGraph c -&gt; c</code></p>
+<p>ある辺に流れているフローを取得する</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>eid</code> : <code>add_edge</code>で得た辺の識別子</li>
+<li><code>graph</code> : グラフ</li>
+</ul>
+<h4 id="get_min_cut">get_min_cut</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] CPLib.MaxFlow::MaxFlowGraph c -&gt; Std::Array Std::Bool</code></p>
+<p>最小カットを取得する</p>
+<p>先に<code>maximize_flow</code>を呼び出しておく必要がある。</p>
+<p><code>s</code>から到達可能な頂点を<code>true</code>、到達不可能な頂点を<code>false</code>とする配列を返す。</p>
+<p>注：最小カットにおいて除去される辺の容量の和は<code>maximize_flow</code>で得られたフローの量に等しい。</p>
+<h5 id="parameters_4">Parameters</h5>
+<ul>
+<li><code>graph</code> : グラフ</li>
+</ul>
+<h4 id="maximize_flow">maximize_flow</h4>
+<p>Type: <code>[c : CPLib.MaxFlow::CapacityLike] CPLib.MaxFlow::MaxFlowGraph c -&gt; (CPLib.MaxFlow::MaxFlowGraph c, c)</code></p>
+<p>最大フローを計算する</p>
+<p>残余グラフと流されたフローの量を返す。</p>
+<h5 id="parameters_5">Parameters</h5>
+<ul>
+<li><code>graph</code> : グラフ</li>
+</ul>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-minilibcryptomd5_1">namespace Minilib.Crypto.MD5</h3>
-<h4 id="md5">MD5</h4>
-<p>Defined as: <code>type MD5 = unbox struct { ...fields... }</code></p>
-<p>MD5 hasher.
-Usually it is sufficient to simply call <code>MD5:digest(bytes)</code> without using this structure.</p>
-<h5 id="field-hash">field <code>hash</code></h5>
-<p>Type: <code>Std::Array Std::U32</code></p>
-<h5 id="field-msglen">field <code>msglen</code></h5>
-<p>Type: <code>Std::U64</code></p>
-<h5 id="field-msgbuf">field <code>msgbuf</code></h5>
-<p>Type: <code>Std::Array Std::U8</code></p>
+<h3 id="namespace-cplibmaxflow">namespace CPLib.MaxFlow</h3>
+<h4 id="edgeid">EdgeId</h4>
+<p>Defined as: <code>type EdgeId = (Std::I64, Std::I64)</code></p>
+<p>辺の識別子の型</p>
+<h4 id="maxflowgraph">MaxFlowGraph</h4>
+<p>Defined as: <code>type MaxFlowGraph c = unbox struct { ...fields... }</code></p>
+<p>最大フロー問題のグラフの型</p>
+<p>型パラメータ<code>c</code>は容量の型です。</p>
+<h5 id="field-graph">field <code>graph</code></h5>
+<p>Type: <code>CPLib.Graph::Graph (c, Std::I64, c)</code></p>
+<p>グラフ。<code>(現在の容量, 逆辺のインデックス, 初期容量)</code></p>
+<h5 id="field-max_cap">field <code>max_cap</code></h5>
+<p>Type: <code>c</code></p>
+<p>容量の型<code>c</code>の最大値</p>
+<h5 id="field-s">field <code>s</code></h5>
+<p>Type: <code>Std::I64</code></p>
+<p>開始地点</p>
+<h5 id="field-t">field <code>t</code></h5>
+<p>Type: <code>Std::I64</code></p>
+<p>終了地点</p>
+<h5 id="field-level">field <code>level</code></h5>
+<p>Type: <code>Std::Array Std::I64</code></p>
+<p>レベル。残余グラフ上での開始地点から任意の地点への距離。到達できない場合は-1。</p>
+<h5 id="field-iter">field <code>iter</code></h5>
+<p>Type: <code>Std::Array Std::I64</code></p>
+<p>DFSにおいて次に調べる辺のインデックス</p>
+<h5 id="field-queue">field <code>queue</code></h5>
+<p>Type: <code>Std::Option (RingBuffer::RingBuffer Std::I64)</code></p>
+<p>BFSで用いるキュー</p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 
