@@ -357,6 +357,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#is_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_empty
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pop" class="md-nav__link">
     <span class="md-ellipsis">
       pop
@@ -886,12 +895,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../CPLib.MinCostFlow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPLib.MinCostFlow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../CPLib.Segtree/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     CPLib.Segtree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.String/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPLib.String
     
   </span>
   
@@ -3285,6 +3338,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#is_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_empty
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pop" class="md-nav__link">
     <span class="md-ellipsis">
       pop
@@ -3596,7 +3658,7 @@
 
 
 <h1 id="binaryheap">BinaryHeap</h1>
-<p>Defined in binary-heap@0.1.1</p>
+<p>Defined in binary-heap@0.1.2</p>
 <p>This module provides a <a href="https://en.wikipedia.org/wiki/Binary_heap">binary heap</a> implementation.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-binaryheapbinaryheap">namespace BinaryHeap::BinaryHeap</h3>
@@ -3612,6 +3674,9 @@
 <p>Get the most prioritized element in the heap.</p>
 <p>This function returns <code>none()</code> if the heap is empty.</p>
 <p>This function does not remove the element.</p>
+<h4 id="is_empty">is_empty</h4>
+<p>Type: <code>BinaryHeap::BinaryHeap p e -&gt; Std::Bool</code></p>
+<p>Check if the heap is empty.</p>
 <h4 id="pop">pop</h4>
 <p>Type: <code>[p : BinaryHeap::Priority, BinaryHeap::Priority::Elem p = e] BinaryHeap::BinaryHeap p e -&gt; BinaryHeap::BinaryHeap p e</code></p>
 <p>Pop the most prioritized element from the heap.</p>
@@ -3641,6 +3706,32 @@ The type must implement the <code>Priority</code> trait.</p>
 <p>The priority objects that prioritize the maximum or minimum value based on comparison with the <code>LessThan</code> trait are
 provided in this module (<code>PriorityMaximum</code> and <code>PriorityMinimum</code>).
 It is recommended to use the <code>MaxBinaryHeap</code> and <code>MinBinaryHeap</code> type aliases when using them.</p>
+<p>Example:</p>
+<pre><code>test_minimum : IO ();
+test_minimum = (
+    let heap = MinBinaryHeap::empty : MinBinaryHeap I64;
+    assert_eq(|_|&quot;1&quot;, heap.get_top, none());;
+
+    let heap = heap.push(1);
+    // [1]
+    assert_eq(|_|&quot;2&quot;, heap.get_top, some(1));;
+
+    let heap = heap.push(2);
+    // [1, 2]
+    assert_eq(|_|&quot;3-1&quot;, heap.get_top, some(1));;
+    assert_eq(|_|&quot;3-2&quot;, heap.get_size, 2);;
+
+    let heap = heap.pop;
+    // [2]
+    assert_eq(|_|&quot;4&quot;, heap.get_top, some(2));;
+
+    let heap = heap.pop;
+    // []
+    assert_eq(|_|&quot;5&quot;, heap.get_top, none());;
+
+    pure()
+);
+</code></pre>
 <h5 id="field-_d">field <code>_d</code></h5>
 <p>Type: <code>Std::Array e</code></p>
 <h5 id="field-_p">field <code>_p</code></h5>
