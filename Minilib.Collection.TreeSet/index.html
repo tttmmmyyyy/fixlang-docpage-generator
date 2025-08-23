@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -1039,9 +1039,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#find_range_descending" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_range_descending
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#find_raw_range" class="md-nav__link">
     <span class="md-ellipsis">
       find_raw_range
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find_raw_range_descending" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_raw_range_descending
     </span>
   </a>
   
@@ -3292,9 +3310,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#find_range_descending" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_range_descending
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#find_raw_range" class="md-nav__link">
     <span class="md-ellipsis">
       find_raw_range
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find_raw_range_descending" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_raw_range_descending
     </span>
   </a>
   
@@ -3522,7 +3558,7 @@
 
 
 <h1 id="minilibcollectiontreeset">Minilib.Collection.TreeSet</h1>
-<p>Defined in minilib-collection@0.5.1</p>
+<p>Defined in minilib-collection@0.5.2</p>
 <p>TreeSet is a set that manages elements in sorted order.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiontreesettreeset">namespace Minilib.Collection.TreeSet::TreeSet</h3>
@@ -3541,10 +3577,21 @@ then <code>y</code> is removed.</p>
 <p><code>ts.find_range(begin, end)</code> finds all elements <code>x</code>
 where <code>!less_than(x, begin) &amp;&amp; less_than(x, end)</code> is true.
 In default <code>LessThan</code> ordering, that condition is same as <code>begin &lt;= x &amp;&amp; x &lt; end</code>.</p>
+<h4 id="find_range_descending">find_range_descending</h4>
+<p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] a -&gt; a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Std::Iterator::DynIterator a</code></p>
+<p><code>ts.find_range(begin, end)</code> finds all elements <code>x</code>
+where <code>!less_than(x, begin) &amp;&amp; less_than(x, end)</code> is true,  in descending order.
+In default <code>LessThan</code> ordering, that condition is same as <code>begin &lt;= x &amp;&amp; x &lt; end</code>.</p>
 <h4 id="find_raw_range">find_raw_range</h4>
 <p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] (a -&gt; Std::Bool) -&gt; (a -&gt; Std::Bool) -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Std::Iterator::DynIterator a</code></p>
 <p><code>ts.find_raw_range(lt_begin, lt_end)</code> finds all elements <code>x</code>
 where <code>!lt_begin(x) &amp;&amp; lt_end(x)</code> is true.
+NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
+for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
+<h4 id="find_raw_range_descending">find_raw_range_descending</h4>
+<p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] (a -&gt; Std::Bool) -&gt; (a -&gt; Std::Bool) -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Std::Iterator::DynIterator a</code></p>
+<p><code>ts.find_raw_range_descending(lt_begin, lt_end)</code> finds all elements <code>elem</code>
+such that <code>!lt_begin(x) &amp;&amp; lt_end(x)</code> is true, in descending order.
 NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
 for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
 <h4 id="from_iter">from_iter</h4>

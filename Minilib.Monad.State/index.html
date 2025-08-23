@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -2394,6 +2394,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mod_state_" class="md-nav__link">
+    <span class="md-ellipsis">
+      mod_state_
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#put_state" class="md-nav__link">
     <span class="md-ellipsis">
       put_state
@@ -2527,6 +2536,15 @@
   <a href="#method-put_state" class="md-nav__link">
     <span class="md-ellipsis">
       method put_state
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-mod_state_" class="md-nav__link">
+    <span class="md-ellipsis">
+      method mod_state_
     </span>
   </a>
   
@@ -3556,6 +3574,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mod_state_" class="md-nav__link">
+    <span class="md-ellipsis">
+      mod_state_
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#put_state" class="md-nav__link">
     <span class="md-ellipsis">
       put_state
@@ -3694,6 +3721,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#method-mod_state_" class="md-nav__link">
+    <span class="md-ellipsis">
+      method mod_state_
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3804,7 +3840,7 @@
 
 
 <h1 id="minilibmonadstate">Minilib.Monad.State</h1>
-<p>Defined in minilib-monad@0.5.1</p>
+<p>Defined in minilib-monad@0.6.0</p>
 <p>State Monad which maintains a mutable state.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadstate">namespace Minilib.Monad.State</h3>
@@ -3862,6 +3898,9 @@ change_foo = change_bar.lens_state_t(Foo::act_bar);
 <h4 id="get_state">get_state</h4>
 <p>Type: <code>[sm : Minilib.Monad.State::MonadStateIF] sm (Minilib.Monad.State::MonadStateIF::StateType sm)</code></p>
 <p>A monad that returns the internal state as a value.</p>
+<h4 id="mod_state_">mod_state_</h4>
+<p>Type: <code>[sm : Minilib.Monad.State::MonadStateIF] (Minilib.Monad.State::MonadStateIF::StateType sm -&gt; Minilib.Monad.State::MonadStateIF::StateType sm) -&gt; sm ()</code></p>
+<p>A monad that modifies the current state with the specified function.</p>
 <h4 id="put_state">put_state</h4>
 <p>Type: <code>[sm : Minilib.Monad.State::MonadStateIF] Minilib.Monad.State::MonadStateIF::StateType sm -&gt; sm ()</code></p>
 <p>A monad that puts the specified value to the internal state.</p>
@@ -3887,6 +3926,9 @@ change_foo = change_bar.lens_state_t(Foo::act_bar);
 <h5 id="method-put_state">method <code>put_state</code></h5>
 <p>Type: <code>Minilib.Monad.State::MonadStateIF::StateType sm -&gt; sm ()</code></p>
 <p>A monad that puts the specified value to the internal state.</p>
+<h5 id="method-mod_state_">method <code>mod_state_</code></h5>
+<p>Type: <code>(Minilib.Monad.State::MonadStateIF::StateType sm -&gt; Minilib.Monad.State::MonadStateIF::StateType sm) -&gt; sm ()</code></p>
+<p>A monad that modifies the current state with the specified function.</p>
 <h2 id="trait-implementations">Trait implementations</h2>
 <h3 id="impl-minilibmonadstatestatet-s-minilibmonadtransmonadtrans">impl <code>Minilib.Monad.State::StateT s : Minilib.Monad.Trans::MonadTrans</code></h3>
 <h3 id="impl-m-minilibmonaderrormonaderror-minilibmonadstatestatet-s-m-minilibmonaderrormonaderrorif">impl <code>[m : Minilib.Monad.Error::MonadError] Minilib.Monad.State::StateT s m : Minilib.Monad.Error::MonadErrorIF</code></h3>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -3738,7 +3738,7 @@
 
 
 <h1 id="minilibcollectionrbtree">Minilib.Collection.RBTree</h1>
-<p>Defined in minilib-collection@0.5.1</p>
+<p>Defined in minilib-collection@0.5.2</p>
 <p>Red-Black Tree.
 (This is an internal module of <code>TreeMap</code> and <code>TreeSet</code>.)</p>
 <p>Ported from Japanese translation of the book below:</p>
@@ -3764,7 +3764,7 @@ NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following conditio
 for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
 <h4 id="find_range_descending">find_range_descending</h4>
 <p>Type: <code>(a -&gt; Std::Bool) -&gt; (a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Iterator::DynIterator a</code></p>
-<p><code>node.find_range(lt_begin, lt_end)</code> finds all elements <code>elem</code>
+<p><code>node.find_range_descending(lt_begin, lt_end)</code> finds all elements <code>elem</code>
 such that <code>!elem.lt_begin &amp;&amp; elem.lt_end</code> is true, in descending order.
 NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
 for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
