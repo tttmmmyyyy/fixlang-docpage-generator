@@ -29274,6 +29274,7 @@ This means that you don't need to pay cloning cost when your action failed, as e
 <h4 id="dedup">dedup</h4>
 <p>Type: <code>[a : Std::Eq] Std::Array a -&gt; Std::Array a</code></p>
 <p>Remove consecutive duplicates from an array.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_11">Parameters</h5>
 <ul>
 <li><code>arr</code> - The input array.</li>
@@ -29406,6 +29407,7 @@ If the array is empty, this function does nothing.</p>
 <p>Type: <code>Std::I64 -&gt; a -&gt; Std::Array a -&gt; Std::Array a</code></p>
 <p>Resizes an array to the given size, filling with the given value if the new size is larger than the current size,
 or truncating if the new size is smaller than the current size.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_27">Parameters</h5>
 <ul>
 <li><code>new_size</code> - The new size of the array.</li>
@@ -29415,6 +29417,7 @@ or truncating if the new size is smaller than the current size.</p>
 <h4 id="reverse">reverse</h4>
 <p>Type: <code>Std::Array a -&gt; Std::Array a</code></p>
 <p>Reverse an array.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_28">Parameters</h5>
 <ul>
 <li><code>array</code> - The array to be reversed.</li>
@@ -29444,6 +29447,7 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>[a : Std::LessThan] Std::Array a -&gt; Std::Array a</code></p>
 <p>Sort by <code>LessThan</code> trait.</p>
 <p>Note: this can be an unstable sort.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_31">Parameters</h5>
 <ul>
 <li><code>arr</code>: An array of elements to be sorted.</li>
@@ -29452,6 +29456,7 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>((a, a) -&gt; Std::Bool) -&gt; Std::Array a -&gt; Std::Array a</code></p>
 <p>Sort by a "less than" comparator.</p>
 <p>Note: this can be an unstable sort.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_32">Parameters</h5>
 <ul>
 <li><code>less_than</code>: A function that takes two elements and returns true if the first is
@@ -29462,6 +29467,7 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>[a : Std::LessThan] Std::Array a -&gt; Std::Array a</code></p>
 <p>Stable sort by <code>LessThan</code> trait.</p>
 <p>Note: Currently this is implemented by merge sort, which is not in-place.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_33">Parameters</h5>
 <ul>
 <li><code>arr</code>: An array of elements to be sorted.</li>
@@ -30840,6 +30846,7 @@ On the other hand, iteration may be faster by banging.</p>
 <h4 id="enumerate">enumerate</h4>
 <p>Type: <code>[i : Std::Iterator] i -&gt; Std::Iterator::EnumerateIterator i</code></p>
 <p>Creates an iterator that yields elements along with their index.</p>
+<p>Added in v1.1.0.</p>
 <h5 id="parameters_135">Parameters</h5>
 <ul>
 <li><code>iter</code> - The iterator to be enumerated.</li>
