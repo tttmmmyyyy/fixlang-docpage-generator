@@ -1205,15 +1205,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#one" class="md-nav__link">
-    <span class="md-ellipsis">
-      one
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#set_d" class="md-nav__link">
     <span class="md-ellipsis">
       set_d
@@ -1354,15 +1345,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zero" class="md-nav__link">
-    <span class="md-ellipsis">
-      zero
-    </span>
-  </a>
   
 </li>
         
@@ -1525,6 +1507,15 @@
   <a href="#impl-gmpqmpq-stdtostring" class="md-nav__link">
     <span class="md-ellipsis">
       impl GMP.Q::MPQ : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-gmpqmpq-stdzero" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl GMP.Q::MPQ : Std::Zero
     </span>
   </a>
   
@@ -4225,15 +4216,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#one" class="md-nav__link">
-    <span class="md-ellipsis">
-      one
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#set_d" class="md-nav__link">
     <span class="md-ellipsis">
       set_d
@@ -4374,15 +4356,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zero" class="md-nav__link">
-    <span class="md-ellipsis">
-      zero
-    </span>
-  </a>
   
 </li>
         
@@ -4550,6 +4523,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#impl-gmpqmpq-stdzero" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl GMP.Q::MPQ : Std::Zero
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4572,7 +4554,7 @@
 
 
 <h1 id="gmpq">GMP.Q</h1>
-<p>Defined in gmp-fix@0.5.1</p>
+<p>Defined in gmp-fix@0.6.0</p>
 <p>Provides multiple-precision rational number type <code>MPQ</code> and related functions.</p>
 <p>Repository: https://github.com/tttmmmyyyy/fixlang-gmp</p>
 <h2 id="values">Values</h2>
@@ -4718,9 +4700,6 @@
 <li><code>exp</code>: The exponent of 2.</li>
 <li><code>num</code>: The <code>MPQ</code> value to be multiplied.</li>
 </ul>
-<h4 id="one">one</h4>
-<p>Type: <code>GMP.Q::MPQ</code></p>
-<p>The one value.</p>
 <h4 id="set_d">set_d</h4>
 <p>Type: <code>Std::F64 -&gt; GMP.Q::MPQ -&gt; GMP.Q::MPQ</code></p>
 <p>Sets the <code>MPQ</code> value to a floating-point number.</p>
@@ -4773,9 +4752,6 @@
 <li><code>0</code> if <code>n == 0</code></li>
 <li><code>1</code> if <code>n &gt; 0</code></li>
 </ul>
-<h4 id="zero">zero</h4>
-<p>Type: <code>GMP.Q::MPQ</code></p>
-<p>The zero value.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-gmpq_1">namespace GMP.Q</h3>
 <h4 id="mpq_1">MPQ</h4>
@@ -4796,6 +4772,7 @@
 <h3 id="impl-gmpqmpq-stdneg">impl <code>GMP.Q::MPQ : Std::Neg</code></h3>
 <h3 id="impl-gmpqmpq-stdsub">impl <code>GMP.Q::MPQ : Std::Sub</code></h3>
 <h3 id="impl-gmpqmpq-stdtostring">impl <code>GMP.Q::MPQ : Std::ToString</code></h3>
+<h3 id="impl-gmpqmpq-stdzero">impl <code>GMP.Q::MPQ : Std::Zero</code></h3>
 
 
 

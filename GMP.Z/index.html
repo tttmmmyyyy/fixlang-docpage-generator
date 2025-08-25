@@ -2073,15 +2073,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#one" class="md-nav__link">
-    <span class="md-ellipsis">
-      one
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#or" class="md-nav__link">
     <span class="md-ellipsis">
       or
@@ -2816,15 +2807,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#zero" class="md-nav__link">
-    <span class="md-ellipsis">
-      zero
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3020,6 +3002,15 @@
   <a href="#impl-gmpzmpz-stdtostring" class="md-nav__link">
     <span class="md-ellipsis">
       impl GMP.Z::MPZ : Std::ToString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-gmpzmpz-stdzero" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl GMP.Z::MPZ : Std::Zero
     </span>
   </a>
   
@@ -6544,15 +6535,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#one" class="md-nav__link">
-    <span class="md-ellipsis">
-      one
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#or" class="md-nav__link">
     <span class="md-ellipsis">
       or
@@ -7287,15 +7269,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#zero" class="md-nav__link">
-    <span class="md-ellipsis">
-      zero
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -7496,6 +7469,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#impl-gmpzmpz-stdzero" class="md-nav__link">
+    <span class="md-ellipsis">
+      impl GMP.Z::MPZ : Std::Zero
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7518,7 +7500,7 @@
 
 
 <h1 id="gmpz">GMP.Z</h1>
-<p>Defined in gmp-fix@0.5.1</p>
+<p>Defined in gmp-fix@0.6.0</p>
 <p>Provides multiple-precision integer type <code>MPZ</code> and related functions.</p>
 <p>Repository: https://github.com/tttmmmyyyy/fixlang-gmp</p>
 <h2 id="values">Values</h2>
@@ -7556,8 +7538,8 @@
 <p>Calculates the binomial coefficient <code>n choose k</code>.</p>
 <h5 id="parameters_3">Parameters</h5>
 <ul>
-<li><code>k</code>: The number of items to choose.</li>
 <li><code>n</code>: The total number of items.</li>
+<li><code>k</code>: The number of items to choose.</li>
 </ul>
 <h4 id="cdiv_q">cdiv_q</h4>
 <p>Type: <code>GMP.Z::MPZ -&gt; GMP.Z::MPZ -&gt; GMP.Z::MPZ</code></p>
@@ -7965,9 +7947,6 @@ See document of <code>mpz_set_str</code> in GMP for details.</p>
 <ul>
 <li><code>x</code>: The value to find the next prime of.</li>
 </ul>
-<h4 id="one">one</h4>
-<p>Type: <code>GMP.Z::MPZ</code></p>
-<p>The value <code>1</code></p>
 <h4 id="or">or</h4>
 <p>Type: <code>GMP.Z::MPZ -&gt; GMP.Z::MPZ -&gt; GMP.Z::MPZ</code></p>
 <p>Logical or operation on two <code>MPZ</code> values.</p>
@@ -8219,9 +8198,6 @@ See document of <code>mpz_set_str</code> in GMP for details.</p>
 <li><code>lhs</code>: The left-hand-side value.</li>
 <li><code>rhs</code>: The right-hand-side value.</li>
 </ul>
-<h4 id="zero">zero</h4>
-<p>Type: <code>GMP.Z::MPZ</code></p>
-<p>The value <code>0</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-gmpz_1">namespace GMP.Z</h3>
 <h4 id="mpz_1">MPZ</h4>
@@ -8246,6 +8222,7 @@ See document of <code>mpz_set_str</code> in GMP for details.</p>
 <h3 id="impl-gmpzmpz-stdrem">impl <code>GMP.Z::MPZ : Std::Rem</code></h3>
 <h3 id="impl-gmpzmpz-stdsub">impl <code>GMP.Z::MPZ : Std::Sub</code></h3>
 <h3 id="impl-gmpzmpz-stdtostring">impl <code>GMP.Z::MPZ : Std::ToString</code></h3>
+<h3 id="impl-gmpzmpz-stdzero">impl <code>GMP.Z::MPZ : Std::Zero</code></h3>
 
 
 
