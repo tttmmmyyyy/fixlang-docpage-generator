@@ -1236,6 +1236,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#field-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      field size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#field-less_than" class="md-nav__link">
     <span class="md-ellipsis">
       field less_than
@@ -3507,6 +3516,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#field-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      field size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#field-less_than" class="md-nav__link">
     <span class="md-ellipsis">
       field less_than
@@ -3580,7 +3598,7 @@
 
 
 <h1 id="minilibcollectiontreeset">Minilib.Collection.TreeSet</h1>
-<p>Defined in minilib-collection@0.5.2</p>
+<p>Defined in minilib-collection@0.6.0</p>
 <p>TreeSet is a set that manages elements in sorted order.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiontreesettreeset">namespace Minilib.Collection.TreeSet::TreeSet</h3>
@@ -3624,7 +3642,8 @@ for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</cod
 <p>Converts an iterator into a TreeSet using specified ordering.</p>
 <h4 id="get_size">get_size</h4>
 <p>Type: <code>Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Std::I64</code></p>
-<p>Gets the number of elements.</p>
+<p>Gets the number of elements.
+The time complexity of this function is O(1).</p>
 <h4 id="insert">insert</h4>
 <p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
 <p>Inserts an element into a TreeSet.
@@ -3662,6 +3681,8 @@ NOTE: <code>less_than</code> function must meet specific conditions. For details
 <p>A type of set that manages elements in sorted order.</p>
 <h5 id="field-root">field <code>root</code></h5>
 <p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
+<h5 id="field-size">field <code>size</code></h5>
+<p>Type: <code>Std::I64</code></p>
 <h5 id="field-less_than">field <code>less_than</code></h5>
 <p>Type: <code>a -&gt; a -&gt; Std::Bool</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>

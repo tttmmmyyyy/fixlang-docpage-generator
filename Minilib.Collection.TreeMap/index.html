@@ -1205,6 +1205,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#field-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      field size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#field-key_less_than" class="md-nav__link">
     <span class="md-ellipsis">
       field key_less_than
@@ -3498,6 +3507,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#field-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      field size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#field-key_less_than" class="md-nav__link">
     <span class="md-ellipsis">
       field key_less_than
@@ -3580,7 +3598,7 @@
 
 
 <h1 id="minilibcollectiontreemap">Minilib.Collection.TreeMap</h1>
-<p>Defined in minilib-collection@0.5.2</p>
+<p>Defined in minilib-collection@0.6.0</p>
 <p>TreeMap is a map that manages keys in sorted order.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiontreemaptreemap">namespace Minilib.Collection.TreeMap::TreeMap</h3>
@@ -3617,7 +3635,8 @@ for all <code>(k,v)</code>, <code>lt_begin((k,v))</code> is true then <code>lt_e
 <p>Converts an iterator of key-value pairs into a TreeMap using specified ordering.</p>
 <h4 id="get_size">get_size</h4>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] Minilib.Collection.TreeMap::TreeMap::TreeMap k v -&gt; Std::I64</code></p>
-<p>Gets the number of entries.</p>
+<p>Gets the number of entries.
+The time complexity of this function is O(1).</p>
 <h4 id="insert">insert</h4>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] k -&gt; v -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
 <p>Inserts an entry into a TreeMap.
@@ -3661,6 +3680,8 @@ then <code>(k1,v1)</code> is replaced with <code>(k, updater(v1))</code>.</p>
 <p><code>TreeMap</code> is a structure that stores key-value pairs into a red-black tree.</p>
 <h5 id="field-root">field <code>root</code></h5>
 <p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode (k, v)</code></p>
+<h5 id="field-size">field <code>size</code></h5>
+<p>Type: <code>Std::I64</code></p>
 <h5 id="field-key_less_than">field <code>key_less_than</code></h5>
 <p>Type: <code>k -&gt; k -&gt; Std::Bool</code></p>
 <h5 id="field-entry_less_than">field <code>entry_less_than</code></h5>
