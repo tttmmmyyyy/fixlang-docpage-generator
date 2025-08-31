@@ -546,6 +546,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../CPLib.Misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPLib.Misc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../CPLib.Segtree/" class="md-nav__link">
         
   
@@ -728,6 +750,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#find_parent" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_parent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="find_parent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_groups" class="md-nav__link">
     <span class="md-ellipsis">
       get_groups
@@ -738,7 +784,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
+  <a href="#parameters_2" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -762,7 +808,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
+  <a href="#parameters_3" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -786,7 +832,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3257,6 +3303,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#find_parent" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_parent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="find_parent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_groups" class="md-nav__link">
     <span class="md-ellipsis">
       get_groups
@@ -3267,7 +3337,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
+  <a href="#parameters_2" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3291,7 +3361,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
+  <a href="#parameters_3" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3315,7 +3385,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
     </span>
@@ -3436,7 +3506,7 @@
 
 
 <h1 id="cplibunionfind">CPLib.UnionFind</h1>
-<p>Defined in cp-library@0.6.4</p>
+<p>Defined in cp-library@0.6.6</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-cplibunionfind">namespace CPLib.UnionFind</h3>
 <h4 id="create">create</h4>
@@ -3447,12 +3517,21 @@
 <ul>
 <li><code>size</code> : UnionFind木のサイズ</li>
 </ul>
+<h4 id="find_parent">find_parent</h4>
+<p>Type: <code>Std::I64 -&gt; CPLib.UnionFind::UnionFind -&gt; (CPLib.UnionFind::UnionFind, Std::I64)</code></p>
+<p>指定された要素の親を取得する</p>
+<p>パス圧縮を行うため、UnionFindの状態も変化する</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>x</code> : 対象となる要素</li>
+<li><code>uf</code> : UnionFind木</li>
+</ul>
 <h4 id="get_groups">get_groups</h4>
 <p>Type: <code>CPLib.UnionFind::UnionFind -&gt; (CPLib.UnionFind::UnionFind, Std::Array (Std::Array Std::I64))</code></p>
 <p>グループの配列を取得する</p>
 <p>グループの配列[g0, g1, g2, ...]を返す</p>
 <p>パス圧縮を行うため、UnionFindの状態も変化する</p>
-<h5 id="parameters_1">Parameters</h5>
+<h5 id="parameters_2">Parameters</h5>
 <ul>
 <li><code>uf</code> : UnionFind木</li>
 </ul>
@@ -3460,7 +3539,7 @@
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; CPLib.UnionFind::UnionFind -&gt; (CPLib.UnionFind::UnionFind, Std::Bool)</code></p>
 <p>2つの要素が同じグループに属しているかどうかを判定する</p>
 <p>パス圧縮を行うため、UnionFindの状態も変化する</p>
-<h5 id="parameters_2">Parameters</h5>
+<h5 id="parameters_3">Parameters</h5>
 <ul>
 <li><code>x</code> : 1つ目の要素</li>
 <li><code>y</code> : 2つ目の要素</li>
@@ -3469,7 +3548,7 @@
 <h4 id="unite">unite</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; CPLib.UnionFind::UnionFind -&gt; CPLib.UnionFind::UnionFind</code></p>
 <p>2つの要素を同じグループにする</p>
-<h5 id="parameters_3">Parameters</h5>
+<h5 id="parameters_4">Parameters</h5>
 <ul>
 <li><code>x</code> : 1つ目の要素</li>
 <li><code>y</code> : 2つ目の要素</li>
