@@ -2228,6 +2228,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#trait-monadio-stdmonad-minilibmonadiomonadioif" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait MonadIO = Std::Monad + Minilib.Monad.IO::MonadIOIF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-monadiofail-stdmonad-minilibmonadiomonadioif-minilibmonadiomonadiofailif" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait MonadIOFail = Std::Monad + Minilib.Monad.IO::MonadIOIF + Minilib.Monad.IO::MonadIOFailIF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#trait-m-m-monadiofailif" class="md-nav__link">
     <span class="md-ellipsis">
       trait [m : *-&gt;*] m : MonadIOFailIF
@@ -3312,6 +3330,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#trait-monadio-stdmonad-minilibmonadiomonadioif" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait MonadIO = Std::Monad + Minilib.Monad.IO::MonadIOIF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-monadiofail-stdmonad-minilibmonadiomonadioif-minilibmonadiomonadiofailif" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait MonadIOFail = Std::Monad + Minilib.Monad.IO::MonadIOIF + Minilib.Monad.IO::MonadIOFailIF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#trait-m-m-monadiofailif" class="md-nav__link">
     <span class="md-ellipsis">
       trait [m : *-&gt;*] m : MonadIOFailIF
@@ -3440,6 +3476,12 @@
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h3 id="namespace-minilibmonadio">namespace Minilib.Monad.IO</h3>
+<h4 id="trait-monadio-stdmonad-minilibmonadiomonadioif">trait <code>MonadIO = Std::Monad + Minilib.Monad.IO::MonadIOIF</code></h4>
+<p>Kind: <code>*-&gt;*</code></p>
+<p>A monadic trait which can lift IO monad.</p>
+<h4 id="trait-monadiofail-stdmonad-minilibmonadiomonadioif-minilibmonadiomonadiofailif">trait <code>MonadIOFail = Std::Monad + Minilib.Monad.IO::MonadIOIF + Minilib.Monad.IO::MonadIOFailIF</code></h4>
+<p>Kind: <code>*-&gt;*</code></p>
+<p>A monadic trait which can lift IO and IOFail monad.</p>
 <h4 id="trait-m-m-monadiofailif">trait <code>[m : *-&gt;*] m : MonadIOFailIF</code></h4>
 <p>An interface of a monadic trait which can lift IOFail monad.</p>
 <h5 id="method-lift_iofail">method <code>lift_iofail</code></h5>

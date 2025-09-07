@@ -13368,6 +13368,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#trait-additive-stdadd-stdzero" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait Additive = Std::Add + Std::Zero
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#trait-a-boxed" class="md-nav__link">
     <span class="md-ellipsis">
       trait a : Boxed
@@ -26484,6 +26493,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#trait-additive-stdadd-stdzero" class="md-nav__link">
+    <span class="md-ellipsis">
+      trait Additive = Std::Add + Std::Zero
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#trait-a-boxed" class="md-nav__link">
     <span class="md-ellipsis">
       trait a : Boxed
@@ -32137,6 +32155,8 @@ This is used in the implementation of <code>Array::act</code>.</p>
 <p>Type: <code>e</code></p>
 <h4 id="string">String</h4>
 <p>Defined as: <code>type String = unbox struct { ...fields... }</code></p>
+<p>The string type.</p>
+<p>A string is represented as a null-terminated byte array.</p>
 <h5 id="field-_data">field <code>_data</code></h5>
 <p>Type: <code>Std::Array Std::U8</code></p>
 <h4 id="tuple0">Tuple0</h4>
@@ -32402,6 +32422,9 @@ consider converting it to an <code>ArrayIterator</code> using <code>bang</code> 
 <li><code>lhs</code></li>
 <li><code>rhs</code></li>
 </ul>
+<h4 id="trait-additive-stdadd-stdzero">trait <code>Additive = Std::Add + Std::Zero</code></h4>
+<p>Kind: <code>*</code></p>
+<p>The trait (alias) for types that support addition and have zero element.</p>
 <h4 id="trait-a-boxed">trait <code>a : Boxed</code></h4>
 <p>Marker trait for boxed types.</p>
 <p>This trait is automatically implemented for all boxed types.
