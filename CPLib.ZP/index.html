@@ -4070,13 +4070,15 @@
 
 
 <h1 id="cplibzp">CPLib.ZP</h1>
-<p>Defined in cp-library@0.6.6</p>
+<p>Defined in cp-library@0.6.7</p>
 <p>素数<code>p</code>を法とする整数の環の型<code>ZP p</code>を与えるモジュール。</p>
 <p>素数<code>p</code>は静的でなければならない（コンパイル時に決まる必要がある）。</p>
-<p>素数<code>p</code>は型パラメータとして与える。例として、p = 17 としたい場合、
-- 空の型（フィールドを持たないunboxedな型）<code>P17</code>を作成：<code>type P17 = unbox struct {}</code>.
-- <code>P17 : PrimeProvider</code>を実装する。この際<code>PrimeProvider::value</code>関数で17を返すようにする：<code>value = |_| 17_U32;</code>
-すると<code>ZP P17</code>が環"Z/(17)"を表す型となる。</p>
+<p>素数<code>p</code>は型パラメータとして与える。例として、p = 17 としたい場合、</p>
+<ul>
+<li>空の型（フィールドを持たないunboxedな型）<code>P17</code>を作成：<code>type P17 = unbox struct {}</code>.</li>
+<li><code>P17 : PrimeProvider</code>を実装する。この際<code>PrimeProvider::value</code>関数で17を返すようにする：<code>value = |_| 17_U32;</code></li>
+</ul>
+<p>すると<code>ZP P17</code>が環"Z/(17)"を表す型となる。</p>
 <p>幾つかの有名な素数nに対する PrimeProvider <code>Pn</code> はこのモジュールに定義されている。</p>
 <p>使用例：</p>
 <pre><code>module Main;
