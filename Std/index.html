@@ -34662,7 +34662,7 @@
 
 
 <h1 id="std">Std</h1>
-<p>Defined in std-doc@1.1.0</p>
+<p>Defined in std-doc@1.2.0</p>
 <p>Module <code>Std</code> provides basic types, traits and values.</p>
 <p>This module is special in the sense that:</p>
 <ul>
@@ -34773,10 +34773,8 @@ truth = undefined(&quot;I will implement the truth later.&quot;);
 <h4 id="unsafe_is_unique">unsafe_is_unique</h4>
 <p>Type: <code>a -&gt; (Std::Bool, a)</code></p>
 <p>This function checks if a value is uniquely referenced by a name, and returns the result paired with the given value itself. An unboxed value is always considered unique.</p>
-<p>NOTE: Changing outputs of your function depending on uniqueness breaks the referential transparency of the function. If you want to assert that a value is unique, consider using <code>Debug::assert_unique</code> instead.</p>
 <p>Example: </p>
 <pre><code>module Main;
-
 
 main : IO ();
 main = (
@@ -34784,23 +34782,28 @@ main = (
     let int_val = 42;
     let (unique, _) = int_val.unsafe_is_unique;
     let use = int_val + 1;
+    eval use; // `eval` ensures that the computation of `use` is not optimized away
     assert_eq(|_|&quot;fail: int_val is shared&quot;, unique, true);;
 
     // For boxed value, it returns true if the value isn't used later.
     let arr = Array::fill(10, 10);
     let (unique, arr) = arr.unsafe_is_unique;
     let use = arr.@(0); // This `arr` is not the one passed to `is_unique`, but the one returned by `is_unique`.
+    eval use; // `eval` ensures that the computation of `use` is not optimized away
     assert_eq(|_|&quot;fail: arr is shared&quot;, unique, true);;
 
     // Fox boxed value, it returns false if the value will be used later.
     let arr = Array::fill(10, 10);
     let (unique, _) = arr.unsafe_is_unique;
     let use = arr.@(0);
+    eval use; // `eval` ensures that the computation of `use` is not optimized away
     assert_eq(|_|&quot;fail: arr is unique&quot;, unique, false);;
 
     pure()
 );
 </code></pre>
+<p>NOTE: Changing outputs of your function depending on uniqueness breaks the referential transparency of the function. If you want to assert that a value is unique, consider using <code>Debug::assert_unique</code> instead.</p>
+<p>NOTE: This function's return value may change depending on the optimization level. This is because optimizations may eliminate unnecessary computations and change a value from being shared to being unique.</p>
 <h5 id="parameters_5">Parameters</h5>
 <ul>
 <li><code>value</code> - The value to check for uniqueness.</li>
@@ -35110,7 +35113,11 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>Std::Lazy Std::String -&gt; a -&gt; a</code></p>
 <p>Asserts that the given value is unique, and returns the given value.
 If the assertion failed, prints a message to the stderr and aborts the program.</p>
-<p>The main use of this function is to check whether a boxed value given as an argument is unique.</p>
+<p>This function is used to verify that functions such as <code>Array::set</code> do not perform array copying.
+For example, in the code <code>let arr2 = arr.set(0, 42);</code>, to verify that <code>set</code> does not perform copying,
+rewrite it as <code>let arr2 = arr.assert_unique(|_|"arr copied!").set(0, 42);</code> and run the program.
+If the <code>arr</code> originally passed to <code>set</code> was not unique, the program will output an error and terminate.</p>
+<p>This function should be limited to temporary use for debugging purposes and should be removed from the final code.</p>
 <h5 id="parameters_39">Parameters</h5>
 <ul>
 <li><code>lazy_msg</code></li>
