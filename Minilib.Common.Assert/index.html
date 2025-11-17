@@ -3860,7 +3860,7 @@
 
 
 <h1 id="minilibcommonassert">Minilib.Common.Assert</h1>
-<p>Defined in minilib-common@0.6.1</p>
+<p>Defined in minilib-common@0.7.0</p>
 <p>Assert functions.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcommonassert">namespace Minilib.Common.Assert</h3>
@@ -3870,7 +3870,7 @@
 If the assertion failed, prints a message to the stderr and aborts the program.
 If the assertion succeeded, calls a lazy function.
 For example, instead of
-<code>eval *assert_eq(|_| "error", a, b); ...</code> in an IO monad, you can write
+<code>assert_eq(|_| "error", a, b);; ...</code> in an IO monad, you can write
 <code>assert_eq_lazy(|_| "error", a, b) $ |_| ...</code>.</p>
 <h4 id="assert_lazy">assert_lazy</h4>
 <p>Type: <code>Std::Lazy Std::String -&gt; Std::Bool -&gt; Std::Lazy a -&gt; a</code></p>
@@ -3878,7 +3878,7 @@ For example, instead of
 If the assertion failed, prints a message to the stderr and aborts the program.
 If the assertion succeeded, calls a lazy function.</p>
 <p>For example, instead of
-<code>eval *assert(|_| "error", a == b); ...</code> in an IO monad, you can write
+<code>assert(|_| "error", a == b);; ...</code> in an IO monad, you can write
 <code>assert_lazy(|_| "error", a == b) $ |_| ...</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>

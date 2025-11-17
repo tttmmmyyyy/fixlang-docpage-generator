@@ -4184,15 +4184,15 @@
 
 
 <h1 id="minilibtraittraversable">Minilib.Trait.Traversable</h1>
-<p>Defined in minilib-common@0.6.1</p>
+<p>Defined in minilib-common@0.7.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtraittraversable">namespace Minilib.Trait.Traversable</h3>
 <h4 id="foreach_m">foreach_m</h4>
-<p>Type: <code>[m : Std::Monad, t : Minilib.Trait.Traversable::Traversable, t : Std::Functor] (a -&gt; m ()) -&gt; t a -&gt; m ()</code></p>
-<p><code>ta.foreach_m(f)</code> maps each element with <code>f</code>, then performs all elements sequentially and forgets the results.
-Similar to Haskell's <code>mapM</code> function, but the results are discarded.</p>
+<p>Type: <code>[m : Std::Monad, i : Std::Iterator, Std::Iterator::Item i = a] (a -&gt; m ()) -&gt; i -&gt; m ()</code></p>
+<p><code>iter.foreach_m(f)</code> maps each element with <code>f</code>, then performs all elements sequentially and forgets the results.</p>
+<p>Breaking change in 0.7.0: Now <code>foreach_m</code> is not a method of <code>Traversable</code> but of <code>Iterator</code>.</p>
 <p>Example:</p>
-<pre><code>[&quot;hello&quot;, &quot;world&quot;].foreach_m(println);;
+<pre><code>[&quot;hello&quot;, &quot;world&quot;].to_iter.foreach_m(println);;
 ==&gt; (&quot;hello\nworld\n&quot; is printed)
 </code></pre>
 <h4 id="map_m">map_m</h4>
