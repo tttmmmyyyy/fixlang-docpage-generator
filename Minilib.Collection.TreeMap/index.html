@@ -2981,14 +2981,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4460,7 +4460,7 @@
 
 
 <h1 id="minilibcollectiontreemap">Minilib.Collection.TreeMap</h1>
-<p>Defined in minilib-collection@0.6.1</p>
+<p>Defined in minilib-collection@0.6.2</p>
 <p>TreeMap is a map that manages keys in sorted order.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiontreemaptreemap">namespace Minilib.Collection.TreeMap::TreeMap</h3>
@@ -4490,10 +4490,10 @@ where <code>!lt_begin((k, v)) &amp;&amp; lt_end((k, v))</code> is true.
 NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
 for all <code>(k,v)</code>, <code>lt_begin((k,v))</code> is true then <code>lt_end((k,v))</code> must be true.</p>
 <h4 id="from_iter">from_iter</h4>
-<p>Type: <code>[k : Std::LessThan, k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue, it : Std::Iterator, Std::Iterator::Item it = (k, v)] it -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
+<p>Type: <code>[it : Std::Iterator, k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, k : Std::LessThan, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue, Std::Iterator::Item it = (k, v)] it -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
 <p>Converts an iterator of key-value pairs into a TreeMap using default <code>LessThan</code> ordering.</p>
 <h4 id="from_iter_lt">from_iter_lt</h4>
-<p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue, it : Std::Iterator, Std::Iterator::Item it = (k, v)] (k -&gt; k -&gt; Std::Bool) -&gt; it -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
+<p>Type: <code>[it : Std::Iterator, k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue, Std::Iterator::Item it = (k, v)] (k -&gt; k -&gt; Std::Bool) -&gt; it -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
 <p>Converts an iterator of key-value pairs into a TreeMap using specified ordering.</p>
 <h4 id="get_size">get_size</h4>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] Minilib.Collection.TreeMap::TreeMap::TreeMap k v -&gt; Std::I64</code></p>
@@ -4514,7 +4514,7 @@ then <code>(k1,v1)</code> is replaced with <code>(k,v)</code>.</p>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] Minilib.Collection.TreeMap::TreeMap::TreeMap k v -&gt; Std::Iterator::DynIterator k</code></p>
 <p>Returns an iterator of keys in ascending order.</p>
 <h4 id="make">make</h4>
-<p>Type: <code>[k : Std::LessThan, k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] () -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
+<p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, k : Std::LessThan, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] () -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>
 <p><code>TreeMap::make()</code> creates an empty <code>TreeMap</code> using default <code>LessThan</code> ordering.</p>
 <h4 id="make_lt">make_lt</h4>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] (k -&gt; k -&gt; Std::Bool) -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v</code></p>

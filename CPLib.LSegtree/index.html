@@ -2872,14 +2872,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4242,7 +4242,7 @@
 
 
 <h1 id="cpliblsegtree">CPLib.LSegtree</h1>
-<p>Defined in cp-library@0.6.7</p>
+<p>Defined in cp-library@0.7.0</p>
 <p>遅延伝番セグメント木（右作用）</p>
 <p>ある要素の値を取得する関数<code>@</code>はないので、もし必要なら<code>fold(i, i+1)</code>を使うこと。</p>
 <p>使用例</p>
@@ -4290,7 +4290,7 @@ main = (
 <h2 id="values">Values</h2>
 <h3 id="namespace-cpliblsegtree">namespace CPLib.LSegtree</h3>
 <h4 id="act_range">act_range</h4>
-<p>Type: <code>[m : CPLib.Trait::Monoid, a : CPLib.Trait::Monoid, a : CPLib.Trait::Action, CPLib.Trait::Action::Set a = m] Std::I64 -&gt; Std::I64 -&gt; a -&gt; CPLib.LSegtree::LSegtree m a -&gt; CPLib.LSegtree::LSegtree m a</code></p>
+<p>Type: <code>[a : CPLib.Trait::Action, a : CPLib.Trait::Monoid, m : CPLib.Trait::Monoid, CPLib.Trait::Action::Set a = m] Std::I64 -&gt; Std::I64 -&gt; a -&gt; CPLib.LSegtree::LSegtree m a -&gt; CPLib.LSegtree::LSegtree m a</code></p>
 <p>半開区間[l, r)に右から作用を適用する</p>
 <h5 id="parameters">Parameters</h5>
 <ul>
@@ -4300,14 +4300,14 @@ main = (
 <li><code>tree</code> : セグメント木</li>
 </ul>
 <h4 id="build">build</h4>
-<p>Type: <code>[m : CPLib.Trait::Monoid, a : CPLib.Trait::Monoid] Std::Array m -&gt; CPLib.LSegtree::LSegtree m a</code></p>
+<p>Type: <code>[a : CPLib.Trait::Monoid, m : CPLib.Trait::Monoid] Std::Array m -&gt; CPLib.LSegtree::LSegtree m a</code></p>
 <p>要素の配列からセグメント木を作成する</p>
 <h5 id="parameters_1">Parameters</h5>
 <ul>
 <li><code>elems</code> : セグメント木の要素を格納する配列</li>
 </ul>
 <h4 id="fold">fold</h4>
-<p>Type: <code>[m : CPLib.Trait::Monoid, a : CPLib.Trait::Monoid, a : CPLib.Trait::Action, CPLib.Trait::Action::Set a = m] Std::I64 -&gt; Std::I64 -&gt; CPLib.LSegtree::LSegtree m a -&gt; (CPLib.LSegtree::LSegtree m a, m)</code></p>
+<p>Type: <code>[a : CPLib.Trait::Action, a : CPLib.Trait::Monoid, m : CPLib.Trait::Monoid, CPLib.Trait::Action::Set a = m] Std::I64 -&gt; Std::I64 -&gt; CPLib.LSegtree::LSegtree m a -&gt; (CPLib.LSegtree::LSegtree m a, m)</code></p>
 <p>半開区間[l, r)にある要素の畳み込みを計算する</p>
 <p>遅延作用の伝搬が行われるので、ツリー自体も更新される。</p>
 <h5 id="parameters_2">Parameters</h5>
@@ -4317,14 +4317,14 @@ main = (
 <li><code>tree</code> : セグメント木</li>
 </ul>
 <h4 id="init">init</h4>
-<p>Type: <code>[m : CPLib.Trait::Monoid, a : CPLib.Trait::Monoid] Std::I64 -&gt; CPLib.LSegtree::LSegtree m a</code></p>
+<p>Type: <code>[a : CPLib.Trait::Monoid, m : CPLib.Trait::Monoid] Std::I64 -&gt; CPLib.LSegtree::LSegtree m a</code></p>
 <p>すべての要素が単位元であるような遅延伝搬セグメント木を作成する</p>
 <h5 id="parameters_3">Parameters</h5>
 <ul>
 <li><code>n</code> : セグメント木の要素数</li>
 </ul>
 <h4 id="set">set</h4>
-<p>Type: <code>[m : CPLib.Trait::Monoid, a : CPLib.Trait::Monoid, a : CPLib.Trait::Action, CPLib.Trait::Action::Set a = m] Std::I64 -&gt; m -&gt; CPLib.LSegtree::LSegtree m a -&gt; CPLib.LSegtree::LSegtree m a</code></p>
+<p>Type: <code>[a : CPLib.Trait::Action, a : CPLib.Trait::Monoid, m : CPLib.Trait::Monoid, CPLib.Trait::Action::Set a = m] Std::I64 -&gt; m -&gt; CPLib.LSegtree::LSegtree m a -&gt; CPLib.LSegtree::LSegtree m a</code></p>
 <p>セグメント木の要素を設定する</p>
 <h5 id="parameters_4">Parameters</h5>
 <ul>

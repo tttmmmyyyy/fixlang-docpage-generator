@@ -3124,14 +3124,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4746,7 +4746,7 @@
 
 
 <h1 id="cplibgraph">CPLib.Graph</h1>
-<p>Defined in cp-library@0.6.7</p>
+<p>Defined in cp-library@0.7.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-cplibgraph">namespace CPLib.Graph</h3>
 <h4 id="add_edge">add_edge</h4>
@@ -4770,7 +4770,7 @@
 <li><code>graph</code> : グラフ</li>
 </ul>
 <h4 id="bellman_ford">bellman_ford</h4>
-<p>Type: <code>[c : Std::Additive, c : Std::LessThan, c : CPLib.Trait::Inf, c : Std::Eq] Std::I64 -&gt; CPLib.Graph::Graph c -&gt; Std::Array c</code></p>
+<p>Type: <code>[c : CPLib.Trait::Inf, c : Std::Additive, c : Std::Eq, c : Std::LessThan] Std::I64 -&gt; CPLib.Graph::Graph c -&gt; Std::Array c</code></p>
 <p>ベルマンフォード法：グラフと開始ノードが与えられたとき、開始ノードから各ノードに到達するまでの最小コストの配列を返す。</p>
 <p>到達できないノードまでの距離には<code>Inf::inf</code>が設定されます。</p>
 <p>負の閉路が存在する場合は無限ループに陥ります。</p>
@@ -4796,7 +4796,7 @@
 <li><code>n</code> : 頂点数</li>
 </ul>
 <h4 id="dijkstra">dijkstra</h4>
-<p>Type: <code>[c : Std::Additive, c : Std::LessThan, c : CPLib.Trait::Inf] Std::I64 -&gt; CPLib.Graph::Graph c -&gt; Std::Array c</code></p>
+<p>Type: <code>[c : CPLib.Trait::Inf, c : Std::Additive, c : Std::LessThan] Std::I64 -&gt; CPLib.Graph::Graph c -&gt; Std::Array c</code></p>
 <p>ダイクストラ法：グラフと開始ノードが与えられたとき、開始ノードから各ノードに到達するまでの最小コストの配列を返す。</p>
 <p>各辺のコストは非負である必要があります。</p>
 <p>到達できないノードまでの距離には<code>Inf::inf</code>が設定されます。</p>

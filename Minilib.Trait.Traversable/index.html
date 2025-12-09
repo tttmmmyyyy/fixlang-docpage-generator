@@ -2545,14 +2545,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -3552,6 +3552,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#impl-stdconst-a-minilibtraittraversabletraversable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::Const a : Minilib.Trait.Traversable::Traversable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdidentity-minilibtraittraversabletraversable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::Identity : Minilib.Trait.Traversable::Traversable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-stditeratorarrayiterator-minilibtraittraversabletraversable" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4107,6 +4129,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#impl-stdconst-a-minilibtraittraversabletraversable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::Const a : Minilib.Trait.Traversable::Traversable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdidentity-minilibtraittraversabletraversable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::Identity : Minilib.Trait.Traversable::Traversable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-stditeratorarrayiterator-minilibtraittraversabletraversable" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4184,11 +4228,11 @@
 
 
 <h1 id="minilibtraittraversable">Minilib.Trait.Traversable</h1>
-<p>Defined in minilib-common@0.7.0</p>
+<p>Defined in minilib-common@0.7.2</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtraittraversable">namespace Minilib.Trait.Traversable</h3>
 <h4 id="foreach_m">foreach_m</h4>
-<p>Type: <code>[m : Std::Monad, i : Std::Iterator, Std::Iterator::Item i = a] (a -&gt; m ()) -&gt; i -&gt; m ()</code></p>
+<p>Type: <code>[i : Std::Iterator, m : Std::Monad, Std::Iterator::Item i = a] (a -&gt; m ()) -&gt; i -&gt; m ()</code></p>
 <p><code>iter.foreach_m(f)</code> maps each element with <code>f</code>, then performs all elements sequentially and forgets the results.</p>
 <p>Breaking change in 0.7.0: Now <code>foreach_m</code> is not a method of <code>Traversable</code> but of <code>Iterator</code>.</p>
 <p>Example:</p>
@@ -4211,7 +4255,7 @@ let results = *tasks.map_m(get);
 <code>traverse</code> is a synonym of <code>map_m</code>.</p>
 <h3 id="namespace-minilibtraittraversabletraversable">namespace Minilib.Trait.Traversable::Traversable</h3>
 <h4 id="sequence">sequence</h4>
-<p>Type: <code>[t : Minilib.Trait.Traversable::Traversable, m : Std::Monad] t (m a) -&gt; m (t a)</code></p>
+<p>Type: <code>[m : Std::Monad, t : Minilib.Trait.Traversable::Traversable] t (m a) -&gt; m (t a)</code></p>
 <p><code>ta.sequence</code> performs all elements sequentially and collects the results.
 Similar to Haskell's <code>sequence</code> function.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
@@ -4225,6 +4269,8 @@ Similar to Haskell's <code>sequence</code> function.</p>
 Similar to Haskell's <code>sequence</code> function.</p>
 <h2 id="trait-implementations">Trait implementations</h2>
 <h3 id="impl-stdarray-minilibtraittraversabletraversable">impl <code>Std::Array : Minilib.Trait.Traversable::Traversable</code></h3>
+<h3 id="impl-stdconst-a-minilibtraittraversabletraversable">impl <code>Std::Const a : Minilib.Trait.Traversable::Traversable</code></h3>
+<h3 id="impl-stdidentity-minilibtraittraversabletraversable">impl <code>Std::Identity : Minilib.Trait.Traversable::Traversable</code></h3>
 <h3 id="impl-stditeratorarrayiterator-minilibtraittraversabletraversable">impl <code>Std::Iterator::ArrayIterator : Minilib.Trait.Traversable::Traversable</code></h3>
 <h3 id="impl-stditeratordyniterator-minilibtraittraversabletraversable">impl <code>Std::Iterator::DynIterator : Minilib.Trait.Traversable::Traversable</code></h3>
 <h3 id="impl-stdoption-minilibtraittraversabletraversable">impl <code>Std::Option : Minilib.Trait.Traversable::Traversable</code></h3>

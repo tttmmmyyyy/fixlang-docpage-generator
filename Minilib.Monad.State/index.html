@@ -2545,14 +2545,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4704,7 +4704,7 @@
 
 
 <h1 id="minilibmonadstate">Minilib.Monad.State</h1>
-<p>Defined in minilib-monad@0.6.1</p>
+<p>Defined in minilib-monad@0.7.2</p>
 <p>State Monad which maintains a mutable state.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadstate">namespace Minilib.Monad.State</h3>
@@ -4721,9 +4721,9 @@
 <p>Type: <code>[m : Std::Monad] s -&gt; Minilib.Monad.State::StateT s m a -&gt; m s</code></p>
 <p>Runs a StateT monad with the supplied initial state and return the final state, discarding the final value.</p>
 <h4 id="lens_state">lens_state</h4>
-<p>Type: <code>((s -&gt; Minilib.Functor.Pair::PairLT a Minilib.Monad.Identity::Identity s) -&gt; t -&gt; Minilib.Functor.Pair::PairLT a Minilib.Monad.Identity::Identity t) -&gt; Minilib.Monad.State::State s a -&gt; Minilib.Monad.State::State t a</code></p>
+<p>Type: <code>((s -&gt; Minilib.Functor.Pair::PairLT a Minilib.Monad.Iden::Iden s) -&gt; t -&gt; Minilib.Functor.Pair::PairLT a Minilib.Monad.Iden::Iden t) -&gt; Minilib.Monad.State::State s a -&gt; Minilib.Monad.State::State t a</code></p>
 <h4 id="lens_state_t">lens_state_t</h4>
-<p>Type: <code>[m : Std::Monad, m : Std::Functor] ((s -&gt; Minilib.Functor.Pair::PairLT a m s) -&gt; t -&gt; Minilib.Functor.Pair::PairLT a m t) -&gt; Minilib.Monad.State::StateT s m a -&gt; Minilib.Monad.State::StateT t m a</code></p>
+<p>Type: <code>[m : Std::Functor, m : Std::Monad] ((s -&gt; Minilib.Functor.Pair::PairLT a m s) -&gt; t -&gt; Minilib.Functor.Pair::PairLT a m t) -&gt; Minilib.Monad.State::StateT s m a -&gt; Minilib.Monad.State::StateT t m a</code></p>
 <p>Transforms a state monad with a lens action.
 For example, if <code>Foo</code> has a field <code>bar: Bar</code>, then <code>act_bar</code> is a function of type
 <code>[f: Functor] (Bar -&gt; f Bar) -&gt; (Foo -&gt; f Foo)</code>.
@@ -4771,7 +4771,7 @@ change_foo = change_bar.lens_state_t(Foo::act_bar);
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibmonadstate_1">namespace Minilib.Monad.State</h3>
 <h4 id="state_1">State</h4>
-<p>Defined as: <code>type State s = Minilib.Monad.State::StateT s Minilib.Monad.Identity::Identity</code></p>
+<p>Defined as: <code>type State s = Minilib.Monad.State::StateT s Minilib.Monad.Iden::Iden</code></p>
 <h4 id="statet">StateT</h4>
 <p>Defined as: <code>type [m : *-&gt;*] StateT s m a = unbox struct { ...fields... }</code></p>
 <p>State monad wraps a function from a initial state to a pair of a value and a final state.</p>

@@ -2916,14 +2916,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4330,7 +4330,7 @@
 
 
 <h1 id="minilibmonadcont">Minilib.Monad.Cont</h1>
-<p>Defined in minilib-monad@0.6.1</p>
+<p>Defined in minilib-monad@0.7.2</p>
 <p>Continuation Monad.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadcont">namespace Minilib.Monad.Cont</h3>
@@ -4360,8 +4360,8 @@ The exit function can be passed to another function.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibmonadcont_1">namespace Minilib.Monad.Cont</h3>
 <h4 id="cont_1">Cont</h4>
-<p>Defined as: <code>type Cont r = Minilib.Monad.Cont::ContT r Minilib.Monad.Identity::Identity</code></p>
-<p>A continuation monad whose undelying monad is Identity.</p>
+<p>Defined as: <code>type Cont r = Minilib.Monad.Cont::ContT r Minilib.Monad.Iden::Iden</code></p>
+<p>A continuation monad whose undelying monad is Iden.</p>
 <h4 id="contt">ContT</h4>
 <p>Defined as: <code>type [m : *-&gt;*] ContT r m a = unbox struct { ...fields... }</code></p>
 <p>A continuation monad transformer.

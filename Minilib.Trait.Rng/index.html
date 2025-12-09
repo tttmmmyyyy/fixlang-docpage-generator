@@ -2545,14 +2545,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4118,12 +4118,12 @@
 
 
 <h1 id="minilibtraitrng">Minilib.Trait.Rng</h1>
-<p>Defined in minilib-random@0.5.3</p>
+<p>Defined in minilib-random@0.6.2</p>
 <p>A trait for Random Number Generator.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtraitrng">namespace Minilib.Trait.Rng</h3>
 <h4 id="lens_rng">lens_rng</h4>
-<p>Type: <code>[rg : Minilib.Trait.Rng::Rng, rg2 : Minilib.Trait.Rng::Rng, f : Std::Functor, Minilib.Trait.Rng::Rng::RngResult rg a = f a] ((rg -&gt; Minilib.Functor.Pair::PairLT a f rg) -&gt; rg2 -&gt; Minilib.Functor.Pair::PairLT a f rg2) -&gt; (rg -&gt; f (rg, a)) -&gt; rg2 -&gt; f (rg2, a)</code></p>
+<p>Type: <code>[f : Std::Functor, rg : Minilib.Trait.Rng::Rng, rg2 : Minilib.Trait.Rng::Rng, Minilib.Trait.Rng::Rng::RngResult rg a = f a] ((rg -&gt; Minilib.Functor.Pair::PairLT a f rg) -&gt; rg2 -&gt; Minilib.Functor.Pair::PairLT a f rg2) -&gt; (rg -&gt; f (rg, a)) -&gt; rg2 -&gt; f (rg2, a)</code></p>
 <p>Converts a <code>rng_xxx</code> function using a lens action.
 Useful for implementing the <code>Rng</code> trait for containers that have a member implementing the <code>Rng</code> trait.
 For instance, <code>rng_U64.lens_rng(act_random)</code> creates an <code>rng_U64</code> function that performs the <code>act_random</code> action.
@@ -4143,7 +4143,7 @@ Note that this function is similar to <code>State::lens_state_t</code>.</p>
 <p>A trait for Random Number Generator.</p>
 <h5 id="type-rngresult">type <code>RngResult</code></h5>
 <p>Defined as: <code>RngResult rg a</code></p>
-<p>The result type of <code>rng_xxx</code> functions. This should be a monad, for example <code>Identity a</code>, <code>IOFail a</code> etc.
+<p>The result type of <code>rng_xxx</code> functions. This should be a monad, for example <code>Iden a</code>, <code>IOFail a</code> etc.
 This result will be lifted by the lifter.</p>
 <h5 id="type-rnglift">type <code>RngLift</code></h5>
 <p>Defined as: <code>[m : *-&gt;*] RngLift rg m a</code></p>

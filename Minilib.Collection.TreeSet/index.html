@@ -2970,14 +2970,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Minilib.Monad.Identity/" class="md-nav__link">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Minilib.Monad.Identity
+    Minilib.Monad.Iden
   
 
     
@@ -4438,7 +4438,7 @@
 
 
 <h1 id="minilibcollectiontreeset">Minilib.Collection.TreeSet</h1>
-<p>Defined in minilib-collection@0.6.1</p>
+<p>Defined in minilib-collection@0.6.2</p>
 <p>TreeSet is a set that manages elements in sorted order.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiontreesettreeset">namespace Minilib.Collection.TreeSet::TreeSet</h3>
@@ -4475,7 +4475,7 @@ such that <code>!lt_begin(x) &amp;&amp; lt_end(x)</code> is true, in descending 
 NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
 for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
 <h4 id="from_iter">from_iter</h4>
-<p>Type: <code>[a : Std::LessThan, a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem, it : Std::Iterator, Std::Iterator::Item it = a] it -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
+<p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem, a : Std::LessThan, it : Std::Iterator, Std::Iterator::Item it = a] it -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
 <p>Converts an iterator into a TreeSet using default <code>LessThan</code> ordering.</p>
 <h4 id="from_iter_lt">from_iter_lt</h4>
 <p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem, it : Std::Iterator, Std::Iterator::Item it = a] (a -&gt; a -&gt; Std::Bool) -&gt; it -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
