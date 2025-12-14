@@ -18647,6 +18647,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#impl-stdstring-stdindexable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::String : Std::Indexable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-stdstring-stdlessthan" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -34525,6 +34536,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#impl-stdstring-stdindexable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::String : Std::Indexable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-stdstring-stdlessthan" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -35463,7 +35485,6 @@ This means that you don't need to pay cloning cost when your action failed, as e
 <h4 id="dedup">dedup</h4>
 <p>Type: <code>[a : Std::Eq] Std::Array a -&gt; Std::Array a</code></p>
 <p>Remove consecutive duplicates from an array.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_11">Parameters</h5>
 <ul>
 <li><code>arr</code> - The input array.</li>
@@ -35596,7 +35617,6 @@ If the array is empty, this function does nothing.</p>
 <p>Type: <code>Std::I64 -&gt; a -&gt; Std::Array a -&gt; Std::Array a</code></p>
 <p>Resizes an array to the given size, filling with the given value if the new size is larger than the current size,
 or truncating if the new size is smaller than the current size.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_27">Parameters</h5>
 <ul>
 <li><code>new_size</code> - The new size of the array.</li>
@@ -35606,7 +35626,6 @@ or truncating if the new size is smaller than the current size.</p>
 <h4 id="reverse">reverse</h4>
 <p>Type: <code>Std::Array a -&gt; Std::Array a</code></p>
 <p>Reverse an array.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_28">Parameters</h5>
 <ul>
 <li><code>array</code> - The array to be reversed.</li>
@@ -35616,7 +35635,6 @@ or truncating if the new size is smaller than the current size.</p>
 <p><code>arr.search_partition_point(pred)</code> returns an index x such that <code>pred</code> is true on [0, x) and false on [x, n) by binary search.</p>
 <p>When we put an order on <code>Bool</code> as <code>false &lt; true</code>, <code>pred</code> must be monotonically decreasing on <code>arr</code>.</p>
 <p>The returned value x satisfies 0 &lt;= x &lt;= <code>arr.get_size</code>. If <code>arr</code> is empty, it returns 0.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_29">Parameters</h5>
 <ul>
 <li><code>predicate</code> - The predicate function.</li>
@@ -35636,7 +35654,6 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>[a : Std::LessThan] Std::Array a -&gt; Std::Array a</code></p>
 <p>Sort by <code>LessThan</code> trait.</p>
 <p>Note: this can be an unstable sort.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_31">Parameters</h5>
 <ul>
 <li><code>arr</code>: An array of elements to be sorted.</li>
@@ -35645,7 +35662,6 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>((a, a) -&gt; Std::Bool) -&gt; Std::Array a -&gt; Std::Array a</code></p>
 <p>Sort by a "less than" comparator.</p>
 <p>Note: this can be an unstable sort.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_32">Parameters</h5>
 <ul>
 <li><code>less_than</code>: A function that takes two elements and returns true if the first is
@@ -35656,7 +35672,6 @@ or truncating if the new size is smaller than the current size.</p>
 <p>Type: <code>[a : Std::LessThan] Std::Array a -&gt; Std::Array a</code></p>
 <p>Stable sort by <code>LessThan</code> trait.</p>
 <p>Note: Currently this is implemented by merge sort, which is not in-place.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_33">Parameters</h5>
 <ul>
 <li><code>arr</code>: An array of elements to be sorted.</li>
@@ -37083,7 +37098,6 @@ On the other hand, iteration may be faster by banging.</p>
 <h4 id="check_all">check_all</h4>
 <p>Type: <code>[it : Std::Iterator, Std::Iterator::Item it = a] (a -&gt; Std::Bool) -&gt; it -&gt; Std::Bool</code></p>
 <p>Check if all elements of an iterator satisfy a given predicate.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_137">Parameters</h5>
 <ul>
 <li><code>pred</code> - The predicate function to be applied to each element of the iterator.</li>
@@ -37091,7 +37105,6 @@ On the other hand, iteration may be faster by banging.</p>
 <h4 id="check_any">check_any</h4>
 <p>Type: <code>[it : Std::Iterator, Std::Iterator::Item it = a] (a -&gt; Std::Bool) -&gt; it -&gt; Std::Bool</code></p>
 <p>Check if any element of an iterator satisfies a given predicate.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_138">Parameters</h5>
 <ul>
 <li><code>pred</code> - The predicate function to be applied to each element of the iterator.</li>
@@ -37118,7 +37131,6 @@ On the other hand, iteration may be faster by banging.</p>
 <h4 id="enumerate">enumerate</h4>
 <p>Type: <code>[i : Std::Iterator] i -&gt; Std::Iterator::EnumerateIterator i</code></p>
 <p>Creates an iterator that yields elements along with their index.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_141">Parameters</h5>
 <ul>
 <li><code>iter</code> - The iterator to be enumerated.</li>
@@ -37270,7 +37282,6 @@ On the other hand, iteration may be faster by banging.</p>
 <p>Loop over the elements of an iterator by monadic action.</p>
 <p>This function is similar to <code>loop_iter_s</code>, but it returns a <code>LoopState</code>.
 This allows you to return different types for <code>break_m</code> and <code>continue_m</code>.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_159">Parameters</h5>
 <ul>
 <li><code>s</code> - The initial state.</li>
@@ -37282,7 +37293,6 @@ This allows you to return different types for <code>break_m</code> and <code>con
 <p>Loop over the elements of an iterator.</p>
 <p>This function is similar to <code>loop_iter</code>, but it returns a <code>LoopState</code>.
 This allows you to return different types for <code>break</code> and <code>continue</code>.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_160">Parameters</h5>
 <ul>
 <li><code>s</code> - The initial state.</li>
@@ -37689,7 +37699,6 @@ assert_eq(|_|&quot;&quot;, String::from_U8('\x00'), &quot;&quot;);;
 <p>Example:
 <code>"{{ x = {}, y = {} }}".populate([1.to_string, 2.to_string])</code> =&gt; "{ x = 1, y = 2 }",</p>
 <p>If the number of placeholders does not match with the number of strings, this function halts the program.</p>
-<p>Added in v1.1.0.</p>
 <h5 id="parameters_205">Parameters</h5>
 <ul>
 <li><code>vs</code>: The array of strings ("values") to be inserted into the template string.</li>
@@ -38957,6 +38966,7 @@ More precisely, an iterator is a type whose data is "the current state" and has 
 <p>Creates a string from a byte array.</p>
 <p>The byte array must include a null terminator (<code>'\0'</code>). If not, <code>from_bytes</code> returns an error.</p>
 <p>The length of the string is the number of bytes until the first null character.</p>
+<h3 id="impl-stdstring-stdindexable">impl <code>Std::String : Std::Indexable</code></h3>
 <h3 id="impl-stdstring-stdlessthan">impl <code>Std::String : Std::LessThan</code></h3>
 <h3 id="impl-stdstring-stdlessthanoreq">impl <code>Std::String : Std::LessThanOrEq</code></h3>
 <h3 id="impl-stdstring-stdtobytes">impl <code>Std::String : Std::ToBytes</code></h3>

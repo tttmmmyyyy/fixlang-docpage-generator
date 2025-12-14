@@ -4388,14 +4388,17 @@
 
 
 <h1 id="ezs">EZS</h1>
-<p>Defined in ez-scripting@0.1.0</p>
+<p>Defined in ez-scripting@0.2.0</p>
+<p>Provides a simple interface for running commands.</p>
+<p>Example usage: TBA but see <a href="https://github.com/tttmmmyyyy/fixlang-docpage-generator/blob/main/main.fix">fixlang-docpage-generator</a>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-ezs">namespace EZS</h3>
 <h4 id="ez_cd">ez_cd</h4>
-<p>Type: <code>Std::String -&gt; Std::IO ()</code></p>
+<p>Type: <code>EZS::EZSConfig -&gt; Std::String -&gt; Std::IO ()</code></p>
 <p>Changes the current working directory to the specified path.</p>
 <h5 id="parameters">Parameters</h5>
 <ul>
+<li><code>config</code>: The configuration for EZS.</li>
 <li><code>dir</code>: The directory to change to, as a string.</li>
 </ul>
 <h4 id="ez_run_o">ez_run_o</h4>
