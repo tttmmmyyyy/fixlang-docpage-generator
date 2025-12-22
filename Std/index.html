@@ -36104,19 +36104,19 @@ on the other hand, <code>boxed_to_retained_ptr</code> returns a pointer to the b
 <li><code>value</code> - The boxed value to be borrowed.</li>
 </ul>
 <h4 id="boxed_from_retained_ptr">boxed_from_retained_ptr</h4>
-<p>Type: <code>[a : Std::Boxed] Std::Ptr -&gt; a</code></p>
+<p>Type: <code>[a : Std::Boxed] Std::Ptr -&gt; Std::IO a</code></p>
 <p>Creates a boxed value from a retained pointer obtained by <code>boxed_to_retained_ptr</code>.</p>
-<p>NOTE: 
+<p>NOTE:
 It is the user's responsibility to ensure that the argument is actually a pointer to the type of the return value, and undefined behavior will occur if it is not.</p>
 <h5 id="parameters_56">Parameters</h5>
 <ul>
 <li><code>retained_ptr</code> - The pointer to the value.</li>
 </ul>
 <h4 id="boxed_to_retained_ptr">boxed_to_retained_ptr</h4>
-<p>Type: <code>[a : Std::Boxed] a -&gt; Std::Ptr</code></p>
+<p>Type: <code>[a : Std::Boxed] a -&gt; Std::IO Std::Ptr</code></p>
 <p>Gets a retained pointer to a boxed value.
 This function is used to share ownership of Fix's boxed values with foreign languages.</p>
-<p>To get back the boxed value from the retained pointer, use <code>from_retained_ptr</code>.
+<p>To get back the boxed value from the retained pointer, use <code>boxed_from_retained_ptr</code>.
 To release / retain the value in a foreign language, call the function pointer obtained by <code>get_funptr_release</code> or <code>get_funptr_retain</code> on the pointer.</p>
 <p>Note that the returned pointer points to the control block allocated by Fix, and does not necessary points to the data of the boxed value.
 If you want to get a pointer to the data of the boxed value, use <code>borrow_boxed</code>.</p>
@@ -38763,7 +38763,8 @@ Implementing this trait manually is not allowed.</p>
 <p>The trait for indexable types.</p>
 <p>Implementing this trait for an aggregate value <code>xs</code> enables the use of the index syntax <code>xs[i]</code>.</p>
 <p>The index syntax <code>xs[i]</code> returns a "store", which is a value of type <code>[f : Functor] Elem c -&gt; f (Elem c) -&gt; f c</code>.
-By applying <code>Indexable::iget</code>, <code>Indexable::iset</code>, <code>Indexable::imod</code>, and <code>Indexable::iact</code> to the store, various operations can be performed on the specified index.</p>
+By applying <code>Indexable::iget</code>, <code>Indexable::iset</code>, <code>Indexable::imod</code>, and <code>Indexable::iact</code> to the store,
+various operations can be performed on the specified index.</p>
 <h5 id="type-index">type <code>Index</code></h5>
 <p>Defined as: <code>Index c</code></p>
 <p>The type of indices.</p>
