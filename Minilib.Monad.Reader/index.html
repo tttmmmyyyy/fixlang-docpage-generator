@@ -1276,6 +1276,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../Minilib.Common.IORef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IORef
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IteratorEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IteratorEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Minilib.Common.RandomEx/" class="md-nav__link">
         
   
@@ -2710,6 +2764,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        asks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#map_reader_t" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3201,6 +3266,33 @@
     
   
     Minilib.Monad.Writer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Yield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Yield
   
 
     
@@ -4101,6 +4193,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        asks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#map_reader_t" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4506,11 +4609,26 @@
 
 
 <h1 id="minilibmonadreader">Minilib.Monad.Reader</h1>
-<p>Defined in minilib-monad@0.7.3</p>
+<p>Defined in minilib-monad@0.7.6</p>
 <p>Reader monad.</p>
 <p>For details, see <a href="https://www.olivierverdier.com/posts/2014/12/31/reader-writer-monad-comonad/">blog post: The Reader and Writer Monads and Comonads</a>.</p>
+<p>Example:</p>
+<pre><code>type Obj = unbox struct { foo: I64, bar: String };
+
+main: IO () = (
+    let r: ReaderT Obj IO () = do {
+        let foo = *asks(@foo);
+        let bar = *asks(@bar);
+        println((foo,bar).format(&quot;foo={} bar={}&quot;)).lift_io     // will print &quot;foo=1 bar=abc&quot;
+    };
+    r.run_reader_t(Obj { foo:1, bar:&quot;abc&quot; })
+);
+</code></pre>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadreader">namespace Minilib.Monad.Reader</h3>
+<h4 id="asks">asks</h4>
+<p>Type: <code>[rm : Minilib.Monad.Reader::MonadReader] (Minilib.Monad.Reader::MonadReaderIF::EnvType rm -&gt; a) -&gt; rm a</code></p>
+<p><code>asks(f)</code> is same as <code>ask.map(f)</code>.</p>
 <h4 id="map_reader_t">map_reader_t</h4>
 <p>Type: <code>[m : Std::Monad, n : Std::Monad] (m a -&gt; n b) -&gt; Minilib.Monad.Reader::ReaderT e m a -&gt; Minilib.Monad.Reader::ReaderT e n b</code></p>
 <p>Maps an underlying monad and a value using the specified function.</p>
