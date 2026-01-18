@@ -54,10 +54,12 @@ build_docs = (
     ["mkdir", "-p", docs_dir].ez_run_o(ezsc);;    // Create the directory.
 
     // Download the standard library documentation.
-    let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md";
+    // let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md";
+    let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/tags/v1.1.0-alpha.12/std_doc/Std.md";
     let std_doc = docs_dir + "/" + "Std.md";
     ["wget", "-q", std_doc_url, "-O", std_doc].ez_run_o(ezsc);;
 
+/*
     // Run `fix deps list --json` to get the list of all available fix projects.
     let packages = *["fix", "deps", "list", "--json"].ez_run_o(ezsc);
 
@@ -75,6 +77,34 @@ build_docs = (
         exit(1)
     };
     let packages = packages.as_ok;
+*/
+    let packages = [
+        ProjInfo { name : "character", loc : "https://github.com/tttmmmyyyy/fixlang-character.git", ver : "1.0.1", modules : [] },
+        ProjInfo { name : "hash", loc : "https://github.com/tttmmmyyyy/fixlang-hash.git", ver : "1.1.0", modules : [] },
+        ProjInfo { name : "hashmap", loc : "https://github.com/tttmmmyyyy/fixlang-hashmap.git", ver : "1.1.3", modules : [] },
+        ProjInfo { name : "hashset", loc : "https://github.com/tttmmmyyyy/fixlang-hashset.git", ver : "v1.1.1", modules : [] },
+        ProjInfo { name : "math", loc : "https://github.com/tttmmmyyyy/fixlang-math.git", ver : "1.2.0", modules : [] },
+        ProjInfo { name : "random", loc : "https://github.com/tttmmmyyyy/fixlang-random.git", ver : "1.1.1", modules : [] },
+        ProjInfo { name : "regexp", loc : "https://github.com/tttmmmyyyy/fixlang-regexp.git", ver : "1.1.1", modules : [] },
+        ProjInfo { name : "time", loc : "https://github.com/tttmmmyyyy/fixlang-time.git", ver : "1.0.2", modules : [] },
+        ProjInfo { name : "binary-heap", loc : "https://github.com/tttmmmyyyy/fixlang-binary-heap.git", ver : "0.1.2", modules : [] },
+        ProjInfo { name : "bool-array", loc : "https://github.com/tttmmmyyyy/bool-array.git", ver : "0.1.1", modules : [] },
+        ProjInfo { name : "cp-library", loc : "https://github.com/tttmmmyyyy/cp-library.git", ver : "0.6.6", modules : [] },
+        ProjInfo { name : "ring-buffer", loc : "https://github.com/tttmmmyyyy/ring-buffer.git", ver : "0.1.1", modules : [] },
+        ProjInfo { name : "gmp-fix", loc : "https://github.com/tttmmmyyyy/fixlang-gmp.git", ver : "0.6.0", modules : [] },
+        ProjInfo { name : "minilib-common", loc : "https://github.com/pt9999/fixlang-minilib-common.git", ver : "0.6.1", modules : [] },
+        ProjInfo { name : "minilib-text", loc : "https://github.com/pt9999/fixlang-minilib-text.git", ver : "0.5.2", modules : [] },
+        ProjInfo { name : "minilib-binary", loc : "https://github.com/pt9999/fixlang-minilib-binary.git", ver : "0.5.1", modules : [] },
+        ProjInfo { name : "minilib-collection", loc : "https://github.com/pt9999/fixlang-minilib-collection.git", ver : "0.6.0", modules : [] },
+        ProjInfo { name : "minilib-monad", loc : "https://github.com/pt9999/fixlang-minilib-monad.git", ver : "0.6.0", modules : [] },
+        ProjInfo { name : "minilib-comonad", loc : "https://github.com/pt9999/fixlang-minilib-comonad.git", ver : "0.5.1", modules : [] },
+        ProjInfo { name : "minilib-random", loc : "https://github.com/pt9999/fixlang-minilib-random.git", ver : "0.5.2", modules : [] },
+        ProjInfo { name : "minilib-math", loc : "https://github.com/pt9999/fixlang-minilib-math.git", ver : "0.6.1", modules : [] },
+        ProjInfo { name : "minilib-crypto", loc : "https://github.com/pt9999/fixlang-minilib-crypto.git", ver : "0.5.1", modules : [] },
+        ProjInfo { name : "minilib-app", loc : "https://github.com/pt9999/fixlang-minilib-app.git", ver : "0.5.1", modules : [] },
+        ProjInfo { name : "minilib-json", loc : "https://github.com/pt9999/fixlang-minilib-json.git", ver : "0.5.1", modules : [] },
+        ProjInfo { name : "minilib-xml", loc : "https://github.com/pt9999/fixlang-minilib-xml.git", ver : "0.5.1", modules : [] }
+    ];
 
     // Remove the working directory if it exists.
     let packages_dir = "packages";
