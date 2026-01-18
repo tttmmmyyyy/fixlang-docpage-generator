@@ -9,8 +9,8 @@ import EZS;
 // Information of a package.
 type ProjInfo = box struct {
     name : String,
-    git : String,
-    tag : String,
+    loc : String,
+    ver : String,
     modules : Array String
 };
 
@@ -30,13 +30,13 @@ namespace ProjInfo {
                     if !name.is_string { Result::err $ errmsg_base + "expected a string for the field `name`" };
                     let name = name.as_string;
 
-                    let git = entry.find("git");
-                    if git.is_none { Result::err $ errmsg_base + "expected a field `git`" };
-                    let git = git.as_some;
-                    if !git.is_string { Result::err $ errmsg_base + "expected a string for the field `git`" };
-                    let git = git.as_string;
+                    let loc = entry.find("git");
+                    if loc.is_none { Result::err $ errmsg_base + "expected a field `git`" };
+                    let loc = loc.as_some;
+                    if !loc.is_string { Result::err $ errmsg_base + "expected a string for the field `git`" };
+                    let loc = loc.as_string;
 
-                    Result::ok $ ProjInfo { name : name, git : git, tag : "", modules : [] }
+                    Result::ok $ ProjInfo { name : name, loc : loc, ver : "", modules : [] }
                 ).collect_m
             ),
             _ => Result::err $ errmsg_base + "expected an array",
@@ -123,7 +123,7 @@ build_docs = (
         ["mkdir", "-p", work_dir].ez_run_o(ezsc);;
 
         // Clone the repository.
-        ["git", "clone", "--quiet", "--tags", prj_info.@git, work_dir].ez_run_o(ezsc);;
+        ["git", "clone", "--quiet", "--tags", prj_info.@loc, work_dir].ez_run_o(ezsc);;
 
         // cd to the working directory.
         ez_cd(work_dir);;
@@ -168,7 +168,7 @@ build_docs = (
         // Pop the working directory.
         ez_cd("..");;
 
-        let prj_info = prj_info.set_tag(tag).set_modules(modules);
+        let prj_info = prj_info.set_ver(tag).set_modules(modules);
         let packages = packages.push_back(prj_info);
 
         continue_m $ packages
@@ -184,7 +184,7 @@ build_docs = (
         write_string(file, "# Index\n\n");;
         write_string(file, "This page contains the documentation of the following projects and modules (and \"Std\"): \n\n");;
         packages.to_iter.fold_m((), |prj_info, _|
-            write_string(file, "- [" + prj_info.@name + "](" + prj_info.@git + ")@" + prj_info.@tag + "\n");;
+            write_string(file, "- [" + prj_info.@name + "](" + prj_info.@loc + ")@" + prj_info.@ver + "\n");;
             let mod_links = prj_info.@modules.to_iter.map(|mod| "[" + mod + "](" + mod + ".md)").join(", ");
             write_string(file, "    - " + mod_links + "\n")
         );;
