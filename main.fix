@@ -128,9 +128,13 @@ build_docs = (
         // cd to the working directory.
         ez_cd(work_dir);;
 
-        // Get the latest tag.
-        let tag = *["git", "describe", "--tags", "--abbrev=0"].ez_run_o(ezsc);
-        let tag = tag.strip_spaces;
+        // If the tag is not specified, get the latest tag.
+        let tag = *if !prj_info.@ver.is_empty {
+            prj_info.@ver.pure
+        } else {
+            let tag = *["git", "describe", "--tags", "--abbrev=0"].ez_run_o(ezsc);
+            tag.strip_spaces.pure
+        };
 
         // If the latest tag found, checkout it.
         when(tag.get_size > 0, 
