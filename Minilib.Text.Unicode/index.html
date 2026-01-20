@@ -12,7 +12,7 @@
         <link rel="prev" href="../Minilib.Text.StringEx/">
       
       
-        <link rel="next" href="../Minilib.Thread.Channel/">
+        <link rel="next" href="../Minilib.Text.WideChar/">
       
       
         
@@ -3092,6 +3092,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../Minilib.Text.Locale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Locale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Minilib.Text.SimpleParser/" class="md-nav__link">
         
   
@@ -4061,6 +4088,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.WideChar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.WideChar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -5474,8 +5528,20 @@
 
 
 <h1 id="minilibtextunicode">Minilib.Text.Unicode</h1>
-<p>Defined in minilib-text@0.6.1</p>
+<p>Defined in minilib-text@0.7.0</p>
 <p>Unicode strings and conversions (UTF8/UTF16/UTF32)</p>
+<p>An utf-8 encoded <code>Std::String</code> can be converted to <code>UTF8String</code>, <code>UTF16String</code>, <code>UTF32String</code>
+by using <code>to_utf8_string</code>, <code>to_utf16_string</code>, <code>to_utf32_string</code>.</p>
+<p><code>UTF8String</code>, <code>UTF16String</code>, <code>UTF32String</code> can be converted to an utf-8 encoded <code>Std::String</code>
+by using <code>to_string</code>.</p>
+<p><code>UTF32String</code> is suitable for working with strings containing Unicode characters.</p>
+<p>Example:</p>
+<pre><code>let str = &quot;aAあいう😊😀&quot;;                       // an ordinary string (encoded in utf-8)
+let wstr: UTF32String = str.to_utf32_string;     // convert to a wide string
+assert_equal(&quot;size&quot;, 7, wstr.get_size);;         // number of wide characters
+let wstr = wstr.get_sub(5, 7);                   // get substring of a wide string
+assert_equal(&quot;str&quot;, &quot;😊😀&quot;, wstr.to_string);;   // convert back to an ordinary string
+</code></pre>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtextunicode">namespace Minilib.Text.Unicode</h3>
 <h4 id="encode_code_point_to_utf8">encode_code_point_to_utf8</h4>
