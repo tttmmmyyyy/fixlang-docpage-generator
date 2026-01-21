@@ -4002,17 +4002,17 @@
 
 
 <h1 id="minilibcommonioex">Minilib.Common.IOEx</h1>
-<p>Defined in minilib-common@0.9.0</p>
+<p>Defined in minilib-common@0.10.0</p>
 <p>Extensions for <code>Std::IO</code>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcommonioex">namespace Minilib.Common.IOEx</h3>
 <h4 id="fflush">fflush</h4>
-<p>Type: <code>Std::IO::IOHandle -&gt; Std::IO::IOFail ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Std::IO::IOHandle -&gt; m ()</code></p>
 <p>Flushes a file stream.
 For details, see Linux manual page for <a href="https://man7.org/linux/man-pages/man3/fflush.3.html">fflush()</a>.</p>
 <p>NOTE: <code>Std::IO::flush</code> may be a better choice.</p>
 <h4 id="set_unbuffered_mode">set_unbuffered_mode</h4>
-<p>Type: <code>Std::IO::IOHandle -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::IO::IOHandle -&gt; m ()</code></p>
 <p>Sets IOHandle to unbuffered mode.
 For detials, see Linux manual page for <a href="https://man7.org/linux/man-pages/man3/setbuf.3.html">setbuf()</a>.</p>
 <p>NOTE: When a fix program is invoked by <code>run_with_stream()</code>,

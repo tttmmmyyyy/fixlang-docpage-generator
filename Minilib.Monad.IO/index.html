@@ -2651,6 +2651,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#namespace-minilibmonadio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Monad.IO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Monad.IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emprintln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emprintln
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mprintln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mprintln
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#namespace-minilibmonadiomonadiofailif" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2735,7 +2774,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibmonadio" class="md-nav__link">
+  <a href="#namespace-minilibmonadio_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         namespace Minilib.Monad.IO
@@ -4065,6 +4104,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#namespace-minilibmonadio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Monad.IO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Monad.IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emprintln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emprintln
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mprintln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mprintln
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#namespace-minilibmonadiomonadiofailif" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4149,7 +4227,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibmonadio" class="md-nav__link">
+  <a href="#namespace-minilibmonadio_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         namespace Minilib.Monad.IO
@@ -4316,9 +4394,16 @@
 
 
 <h1 id="minilibmonadio">Minilib.Monad.IO</h1>
-<p>Defined in minilib-monad@0.7.6</p>
+<p>Defined in minilib-common@0.10.0</p>
 <p>Monadic traits which can lift IO and IOFail monad.</p>
 <h2 id="values">Values</h2>
+<h3 id="namespace-minilibmonadio">namespace Minilib.Monad.IO</h3>
+<h4 id="emprintln">emprintln</h4>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::String -&gt; m ()</code></p>
+<p>Same as <code>eprintln</code>, except that it can be automatically lifted into monads that implement MonadIO.</p>
+<h4 id="mprintln">mprintln</h4>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::String -&gt; m ()</code></p>
+<p>Same as <code>println</code>, except that it can be automatically lifted into monads that implement MonadIO.</p>
 <h3 id="namespace-minilibmonadiomonadiofailif">namespace Minilib.Monad.IO::MonadIOFailIF</h3>
 <h4 id="lift_iofail">lift_iofail</h4>
 <p>Type: <code>[m : Minilib.Monad.IO::MonadIOFailIF] Std::IO::IOFail a -&gt; m a</code></p>
@@ -4327,7 +4412,7 @@
 <p>Type: <code>[m : Minilib.Monad.IO::MonadIOIF] Std::IO a -&gt; m a</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
-<h3 id="namespace-minilibmonadio">namespace Minilib.Monad.IO</h3>
+<h3 id="namespace-minilibmonadio_1">namespace Minilib.Monad.IO</h3>
 <h4 id="trait-monadio-stdmonad-minilibmonadiomonadioif">trait <code>MonadIO = Std::Monad + Minilib.Monad.IO::MonadIOIF</code></h4>
 <p>Kind: <code>*-&gt;*</code></p>
 <p>A monadic trait which can lift IO monad.</p>

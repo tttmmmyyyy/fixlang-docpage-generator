@@ -4306,7 +4306,7 @@
 
 
 <h1 id="minilibcommonioref">Minilib.Common.IORef</h1>
-<p>Defined in minilib-common@0.9.0</p>
+<p>Defined in minilib-common@0.10.0</p>
 <p>A mutable reference whose value can be changed using the IO monad.</p>
 <p>NOTE: <code>IORef</code> is NOT a thread-safe. If you want to require thread-safety, use <code>Var</code>.</p>
 <p>Example:</p>
@@ -4320,21 +4320,21 @@ println(str);;  // &quot;world&quot;
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcommoniorefioref">namespace Minilib.Common.IORef::IORef</h3>
 <h4 id="get">get</h4>
-<p>Type: <code>Minilib.Common.IORef::IORef a -&gt; Std::IO a</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Common.IORef::IORef a -&gt; m a</code></p>
 <p>Gets the value of a mutable reference.</p>
 <h5 id="parameters">Parameters</h5>
 <ul>
 <li><code>ioref</code>: a mutable reference</li>
 </ul>
 <h4 id="make">make</h4>
-<p>Type: <code>a -&gt; Std::IO (Minilib.Common.IORef::IORef a)</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] a -&gt; m (Minilib.Common.IORef::IORef a)</code></p>
 <p>Creates a mutable reference with the specified initial value.</p>
 <h5 id="parameters_1">Parameters</h5>
 <ul>
 <li><code>a</code>: an initial value</li>
 </ul>
 <h4 id="mod">mod</h4>
-<p>Type: <code>(a -&gt; a) -&gt; Minilib.Common.IORef::IORef a -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] (a -&gt; a) -&gt; Minilib.Common.IORef::IORef a -&gt; m ()</code></p>
 <p>Modifies the value of a mutable reference.</p>
 <h5 id="parameters_2">Parameters</h5>
 <ul>
@@ -4342,10 +4342,10 @@ println(str);;  // &quot;world&quot;
 <li><code>ioref</code>: a mutable reference</li>
 </ul>
 <h4 id="put">put</h4>
-<p>Type: <code>a -&gt; Minilib.Common.IORef::IORef a -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] a -&gt; Minilib.Common.IORef::IORef a -&gt; m ()</code></p>
 <p><code>put</code> is a synonym of <code>set</code>.</p>
 <h4 id="set">set</h4>
-<p>Type: <code>a -&gt; Minilib.Common.IORef::IORef a -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] a -&gt; Minilib.Common.IORef::IORef a -&gt; m ()</code></p>
 <p>Sets the value of a mutable reference.</p>
 <h5 id="parameters_3">Parameters</h5>
 <ul>
