@@ -2609,6 +2609,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        finally
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="finally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#from_result_t" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4071,6 +4099,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        finally
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="finally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#from_result_t" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4304,10 +4360,34 @@
 
 
 <h1 id="minilibmonaderror">Minilib.Monad.Error</h1>
-<p>Defined in minilib-common@0.10.0</p>
-<p>Definition of <code>MonadErrorIF</code> trait which can report errors.</p>
+<p>Defined in minilib-common@0.10.1</p>
+<p>This module defines the <code>MonadError</code> trait, which can report errors.</p>
+<p>Monads that implement <code>MonadError</code> can throw errors via the <code>error</code> function.</p>
+<p>It also provides functions like <code>catch</code> and <code>finally</code> to help with exception handling.</p>
+<p>Example:</p>
+<pre><code>read_file: Path -&gt; IOFail String;
+read_file = |path| (
+    let handle = *open_file(path, &quot;r&quot;);
+    do {
+        println(&quot;reading file: &quot; + path).lift;;
+        read_string(handle)
+    }
+    .catch(|errmsg| pure(&quot;Error: &quot; + errmsg))
+    .finally(close_file(handle).lift)
+);
+</code></pre>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonaderror">namespace Minilib.Monad.Error</h3>
+<h4 id="finally">finally</h4>
+<p>Type: <code>[m : Minilib.Monad.Error::MonadError] m () -&gt; m a -&gt; m a</code></p>
+<p>Returns a monad which performs <code>body</code> first, then <code>cleanup</code>,
+regardless of whether <code>body</code> throws an error.</p>
+<p>If <code>cleanup</code> throws an error, that error takes precedence over an error thrown by <code>body</code>.</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>cleanup</code>: a cleanup</li>
+<li><code>body</code>: a body</li>
+</ul>
 <h4 id="from_result_t">from_result_t</h4>
 <p>Type: <code>[m : Minilib.Monad.Error::MonadError] Std::Result Std::ErrMsg a -&gt; m a</code></p>
 <p>Synonym of <code>lift_result</code>.</p>

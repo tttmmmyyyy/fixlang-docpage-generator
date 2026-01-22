@@ -4214,7 +4214,7 @@
 
 
 <h1 id="minilibioplatform">Minilib.IO.Platform</h1>
-<p>Defined in minilib-io@0.6.12</p>
+<p>Defined in minilib-io@0.7.0</p>
 <p>Get kernel information such as system name, machine archtecture.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibioplatform">namespace Minilib.IO.Platform</h3>
@@ -4222,7 +4222,7 @@
 <p>Type: <code>Minilib.Encoding.Binary::ByteOrder</code></p>
 <p>The byte order of platform.</p>
 <h4 id="get_uname">get_uname</h4>
-<p>Type: <code>Std::IO::IOFail Minilib.IO.Platform::UName</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] m Minilib.IO.Platform::UName</code></p>
 <p>Gets the name and information of current kernel.
 It calls POSIX C function <code>uname()</code>.</p>
 <h4 id="uname">uname</h4>

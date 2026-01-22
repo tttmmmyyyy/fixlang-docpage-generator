@@ -4024,19 +4024,19 @@
 
 
 <h1 id="minilibioerrno">Minilib.IO.Errno</h1>
-<p>Defined in minilib-io@0.6.12</p>
+<p>Defined in minilib-io@0.7.0</p>
 <p>Functions for <code>errno</code> which is set by system calls and some library functions.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibioerrno">namespace Minilib.IO.Errno</h3>
 <h4 id="get_last_error">get_last_error</h4>
-<p>Type: <code>Std::IO Std::String</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] m Std::String</code></p>
 <p>Gets the error message corresponding to the last error number.</p>
 <h4 id="strerror">strerror</h4>
-<p>Type: <code>Std::I32 -&gt; Std::IO Std::String</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::I32 -&gt; m Std::String</code></p>
 <p>Converts the error number returned by <code>get_errno</code> to a string.
 This function may have race conditions, but is more portable.</p>
 <h4 id="strerror_r">strerror_r</h4>
-<p>Type: <code>Std::I32 -&gt; Std::IO Std::String</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::I32 -&gt; m Std::String</code></p>
 <p>Deprecated: Now this function is identical to <code>strerror</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>

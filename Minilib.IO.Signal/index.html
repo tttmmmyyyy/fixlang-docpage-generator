@@ -4046,17 +4046,17 @@
 
 
 <h1 id="minilibiosignal">Minilib.IO.Signal</h1>
-<p>Defined in minilib-io@0.6.12</p>
+<p>Defined in minilib-io@0.7.0</p>
 <p>Unix signal handling</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibiosignal">namespace Minilib.IO.Signal</h3>
 <h4 id="kill_process">kill_process</h4>
-<p>Type: <code>Std::I64 -&gt; Std::String -&gt; Std::IO::IOFail ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Std::I64 -&gt; Std::String -&gt; m ()</code></p>
 <p><code>kill_process(pid, signal_name)</code> sends a signal to the process specified by <code>pid</code>.
 <code>signal_name</code> should be one of <code>signal_names</code>.</p>
 <p>For details, see see Linux manual page for <a href="https://man7.org/linux/man-pages/man2/kill.2.html">kill(2)</a>.</p>
 <h4 id="set_signal_handler">set_signal_handler</h4>
-<p>Type: <code>Std::String -&gt; Std::String -&gt; Std::IO::IOFail ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Std::String -&gt; Std::String -&gt; m ()</code></p>
 <p><code>set_signal_handler(signal_name, sighandle_name)</code> sets the handler for the signal.
 <code>signal_name</code> should be one of <code>signal_names</code>.
 <code>sighandle_name</code> should be one of <code>sighandler_names</code>.</p>
