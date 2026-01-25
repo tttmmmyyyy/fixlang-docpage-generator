@@ -2604,6 +2604,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eval_cont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eval_cont
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eval_cont_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eval_cont_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lift_cont" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2848,6 +2870,39 @@
     <span class="md-ellipsis">
       
         impl [m : Std::Monad] Minilib.Monad.Cont::ContT r m : Minilib.Monad.Cont::MonadContIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-m-minilibmonaderrormonaderror-minilibmonadcontcontt-r-m-minilibmonaderrormonaderrorif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [m : Minilib.Monad.Error::MonadError] Minilib.Monad.Cont::ContT r m : Minilib.Monad.Error::MonadErrorIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-m-minilibmonadiomonadiofail-minilibmonadcontcontt-r-m-minilibmonadiomonadiofailif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Cont::ContT r m : Minilib.Monad.IO::MonadIOFailIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-m-minilibmonadiomonadio-minilibmonadcontcontt-r-m-minilibmonadiomonadioif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Cont::ContT r m : Minilib.Monad.IO::MonadIOIF
       
     </span>
   </a>
@@ -4177,6 +4232,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eval_cont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eval_cont
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eval_cont_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eval_cont_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lift_cont" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4428,6 +4505,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#impl-m-minilibmonaderrormonaderror-minilibmonadcontcontt-r-m-minilibmonaderrormonaderrorif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [m : Minilib.Monad.Error::MonadError] Minilib.Monad.Cont::ContT r m : Minilib.Monad.Error::MonadErrorIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-m-minilibmonadiomonadiofail-minilibmonadcontcontt-r-m-minilibmonadiomonadiofailif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Cont::ContT r m : Minilib.Monad.IO::MonadIOFailIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-m-minilibmonadiomonadio-minilibmonadcontcontt-r-m-minilibmonadiomonadioif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Cont::ContT r m : Minilib.Monad.IO::MonadIOIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-m-stdmonad-minilibmonadcontcontt-r-m-stdfunctor" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4472,7 +4582,7 @@
 
 
 <h1 id="minilibmonadcont">Minilib.Monad.Cont</h1>
-<p>Defined in minilib-monad@0.8.1</p>
+<p>Defined in minilib-monad@0.8.2</p>
 <p>Continuation Monad.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadcont">namespace Minilib.Monad.Cont</h3>
@@ -4482,6 +4592,12 @@
 <h4 id="cont_t">cont_t</h4>
 <p>Type: <code>[m : Std::Monad] ((a -&gt; m r) -&gt; m r) -&gt; Minilib.Monad.Cont::ContT r m a</code></p>
 <p>Creates a ContT monad from a function which receives a continuation function and returns the monadic value of the result.</p>
+<h4 id="eval_cont">eval_cont</h4>
+<p>Type: <code>Minilib.Monad.Cont::Cont r r -&gt; r</code></p>
+<p>Runs a Cont monad with <code>id</code> as a continuation function.</p>
+<h4 id="eval_cont_t">eval_cont_t</h4>
+<p>Type: <code>[m : Std::Monad] Minilib.Monad.Cont::ContT r m r -&gt; m r</code></p>
+<p>Runs a ContT monad with <code>pure</code> as a continuation function.</p>
 <h4 id="lift_cont">lift_cont</h4>
 <p>Type: <code>[m : Std::Monad] m a -&gt; Minilib.Monad.Cont::ContT r m a</code></p>
 <p>Deprecated: Please use <code>MonadTrans::lift_t</code>.</p>
@@ -4528,6 +4644,9 @@ The exit function can be passed to another function.</p>
 <h2 id="trait-implementations">Trait implementations</h2>
 <h3 id="impl-minilibmonadcontcontt-r-minilibmonadtransmonadtrans">impl <code>Minilib.Monad.Cont::ContT r : Minilib.Monad.Trans::MonadTrans</code></h3>
 <h3 id="impl-m-stdmonad-minilibmonadcontcontt-r-m-minilibmonadcontmonadcontif">impl <code>[m : Std::Monad] Minilib.Monad.Cont::ContT r m : Minilib.Monad.Cont::MonadContIF</code></h3>
+<h3 id="impl-m-minilibmonaderrormonaderror-minilibmonadcontcontt-r-m-minilibmonaderrormonaderrorif">impl <code>[m : Minilib.Monad.Error::MonadError] Minilib.Monad.Cont::ContT r m : Minilib.Monad.Error::MonadErrorIF</code></h3>
+<h3 id="impl-m-minilibmonadiomonadiofail-minilibmonadcontcontt-r-m-minilibmonadiomonadiofailif">impl <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Monad.Cont::ContT r m : Minilib.Monad.IO::MonadIOFailIF</code></h3>
+<h3 id="impl-m-minilibmonadiomonadio-minilibmonadcontcontt-r-m-minilibmonadiomonadioif">impl <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Cont::ContT r m : Minilib.Monad.IO::MonadIOIF</code></h3>
 <h3 id="impl-m-stdmonad-minilibmonadcontcontt-r-m-stdfunctor">impl <code>[m : Std::Monad] Minilib.Monad.Cont::ContT r m : Std::Functor</code></h3>
 <h3 id="impl-m-stdmonad-minilibmonadcontcontt-r-m-stdmonad">impl <code>[m : Std::Monad] Minilib.Monad.Cont::ContT r m : Std::Monad</code></h3>
 
