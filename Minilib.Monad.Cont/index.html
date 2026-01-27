@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../Minilib.Media.Svg/">
+        <link rel="prev" href="../Minilib.Monad.Alt/">
       
       
         <link rel="next" href="../Minilib.Monad.Error/">
@@ -2495,6 +2495,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Alt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Alt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -2630,6 +2657,28 @@
     <span class="md-ellipsis">
       
         lift_cont
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map_cont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map_cont
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map_cont_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map_cont_t
       
     </span>
   </a>
@@ -4265,6 +4314,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#map_cont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map_cont
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map_cont_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map_cont_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run_cont" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4582,7 +4653,7 @@
 
 
 <h1 id="minilibmonadcont">Minilib.Monad.Cont</h1>
-<p>Defined in minilib-monad@0.8.2</p>
+<p>Defined in minilib-monad@0.9.0</p>
 <p>Continuation Monad.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadcont">namespace Minilib.Monad.Cont</h3>
@@ -4602,6 +4673,12 @@
 <p>Type: <code>[m : Std::Monad] m a -&gt; Minilib.Monad.Cont::ContT r m a</code></p>
 <p>Deprecated: Please use <code>MonadTrans::lift_t</code>.</p>
 <p>Lifts an underlying monad to a continuation monad.</p>
+<h4 id="map_cont">map_cont</h4>
+<p>Type: <code>(r -&gt; r) -&gt; Minilib.Monad.Cont::Cont r a -&gt; Minilib.Monad.Cont::Cont r a</code></p>
+<p>Applys a function to the result of a Cont monad.</p>
+<h4 id="map_cont_t">map_cont_t</h4>
+<p>Type: <code>[m : Std::Monad] (r -&gt; r) -&gt; Minilib.Monad.Cont::ContT r m a -&gt; Minilib.Monad.Cont::ContT r m a</code></p>
+<p>Applys a function to the result of a ContT monad.</p>
 <h4 id="run_cont">run_cont</h4>
 <p>Type: <code>(a -&gt; r) -&gt; Minilib.Monad.Cont::Cont r a -&gt; r</code></p>
 <p>Runs a Cont monad with the supplied continuation function.</p>

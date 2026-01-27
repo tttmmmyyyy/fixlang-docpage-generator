@@ -2498,6 +2498,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../Minilib.Monad.Alt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Alt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Minilib.Monad.Cont/" class="md-nav__link">
         
   
@@ -2798,6 +2825,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#map_result_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map_result_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#result_t" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2813,6 +2851,45 @@
     <span class="md-ellipsis">
       
         run_result_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibmonadresultresultt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Monad.Result::ResultT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Monad.Result::ResultT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from_iofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        from_iofail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_iofail
       
     </span>
   </a>
@@ -4043,6 +4120,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#map_result_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map_result_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#result_t" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4058,6 +4146,45 @@
     <span class="md-ellipsis">
       
         run_result_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibmonadresultresultt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Monad.Result::ResultT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Monad.Result::ResultT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from_iofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        from_iofail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iofail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_iofail
       
     </span>
   </a>
@@ -4248,16 +4375,26 @@
 
 
 <h1 id="minilibmonadresult">Minilib.Monad.Result</h1>
-<p>Defined in minilib-monad@0.8.2</p>
+<p>Defined in minilib-monad@0.9.0</p>
 <p>A monad transformer that wraps <code>m (Result e a)</code>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadresult">namespace Minilib.Monad.Result</h3>
+<h4 id="map_result_t">map_result_t</h4>
+<p>Type: <code>(m (Std::Result e a) -&gt; m2 (Std::Result e2 a2)) -&gt; Minilib.Monad.Result::ResultT e m a -&gt; Minilib.Monad.Result::ResultT e2 m2 a2</code></p>
+<p>Maps a ResultT monad with the specified function.</p>
 <h4 id="result_t">result_t</h4>
 <p>Type: <code>m (Std::Result e a) -&gt; Minilib.Monad.Result::ResultT e m a</code></p>
 <p>Creates a ResultT monad from an operation result.</p>
 <h4 id="run_result_t">run_result_t</h4>
 <p>Type: <code>Minilib.Monad.Result::ResultT e m a -&gt; m (Std::Result e a)</code></p>
 <p>Gets the operation result.</p>
+<h3 id="namespace-minilibmonadresultresultt">namespace Minilib.Monad.Result::ResultT</h3>
+<h4 id="from_iofail">from_iofail</h4>
+<p>Type: <code>Std::IO::IOFail a -&gt; Minilib.Monad.Result::ResultT Std::ErrMsg Std::IO a</code></p>
+<p>Converts an <code>IOFail</code> monad to a <code>ResultT ErrMsg IO</code> monad.</p>
+<h4 id="to_iofail">to_iofail</h4>
+<p>Type: <code>Minilib.Monad.Result::ResultT Std::ErrMsg Std::IO a -&gt; Std::IO::IOFail a</code></p>
+<p>Converts a <code>ResultT ErrMsg IO</code> monad to an <code>IOFail</code> monad.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibmonadresult_1">namespace Minilib.Monad.Result</h3>
 <h4 id="resultt">ResultT</h4>

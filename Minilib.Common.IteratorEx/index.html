@@ -1450,6 +1450,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_last" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_last
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_last">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#repeat" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1462,7 +1490,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
+  <a href="#parameters_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -1490,7 +1518,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -1518,7 +1546,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_4" class="md-nav__link">
+  <a href="#parameters_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -1546,7 +1574,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_5" class="md-nav__link">
+  <a href="#parameters_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -1574,7 +1602,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_6" class="md-nav__link">
+  <a href="#parameters_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -2976,6 +3004,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../Minilib.Monad.Alt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Alt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Minilib.Monad.Cont/" class="md-nav__link">
         
   
@@ -4318,6 +4373,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_last" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_last
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_last">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#repeat" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4330,7 +4413,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
+  <a href="#parameters_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4358,7 +4441,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
+  <a href="#parameters_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4386,7 +4469,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_4" class="md-nav__link">
+  <a href="#parameters_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4414,7 +4497,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_5" class="md-nav__link">
+  <a href="#parameters_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4442,7 +4525,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_6" class="md-nav__link">
+  <a href="#parameters_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4686,7 +4769,7 @@
 
 
 <h1 id="minilibcommoniteratorex">Minilib.Common.IteratorEx</h1>
-<p>Defined in minilib-common@0.10.1</p>
+<p>Defined in minilib-common@0.11.0</p>
 <p>Extensions for <code>Std::Iterator</code>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcommoniteratorex">namespace Minilib.Common.IteratorEx</h3>
@@ -4706,10 +4789,19 @@
 <li><code>predicate</code> - The predicate function to be applied to each element of the iterator.</li>
 <li><code>iter</code> - The iterator to be taken from.</li>
 </ul>
+<h4 id="get_last">get_last</h4>
+<p>Type: <code>[iter : Std::Iterator] iter -&gt; Std::Option (Std::Iterator::Item iter)</code></p>
+<p>Get the last element of an iterator.</p>
+<p>If the iterator is empty, this function returns <code>none</code>.</p>
+<p>Time complexity: <code>O(n)</code></p>
+<h5 id="parameters_2">Parameters</h5>
+<ul>
+<li><code>iter</code> - The iterator.</li>
+</ul>
 <h4 id="repeat">repeat</h4>
 <p>Type: <code>a -&gt; Std::Iterator::MapIterator Std::Iterator::CountUpIterator Std::I64 a</code></p>
 <p>Create an iterator that generates the same element infinitely.</p>
-<h5 id="parameters_2">Parameters</h5>
+<h5 id="parameters_3">Parameters</h5>
 <ul>
 <li><code>a</code> - A value of type <code>a</code>.</li>
 </ul>
@@ -4718,7 +4810,7 @@
 <p>Create an iterator that generates the inclusive scan of an iterator.</p>
 <p>Conceptually, <code>[a0, a1, a2, ...].to_iter.scan(s, op) = [s1, s2, ...].to_iter</code> such that
 <code>s0 = s, s1 = op(a0,s0), s2 = op(a1,s1), ...</code>.</p>
-<h5 id="parameters_3">Parameters</h5>
+<h5 id="parameters_4">Parameters</h5>
 <ul>
 <li><code>state</code> - The initial state.</li>
 <li><code>op</code> - The function to be called on the pair of an element and the current state.</li>
@@ -4729,7 +4821,7 @@
 <p>Create an iterator that generates the exclusive scan of an iterator.</p>
 <p>Conceptually, <code>[a0, a1, a2, ...].to_iter.scan_ex(s, op) = [s0, s1, s2, ...].to_iter</code> such that
 <code>s0 = s, s1 = op(a0,s0), s2 = op(a1,s1), ...</code>.</p>
-<h5 id="parameters_4">Parameters</h5>
+<h5 id="parameters_5">Parameters</h5>
 <ul>
 <li><code>state</code> - The initial state.</li>
 <li><code>op</code> - The function to be called on the pair of an element and the current state.</li>
@@ -4740,7 +4832,7 @@
 <p>Creates an iterator that yields a tail starting from each element.</p>
 <p>Conceptually, <code>[a1, a2, ..., an].to_iter.tails = [t1, t2, ..., tn, nil].to_iter</code> such that
 <code>t1 = [a1, a2, ..., an].to_iter, t2 = [a2, a3, ..., an].to_iter, ..., tn = [an].to_iter, nil = [].to_iter</code>.</p>
-<h5 id="parameters_5">Parameters</h5>
+<h5 id="parameters_6">Parameters</h5>
 <ul>
 <li><code>iter</code> - An iterator.</li>
 </ul>
@@ -4750,7 +4842,7 @@
 <p>Conceptually, <code>[a1, a2, ..., an].to_iter.transpose = [b1, b2, ..., bm].to_iter</code> where
 <code>a1 = [a11, a12, ..., a1m].to_iter, ..., an = [an1, an2, ..., anm].to_iter</code> then
 <code>b1 = [a11, a21, ..., an1].to_iter, ..., bm = [a1m, a2m, ..., anm].to_iter</code>.</p>
-<h5 id="parameters_6">Parameters</h5>
+<h5 id="parameters_7">Parameters</h5>
 <ul>
 <li><code>iter_iter</code> - An iterator of iterators. It must be a finite iterator.</li>
 </ul>
