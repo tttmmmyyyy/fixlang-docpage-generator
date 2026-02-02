@@ -12515,6 +12515,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#unsafe_from_c_str_ptr_io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unsafe_from_c_str_ptr_io
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -32418,6 +32429,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#unsafe_from_c_str_ptr_io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unsafe_from_c_str_ptr_io
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -43634,7 +43656,7 @@ main = (
 <p>Type: <code>(a -&gt; b) -&gt; a -&gt; b</code></p>
 <p><code>x.with_retained(f)</code> runs <code>f</code> with retained <code>x</code>. 
 It is guaranteed that <code>x</code> is keep alive until <code>with_retained</code> is finished, even after <code>f</code> has finished using <code>x</code> in it. </p>
-<p>A typical use case of this function is the implementation of <code>Std::Array::borrow_ptr</code>.</p>
+<p>A typical use case of this function is the implementation of <code>Std::FFI::borrow_boxed</code>.</p>
 <h5 id="parameters_6">Parameters</h5>
 <ul>
 <li><code>f</code> - The function to run with the retained value.</li>
@@ -46161,10 +46183,27 @@ assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&
 <p>Create a <code>String</code> from a pointer to a null-terminated C string.</p>
 <p>If the pointer is not pointing to a valid null-terminated C string, this function cause undefined behavior.</p>
 <p>If you have an <code>Array U8</code> containing a null-terminated C string, use <code>FromBytes::from_bytes</code> instead.</p>
+<p>There is also an IO version of this function, <code>unsafe_from_c_str_ptr_io</code>.</p>
+<p>Since this function is not an <code>IO</code> action, the compiler does not guarantee the order of execution between this function and <code>IO</code> actions.
+Do not use this function if you perform <code>IO</code> operations that modify the content pointed to by <code>ptr</code> or free <code>ptr</code>.</p>
+<p>For example,</p>
+<pre><code>let str = unsafe_from_c_str_ptr(ptr);
+FFI_CALL_IO[() free(Ptr), ptr];;
+</code></pre>
+<p>may be rewritten to:</p>
+<pre><code>FFI_CALL_IO[() free(Ptr), ptr];;
+let str = unsafe_from_c_str_ptr(ptr);
+</code></pre>
+<p>which can cause undefined behavior.</p>
 <h5 id="parameters_219">Parameters</h5>
 <ul>
 <li><code>ptr</code> - The pointer to a null-terminated C string.</li>
 </ul>
+<h4 id="unsafe_from_c_str_ptr_io">unsafe_from_c_str_ptr_io</h4>
+<p>Type: <code>Std::Ptr -&gt; Std::IO Std::String</code></p>
+<p>Create a <code>String</code> from a pointer to a null-terminated C string, via an IO action.</p>
+<p>If the pointer is not pointing to a valid null-terminated C string, this function causes undefined behavior.</p>
+<p>If you have an <code>Array U8</code> containing a null-terminated C string, use <code>FromBytes::from_bytes</code> instead.</p>
 <h3 id="namespace-stdsub">namespace Std::Sub</h3>
 <h4 id="sub">sub</h4>
 <p>Type: <code>[a : Std::Sub] a -&gt; a -&gt; a</code></p>
