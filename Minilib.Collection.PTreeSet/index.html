@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Minilib.Collection.OrderedMap/">
+        <link rel="prev" href="../Minilib.Collection.PTreeMap/">
       
       
-        <link rel="next" href="../Minilib.Collection.TreeMap/">
+        <link rel="next" href="../Minilib.Collection.Trait/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Minilib.Collection.RBTree - Fix DocPage</title>
+        <title>Minilib.Collection.PTreeSet - Fix DocPage</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#minilibcollectionrbtree" class="md-skip">
+        <a href="#minilibcollectionptreeset" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Minilib.Collection.RBTree
+              Minilib.Collection.PTreeSet
             
           </span>
         </div>
@@ -1094,6 +1094,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../Minilib.Collection.Internal.PatTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Internal.PatTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Internal.RBTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Internal.RBTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Minilib.Collection.OrderedMap/" class="md-nav__link">
         
   
@@ -1102,6 +1156,33 @@
     
   
     Minilib.Collection.OrderedMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.PTreeMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.PTreeMap
   
 
     
@@ -1137,7 +1218,7 @@
   <span class="md-ellipsis">
     
   
-    Minilib.Collection.RBTree
+    Minilib.Collection.PTreeSet
   
 
     
@@ -1155,7 +1236,7 @@
   <span class="md-ellipsis">
     
   
-    Minilib.Collection.RBTree
+    Minilib.Collection.PTreeSet
   
 
     
@@ -1181,6 +1262,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#benchmark-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmark Result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1193,297 +1285,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionrbtreerbnode" class="md-nav__link">
+  <a href="#namespace-minilibcollectionptreeset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace Minilib.Collection.RBTree::RBNode
+        namespace Minilib.Collection.PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.RBTree::RBNode">
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
+  <a href="#empty" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_range" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_range
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_range_descending" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_range_descending
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#from_iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        from_iter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#from_iter_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        from_iter_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_color" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_color
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_first" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_first
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_last" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_last
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_left" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_left
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_right" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_right
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_size" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_size
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_triplet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_triplet
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        level
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#level_nonvalidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        level_nonvalidate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_range" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove_range
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_color" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        set_color
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_triplet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        set_triplet
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_array" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_array
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_iter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upsert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        upsert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upsert_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        upsert_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        validate
+        empty
       
     </span>
   </a>
@@ -1513,56 +1330,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionrbtreerbnode_1" class="md-nav__link">
+  <a href="#namespace-minilibcollectionptreeset_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace Minilib.Collection.RBTree::RBNode
+        namespace Minilib.Collection.PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.RBTree::RBNode">
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rbnode" class="md-nav__link">
+  <a href="#ptreeset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        RBNode
+        PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RBNode">
+    <nav class="md-nav" aria-label="PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variant-empty" class="md-nav__link">
+  <a href="#field-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variant empty
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variant-red" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variant red
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variant-black" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variant black
+        field tree
       
     </span>
   </a>
@@ -1597,25 +1392,53 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionrbtreerbnode_2" class="md-nav__link">
+  <a href="#namespace-minilibcollectionptreeset_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace Minilib.Collection.RBTree::RBNode
+        namespace Minilib.Collection.PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.RBTree::RBNode">
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#trait-rbnodeelem-stdtostring" class="md-nav__link">
+  <a href="#trait-e-ptreesetelem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        trait RBNodeElem = Std::ToString
+        trait e : PTreeSetElem
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="trait e : PTreeSetElem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-_to_pattree_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method _to_pattree_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-_from_pattree_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method _from_pattree_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1642,10 +1465,109 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#impl-a-minilibcollectionrbtreerbnoderbnodeelem-a-stdtostring-minilibcollectionrbtreerbnoderbnode-a-stdtostring" class="md-nav__link">
+  <a href="#impl-e-minilibcollectionptreesetptreesetelem-minilibcollectionptreesetptreeset-e-minilibcollectiontraitset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::ToString] Minilib.Collection.RBTree::RBNode::RBNode a : Std::ToString
+        impl [e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e : Minilib.Collection.Trait::Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-e-minilibcollectionptreesetptreesetelem-minilibcollectionptreesetptreeset-e-minilibcollectiontraitsortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e : Minilib.Collection.Trait::SortedSetIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi16-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I16 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi32-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I32 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi64-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I64 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi8-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I8 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu16-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U16 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu32-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U32 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu64-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U64 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu8-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U8 : Minilib.Collection.PTreeSet::PTreeSetElem
       
     </span>
   </a>
@@ -1661,6 +1583,87 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Trait/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Trait
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreapMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreapMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreapSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreapSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -4311,6 +4314,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#benchmark-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmark Result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4323,297 +4337,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionrbtreerbnode" class="md-nav__link">
+  <a href="#namespace-minilibcollectionptreeset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace Minilib.Collection.RBTree::RBNode
+        namespace Minilib.Collection.PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.RBTree::RBNode">
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
+  <a href="#empty" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_range" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_range
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_range_descending" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_range_descending
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#from_iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        from_iter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#from_iter_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        from_iter_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_color" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_color
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_first" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_first
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_last" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_last
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_left" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_left
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_right" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_right
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_size" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_size
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_triplet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_triplet
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        level
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#level_nonvalidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        level_nonvalidate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_range" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove_range
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_color" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        set_color
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_triplet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        set_triplet
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_array" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_array
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_iter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upsert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        upsert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upsert_lt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        upsert_lt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        validate
+        empty
       
     </span>
   </a>
@@ -4643,56 +4382,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionrbtreerbnode_1" class="md-nav__link">
+  <a href="#namespace-minilibcollectionptreeset_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace Minilib.Collection.RBTree::RBNode
+        namespace Minilib.Collection.PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.RBTree::RBNode">
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rbnode" class="md-nav__link">
+  <a href="#ptreeset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        RBNode
+        PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RBNode">
+    <nav class="md-nav" aria-label="PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variant-empty" class="md-nav__link">
+  <a href="#field-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variant empty
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variant-red" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variant red
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variant-black" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variant black
+        field tree
       
     </span>
   </a>
@@ -4727,25 +4444,53 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionrbtreerbnode_2" class="md-nav__link">
+  <a href="#namespace-minilibcollectionptreeset_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace Minilib.Collection.RBTree::RBNode
+        namespace Minilib.Collection.PTreeSet
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.RBTree::RBNode">
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.PTreeSet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#trait-rbnodeelem-stdtostring" class="md-nav__link">
+  <a href="#trait-e-ptreesetelem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        trait RBNodeElem = Std::ToString
+        trait e : PTreeSetElem
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="trait e : PTreeSetElem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-_to_pattree_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method _to_pattree_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-_from_pattree_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method _from_pattree_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4772,10 +4517,109 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#impl-a-minilibcollectionrbtreerbnoderbnodeelem-a-stdtostring-minilibcollectionrbtreerbnoderbnode-a-stdtostring" class="md-nav__link">
+  <a href="#impl-e-minilibcollectionptreesetptreesetelem-minilibcollectionptreesetptreeset-e-minilibcollectiontraitset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::ToString] Minilib.Collection.RBTree::RBNode::RBNode a : Std::ToString
+        impl [e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e : Minilib.Collection.Trait::Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-e-minilibcollectionptreesetptreesetelem-minilibcollectionptreesetptreeset-e-minilibcollectiontraitsortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e : Minilib.Collection.Trait::SortedSetIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi16-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I16 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi32-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I32 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi64-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I64 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdi8-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::I8 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu16-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U16 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu32-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U32 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu64-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U64 : Minilib.Collection.PTreeSet::PTreeSetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-stdu8-minilibcollectionptreesetptreesetelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Std::U8 : Minilib.Collection.PTreeSet::PTreeSetElem
       
     </span>
   </a>
@@ -4804,151 +4648,60 @@
 
 
 
-<h1 id="minilibcollectionrbtree">Minilib.Collection.RBTree</h1>
-<p>Defined in minilib-collection@0.6.5</p>
-<p>Red-Black Tree.
-(This is an internal module of <code>TreeMap</code> and <code>TreeSet</code>.)</p>
-<p>Ported from Japanese translation of the book below:</p>
-<p>"Purely functional data structures" by Chris Okasaki, Cambridge University Press, 1998, ISBN 0-521-66350-4</p>
-<p>And for removal algorithm, ported from web site below.
-http://wwwa.pikara.ne.jp/okojisan/rb-tree/index.html#Delete</p>
-<p>NOTE: <code>less_than()</code> function must meet following conditions.
-- Irreflexivity: for all <code>x</code>, <code>less_than(x,x)</code> must be false.
-- Asymmetry:     for all <code>x, y</code>, if <code>less_than(x,y)</code> is true, then <code>less_than(y,x)</code> must be false.
-- Transitivity:  for all <code>x, y, z</code>, if <code>less_than(x,y)</code> is true and <code>less_than(y,z)</code> is true,
-                 then <code>less_than(x,z)</code> must be true.</p>
+<h1 id="minilibcollectionptreeset">Minilib.Collection.PTreeSet</h1>
+<p>Defined in minilib-collection@0.7.0-beta1</p>
+<p><code>PTreeSet</code> is a set that manages elements in sorted order.</p>
+<p>The elements of a <code>PTreeSet</code> can be of type <code>I64</code>, <code>I32</code>, <code>I16</code>, <code>I8</code>, <code>U64</code>,
+<code>U32</code>, <code>U16</code>, or <code>U8</code>. It's limited, but fast.</p>
+<p>The order of elements is fixed to ascending order and cannot be changed to descending order.</p>
+<p><code>PTreeSet</code> implements the <code>Set</code> and <code>SortedSet</code> trait.
+ If you import this module, you should also import <code>Minilib.Collection.Trait</code>.</p>
+<p><code>PTreeSet</code> manages elements as a node array.
+If you modify the <code>PTreeSet</code>, make sure it is unique, otherwise the entire node array will be copied.</p>
+<p><code>PTreeSet</code> is built upon <a href="https://en.wikipedia.org/wiki/Radix_tree">a Patricia Tree</a>.
+In particular, I implemented the Patricia Tree with reference to the following paper:
+<a href="https://web.archive.org/web/20150417234429/https://ittc.ku.edu/~andygill/papers/IntMap98.pdf">Chris Okasaki and Andy Gill, "Fast Mergeable Integer Maps"</a>.</p>
+<h2 id="benchmark-result">Benchmark Result</h2>
+<pre><code>test_perf (n=1000000)
+ insert: 0.925837 seconds
+ to_iter.to_array: 0.206471 seconds
+ to_array: 0.101298 seconds
+ erase: 0.955463 seconds
+</code></pre>
 <h2 id="values">Values</h2>
-<h3 id="namespace-minilibcollectionrbtreerbnode">namespace Minilib.Collection.RBTree::RBNode</h3>
-<h4 id="find">find</h4>
-<p>Type: <code>a -&gt; (a -&gt; a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Option a</code></p>
-<p><code>node.find(x, less_than)</code> finds an element <code>elem</code> that is equivalent to <code>x</code>,
-ie. <code>!less_than(elem, x) &amp;&amp; !less_than(x, elem)</code> is true.</p>
-<h4 id="find_range">find_range</h4>
-<p>Type: <code>(a -&gt; Std::Bool) -&gt; (a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Iterator::DynIterator a</code></p>
-<p><code>node.find_range(lt_begin, lt_end)</code> finds all elements <code>elem</code>
-such that <code>!elem.lt_begin &amp;&amp; elem.lt_end</code> is true.
-NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
-for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
-<h4 id="find_range_descending">find_range_descending</h4>
-<p>Type: <code>(a -&gt; Std::Bool) -&gt; (a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Iterator::DynIterator a</code></p>
-<p><code>node.find_range_descending(lt_begin, lt_end)</code> finds all elements <code>elem</code>
-such that <code>!elem.lt_begin &amp;&amp; elem.lt_end</code> is true, in descending order.
-NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
-for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
-<h4 id="from_iter">from_iter</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::LessThan, it : Std::Iterator, Std::Iterator::Item it = a] it -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="from_iter_lt">from_iter_lt</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem, it : Std::Iterator, Std::Iterator::Item it = a] (a -&gt; a -&gt; Std::Bool) -&gt; it -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="get_color">get_color</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Minilib.Collection.RBTree::RBNode::RBNode a, a, Minilib.Collection.RBTree::RBNode::RBNode a) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="get_first">get_first</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Option a</code></p>
-<p>Gets the first element (that is, the smallest element) of the tree.</p>
-<h4 id="get_last">get_last</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Option a</code></p>
-<p>Gets the last element (that is, the largest element) of the tree.</p>
-<h4 id="get_left">get_left</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="get_right">get_right</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="get_size">get_size</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::I64</code></p>
-<p>Gets the number of elements.
-The time complexity of this function is O(n).</p>
-<h4 id="get_triplet">get_triplet</h4>
-<p>Type: <code>Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Minilib.Collection.RBTree::RBNode::RBNode a, a, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p>If the node is black or red, <code>node.get_triplet</code> returns a triplet <code>(left, elem, right)</code>.
-If the node is empty, it will abort.</p>
-<h4 id="insert">insert</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::LessThan] a -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.insert(x)</code> inserts an element <code>x</code> using default <code>LessThan</code> ordering.
-Returns the size difference and the changed node.
-If <code>node</code> already contains an element <code>y</code> equivalent to <code>x</code>,
-ie. <code>!(x &lt; y) &amp;&amp; !(y &lt; x)</code> is true,
-then <code>y</code> is replaced with <code>x</code>.</p>
-<h4 id="insert_lt">insert_lt</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] a -&gt; (a -&gt; a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.insert_lt(x, less_than)</code> inserts an element <code>x</code> using <code>less_than</code> ordering.
-Returns the size difference and the changed node.
-If <code>node</code> already contains an element <code>y</code> equivalent to <code>x</code>,
-ie. <code>!less_than(x,y) &amp;&amp; !less_than(y,x)</code> is true,
-then <code>y</code> is replaced with <code>x</code>.</p>
-<h4 id="level">level</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::I64</code></p>
-<p>Returns the level of this node (ie. the number of black nodes from this node to any leaf).
-Panicks when the left and right nodes have different black count.</p>
-<h4 id="level_nonvalidate">level_nonvalidate</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::I64</code></p>
-<p>Returns the level of this node (ie. the number of black nodes from this node to any leaf).
-This function does not validate, so an unbalanced node can be specified.</p>
-<h4 id="remove">remove</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::LessThan] a -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.remove(x)</code> removes any element <code>y</code> equivalent to <code>x</code>,
-ie. <code>!(x &lt; y) &amp;&amp; !(y &lt; x)</code> is true.
-Returns the size difference and the changed node.</p>
-<h4 id="remove_lt">remove_lt</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] a -&gt; (a -&gt; a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.remove_lt(x, less_than)</code> removes any element <code>y</code> equivalent to <code>x</code>,
-ie. <code>!less_than(x,y) &amp;&amp; !less_than(y,x)</code> is true.
-Returns the size difference and the changed node.</p>
-<h4 id="remove_range">remove_range</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] (a -&gt; Std::Bool) -&gt; (a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.remove_range(lt_begin, lt_end)</code> removes all elements <code>elem</code>
-where <code>!elem.lt_begin &amp;&amp; elem.lt_end</code> is true.
-Returns the size difference and the changed node.
-NOTE: <code>lt_begin</code> and <code>lt_end</code> must meet following condition:
-for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</code> must be true.</p>
-<h4 id="set_color">set_color</h4>
-<p>Type: <code>((Minilib.Collection.RBTree::RBNode::RBNode a, a, Minilib.Collection.RBTree::RBNode::RBNode a) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="set_triplet">set_triplet</h4>
-<p>Type: <code>(Minilib.Collection.RBTree::RBNode::RBNode a, a, Minilib.Collection.RBTree::RBNode::RBNode a) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Minilib.Collection.RBTree::RBNode::RBNode a</code></p>
-<h4 id="to_array">to_array</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Array a</code></p>
-<h4 id="to_iter">to_iter</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] Minilib.Collection.RBTree::RBNode::RBNode a -&gt; Std::Iterator::DynIterator a</code></p>
-<h4 id="upsert">upsert</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::LessThan] a -&gt; (a -&gt; a) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.upsert(x, updater)</code> inserts or updates using default <code>LessThan</code> ordering.
-Returns the size difference and the changed node.
-If <code>node</code> does not contain an element equivalent to <code>x</code>, <code>x</code> is inserted.
-If <code>node</code> already contains an element <code>y</code> equivalent to <code>x</code>,
-ie. <code>!(x &lt; y) &amp;&amp; !(y &lt; x)</code> is true,
-then <code>y</code> is updated with <code>updater(y)</code>.</p>
-<h4 id="upsert_lt">upsert_lt</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] a -&gt; (a -&gt; a) -&gt; (a -&gt; a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<p><code>node.upsert_lt(x, updater, less_than)</code> inserts or updates using <code>less_than</code> ordering.
-Returns the size difference and the changed node.
-If <code>node</code> does not contain an element equivalent to <code>x</code>, <code>x</code> is inserted.
-If <code>node</code> already contains an element <code>y</code> equivalent to <code>x</code>,
-ie. <code>!less_than(x,y) &amp;&amp; !less_than(y,x)</code> is true,
-then <code>y</code> is updated with <code>updater(y)</code>.</p>
-<h4 id="validate">validate</h4>
-<p>Type: <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem] (a -&gt; a -&gt; Std::Bool) -&gt; Minilib.Collection.RBTree::RBNode::RBNode a -&gt; (Std::I64, Std::Option a, Std::Option a)</code></p>
-<p>Validates that:
-- the left and right nodes have same black count
-- children of a red node is not red
-- max of left node &lt; elem
-- elem &lt; min of right node
-Returns <code>(level, min, max)</code>.
-Panicks if validation failed.</p>
+<h3 id="namespace-minilibcollectionptreeset">namespace Minilib.Collection.PTreeSet</h3>
+<h4 id="empty">empty</h4>
+<p>Type: <code>[e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e</code></p>
+<p>An empty PTreeSet.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-minilibcollectionrbtreerbnode_1">namespace Minilib.Collection.RBTree::RBNode</h3>
-<h4 id="rbnode">RBNode</h4>
-<p>Defined as: <code>type RBNode a = box union { ...variants... }</code></p>
-<p>A type of red-black tree node.</p>
-<h5 id="variant-empty">variant <code>empty</code></h5>
-<p>Type: <code>()</code></p>
-<h5 id="variant-red">variant <code>red</code></h5>
-<p>Type: <code>(Minilib.Collection.RBTree::RBNode::RBNode a, a, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
-<h5 id="variant-black">variant <code>black</code></h5>
-<p>Type: <code>(Minilib.Collection.RBTree::RBNode::RBNode a, a, Minilib.Collection.RBTree::RBNode::RBNode a)</code></p>
+<h3 id="namespace-minilibcollectionptreeset_1">namespace Minilib.Collection.PTreeSet</h3>
+<h4 id="ptreeset">PTreeSet</h4>
+<p>Defined as: <code>type PTreeSet e = unbox struct { ...fields... }</code></p>
+<p>The type of Patricia Tree Sets.</p>
+<h5 id="field-tree">field <code>tree</code></h5>
+<p>Type: <code>Minilib.Collection.Internal.PatTree::PTree ()</code></p>
+<p>The internal Patricia Tree.</p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
-<h3 id="namespace-minilibcollectionrbtreerbnode_2">namespace Minilib.Collection.RBTree::RBNode</h3>
-<h4 id="trait-rbnodeelem-stdtostring">trait <code>RBNodeElem = Std::ToString</code></h4>
-<p>Kind: <code>*</code></p>
-<p>A trait of the element. Currently <code>ToString</code> is required.</p>
+<h3 id="namespace-minilibcollectionptreeset_2">namespace Minilib.Collection.PTreeSet</h3>
+<h4 id="trait-e-ptreesetelem">trait <code>e : PTreeSetElem</code></h4>
+<p>The trait of elements of a PTreeSet.</p>
+<h5 id="method-_to_pattree_key">method <code>_to_pattree_key</code></h5>
+<p>Type: <code>e -&gt; Std::U64</code></p>
+<p>Converts from <code>e</code> to an internal key.</p>
+<h5 id="method-_from_pattree_key">method <code>_from_pattree_key</code></h5>
+<p>Type: <code>Std::U64 -&gt; e</code></p>
+<p>Converts from an internal key to <code>e</code>.</p>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-a-minilibcollectionrbtreerbnoderbnodeelem-a-stdtostring-minilibcollectionrbtreerbnoderbnode-a-stdtostring">impl <code>[a : Minilib.Collection.RBTree::RBNode::RBNodeElem, a : Std::ToString] Minilib.Collection.RBTree::RBNode::RBNode a : Std::ToString</code></h3>
+<h3 id="impl-e-minilibcollectionptreesetptreesetelem-minilibcollectionptreesetptreeset-e-minilibcollectiontraitset">impl <code>[e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e : Minilib.Collection.Trait::Set</code></h3>
+<h3 id="impl-e-minilibcollectionptreesetptreesetelem-minilibcollectionptreesetptreeset-e-minilibcollectiontraitsortedsetif">impl <code>[e : Minilib.Collection.PTreeSet::PTreeSetElem] Minilib.Collection.PTreeSet::PTreeSet e : Minilib.Collection.Trait::SortedSetIF</code></h3>
+<h3 id="impl-stdi16-minilibcollectionptreesetptreesetelem">impl <code>Std::I16 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdi32-minilibcollectionptreesetptreesetelem">impl <code>Std::I32 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdi64-minilibcollectionptreesetptreesetelem">impl <code>Std::I64 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdi8-minilibcollectionptreesetptreesetelem">impl <code>Std::I8 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdu16-minilibcollectionptreesetptreesetelem">impl <code>Std::U16 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdu32-minilibcollectionptreesetptreesetelem">impl <code>Std::U32 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdu64-minilibcollectionptreesetptreesetelem">impl <code>Std::U64 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
+<h3 id="impl-stdu8-minilibcollectionptreesetptreesetelem">impl <code>Std::U8 : Minilib.Collection.PTreeSet::PTreeSetElem</code></h3>
 
 
 

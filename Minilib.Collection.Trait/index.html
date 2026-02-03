@@ -1,0 +1,8087 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Minilib.Collection.PTreeSet/">
+      
+      
+        <link rel="next" href="../Minilib.Collection.TreapMap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Minilib.Collection.Trait - Fix DocPage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#minilibcollectiontrait" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Fix DocPage" class="md-header__button md-logo" aria-label="Fix DocPage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fix DocPage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Minilib.Collection.Trait
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Fix DocPage" class="md-nav__button md-logo" aria-label="Fix DocPage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fix DocPage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AsyncTask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AsyncTask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap.BinaryArrayTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BinaryHeap.BinaryArrayTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BinaryHeap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BoolArray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BoolArray
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Arithmetic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Bipartite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Bipartite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Bits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Bits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.DSegtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.DSegtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.IO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.LDSegtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.LDSegtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.LSegtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.LSegtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.MaxFlow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.MaxFlow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.MinCostFlow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.MinCostFlow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Misc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Segtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Segtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.String/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Trait/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Trait
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.TwoSat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.TwoSat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.UnionFind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.UnionFind
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.ZP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.ZP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EZS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EZS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GMP.Q/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GMP.Q
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GMP.Z/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GMP.Z
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.App.Clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.App.Clap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Deque/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Deque
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Internal.PatTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Internal.PatTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Internal.RBTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Internal.RBTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.OrderedMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.OrderedMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.PTreeMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.PTreeMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.PTreeSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.PTreeSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Trait
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Trait
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::KeyCompare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#above_lower_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        above_lower_bound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="above_lower_bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#below_upper_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        below_upper_bound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="below_upper_bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitkeycomparewithfunc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::KeyCompareWithFunc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::KeyCompareWithFunc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        make
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="make">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#act" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        act
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="act">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contains_key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="contains_key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        find
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitmapdefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::Map::Default
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::Map::Default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_act" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_act
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_set
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::Set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_size_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_empty_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_array_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitsortedmapif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::SortedMapIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::SortedMapIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitsortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::SortedSetIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::SortedSetIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select_range_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant included
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-unbound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant unbound
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycomparewithfunc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyCompareWithFunc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KeyCompareWithFunc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keygreaterthan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyGreaterThan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keylessthan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyLessThan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traits and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontrait_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trait-kc-keycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait kc : KeyCompare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait kc : KeyCompare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-map-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait map : Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait map : Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-mapvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type MapValue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-mapkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type MapKey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-mapiterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type MapIterator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-get_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-contains_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method contains_key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method contains_key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method find
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-erase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-act" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method act
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method act">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-set-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait set : Set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait set : Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-setelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type SetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-setiterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type SetIterator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_empty_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-get_size_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method contains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-insert_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-erase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_iter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_array_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-sortedmap-minilibcollectiontraitmap-minilibcollectiontraitsortedmapif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait SortedMap = Minilib.Collection.Trait::Map + Minilib.Collection.Trait::SortedMapIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-map-sortedmapif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait map : SortedMapIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait map : SortedMapIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-select_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-sortedset-minilibcollectiontraitset-minilibcollectiontraitsortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait SortedSet = Minilib.Collection.Trait::Set + Minilib.Collection.Trait::SortedSetIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-set-sortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait set : SortedSetIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait set : SortedSetIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-select_range_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trait implementations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibcollectiontraitbound-stdfunctor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Collection.Trait::Bound : Std::Functor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-a-stdtostring-minilibcollectiontraitbound-a-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [a : Std::ToString] Minilib.Collection.Trait::Bound a : Std::ToString
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibcollectiontraitkeycomparewithfunc-k-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Collection.Trait::KeyCompareWithFunc k : Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-k-stdlessthan-minilibcollectiontraitkeygreaterthan-k-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [k : Std::LessThan] Minilib.Collection.Trait::KeyGreaterThan k : Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-k-stdlessthan-minilibcollectiontraitkeylessthan-k-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [k : Std::LessThan] Minilib.Collection.Trait::KeyLessThan k : Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreapMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreapMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreapSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreapSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreeMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreeSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Assert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.Assert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.Common
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IOEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IOEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IORef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IORef
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IteratorEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IteratorEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.RandomEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.RandomEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.TimeEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.TimeEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.IdentityC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.IdentityC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Traced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Traced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES.GCM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.AES.GCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.AES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacMD5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC.HmacMD5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC.HmacSHA1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC.HmacSHA256
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.MD5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.MD5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SHA1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SHA256
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SHA512
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SecureRandom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SecureRandom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Base64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Base64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Binary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonDecoder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Json.JsonDecoder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonEncoder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Json.JsonEncoder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlHelpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Xml.XmlHelpers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Xml.XmlParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Xml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Functor.Pair/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Functor.Pair
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Errno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Errno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.FileSystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.FileSystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Signal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Signal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigFloat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.BigFloat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigInt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.BigInt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigNat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.BigNat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Complex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Complex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Euclid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Rational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Rational
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Ring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Media.Image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Png/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Media.Png
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Svg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Media.Svg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Alt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Alt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Cont/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Cont
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Error
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.FreeRandom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.FreeRandom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.IO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Iden
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Option/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Option
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Reader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Reader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Result/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Result
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.State/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Trans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Trans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Writer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Writer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Yield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Yield
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HTML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HttpServer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.HttpServer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.Tcp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.URL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.URL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Random.XorShift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Random.XorShift
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Testing.UnitTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Testing.UnitTest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Hex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Hex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Locale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Locale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.SimpleParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.SimpleParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.StringEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.StringEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Unicode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Unicode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.WideChar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.WideChar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Thread.Channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Thread.Future
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.TaskPool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Thread.TaskPool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Comonad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Comonad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Lifter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Lifter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Monoid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Monoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Rng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Rng
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Semigroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Semigroup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Traversable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Traversable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpNFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.RegExpNFA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpPattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.RegExpPattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.SimpleParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.SimpleParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.StringEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.StringEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RingBuffer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RingBuffer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Std/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Std
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subprocess
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::KeyCompare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#above_lower_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        above_lower_bound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="above_lower_bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#below_upper_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        below_upper_bound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="below_upper_bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitkeycomparewithfunc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::KeyCompareWithFunc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::KeyCompareWithFunc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        make
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="make">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#act" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        act
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="act">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contains_key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="contains_key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        find
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitmapdefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::Map::Default
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::Map::Default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_act" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_act
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_set
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::Set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_size_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_empty_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_array_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_iter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitsortedmapif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::SortedMapIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::SortedMapIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontraitsortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait::SortedSetIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait::SortedSetIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select_range_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant included
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-unbound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant unbound
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycomparewithfunc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyCompareWithFunc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KeyCompareWithFunc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keygreaterthan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyGreaterThan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keylessthan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyLessThan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traits and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcollectiontrait_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Collection.Trait
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Collection.Trait">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trait-kc-keycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait kc : KeyCompare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait kc : KeyCompare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-map-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait map : Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait map : Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-mapvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type MapValue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-mapkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type MapKey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-mapiterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type MapIterator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-get_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-contains_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method contains_key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method contains_key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method find
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-erase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-act" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method act
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method act">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_iter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-set-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait set : Set
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait set : Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-setelem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type SetElem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-setiterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type SetIterator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_empty_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method is_empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method is_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-get_size_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method get_size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method get_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method contains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-insert_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-erase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method erase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method erase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_iter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_iter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_iter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-to_array_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method to_array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method to_array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-sortedmap-minilibcollectiontraitmap-minilibcollectiontraitsortedmapif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait SortedMap = Minilib.Collection.Trait::Map + Minilib.Collection.Trait::SortedMapIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-map-sortedmapif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait map : SortedMapIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait map : SortedMapIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-select_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-sortedset-minilibcollectiontraitset-minilibcollectiontraitsortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait SortedSet = Minilib.Collection.Trait::Set + Minilib.Collection.Trait::SortedSetIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-set-sortedsetif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait set : SortedSetIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait set : SortedSetIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-select_range_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method select_range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="method select_range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trait implementations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibcollectiontraitbound-stdfunctor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Collection.Trait::Bound : Std::Functor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-a-stdtostring-minilibcollectiontraitbound-a-stdtostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [a : Std::ToString] Minilib.Collection.Trait::Bound a : Std::ToString
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibcollectiontraitkeycomparewithfunc-k-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Collection.Trait::KeyCompareWithFunc k : Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-k-stdlessthan-minilibcollectiontraitkeygreaterthan-k-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [k : Std::LessThan] Minilib.Collection.Trait::KeyGreaterThan k : Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-k-stdlessthan-minilibcollectiontraitkeylessthan-k-minilibcollectiontraitkeycompare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [k : Std::LessThan] Minilib.Collection.Trait::KeyLessThan k : Minilib.Collection.Trait::KeyCompare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="minilibcollectiontrait">Minilib.Collection.Trait</h1>
+<p>Defined in minilib-collection@0.7.0-beta1</p>
+<p>Trait definitions, default implementations of traits, and common type definitions for <code>Minilib.Collection.*</code>.</p>
+<p>The following traits are defined in this module.
+- <code>Set</code>: Abstract sets.
+- <code>SortedSet</code>: Sorted sets.
+- <code>Map</code>: Abstract maps.
+- <code>SortedMap</code>: Sorted maps.
+- <code>KeyCompare</code>: Key comparators.</p>
+<p>Some trait methods have default implementations defined in <code>{trait-name}::Default</code> namespaces.</p>
+<p>The following types are defined in this module.
+- <code>Bound</code>: A bound of a range, used in <code>SortedMap</code> and <code>SortedSet</code>.
+- <code>KeyLessThan</code>: Key comparators which compares keys with <code>LessThan::less_than</code>.
+- <code>KeyGreaterThan</code>: Key comparators which compares keys with <code>LessThan::less_than</code> in reversed order.
+- <code>KeyCompareWithFunc</code>: Key comparators which uses a function.</p>
+<h2 id="values">Values</h2>
+<h3 id="namespace-minilibcollectiontraitkeycompare">namespace Minilib.Collection.Trait::KeyCompare</h3>
+<h4 id="above_lower_bound">above_lower_bound</h4>
+<p>Type: <code>[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.Trait::Bound k -&gt; k -&gt; kc -&gt; Std::Bool</code></p>
+<p>Checks if the key is above the lower bound.</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>lower_bound</code>: a lower bound.</li>
+<li><code>key</code>: a key.</li>
+<li><code>kc</code>: a key comparator.</li>
+</ul>
+<h4 id="below_upper_bound">below_upper_bound</h4>
+<p>Type: <code>[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.Trait::Bound k -&gt; k -&gt; kc -&gt; Std::Bool</code></p>
+<p>Checks if the key is below the uppwer bound.</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>upper_bound</code>: a upper bound.</li>
+<li><code>key</code>: a key.</li>
+<li><code>kc</code>: a key comparator.</li>
+</ul>
+<h4 id="compare">compare</h4>
+<p>Type: <code>[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.Trait::KeyCompare::Key kc -&gt; Minilib.Collection.Trait::KeyCompare::Key kc -&gt; kc -&gt; Std::Bool</code></p>
+<p>Returns false if and only if the first key should appear after the second key.</p>
+<h4 id="empty">empty</h4>
+<p>Type: <code>[kc : Minilib.Collection.Trait::KeyCompare] kc</code></p>
+<p>An empty key comparator.</p>
+<h3 id="namespace-minilibcollectiontraitkeycomparewithfunc">namespace Minilib.Collection.Trait::KeyCompareWithFunc</h3>
+<h4 id="make">make</h4>
+<p>Type: <code>(k -&gt; k -&gt; Std::Bool) -&gt; Minilib.Collection.Trait::KeyCompareWithFunc k</code></p>
+<p>Creates a key comparator using the specified function.</p>
+<h5 id="parameters_2">Parameters</h5>
+<ul>
+<li><code>compare</code>: a comparator function</li>
+</ul>
+<h3 id="namespace-minilibcollectiontraitmap">namespace Minilib.Collection.Trait::Map</h3>
+<h4 id="act">act</h4>
+<p>Type: <code>[f : Std::Functor, map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; (Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; f (Std::Option (Minilib.Collection.Trait::Map::MapValue map))) -&gt; map -&gt; f map</code></p>
+<p>Modifies a map by a functorial action.</p>
+<p>Semantically, <code>map.act(key, fun)</code> is equivalent to
+<code>fun(map.find(key)).Functor::map(|opt_v| map.set(key, opt_v))</code>.</p>
+<p><code>action</code> is a function which takes an <code>Option v</code> as an argument and returns an <code>f (Option v)</code>,
+ where <code>v</code> is equal to <code>MapValue map</code>.
+ The argument of <code>action</code> is <code>some(old_value)</code> if there is an entry for the specified key, <code>none()</code> if there is no entry.
+ <code>action</code> should return a lifted value for <code>f</code> of <code>some(new_value)</code>
+  if you want to keep the entry (with or without changing the value),
+  or return a lifted value for <code>f</code> of <code>none()</code> if you want to remove the entry.</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>key</code>: A key</li>
+<li><code>action</code>: The functorial action to be performed on the value for the key <code>key</code>.</li>
+<li><code>map</code>: A map</li>
+</ul>
+<h4 id="contains_key">contains_key</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; Std::Bool</code></p>
+<p>Checks whether any entry exists whose key is equivalent to the specified key.</p>
+<h5 id="parameters_4">Parameters</h5>
+<ul>
+<li><code>key</code>: a key</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="erase">erase</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; map</code></p>
+<p>Erases all entries whose key is equivalent to the specified key.</p>
+<h5 id="parameters_5">Parameters</h5>
+<ul>
+<li><code>key</code>: a key</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="find">find</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map)</code></p>
+<p>Finds an entry whose key is equivalent to the specified key.
+If an entry is found, returns <code>some(v)</code> where <code>v</code> is the value.
+If no entry is found, returns <code>none()</code>.</p>
+<h5 id="parameters_6">Parameters</h5>
+<ul>
+<li><code>key</code>: a key</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="get_size">get_size</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Std::I64</code></p>
+<p>Gets the number of entries in a map.</p>
+<h5 id="parameters_7">Parameters</h5>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="insert">insert</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Inserts an entry into a map.</p>
+<h5 id="parameters_8">Parameters</h5>
+<ul>
+<li><code>key_value</code>: a key-value pair</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="is_empty">is_empty</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Std::Bool</code></p>
+<p>Checks whether a map is empty.</p>
+<h5 id="parameters_9">Parameters</h5>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="set">set</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Inserts an entry to a map, or erases an entry from a map.</p>
+<p>Semantically, <code>map.set(key, opt_v)</code> is equivalent to
+<code>match opt_v { some(v) =&gt; map.insert(key, v), none() =&gt; map.erase(key) }</code>.</p>
+<h5 id="parameters_10">Parameters</h5>
+<ul>
+<li><code>key</code>: A key</li>
+<li><code>opt_value</code>: If <code>some(v)</code>, an element is inserted. if <code>none()</code>, any element for <code>key</code> is erased.</li>
+<li><code>map</code>: A map</li>
+</ul>
+<h4 id="to_array">to_array</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Std::Array (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map)</code></p>
+<p>Converts a map into an array of entries.</p>
+<h5 id="parameters_11">Parameters</h5>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="to_iter">to_iter</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Minilib.Collection.Trait::Map::MapIterator map</code></p>
+<p>Converts a map into an iterator of entries.</p>
+<h5 id="parameters_12">Parameters</h5>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h3 id="namespace-minilibcollectiontraitmapdefault">namespace Minilib.Collection.Trait::Map::Default</h3>
+<h4 id="default_act">default_act</h4>
+<p>Type: <code>[f : Std::Functor, map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; (Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; f (Std::Option (Minilib.Collection.Trait::Map::MapValue map))) -&gt; map -&gt; f map</code></p>
+<p>Default implementation of <code>Map::act</code>.</p>
+<h4 id="default_set">default_set</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Default implementation of <code>Map::set</code>.</p>
+<h3 id="namespace-minilibcollectiontraitset">namespace Minilib.Collection.Trait::Set</h3>
+<h4 id="contains">contains</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; Std::Bool</code></p>
+<p>Checks whether a set contains the specified element.</p>
+<h5 id="parameters_13">Parameters</h5>
+<ul>
+<li><code>elem</code>: a element</li>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="erase_1">erase</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; set</code></p>
+<p>Erases all elements which is equivalent to the specified element.</p>
+<h5 id="parameters_14">Parameters</h5>
+<ul>
+<li><code>elem</code>: a element</li>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="get_size_1">get_size</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Std::I64</code></p>
+<p>Gets the number of elements in a set.</p>
+<h5 id="parameters_15">Parameters</h5>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="insert_1">insert</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; set</code></p>
+<p>Inserts an element into a set.</p>
+<h5 id="parameters_16">Parameters</h5>
+<ul>
+<li><code>elem</code>: a element</li>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="is_empty_1">is_empty</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Std::Bool</code></p>
+<p>Checks whether a set is empty.</p>
+<h5 id="parameters_17">Parameters</h5>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="to_array_1">to_array</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Std::Array (Minilib.Collection.Trait::Set::SetElem set)</code></p>
+<p>Converts a set into an array.</p>
+<h5 id="parameters_18">Parameters</h5>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="to_iter_1">to_iter</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Minilib.Collection.Trait::Set::SetIterator set</code></p>
+<p>Converts a set into an iterator.</p>
+<h5 id="parameters_19">Parameters</h5>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h3 id="namespace-minilibcollectiontraitsortedmapif">namespace Minilib.Collection.Trait::SortedMapIF</h3>
+<h4 id="select_range">select_range</h4>
+<p>Type: <code>[map : Minilib.Collection.Trait::SortedMapIF] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -&gt; Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -&gt; Std::Bool -&gt; map -&gt; Minilib.Collection.Trait::Map::MapIterator map</code></p>
+<p>Finds all entries in the specified range.</p>
+<h5 id="parameters_20">Parameters</h5>
+<ul>
+<li><code>lower_bound</code>: the lower bound of the range</li>
+<li><code>upper_bound</code>: the upper bound of the range</li>
+<li><code>ascending</code>: order of entries (true: ascending, false: descending)</li>
+<li><code>map</code>: a map</li>
+</ul>
+<p>Example:</p>
+<pre><code>map.select_range(included(5), excluded(10), true)    // finds all entries where 5 &lt;= key &lt; 10 in ascending order
+map.select_range(excluded(5), included(10), false)   // finds all entries where 5 &lt; key &lt;= 10 in descending order
+map.select_range(unbound(), excluded(10), true)    // finds all entries where key &lt; 10 in ascending order
+map.select_range(included(5), unbound(), true)    // finds all entries where 5 &lt;= key in ascending order
+map.select_range(unbound(), unbound(), true)    // finds all entries in ascending order
+</code></pre>
+<h3 id="namespace-minilibcollectiontraitsortedsetif">namespace Minilib.Collection.Trait::SortedSetIF</h3>
+<h4 id="select_range_1">select_range</h4>
+<p>Type: <code>[set : Minilib.Collection.Trait::SortedSetIF] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -&gt; Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -&gt; Std::Bool -&gt; set -&gt; Minilib.Collection.Trait::Set::SetIterator set</code></p>
+<p>Finds all elements in the specified range.</p>
+<h5 id="parameters_21">Parameters</h5>
+<ul>
+<li><code>lower_bound</code>: the lower bound of the range</li>
+<li><code>upper_bound</code>: the upper bound of the range</li>
+<li><code>ascending</code>: order of elements (true: ascending, false: descending)</li>
+<li><code>set</code>: a set</li>
+</ul>
+<p>Example:</p>
+<pre><code>set.select_range(included(5), excluded(10), true)    // finds all elements where 5 &lt;= key &lt; 10 in ascending order
+set.select_range(excluded(5), included(10), false)   // finds all elements where 5 &lt; key &lt;= 10 in descending order
+set.select_range(unbound(), excluded(10), true)    // finds all elements where key &lt; 10 in ascending order
+set.select_range(included(5), unbound(), true)    // finds all elements where 5 &lt;= key in ascending order
+set.select_range(unbound(), unbound(), true)    // finds all elements in ascending order
+</code></pre>
+<h2 id="types-and-aliases">Types and aliases</h2>
+<h3 id="namespace-minilibcollectiontrait">namespace Minilib.Collection.Trait</h3>
+<h4 id="bound">Bound</h4>
+<p>Defined as: <code>type Bound a = unbox union { ...variants... }</code></p>
+<p>A bound of a range, used in <code>SortedMap</code> and <code>SortedSet</code>.</p>
+<h5 id="variant-included">variant <code>included</code></h5>
+<p>Type: <code>a</code></p>
+<p>The bound is included</p>
+<h5 id="variant-excluded">variant <code>excluded</code></h5>
+<p>Type: <code>a</code></p>
+<p>The bound is excluded</p>
+<h5 id="variant-unbound">variant <code>unbound</code></h5>
+<p>Type: <code>()</code></p>
+<p>Unbound</p>
+<h4 id="keycomparewithfunc">KeyCompareWithFunc</h4>
+<p>Defined as: <code>type KeyCompareWithFunc k = unbox struct { ...fields... }</code></p>
+<p>The type of key comparators which uses a function.</p>
+<p>The implementation of this type for <code>KeyCompare::empty</code> is a dummy; do not use it.</p>
+<h5 id="field-compare">field <code>compare</code></h5>
+<p>Type: <code>k -&gt; k -&gt; Std::Bool</code></p>
+<h4 id="keygreaterthan">KeyGreaterThan</h4>
+<p>Defined as: <code>type KeyGreaterThan k = unbox struct { ...fields... }</code></p>
+<p>The type of key comparators which compares keys with <code>LessThan::less_than</code> in reversed order.</p>
+<h4 id="keylessthan">KeyLessThan</h4>
+<p>Defined as: <code>type KeyLessThan k = unbox struct { ...fields... }</code></p>
+<p>The type of key comparators which compares keys with <code>LessThan::less_than</code>.</p>
+<h2 id="traits-and-aliases">Traits and aliases</h2>
+<h3 id="namespace-minilibcollectiontrait_1">namespace Minilib.Collection.Trait</h3>
+<h4 id="trait-kc-keycompare">trait <code>kc : KeyCompare</code></h4>
+<p>The trait of key comparators.</p>
+<h5 id="type-key">type <code>Key</code></h5>
+<p>Defined as: <code>Key kc</code></p>
+<p>The type of keys.</p>
+<h5 id="method-empty">method <code>empty</code></h5>
+<p>Type: <code>kc</code></p>
+<p>An empty key comparator.</p>
+<h5 id="method-compare">method <code>compare</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::KeyCompare::Key kc -&gt; Minilib.Collection.Trait::KeyCompare::Key kc -&gt; kc -&gt; Std::Bool</code></p>
+<p>Returns false if and only if the first key should appear after the second key.</p>
+<h4 id="trait-map-map">trait <code>map : Map</code></h4>
+<p>The trait for abstract maps.</p>
+<h5 id="type-mapvalue">type <code>MapValue</code></h5>
+<p>Defined as: <code>MapValue map</code></p>
+<p>The type of the values.</p>
+<h5 id="type-mapkey">type <code>MapKey</code></h5>
+<p>Defined as: <code>MapKey map</code></p>
+<p>The type of the keys.</p>
+<h5 id="type-mapiterator">type <code>MapIterator</code></h5>
+<p>Defined as: <code>MapIterator map</code></p>
+<p>The type of the iterator returned by <code>to_iter</code> and <code>SortedMapIF::select_range</code>.
+<code>Item (MapIterator map)</code> should be equal to <code>(MapKey map, MapValue map)</code>.</p>
+<h5 id="method-is_empty">method <code>is_empty</code></h5>
+<p>Type: <code>map -&gt; Std::Bool</code></p>
+<p>Checks whether a map is empty.</p>
+<h6 id="parameters_22">Parameters</h6>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-get_size">method <code>get_size</code></h5>
+<p>Type: <code>map -&gt; Std::I64</code></p>
+<p>Gets the number of entries in a map.</p>
+<h6 id="parameters_23">Parameters</h6>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-contains_key">method <code>contains_key</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; Std::Bool</code></p>
+<p>Checks whether any entry exists whose key is equivalent to the specified key.</p>
+<h6 id="parameters_24">Parameters</h6>
+<ul>
+<li><code>key</code>: a key</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-find">method <code>find</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map)</code></p>
+<p>Finds an entry whose key is equivalent to the specified key.
+If an entry is found, returns <code>some(v)</code> where <code>v</code> is the value.
+If no entry is found, returns <code>none()</code>.</p>
+<h6 id="parameters_25">Parameters</h6>
+<ul>
+<li><code>key</code>: a key</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-insert">method <code>insert</code></h5>
+<p>Type: <code>(Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Inserts an entry into a map.</p>
+<h6 id="parameters_26">Parameters</h6>
+<ul>
+<li><code>key_value</code>: a key-value pair</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-erase">method <code>erase</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; map</code></p>
+<p>Erases all entries whose key is equivalent to the specified key.</p>
+<h6 id="parameters_27">Parameters</h6>
+<ul>
+<li><code>key</code>: a key</li>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-set">method <code>set</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Map::MapKey map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Inserts an entry to a map, or erases an entry from a map.</p>
+<p>Semantically, <code>map.set(key, opt_v)</code> is equivalent to
+<code>match opt_v { some(v) =&gt; map.insert(key, v), none() =&gt; map.erase(key) }</code>.</p>
+<h6 id="parameters_28">Parameters</h6>
+<ul>
+<li><code>key</code>: A key</li>
+<li><code>opt_value</code>: If <code>some(v)</code>, an element is inserted. if <code>none()</code>, any element for <code>key</code> is erased.</li>
+<li><code>map</code>: A map</li>
+</ul>
+<h5 id="method-act">method <code>act</code></h5>
+<p>Type: <code>[f : Std::Functor] Minilib.Collection.Trait::Map::MapKey map -&gt; (Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; f (Std::Option (Minilib.Collection.Trait::Map::MapValue map))) -&gt; map -&gt; f map</code></p>
+<p>Modifies a map by a functorial action.</p>
+<p>Semantically, <code>map.act(key, fun)</code> is equivalent to
+<code>fun(map.find(key)).Functor::map(|opt_v| map.set(key, opt_v))</code>.</p>
+<p><code>action</code> is a function which takes an <code>Option v</code> as an argument and returns an <code>f (Option v)</code>,
+ where <code>v</code> is equal to <code>MapValue map</code>.
+ The argument of <code>action</code> is <code>some(old_value)</code> if there is an entry for the specified key, <code>none()</code> if there is no entry.
+ <code>action</code> should return a lifted value for <code>f</code> of <code>some(new_value)</code>
+  if you want to keep the entry (with or without changing the value),
+  or return a lifted value for <code>f</code> of <code>none()</code> if you want to remove the entry.</p>
+<h6 id="parameters_29">Parameters</h6>
+<ul>
+<li><code>key</code>: A key</li>
+<li><code>action</code>: The functorial action to be performed on the value for the key <code>key</code>.</li>
+<li><code>map</code>: A map</li>
+</ul>
+<h5 id="method-to_iter">method <code>to_iter</code></h5>
+<p>Type: <code>map -&gt; Minilib.Collection.Trait::Map::MapIterator map</code></p>
+<p>Converts a map into an iterator of entries.</p>
+<h6 id="parameters_30">Parameters</h6>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h5 id="method-to_array">method <code>to_array</code></h5>
+<p>Type: <code>map -&gt; Std::Array (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map)</code></p>
+<p>Converts a map into an array of entries.</p>
+<h6 id="parameters_31">Parameters</h6>
+<ul>
+<li><code>map</code>: a map</li>
+</ul>
+<h4 id="trait-set-set">trait <code>set : Set</code></h4>
+<p>The trait for abstract sets.</p>
+<h5 id="type-setelem">type <code>SetElem</code></h5>
+<p>Defined as: <code>SetElem set</code></p>
+<p>The type of the elements.</p>
+<h5 id="type-setiterator">type <code>SetIterator</code></h5>
+<p>Defined as: <code>SetIterator set</code></p>
+<p>The type of the iterator returned by <code>to_iter</code> and <code>SortedSetIF::select_range</code>.
+<code>Item (SetIterator set)</code> should be equal to <code>SetElem set</code>.</p>
+<h5 id="method-is_empty_1">method <code>is_empty</code></h5>
+<p>Type: <code>set -&gt; Std::Bool</code></p>
+<p>Checks whether a set is empty.</p>
+<h6 id="parameters_32">Parameters</h6>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h5 id="method-get_size_1">method <code>get_size</code></h5>
+<p>Type: <code>set -&gt; Std::I64</code></p>
+<p>Gets the number of elements in a set.</p>
+<h6 id="parameters_33">Parameters</h6>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h5 id="method-contains">method <code>contains</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; Std::Bool</code></p>
+<p>Checks whether a set contains the specified element.</p>
+<h6 id="parameters_34">Parameters</h6>
+<ul>
+<li><code>elem</code>: a element</li>
+<li><code>set</code>: a set</li>
+</ul>
+<h5 id="method-insert_1">method <code>insert</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; set</code></p>
+<p>Inserts an element into a set.</p>
+<h6 id="parameters_35">Parameters</h6>
+<ul>
+<li><code>elem</code>: a element</li>
+<li><code>set</code>: a set</li>
+</ul>
+<h5 id="method-erase_1">method <code>erase</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; set</code></p>
+<p>Erases all elements which is equivalent to the specified element.</p>
+<h6 id="parameters_36">Parameters</h6>
+<ul>
+<li><code>elem</code>: a element</li>
+<li><code>set</code>: a set</li>
+</ul>
+<h5 id="method-to_iter_1">method <code>to_iter</code></h5>
+<p>Type: <code>set -&gt; Minilib.Collection.Trait::Set::SetIterator set</code></p>
+<p>Converts a set into an iterator.</p>
+<h6 id="parameters_37">Parameters</h6>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h5 id="method-to_array_1">method <code>to_array</code></h5>
+<p>Type: <code>set -&gt; Std::Array (Minilib.Collection.Trait::Set::SetElem set)</code></p>
+<p>Converts a set into an array.</p>
+<h6 id="parameters_38">Parameters</h6>
+<ul>
+<li><code>set</code>: a set</li>
+</ul>
+<h4 id="trait-sortedmap-minilibcollectiontraitmap-minilibcollectiontraitsortedmapif">trait <code>SortedMap = Minilib.Collection.Trait::Map + Minilib.Collection.Trait::SortedMapIF</code></h4>
+<p>Kind: <code>*</code></p>
+<p>The trait for sorted maps.</p>
+<h4 id="trait-map-sortedmapif">trait <code>map : SortedMapIF</code></h4>
+<p>The interface for sorted maps.</p>
+<h5 id="method-select_range">method <code>select_range</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -&gt; Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -&gt; Std::Bool -&gt; map -&gt; Minilib.Collection.Trait::Map::MapIterator map</code></p>
+<p>Finds all entries in the specified range.</p>
+<h6 id="parameters_39">Parameters</h6>
+<ul>
+<li><code>lower_bound</code>: the lower bound of the range</li>
+<li><code>upper_bound</code>: the upper bound of the range</li>
+<li><code>ascending</code>: order of entries (true: ascending, false: descending)</li>
+<li><code>map</code>: a map</li>
+</ul>
+<p>Example:</p>
+<pre><code>map.select_range(included(5), excluded(10), true)    // finds all entries where 5 &lt;= key &lt; 10 in ascending order
+map.select_range(excluded(5), included(10), false)   // finds all entries where 5 &lt; key &lt;= 10 in descending order
+map.select_range(unbound(), excluded(10), true)    // finds all entries where key &lt; 10 in ascending order
+map.select_range(included(5), unbound(), true)    // finds all entries where 5 &lt;= key in ascending order
+map.select_range(unbound(), unbound(), true)    // finds all entries in ascending order
+</code></pre>
+<h4 id="trait-sortedset-minilibcollectiontraitset-minilibcollectiontraitsortedsetif">trait <code>SortedSet = Minilib.Collection.Trait::Set + Minilib.Collection.Trait::SortedSetIF</code></h4>
+<p>Kind: <code>*</code></p>
+<p>The trait for sorted sets.</p>
+<h4 id="trait-set-sortedsetif">trait <code>set : SortedSetIF</code></h4>
+<p>The interface for sorted sets.</p>
+<h5 id="method-select_range_1">method <code>select_range</code></h5>
+<p>Type: <code>Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -&gt; Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -&gt; Std::Bool -&gt; set -&gt; Minilib.Collection.Trait::Set::SetIterator set</code></p>
+<p>Finds all elements in the specified range.</p>
+<h6 id="parameters_40">Parameters</h6>
+<ul>
+<li><code>lower_bound</code>: the lower bound of the range</li>
+<li><code>upper_bound</code>: the upper bound of the range</li>
+<li><code>ascending</code>: order of elements (true: ascending, false: descending)</li>
+<li><code>set</code>: a set</li>
+</ul>
+<p>Example:</p>
+<pre><code>set.select_range(included(5), excluded(10), true)    // finds all elements where 5 &lt;= key &lt; 10 in ascending order
+set.select_range(excluded(5), included(10), false)   // finds all elements where 5 &lt; key &lt;= 10 in descending order
+set.select_range(unbound(), excluded(10), true)    // finds all elements where key &lt; 10 in ascending order
+set.select_range(included(5), unbound(), true)    // finds all elements where 5 &lt;= key in ascending order
+set.select_range(unbound(), unbound(), true)    // finds all elements in ascending order
+</code></pre>
+<h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-minilibcollectiontraitbound-stdfunctor">impl <code>Minilib.Collection.Trait::Bound : Std::Functor</code></h3>
+<h3 id="impl-a-stdtostring-minilibcollectiontraitbound-a-stdtostring">impl <code>[a : Std::ToString] Minilib.Collection.Trait::Bound a : Std::ToString</code></h3>
+<h3 id="impl-minilibcollectiontraitkeycomparewithfunc-k-minilibcollectiontraitkeycompare">impl <code>Minilib.Collection.Trait::KeyCompareWithFunc k : Minilib.Collection.Trait::KeyCompare</code></h3>
+<h3 id="impl-k-stdlessthan-minilibcollectiontraitkeygreaterthan-k-minilibcollectiontraitkeycompare">impl <code>[k : Std::LessThan] Minilib.Collection.Trait::KeyGreaterThan k : Minilib.Collection.Trait::KeyCompare</code></h3>
+<h3 id="impl-k-stdlessthan-minilibcollectiontraitkeylessthan-k-minilibcollectiontraitkeycompare">impl <code>[k : Std::LessThan] Minilib.Collection.Trait::KeyLessThan k : Minilib.Collection.Trait::KeyCompare</code></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/search-boost.js"></script>
+      
+    
+  </body>
+</html>
