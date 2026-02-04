@@ -4593,23 +4593,23 @@
 
 
 <h1 id="minilibthreadfuture">Minilib.Thread.Future</h1>
-<p>Defined in minilib-thread@0.5.7</p>
+<p>Defined in minilib-thread@0.6.0</p>
 <p>A computation that is performed in a TaskPool in parallel.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibthreadfuture">namespace Minilib.Thread.Future</h3>
 <h4 id="get">get</h4>
-<p>Type: <code>Minilib.Thread.Future::Future a -&gt; Std::IO::IOFail a</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Thread.Future::Future a -&gt; m a</code></p>
 <p>Gets the result of the Future.
 It waits for future state to be either completed or canceled.</p>
 <h4 id="make">make</h4>
-<p>Type: <code>Minilib.Thread.TaskPool::TaskPool -&gt; Std::IO a -&gt; Std::IO::IOFail (Minilib.Thread.Future::Future a)</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Thread.TaskPool::TaskPool -&gt; Std::IO a -&gt; m (Minilib.Thread.Future::Future a)</code></p>
 <p><code>Future::make(task_pool, io) creates a Future.</code>io` is performed in the task pool.
 If the task pool has been shutdown, an error is thrown.</p>
 <h3 id="namespace-minilibthreadfuturefuturetoken">namespace Minilib.Thread.Future::FutureToken</h3>
 <h4 id="make_1">make</h4>
 <p>Type: <code>AsyncTask::Var::Var Minilib.Thread.Future::FutureState -&gt; Std::IO () -&gt; Minilib.Thread.Future::FutureToken</code></p>
 <h4 id="set_state">set_state</h4>
-<p>Type: <code>Minilib.Thread.Future::FutureState -&gt; Minilib.Thread.Future::FutureToken -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Thread.Future::FutureState -&gt; Minilib.Thread.Future::FutureToken -&gt; m ()</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibthreadfuture_1">namespace Minilib.Thread.Future</h3>
 <h4 id="future">Future</h4>

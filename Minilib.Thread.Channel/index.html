@@ -4547,45 +4547,45 @@
 
 
 <h1 id="minilibthreadchannel">Minilib.Thread.Channel</h1>
-<p>Defined in minilib-thread@0.5.7</p>
+<p>Defined in minilib-thread@0.6.0</p>
 <p>A Channel that can be used for the communication of threads.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibthreadchannel">namespace Minilib.Thread.Channel</h3>
 <h4 id="clear">clear</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Thread.Channel::Channel a -&gt; m ()</code></p>
 <p><code>channel.clear</code> clears the queue of the channel.</p>
 <h4 id="close">close</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Thread.Channel::Channel a -&gt; m ()</code></p>
 <p><code>channel.close</code> closes a channel.
 After close, <code>send()</code> will fail.</p>
 <h4 id="closed_error">closed_error</h4>
 <p>Type: <code>Std::ErrMsg</code></p>
 <p>An error message which is reported when the channel is closed.</p>
 <h4 id="is_closed">is_closed</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO Std::Bool</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Thread.Channel::Channel a -&gt; m Std::Bool</code></p>
 <p><code>channel.is_closed</code> checks whether the channel is closed.</p>
 <h4 id="is_empty">is_empty</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO Std::Bool</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Thread.Channel::Channel a -&gt; m Std::Bool</code></p>
 <p><code>channel.is_empty</code> checks whether the queue of the channel is empty.</p>
 <h4 id="make">make</h4>
-<p>Type: <code>Std::IO (Minilib.Thread.Channel::Channel a)</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] m (Minilib.Thread.Channel::Channel a)</code></p>
 <p><code>Channel::make</code> creates a new channel.</p>
 <h4 id="recv">recv</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO::IOFail a</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Thread.Channel::Channel a -&gt; m a</code></p>
 <p><code>channel.recv</code> receives a data from the queue of the channel.
 If the queue is empty, it waits until any data is sent, or the channel is closed.
 If the channel is closed and the queue is empty, it throws <code>closed_error</code>.</p>
 <h4 id="send">send</h4>
-<p>Type: <code>a -&gt; Minilib.Thread.Channel::Channel a -&gt; Std::IO::IOFail ()</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] a -&gt; Minilib.Thread.Channel::Channel a -&gt; m ()</code></p>
 <p><code>channel.send(a)</code> sends a data to the queue of the channel.
 If the channel is closed, it throws <code>closed_error</code>.</p>
 <h4 id="take_and_clear">take_and_clear</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO (Std::Iterator::DynIterator a)</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Minilib.Thread.Channel::Channel a -&gt; m (Std::Iterator::DynIterator a)</code></p>
 <p><code>channel.take_and_clear</code> takes all items away from the queue of the channel
 and clears the queue.
 This function can be used after the channel is closed.</p>
 <h4 id="try_recv">try_recv</h4>
-<p>Type: <code>Minilib.Thread.Channel::Channel a -&gt; Std::IO::IOFail (Std::Option a)</code></p>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIOFail] Minilib.Thread.Channel::Channel a -&gt; m (Std::Option a)</code></p>
 <p><code>channel.recv</code> tries to receive a data from a channel.
 If there is no data, <code>none</code> is returned.
 If the channel is closed and the queue is empty, it throws <code>closed_error</code>.</p>
