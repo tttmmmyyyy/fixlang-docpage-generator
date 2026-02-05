@@ -5393,7 +5393,7 @@
 
 
 <h1 id="minilibmonadstate">Minilib.Monad.State</h1>
-<p>Defined in minilib-monad@0.9.0</p>
+<p>Defined in minilib-monad@0.10.0</p>
 <p>State Monad which maintains a mutable state.</p>
 <p>Example:</p>
 <pre><code>main: IO () = (
@@ -5439,9 +5439,20 @@
 <p><code>gets(f)</code> is same as <code>get_state.map(f)</code>.</p>
 <h4 id="lens_state">lens_state</h4>
 <p>Type: <code>((s -&gt; Minilib.Functor.Pair::PairLT a Minilib.Monad.Iden::Iden s) -&gt; t -&gt; Minilib.Functor.Pair::PairLT a Minilib.Monad.Iden::Iden t) -&gt; Minilib.Monad.State::State s a -&gt; Minilib.Monad.State::State t a</code></p>
+<p>Transforms a State monad with a lens action.</p>
+<p>For example, if <code>Foo</code> has a field <code>bar: Bar</code>, then <code>act_bar</code> is a function of type
+<code>[f: Functor] (Bar -&gt; f Bar) -&gt; (Foo -&gt; f Foo)</code>.
+Using <code>act_bar</code>, a state monad of <code>Bar</code> can be transformed to a state monad of <code>Foo</code>.</p>
+<p>Note that <code>act_xxx</code> can be composed, for example <code>Foo::act_bar &lt;&lt; Bar::act_baz &lt;&lt; Baz::act_qux</code>.</p>
+<p>Example:</p>
+<pre><code>change_bar: State Bar ();
+change_bar = ...;
+change_foo: State Foo ();
+change_foo = change_bar.lens_state(Foo::act_bar);
+</code></pre>
 <h4 id="lens_state_t">lens_state_t</h4>
 <p>Type: <code>[m : Std::Functor, m : Std::Monad] ((s -&gt; Minilib.Functor.Pair::PairLT a m s) -&gt; t -&gt; Minilib.Functor.Pair::PairLT a m t) -&gt; Minilib.Monad.State::StateT s m a -&gt; Minilib.Monad.State::StateT t m a</code></p>
-<p>Transforms a state monad with a lens action.</p>
+<p>Transforms a StateT monad with a lens action.</p>
 <p>For example, if <code>Foo</code> has a field <code>bar: Bar</code>, then <code>act_bar</code> is a function of type
 <code>[f: Functor] (Bar -&gt; f Bar) -&gt; (Foo -&gt; f Foo)</code>.
 Using <code>act_bar</code>, a state monad of <code>Bar</code> can be transformed to a state monad of <code>Foo</code>.</p>
@@ -5543,9 +5554,9 @@ change_foo = change_bar.lens_state_t(Foo::act_bar);
 <h3 id="namespace-minilibmonadstate_1">namespace Minilib.Monad.State</h3>
 <h4 id="svar">SVar</h4>
 <p>Defined as: <code>type SVar s a = unbox struct { ...fields... }</code></p>
-<p>A variable bound to a substate of the State monad.
+<p>A variable bound to a substate of the StateT monad (including State monad).
 You can get, set, and modify the bound substate.
-This is similar to <code>AsyncTask::Var</code>, but the result of each operation is a State monad, not an IO monad.</p>
+This is similar to <code>AsyncTask::Var</code>, but the result of each operation is a StateT monad, not an IO monad.</p>
 <p>Example:</p>
 <pre><code>type S = unbox struct { a: I64 };
 
@@ -5566,6 +5577,7 @@ main = (
 <p>Type: <code>s -&gt; (a -&gt; Std::Result a a) -&gt; Std::Result a s</code></p>
 <h4 id="state_1">State</h4>
 <p>Defined as: <code>type State s = Minilib.Monad.State::StateT s Minilib.Monad.Iden::Iden</code></p>
+<p><code>State s</code> is an alias of <code>StateT s Iden</code>.</p>
 <h4 id="statet">StateT</h4>
 <p>Defined as: <code>type [m : *-&gt;*] StateT s m a = unbox struct { ...fields... }</code></p>
 <p>State monad wraps a function from a initial state to a pair of a value and a final state.</p>

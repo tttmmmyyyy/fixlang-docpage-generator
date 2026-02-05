@@ -2890,10 +2890,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lift_identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lift_identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#make" class="md-nav__link">
     <span class="md-ellipsis">
       
         make
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_identity
       
     </span>
   </a>
@@ -4154,10 +4187,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lift_identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lift_identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#make" class="md-nav__link">
     <span class="md-ellipsis">
       
         make
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_identity
       
     </span>
   </a>
@@ -4259,16 +4325,25 @@
 
 
 <h1 id="minilibmonadiden">Minilib.Monad.Iden</h1>
-<p>Defined in minilib-monad@0.9.0</p>
+<p>Defined in minilib-monad@0.10.0</p>
 <p>Identity monad</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadiden">namespace Minilib.Monad.Iden</h3>
 <h4 id="get">get</h4>
 <p>Type: <code>Minilib.Monad.Iden::Iden a -&gt; a</code></p>
 <p>Gets a value from an identity monad.</p>
+<h4 id="identity">identity</h4>
+<p>Type: <code>a -&gt; Minilib.Monad.Iden::Iden a</code></p>
+<p><code>identity</code> is a synonym of <code>Iden::make</code>.</p>
+<h4 id="lift_identity">lift_identity</h4>
+<p>Type: <code>[m : Std::Monad] Minilib.Monad.Iden::Iden a -&gt; m a</code></p>
+<p>Lifts an identity monad to any monad.</p>
 <h4 id="make">make</h4>
 <p>Type: <code>a -&gt; Minilib.Monad.Iden::Iden a</code></p>
 <p>Creates an identity monad from a value.</p>
+<h4 id="run_identity">run_identity</h4>
+<p>Type: <code>Minilib.Monad.Iden::Iden a -&gt; a</code></p>
+<p><code>run_identity</code> is a synonym of <code>Iden::get</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibmonadiden_1">namespace Minilib.Monad.Iden</h3>
 <h4 id="iden">Iden</h4>
