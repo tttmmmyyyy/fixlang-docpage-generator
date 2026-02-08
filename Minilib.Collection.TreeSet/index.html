@@ -1013,6 +1013,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../MPFR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPFR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Math/" class="md-nav__link">
         
   
@@ -1600,34 +1627,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#intersect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        intersect
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="intersect">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#make" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1651,35 +1650,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        merge
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="merge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_8" class="md-nav__link">
+  <a href="#parameters_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4686,34 +4657,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#intersect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        intersect
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="intersect">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#make" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4737,35 +4680,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        merge
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="merge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_8" class="md-nav__link">
+  <a href="#parameters_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4987,17 +4902,19 @@
 
 
 <h1 id="minilibcollectiontreeset">Minilib.Collection.TreeSet</h1>
-<p>Defined in minilib-collection@0.7.0-beta1</p>
+<p>Defined in minilib-collection@0.7.0-beta2</p>
 <p>TreeSet is a set that manages elements in sorted order.</p>
 <p><code>TreeSet</code> implements the <code>Set</code> and <code>SortedSet</code> trait.
  If you import this module, you should also import <code>Minilib.Collection.Trait</code>.</p>
 <p>The elements of a TreeSet must have a partial order,
 and <code>less_than</code> is the comparison function for that partial order.</p>
-<p>NOTE: <code>less_than()</code> function must meet following conditions.
-- Irreflexivity: for all <code>x</code>, <code>less_than(x,x)</code> must be false.
-- Asymmetry:     for all <code>x, y</code>, if <code>less_than(x,y)</code> is true, then <code>less_than(y,x)</code> must be false.
-- Transitivity:  for all <code>x, y, z</code>, if <code>less_than(x,y)</code> is true and <code>less_than(y,z)</code> is true,
-                 then <code>less_than(x,z)</code> must be true.</p>
+<p>NOTE: <code>less_than()</code> function must meet following conditions.</p>
+<ul>
+<li>Irreflexivity: for all <code>x</code>, <code>less_than(x,x)</code> must be false.</li>
+<li>Asymmetry:     for all <code>x, y</code>, if <code>less_than(x,y)</code> is true, then <code>less_than(y,x)</code> must be false.</li>
+<li>Transitivity:  for all <code>x, y, z</code>, if <code>less_than(x,y)</code> is true and <code>less_than(y,z)</code> is true,
+                 then <code>less_than(x,z)</code> must be true.</li>
+</ul>
 <p>If two elements <code>x</code> and <code>y</code> are incomparable, i.e. neither <code>less_than(x,y)</code> nor <code>less_than(y,x)</code> holds,
 then <code>x</code> and <code>y</code> are considered equivalent.</p>
 <h2 id="benchmark-result">Benchmark Result</h2>
@@ -5072,31 +4989,15 @@ for all <code>x</code>, <code>x.lt_begin</code> is true then <code>x.lt_end</cod
 <li><code>less_than</code>: a comparision function</li>
 <li><code>iter</code>: an iterator of elements</li>
 </ul>
-<h4 id="intersect">intersect</h4>
-<p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
-<p>Calculates intersection of two TreeSets.</p>
-<h5 id="parameters_6">Parameters</h5>
-<ul>
-<li><code>ts1</code>: a TreeSet</li>
-<li><code>ts2</code>: another TreeSet</li>
-</ul>
 <h4 id="make">make</h4>
 <p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem, a : Std::LessThan] () -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
 <p><code>TreeSet::make()</code> creates an empty <code>TreeSet</code> using default <code>LessThan</code> ordering.</p>
 <h4 id="make_lt">make_lt</h4>
 <p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] (a -&gt; a -&gt; Std::Bool) -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
 <p><code>TreeSet::make_lt(less_than)</code> creates an empty <code>TreeSet</code> using specified ordering.</p>
-<h5 id="parameters_7">Parameters</h5>
+<h5 id="parameters_6">Parameters</h5>
 <ul>
 <li><code>less_than</code>: a comparision function</li>
-</ul>
-<h4 id="merge">merge</h4>
-<p>Type: <code>[a : Minilib.Collection.TreeSet::TreeSet::TreeSetElem] Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a -&gt; Minilib.Collection.TreeSet::TreeSet::TreeSet a</code></p>
-<p>Calculates union of two TreeSets.</p>
-<h5 id="parameters_8">Parameters</h5>
-<ul>
-<li><code>ts1</code>: a TreeSet</li>
-<li><code>ts2</code>: another TreeSet</li>
 </ul>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibcollectiontreesettreeset_1">namespace Minilib.Collection.TreeSet::TreeSet</h3>
