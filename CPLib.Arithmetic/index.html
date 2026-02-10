@@ -881,6 +881,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pythagorean_triples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pythagorean_triples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pythagorean_triples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sub_mod" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -893,7 +921,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_16" class="md-nav__link">
+  <a href="#parameters_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -5060,6 +5088,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pythagorean_triples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pythagorean_triples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pythagorean_triples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sub_mod" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5072,7 +5128,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_16" class="md-nav__link">
+  <a href="#parameters_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -5148,7 +5204,7 @@
 
 
 <h1 id="cplibarithmetic">CPLib.Arithmetic</h1>
-<p>Defined in cp-library@0.7.5</p>
+<p>Defined in cp-library@0.8.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-cplibarithmetic">namespace CPLib.Arithmetic</h3>
 <h4 id="add_mod">add_mod</h4>
@@ -5294,10 +5350,20 @@
 <li><code>m</code>: 法 &gt; 0</li>
 <li><code>x</code>: 底 &gt;= 0</li>
 </ul>
+<h4 id="pythagorean_triples">pythagorean_triples</h4>
+<p>Type: <code>Std::I64 -&gt; Std::Array (Std::I64, Std::I64, Std::I64)</code></p>
+<p>原始ピタゴラス数<code>(a, b, c)</code>を列挙する</p>
+<p><code>a^2 + b^2 = c^2</code>を満たす正の整数の組<code>(a, b, c)</code>で、<code>gcd(a, b, c) = 1</code>を満たすものを列挙する</p>
+<p>また、このような<code>a</code>, <code>b</code>は必ず片方が奇数でもう片方が偶数である。
+この関数の戻り値では<code>a</code>が奇数、<code>b</code>が偶数となる。</p>
+<h5 id="parameters_16">Parameters</h5>
+<ul>
+<li><code>c_max</code>: <code>c</code>の上限（inclusive), <code>c_max &gt;= 1</code></li>
+</ul>
 <h4 id="sub_mod">sub_mod</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
 <p><code>x - y</code>を<code>m</code>で割った余りを（非負で）返す</p>
-<h5 id="parameters_16">Parameters</h5>
+<h5 id="parameters_17">Parameters</h5>
 <ul>
 <li><code>x</code>: 整数</li>
 <li><code>y</code>: 整数</li>

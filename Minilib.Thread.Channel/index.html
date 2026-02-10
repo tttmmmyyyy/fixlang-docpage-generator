@@ -3711,10 +3711,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-deque" class="md-nav__link">
+  <a href="#field-queue" class="md-nav__link">
     <span class="md-ellipsis">
       
-        field deque
+        field queue
       
     </span>
   </a>
@@ -4498,10 +4498,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-deque" class="md-nav__link">
+  <a href="#field-queue" class="md-nav__link">
     <span class="md-ellipsis">
       
-        field deque
+        field queue
       
     </span>
   </a>
@@ -4574,7 +4574,7 @@
 
 
 <h1 id="minilibthreadchannel">Minilib.Thread.Channel</h1>
-<p>Defined in minilib-thread@0.6.0</p>
+<p>Defined in minilib-thread@0.7.0</p>
 <p>A Channel that can be used for the communication of threads.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibthreadchannel">namespace Minilib.Thread.Channel</h3>
@@ -4626,8 +4626,8 @@ If the channel is closed and the queue is empty, it throws <code>closed_error</c
 <h4 id="channeldata">ChannelData</h4>
 <p>Defined as: <code>type ChannelData a = unbox struct { ...fields... }</code></p>
 <p>The channel data</p>
-<h5 id="field-deque">field <code>deque</code></h5>
-<p>Type: <code>Minilib.Collection.Deque::Deque a</code></p>
+<h5 id="field-queue">field <code>queue</code></h5>
+<p>Type: <code>RingBuffer::RingBuffer a</code></p>
 <h5 id="field-closed">field <code>closed</code></h5>
 <p>Type: <code>Std::Bool</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
