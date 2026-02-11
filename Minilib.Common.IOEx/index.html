@@ -1540,6 +1540,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getenv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#set_unbuffered_mode" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4147,6 +4175,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getenv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#set_unbuffered_mode" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4218,7 +4274,7 @@
 
 
 <h1 id="minilibcommonioex">Minilib.Common.IOEx</h1>
-<p>Defined in minilib-common@0.12.0</p>
+<p>Defined in minilib-common@0.12.1</p>
 <p>Extensions for <code>Std::IO</code>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcommonioex">namespace Minilib.Common.IOEx</h3>
@@ -4227,6 +4283,14 @@
 <p>Flushes a file stream.
 For details, see Linux manual page for <a href="https://man7.org/linux/man-pages/man3/fflush.3.html">fflush()</a>.</p>
 <p>NOTE: <code>Std::IO::flush</code> may be a better choice.</p>
+<h4 id="getenv">getenv</h4>
+<p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::String -&gt; m Std::String</code></p>
+<p>Gets the value of an environment variable.
+If the specified variable is not found, this function returns an empty string.</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>name</code>: a variable name</li>
+</ul>
 <h4 id="set_unbuffered_mode">set_unbuffered_mode</h4>
 <p>Type: <code>[m : Minilib.Monad.IO::MonadIO] Std::IO::IOHandle -&gt; m ()</code></p>
 <p>Sets IOHandle to unbuffered mode.
