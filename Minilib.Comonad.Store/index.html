@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../RegExp.RegExpPattern/">
+        <link rel="prev" href="../Minilib.Comonad.IdentityC/">
       
       
-        <link rel="next" href="../RegExp.StringEx/">
+        <link rel="next" href="../Minilib.Comonad.Traced/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>RegExp.SimpleParser - Fix DocPage</title>
+        <title>Minilib.Comonad.Store - Fix DocPage</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#regexpsimpleparser" class="md-skip">
+        <a href="#minilibcomonadstore" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RegExp.SimpleParser
+              Minilib.Comonad.Store
             
           </span>
         </div>
@@ -1658,10 +1658,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Minilib.Comonad.Store/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Store
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1677,6 +1704,555 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_store_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_store_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store_t
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="store_t">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstorecomonadstoredefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store::ComonadStore::Default
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store::ComonadStore::Default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_peeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_peeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_seek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_seek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_seeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_seeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstorecomonadstoreif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store::ComonadStoreIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store::ComonadStoreIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        peek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        peeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstore_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StoreT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StoreT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traits and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstore_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trait-comonadstore-minilibtraitcomonadcomonad-minilibcomonadstorecomonadstoreif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait ComonadStore = Minilib.Trait.Comonad::Comonad + Minilib.Comonad.Store::ComonadStoreIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-sw-sw-comonadstoreif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait [sw : *-&gt;*] sw : ComonadStoreIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait [sw : *-&gt;*] sw : ComonadStoreIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-positiontype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type PositionType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method pos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method peek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-peeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method peeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-seek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method seek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-seeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method seeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trait implementations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-w-minilibtraitcomonadcomonad-minilibcomonadstorestoret-p-w-minilibcomonadstorecomonadstoreif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w : Minilib.Comonad.Store::ComonadStoreIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-w-minilibtraitcomonadcomonad-minilibcomonadstorestoret-p-w-minilibtraitcomonadcomonad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w : Minilib.Trait.Comonad::Comonad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-w-stdfunctor-minilibcomonadstorestoret-p-w-stdfunctor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl [w : Std::Functor] Minilib.Comonad.Store::StoreT p w : Std::Functor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3845,37 +4421,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RegExp.SimpleParser
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RegExp.SimpleParser/" class="md-nav__link">
         
   
   
@@ -3891,724 +4440,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Values
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.SimpleParser
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        parser
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparserparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.SimpleParser::Parser
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser::Parser">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#debug" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        debug
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error_parser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        error_parser
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        filter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_stream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_stream
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#if_exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        if_exists
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#map_result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        map_result
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_any_char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_any_char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_char_class" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_char_class
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_char_if_exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_char_if_exists
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_empty_str" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_empty_str
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_end_of_stream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_end_of_stream
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_integer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_integer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_one_of_char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_one_of_char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class_digit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class_digit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class_lower" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class_lower
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class_whitespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class_whitespace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not_match" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        not_match
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#one_or_more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        one_or_more
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or_else" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        or_else
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or_error" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        or_error
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#repeat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        repeat
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run_parser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        run_parser
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run_parser_str" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        run_parser_str
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        unit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zero_or_more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        zero_or_more
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparserstream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.SimpleParser::Stream
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser::Stream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#advance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        advance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#empty" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        empty
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        error
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        make
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read_all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        read_all
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        read_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types-and-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Types and aliases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types and aliases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparser_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.SimpleParser
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parseresult" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ParseResult
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parser_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parser
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parser">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-_parser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field _parser
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparserstream_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.SimpleParser::Stream
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser::Stream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stream
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-filename" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field filename
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field line
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-column" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field column
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-position" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field position
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field iter
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traits-and-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Traits and aliases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trait-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trait implementations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Trait implementations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserparser-stdfunctor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        impl RegExp.SimpleParser::Parser : Std::Functor
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserparser-stdmonad" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        impl RegExp.SimpleParser::Parser : Std::Monad
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserstreamstream-stdfromstring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        impl RegExp.SimpleParser::Stream::Stream : Std::FromString
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserstreamstream-stdtostring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        impl RegExp.SimpleParser::Stream::Stream : Std::ToString
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4814,22 +4645,67 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparser" class="md-nav__link">
+  <a href="#namespace-minilibcomonadstore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace RegExp.SimpleParser
+        namespace Minilib.Comonad.Store
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser">
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parser" class="md-nav__link">
+  <a href="#get" class="md-nav__link">
     <span class="md-ellipsis">
       
-        parser
+        get
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_store_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_store_t
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
       
     </span>
   </a>
@@ -4842,22 +4718,55 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparserparser" class="md-nav__link">
+  <a href="#store_t" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace RegExp.SimpleParser::Parser
+        store_t
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser::Parser">
+    <nav class="md-nav" aria-label="store_t">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#debug" class="md-nav__link">
+  <a href="#parameters_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        debug
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstorecomonadstoredefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store::ComonadStore::Default
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store::ComonadStore::Default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_experiment
       
     </span>
   </a>
@@ -4865,10 +4774,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#error_parser" class="md-nav__link">
+  <a href="#default_peeks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        error_parser
+        default_peeks
       
     </span>
   </a>
@@ -4876,10 +4785,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#filter" class="md-nav__link">
+  <a href="#default_seek" class="md-nav__link">
     <span class="md-ellipsis">
       
-        filter
+        default_seek
       
     </span>
   </a>
@@ -4887,274 +4796,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_stream" class="md-nav__link">
+  <a href="#default_seeks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_stream
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#if_exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        if_exists
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#map_result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        map_result
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_any_char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_any_char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_char_class" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_char_class
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_char_if_exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_char_if_exists
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_empty_str" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_empty_str
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_end_of_stream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_end_of_stream
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_integer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_integer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_one_of_char" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_one_of_char
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class_digit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class_digit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class_lower" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class_lower
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match_str_class_whitespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        match_str_class_whitespace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not_match" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        not_match
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#one_or_more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        one_or_more
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or_else" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        or_else
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or_error" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        or_error
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#repeat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        repeat
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run_parser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        run_parser
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run_parser_str" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        run_parser_str
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        unit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zero_or_more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        zero_or_more
+        default_seeks
       
     </span>
   </a>
@@ -5167,22 +4812,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparserstream" class="md-nav__link">
+  <a href="#namespace-minilibcomonadstorecomonadstoreif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace RegExp.SimpleParser::Stream
+        namespace Minilib.Comonad.Store::ComonadStoreIF
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser::Stream">
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store::ComonadStoreIF">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#advance" class="md-nav__link">
+  <a href="#experiment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        advance
+        experiment
       
     </span>
   </a>
@@ -5190,10 +4835,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#empty" class="md-nav__link">
+  <a href="#peek" class="md-nav__link">
     <span class="md-ellipsis">
       
-        empty
+        peek
       
     </span>
   </a>
@@ -5201,10 +4846,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#error" class="md-nav__link">
+  <a href="#peeks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        error
+        peeks
       
     </span>
   </a>
@@ -5212,10 +4857,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#make" class="md-nav__link">
+  <a href="#pos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        make
+        pos
       
     </span>
   </a>
@@ -5223,10 +4868,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#read_all" class="md-nav__link">
+  <a href="#seek" class="md-nav__link">
     <span class="md-ellipsis">
       
-        read_all
+        seek
       
     </span>
   </a>
@@ -5234,10 +4879,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#read_string" class="md-nav__link">
+  <a href="#seeks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        read_string
+        seeks
       
     </span>
   </a>
@@ -5267,22 +4912,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparser_1" class="md-nav__link">
+  <a href="#namespace-minilibcomonadstore_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        namespace RegExp.SimpleParser
+        namespace Minilib.Comonad.Store
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser">
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#char" class="md-nav__link">
+  <a href="#store_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Char
+        Store
       
     </span>
   </a>
@@ -5290,122 +4935,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parseresult" class="md-nav__link">
+  <a href="#storet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ParseResult
+        StoreT
       
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parser_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parser
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parser">
+    <nav class="md-nav" aria-label="StoreT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-_parser" class="md-nav__link">
+  <a href="#field-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        field _parser
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpsimpleparserstream_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.SimpleParser::Stream
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.SimpleParser::Stream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stream" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stream
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-filename" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field filename
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field line
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-column" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field column
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-position" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field position
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-iter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field iter
+        field data
       
     </span>
   </a>
@@ -5436,6 +4981,134 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Traits and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-minilibcomonadstore_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Minilib.Comonad.Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Minilib.Comonad.Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trait-comonadstore-minilibtraitcomonadcomonad-minilibcomonadstorecomonadstoreif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait ComonadStore = Minilib.Trait.Comonad::Comonad + Minilib.Comonad.Store::ComonadStoreIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trait-sw-sw-comonadstoreif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trait [sw : *-&gt;*] sw : ComonadStoreIF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trait [sw : *-&gt;*] sw : ComonadStoreIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-positiontype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type PositionType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method pos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method peek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-peeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method peeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-seek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method seek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-seeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method seeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        method experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5451,10 +5124,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserparser-stdfunctor" class="md-nav__link">
+  <a href="#impl-w-minilibtraitcomonadcomonad-minilibcomonadstorestoret-p-w-minilibcomonadstorecomonadstoreif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl RegExp.SimpleParser::Parser : Std::Functor
+        impl [w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w : Minilib.Comonad.Store::ComonadStoreIF
       
     </span>
   </a>
@@ -5462,10 +5135,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserparser-stdmonad" class="md-nav__link">
+  <a href="#impl-w-minilibtraitcomonadcomonad-minilibcomonadstorestoret-p-w-minilibtraitcomonadcomonad" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl RegExp.SimpleParser::Parser : Std::Monad
+        impl [w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w : Minilib.Trait.Comonad::Comonad
       
     </span>
   </a>
@@ -5473,21 +5146,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserstreamstream-stdfromstring" class="md-nav__link">
+  <a href="#impl-w-stdfunctor-minilibcomonadstorestoret-p-w-stdfunctor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl RegExp.SimpleParser::Stream::Stream : Std::FromString
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#impl-regexpsimpleparserstreamstream-stdtostring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        impl RegExp.SimpleParser::Stream::Stream : Std::ToString
+        impl [w : Std::Functor] Minilib.Comonad.Store::StoreT p w : Std::Functor
       
     </span>
   </a>
@@ -5516,179 +5178,108 @@
 
 
 
-<h1 id="regexpsimpleparser">RegExp.SimpleParser</h1>
-<p>Defined in regexp@1.1.1</p>
-<p>Simple text parser. Customizable by monadic operations.
-- Stream of characters
-- Basic parsers such as character matching
-- Create complex parsers with composition</p>
+<h1 id="minilibcomonadstore">Minilib.Comonad.Store</h1>
+<p>Defined in minilib-comonad@0.6.1</p>
 <h2 id="values">Values</h2>
-<h3 id="namespace-regexpsimpleparser">namespace RegExp.SimpleParser</h3>
-<h4 id="parser">parser</h4>
-<p>Type: <code>(RegExp.SimpleParser::Stream::Stream -&gt; RegExp.SimpleParser::ParseResult a) -&gt; RegExp.SimpleParser::Parser a</code></p>
-<p>A function that creates a Parser structure based on the parsing function.</p>
-<h3 id="namespace-regexpsimpleparserparser">namespace RegExp.SimpleParser::Parser</h3>
-<h4 id="debug">debug</h4>
-<p>Type: <code>[a : Std::ToString] Std::String -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser a</code></p>
-<p>Prints the parser result.</p>
-<h4 id="error_parser">error_parser</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Parser a</code></p>
-<p>Raises the specified string as an error.</p>
-<h4 id="filter">filter</h4>
-<p>Type: <code>(a -&gt; Std::Bool) -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser a</code></p>
-<p>Checks whether the parsed result of the specified Parser satisfies the specified conditions.
-Raises a <code>_NotMatch</code> error if the specified condition is not met.</p>
-<h4 id="get_stream">get_stream</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser RegExp.SimpleParser::Stream::Stream</code></p>
-<p>Returns the current stream position.</p>
-<h4 id="if_exists">if_exists</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser (Std::Option a)</code></p>
-<p><code>p.if_exists</code> returns <code>some(x)</code> if <code>p</code> returns <code>x</code> as a parse result,
-or <code>none()</code> if <code>p</code> does not match.</p>
-<h4 id="map_result">map_result</h4>
-<p>Type: <code>(a -&gt; Std::Result Std::ErrMsg b) -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser b</code></p>
-<p><code>parser.map_result(f)</code> maps the parser result with <code>f</code>, possibly reports
-an error message.</p>
-<h4 id="match_any_char">match_any_char</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser RegExp.SimpleParser::Char</code></p>
-<p>Matches any single character. The parsed result is
-a single matched character.
-If the match fails (eg. the end of stream), a <code>_NotMatch</code> error is raised.</p>
-<h4 id="match_char">match_char</h4>
-<p>Type: <code>RegExp.SimpleParser::Char -&gt; RegExp.SimpleParser::Parser ()</code></p>
-<p>Matches a single character specified by the argument.
-The parsed result is nothing.
-If the match fails, a <code>_NotMatch</code> error is raised.</p>
-<h4 id="match_char_class">match_char_class</h4>
-<p>Type: <code>(RegExp.SimpleParser::Char -&gt; Std::Bool) -&gt; RegExp.SimpleParser::Parser RegExp.SimpleParser::Char</code></p>
-<p>Matches a character satisfying the specified condition.</p>
-<h4 id="match_char_if_exists">match_char_if_exists</h4>
-<p>Type: <code>Std::U8 -&gt; RegExp.SimpleParser::Parser (Std::Option Std::U8)</code></p>
-<p>Matches a single character if it exists.
-The parsed result is <code>some(c)</code> if it exists,
-<code>none()</code> if it does not exist.</p>
-<h4 id="match_empty_str">match_empty_str</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser Std::String</code></p>
-<p>Matches a zero-length string.</p>
-<h4 id="match_end_of_stream">match_end_of_stream</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser ()</code></p>
-<p>Matches zero-length string at the end of stream.</p>
-<h4 id="match_integer">match_integer</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser Std::I64</code></p>
-<p>Matches an integer.</p>
-<h4 id="match_one_of_char">match_one_of_char</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Parser Std::String</code></p>
-<p>Matches a character which is included in the specified string.
-The parsed result is a string consisting of the single matched character.
-If the match fails, a <code>_NotMatch</code> error is raised.</p>
-<h4 id="match_str">match_str</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Parser ()</code></p>
-<p>Matches a string specified by the argument.
-The parsed result is nothing.
-If the match fails, a <code>_NotMatch</code> error is raised.</p>
-<h4 id="match_str_class">match_str_class</h4>
-<p>Type: <code>(RegExp.SimpleParser::Char -&gt; Std::Bool) -&gt; RegExp.SimpleParser::Parser Std::String</code></p>
-<p>Matches a zero-or-more-length string. Each character should satisfy the specified condition.</p>
-<h4 id="match_str_class_digit">match_str_class_digit</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser Std::String</code></p>
-<p>Matches a zero-or-more-length string of digit characters.</p>
-<h4 id="match_str_class_lower">match_str_class_lower</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser Std::String</code></p>
-<p>Matches a zero-or-more-length string of lowercase characters.</p>
-<h4 id="match_str_class_whitespace">match_str_class_whitespace</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser Std::String</code></p>
-<p>Matches a zero-or-more-length string of whitespace characters.</p>
-<h4 id="not_match">not_match</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser a</code></p>
-<p>Raises a <code>_NotMatch</code> error.</p>
-<h4 id="one_or_more">one_or_more</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser (Std::Array a)</code></p>
-<p>Same as <code>zero_or_more</code>, but raises a _NotMatch error
-if the array length is zero.</p>
-<h4 id="or_else">or_else</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser a</code></p>
-<p>If the first Parser raises a <code>_NotMatch</code> error, tries the second Parser.
-Note that <code>pa1.or_else(pa2)</code> is interpreted as <code>or_else(pa2, pa1)</code>,
-and  that <code>pa1.or_else $ pa2</code> is interpreted as <code>or_else(pa1, pa2)</code>.</p>
-<h4 id="or_error">or_error</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser a</code></p>
-<p>If the Parser reports any error (including <code>_NotMatch</code>),
-raises the specified string as an error.</p>
-<h4 id="repeat">repeat</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser (Std::Array a)</code></p>
-<p>Repeats matches as many as possible. The parse result is
-an array of successful matches.
-If a _NotMatch error is raised, returns as success.
-If an error other than _NotMatch is raised, reports that error.</p>
-<h4 id="run_parser">run_parser</h4>
-<p>Type: <code>RegExp.SimpleParser::Stream::Stream -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::ParseResult a</code></p>
-<p>Apply a stream to a parsing function and return the parsed result.</p>
-<h4 id="run_parser_str">run_parser_str</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::ParseResult a</code></p>
-<p>Create a stream from a string, then apply a stream to a parsing function
-and return the parsed result.</p>
-<h4 id="unit">unit</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser ()</code></p>
-<p>Match zero-length string.</p>
-<h4 id="zero_or_more">zero_or_more</h4>
-<p>Type: <code>RegExp.SimpleParser::Parser a -&gt; RegExp.SimpleParser::Parser (Std::Array a)</code></p>
-<p>Synonym for <code>repeat</code>.</p>
-<h3 id="namespace-regexpsimpleparserstream">namespace RegExp.SimpleParser::Stream</h3>
-<h4 id="advance">advance</h4>
-<p>Type: <code>RegExp.SimpleParser::Stream::Stream -&gt; Std::Option (RegExp.SimpleParser::Char, RegExp.SimpleParser::Stream::Stream)</code></p>
-<p><code>stream.advance</code> gets next character and increment the stream position.</p>
-<h4 id="empty">empty</h4>
-<p>Type: <code>RegExp.SimpleParser::Stream::Stream</code></p>
-<p>An empty Stream.</p>
-<h4 id="error">error</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Stream::Stream -&gt; Std::Result Std::ErrMsg a</code></p>
-<p><code>stream.error(str)</code> reports an error along with where it occurred.</p>
-<h4 id="make">make</h4>
-<p>Type: <code>Std::String -&gt; RegExp.SimpleParser::Stream::Stream</code></p>
-<p>Creates a stream from specified string.</p>
-<h4 id="read_all">read_all</h4>
-<p>Type: <code>RegExp.SimpleParser::Stream::Stream -&gt; (Std::Array RegExp.SimpleParser::Char, RegExp.SimpleParser::Stream::Stream)</code></p>
-<p><code>stream.read_all</code> reads all characters to the end of stream.</p>
-<h4 id="read_string">read_string</h4>
-<p>Type: <code>Std::I64 -&gt; RegExp.SimpleParser::Stream::Stream -&gt; Std::String</code></p>
-<p><code>stream.read_string(n)</code> reads at most <code>n</code> characters and convert them to a string.</p>
+<h3 id="namespace-minilibcomonadstore">namespace Minilib.Comonad.Store</h3>
+<h4 id="get">get</h4>
+<p>Type: <code>[w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w a -&gt; (p, a)</code></p>
+<p>Gets the current position and the value.</p>
+<h4 id="run_store">run_store</h4>
+<p>Type: <code>Minilib.Comonad.Store::Store p a -&gt; (p, p -&gt; a)</code></p>
+<p>Runs a Store comonad.</p>
+<h4 id="run_store_t">run_store_t</h4>
+<p>Type: <code>Minilib.Comonad.Store::StoreT p w a -&gt; (p, w (p -&gt; a))</code></p>
+<p>Runs a StoreT comonad.</p>
+<h4 id="store">store</h4>
+<p>Type: <code>(p, p -&gt; a) -&gt; Minilib.Comonad.Store::Store p a</code></p>
+<p>Creates a store from a position and a value function.</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>pair</code>: a position and a value function.</li>
+</ul>
+<h4 id="store_t">store_t</h4>
+<p>Type: <code>(p, w (p -&gt; a)) -&gt; Minilib.Comonad.Store::StoreT p w a</code></p>
+<p>Creates a store from a position and a comonad of a value function.</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>pair</code>: a position and a comonad of a value function.</li>
+</ul>
+<h3 id="namespace-minilibcomonadstorecomonadstoredefault">namespace Minilib.Comonad.Store::ComonadStore::Default</h3>
+<h4 id="default_experiment">default_experiment</h4>
+<p>Type: <code>[f : Std::Functor, sw : Minilib.Comonad.Store::ComonadStore] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; f (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw)) -&gt; sw a -&gt; f a</code></p>
+<p>default implementation of <code>experiment</code>.</p>
+<h4 id="default_peeks">default_peeks</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStore] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw) -&gt; sw a -&gt; a</code></p>
+<p>default implementation of <code>peeks</code>.</p>
+<h4 id="default_seek">default_seek</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStore] Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; sw a -&gt; sw a</code></p>
+<p>default implementation of <code>seek</code>.</p>
+<h4 id="default_seeks">default_seeks</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStore] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw) -&gt; sw a -&gt; sw a</code></p>
+<p>default implementation of <code>seeks</code>.</p>
+<h3 id="namespace-minilibcomonadstorecomonadstoreif">namespace Minilib.Comonad.Store::ComonadStoreIF</h3>
+<h4 id="experiment">experiment</h4>
+<p>Type: <code>[f : Std::Functor, sw : Minilib.Comonad.Store::ComonadStoreIF] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; f (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw)) -&gt; sw a -&gt; f a</code></p>
+<p>Takes measurements at various positions.</p>
+<h4 id="peek">peek</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStoreIF] Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; sw a -&gt; a</code></p>
+<p>Peeks the value at the specified position.</p>
+<h4 id="peeks">peeks</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStoreIF] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw) -&gt; sw a -&gt; a</code></p>
+<p>Peeks the value at the position relative to the current position.</p>
+<h4 id="pos">pos</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStoreIF] sw a -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw</code></p>
+<p>Gets the current position.</p>
+<h4 id="seek">seek</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStoreIF] Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; sw a -&gt; sw a</code></p>
+<p>Seeks the current position to the specified position.</p>
+<h4 id="seeks">seeks</h4>
+<p>Type: <code>[sw : Minilib.Comonad.Store::ComonadStoreIF] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw) -&gt; sw a -&gt; sw a</code></p>
+<p>Seeks the current position with the specified function.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-regexpsimpleparser_1">namespace RegExp.SimpleParser</h3>
-<h4 id="char">Char</h4>
-<p>Defined as: <code>type Char = Std::U8</code></p>
-<p>The type of characters. Currently only UTF-8 string is supported.</p>
-<h4 id="parseresult">ParseResult</h4>
-<p>Defined as: <code>type ParseResult a = Std::Result Std::ErrMsg (a, RegExp.SimpleParser::Stream::Stream)</code></p>
-<p>Result type that returns a value of an arbitrary type and a stream.</p>
-<h4 id="parser_1">Parser</h4>
-<p>Defined as: <code>type Parser a = unbox struct { ...fields... }</code></p>
-<p>A structure with a function that receive a stream, parse it, and
-return the parsed result and the next stream position.</p>
-<h5 id="field-_parser">field <code>_parser</code></h5>
-<p>Type: <code>RegExp.SimpleParser::Stream::Stream -&gt; RegExp.SimpleParser::ParseResult a</code></p>
-<h3 id="namespace-regexpsimpleparserstream_1">namespace RegExp.SimpleParser::Stream</h3>
-<h4 id="stream">Stream</h4>
-<p>Defined as: <code>type Stream = unbox struct { ...fields... }</code></p>
-<p>A character iterator that stores the file name, line number, column number,
-and offset from the beginning of the file.</p>
-<h5 id="field-filename">field <code>filename</code></h5>
-<p>Type: <code>Std::String</code></p>
-<h5 id="field-line">field <code>line</code></h5>
-<p>Type: <code>Std::I64</code></p>
-<h5 id="field-column">field <code>column</code></h5>
-<p>Type: <code>Std::I64</code></p>
-<h5 id="field-position">field <code>position</code></h5>
-<p>Type: <code>Std::I64</code></p>
-<h5 id="field-iter">field <code>iter</code></h5>
-<p>Type: <code>Std::Iterator::DynIterator RegExp.SimpleParser::Char</code></p>
+<h3 id="namespace-minilibcomonadstore_1">namespace Minilib.Comonad.Store</h3>
+<h4 id="store_1">Store</h4>
+<p>Defined as: <code>type Store p a = Minilib.Comonad.Store::StoreT p Minilib.Comonad.IdentityC::IdentityC a</code></p>
+<p>Store comonad.</p>
+<h4 id="storet">StoreT</h4>
+<p>Defined as: <code>type [w : *-&gt;*] StoreT p w a = unbox struct { ...fields... }</code></p>
+<p>StoreT comonad.</p>
+<h5 id="field-data">field <code>data</code></h5>
+<p>Type: <code>(p, w (p -&gt; a))</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
+<h3 id="namespace-minilibcomonadstore_2">namespace Minilib.Comonad.Store</h3>
+<h4 id="trait-comonadstore-minilibtraitcomonadcomonad-minilibcomonadstorecomonadstoreif">trait <code>ComonadStore = Minilib.Trait.Comonad::Comonad + Minilib.Comonad.Store::ComonadStoreIF</code></h4>
+<p>Kind: <code>*-&gt;*</code></p>
+<p>A trait for the interface of store comonads.</p>
+<h4 id="trait-sw-sw-comonadstoreif">trait <code>[sw : *-&gt;*] sw : ComonadStoreIF</code></h4>
+<p>A trait for the store comonads.</p>
+<p>Minimum definition: <code>PositionType</code>, <code>pos</code>, <code>peek</code></p>
+<h5 id="type-positiontype">type <code>PositionType</code></h5>
+<p>Defined as: <code>PositionType sw</code></p>
+<p>The type of the position.</p>
+<h5 id="method-pos">method <code>pos</code></h5>
+<p>Type: <code>sw a -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw</code></p>
+<p>Gets the current position.</p>
+<h5 id="method-peek">method <code>peek</code></h5>
+<p>Type: <code>Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; sw a -&gt; a</code></p>
+<p>Peeks the value at the specified position.</p>
+<h5 id="method-peeks">method <code>peeks</code></h5>
+<p>Type: <code>(Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw) -&gt; sw a -&gt; a</code></p>
+<p>Peeks the value at the position relative to the current position.</p>
+<h5 id="method-seek">method <code>seek</code></h5>
+<p>Type: <code>Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; sw a -&gt; sw a</code></p>
+<p>Seeks the current position to the specified position.</p>
+<h5 id="method-seeks">method <code>seeks</code></h5>
+<p>Type: <code>(Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; Minilib.Comonad.Store::ComonadStoreIF::PositionType sw) -&gt; sw a -&gt; sw a</code></p>
+<p>Seeks the current position with the specified function.</p>
+<h5 id="method-experiment">method <code>experiment</code></h5>
+<p>Type: <code>[f : Std::Functor] (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw -&gt; f (Minilib.Comonad.Store::ComonadStoreIF::PositionType sw)) -&gt; sw a -&gt; f a</code></p>
+<p>Takes measurements at various positions.</p>
 <h2 id="trait-implementations">Trait implementations</h2>
-<h3 id="impl-regexpsimpleparserparser-stdfunctor">impl <code>RegExp.SimpleParser::Parser : Std::Functor</code></h3>
-<h3 id="impl-regexpsimpleparserparser-stdmonad">impl <code>RegExp.SimpleParser::Parser : Std::Monad</code></h3>
-<h3 id="impl-regexpsimpleparserstreamstream-stdfromstring">impl <code>RegExp.SimpleParser::Stream::Stream : Std::FromString</code></h3>
-<p>Creates a stream from a string.</p>
-<h3 id="impl-regexpsimpleparserstreamstream-stdtostring">impl <code>RegExp.SimpleParser::Stream::Stream : Std::ToString</code></h3>
-<p>Converts a stream to a string, for example <code>"Stream(pos=1001)"</code></p>
+<h3 id="impl-w-minilibtraitcomonadcomonad-minilibcomonadstorestoret-p-w-minilibcomonadstorecomonadstoreif">impl <code>[w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w : Minilib.Comonad.Store::ComonadStoreIF</code></h3>
+<h3 id="impl-w-minilibtraitcomonadcomonad-minilibcomonadstorestoret-p-w-minilibtraitcomonadcomonad">impl <code>[w : Minilib.Trait.Comonad::Comonad] Minilib.Comonad.Store::StoreT p w : Minilib.Trait.Comonad::Comonad</code></h3>
+<h3 id="impl-w-stdfunctor-minilibcomonadstorestoret-p-w-stdfunctor">impl <code>[w : Std::Functor] Minilib.Comonad.Store::StoreT p w : Std::Functor</code></h3>
 
 
 
