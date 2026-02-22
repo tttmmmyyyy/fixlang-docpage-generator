@@ -43985,7 +43985,7 @@
 
 
 <h1 id="std">Std</h1>
-<p>Defined in std-doc@1.2.0</p>
+<p>Defined in std-doc@1.3.0</p>
 <p>Module <code>Std</code> provides basic types, traits and values.</p>
 <p>This module is special in the sense that:</p>
 <ul>
@@ -44147,6 +44147,7 @@ It is guaranteed that <code>x</code> is keep alive until <code>with_retained</co
 <h3 id="namespace-stdadd">namespace Std::Add</h3>
 <h4 id="add">add</h4>
 <p>Type: <code>[a : Std::Add] a -&gt; a -&gt; a</code></p>
+<p>Trait member of <code>Std::Add</code></p>
 <p>Adds two values. An expression <code>x + y</code> is translated to <code>add(x, y)</code>.</p>
 <h5 id="parameters_7">Parameters</h5>
 <ul>
@@ -44512,6 +44513,7 @@ If the <code>arr</code> originally passed to <code>set</code> was not unique, th
 <h3 id="namespace-stddiv">namespace Std::Div</h3>
 <h4 id="div">div</h4>
 <p>Type: <code>[a : Std::Div] a -&gt; a -&gt; a</code></p>
+<p>Trait member of <code>Std::Div</code></p>
 <p>Divides a value by another value. An expression <code>x / y</code> is translated to <code>div(x, y)</code>.</p>
 <h5 id="parameters_48">Parameters</h5>
 <ul>
@@ -44521,6 +44523,7 @@ If the <code>arr</code> originally passed to <code>set</code> was not unique, th
 <h3 id="namespace-stdeq">namespace Std::Eq</h3>
 <h4 id="eq">eq</h4>
 <p>Type: <code>[a : Std::Eq] a -&gt; a -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Std::Eq</code></p>
 <p>Checks equality of two values. An expression <code>x == y</code> is translated to <code>eq(x, y)</code>.</p>
 <h5 id="parameters_49">Parameters</h5>
 <ul>
@@ -44958,6 +44961,7 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <h3 id="namespace-stdfrombytes">namespace Std::FromBytes</h3>
 <h4 id="from_bytes">from_bytes</h4>
 <p>Type: <code>[a : Std::FromBytes] Std::Array Std::U8 -&gt; Std::Result Std::ErrMsg a</code></p>
+<p>Trait member of <code>Std::FromBytes</code></p>
 <p>Converts a byte array into a value by parsing it.</p>
 <h5 id="parameters_70">Parameters</h5>
 <ul>
@@ -44966,6 +44970,7 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <h3 id="namespace-stdfromstring">namespace Std::FromString</h3>
 <h4 id="from_string">from_string</h4>
 <p>Type: <code>[a : Std::FromString] Std::String -&gt; Std::Result Std::ErrMsg a</code></p>
+<p>Trait member of <code>Std::FromString</code></p>
 <p>Converts a string into a value by parsing it.</p>
 <h5 id="parameters_71">Parameters</h5>
 <ul>
@@ -44981,6 +44986,7 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 </ul>
 <h4 id="map">map</h4>
 <p>Type: <code>[f : Std::Functor] (a -&gt; b) -&gt; f a -&gt; f b</code></p>
+<p>Trait member of <code>Std::Functor</code></p>
 <p>Applies a function to the value inside the functor.</p>
 <h5 id="parameters_73">Parameters</h5>
 <ul>
@@ -45874,6 +45880,7 @@ If <code>IO::close</code> is called while using the <code>Ptr</code> obtained by
 <h3 id="namespace-stdindexable">namespace Std::Indexable</h3>
 <h4 id="act_at_index">act_at_index</h4>
 <p>Type: <code>[c : Std::Indexable, f : Std::Functor] Std::Indexable::Index c -&gt; (Std::Indexable::Elem c -&gt; f (Std::Indexable::Elem c)) -&gt; c -&gt; f c</code></p>
+<p>Trait member of <code>Std::Indexable</code></p>
 <p>Act on an index.</p>
 <h5 id="parameters_132">Parameters</h5>
 <ul>
@@ -45953,6 +45960,7 @@ assert_eq(|_|&quot;&quot;, arr, [1, 42, 3])
 <h3 id="namespace-stditerator">namespace Std::Iterator</h3>
 <h4 id="advance">advance</h4>
 <p>Type: <code>[iter : Std::Iterator] iter -&gt; Std::Option (iter, Std::Iterator::Item iter)</code></p>
+<p>Trait member of <code>Std::Iterator</code></p>
 <h4 id="append_1">append</h4>
 <p>Type: <code>[i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = a] i2 -&gt; i1 -&gt; Std::Iterator::AppendIterator i1 i2</code></p>
 <p>Append two iterators.</p>
@@ -46292,6 +46300,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h3 id="namespace-stdlessthan">namespace Std::LessThan</h3>
 <h4 id="less_than">less_than</h4>
 <p>Type: <code>[a : Std::LessThan] a -&gt; a -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Std::LessThan</code></p>
 <p>Compares two values. An expression <code>x &lt; y</code> is translated to <code>less_than(x, y)</code>.</p>
 <h5 id="parameters_177">Parameters</h5>
 <ul>
@@ -46317,6 +46326,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h3 id="namespace-stdlessthanoreq">namespace Std::LessThanOrEq</h3>
 <h4 id="less_than_or_eq">less_than_or_eq</h4>
 <p>Type: <code>[a : Std::LessThanOrEq] a -&gt; a -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Std::LessThanOrEq</code></p>
 <p>Compares two values. An expression <code>x &lt;= y</code> is translated to <code>less_than_or_eq(x, y)</code>.</p>
 <h5 id="parameters_180">Parameters</h5>
 <ul>
@@ -46335,6 +46345,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h3 id="namespace-stdmonad">namespace Std::Monad</h3>
 <h4 id="bind">bind</h4>
 <p>Type: <code>[m : Std::Monad] (a -&gt; m b) -&gt; m a -&gt; m b</code></p>
+<p>Trait member of <code>Std::Monad</code></p>
 <p>Evaluate a monadic action, and pass the result to the next action.</p>
 <h5 id="parameters_181">Parameters</h5>
 <ul>
@@ -46350,6 +46361,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 </ul>
 <h4 id="pure">pure</h4>
 <p>Type: <code>[m : Std::Monad] a -&gt; m a</code></p>
+<p>Trait member of <code>Std::Monad</code></p>
 <p>Creates a pure monadic action which just returns a specified value.</p>
 <h5 id="parameters_183">Parameters</h5>
 <ul>
@@ -46374,6 +46386,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h3 id="namespace-stdmul">namespace Std::Mul</h3>
 <h4 id="mul">mul</h4>
 <p>Type: <code>[a : Std::Mul] a -&gt; a -&gt; a</code></p>
+<p>Trait member of <code>Std::Mul</code></p>
 <p>Multiplies a value by another value. An expression <code>x * y</code> is translated to <code>mul(x, y)</code>.</p>
 <h5 id="parameters_186">Parameters</h5>
 <ul>
@@ -46383,10 +46396,12 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h3 id="namespace-stdneg">namespace Std::Neg</h3>
 <h4 id="neg">neg</h4>
 <p>Type: <code>[a : Std::Neg] a -&gt; a</code></p>
+<p>Trait member of <code>Std::Neg</code></p>
 <p>Negates a value. An expression <code>-x</code> is translated to <code>neg(x)</code>.</p>
 <h3 id="namespace-stdnot">namespace Std::Not</h3>
 <h4 id="not">not</h4>
 <p>Type: <code>[a : Std::Not] a -&gt; a</code></p>
+<p>Trait member of <code>Std::Not</code></p>
 <p>Logical NOT of a value. An expression <code>!x</code> is translated to <code>not(x)</code>.</p>
 <h3 id="namespace-stdoption">namespace Std::Option</h3>
 <h4 id="as_some_or">as_some_or</h4>
@@ -46429,6 +46444,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h3 id="namespace-stdrem">namespace Std::Rem</h3>
 <h4 id="rem">rem</h4>
 <p>Type: <code>[a : Std::Rem] a -&gt; a -&gt; a</code></p>
+<p>Trait member of <code>Std::Rem</code></p>
 <p>Calculate remainder of a value dividing another value. An expression <code>x % y</code> is translated to <code>rem(x, y)</code>.</p>
 <h5 id="parameters_191">Parameters</h5>
 <ul>
@@ -46704,6 +46720,7 @@ let str = unsafe_from_c_str_ptr(ptr);
 <h3 id="namespace-stdsub">namespace Std::Sub</h3>
 <h4 id="sub">sub</h4>
 <p>Type: <code>[a : Std::Sub] a -&gt; a -&gt; a</code></p>
+<p>Trait member of <code>Std::Sub</code></p>
 <p>Subtracts a value from another value. An expression <code>x - y</code> is translated to <code>sub(x, y)</code>.</p>
 <h5 id="parameters_222">Parameters</h5>
 <ul>
@@ -46713,100 +46730,125 @@ let str = unsafe_from_c_str_ptr(ptr);
 <h3 id="namespace-stdtobytes">namespace Std::ToBytes</h3>
 <h4 id="to_bytes">to_bytes</h4>
 <p>Type: <code>[a : Std::ToBytes] a -&gt; Std::Array Std::U8</code></p>
+<p>Trait member of <code>Std::ToBytes</code></p>
 <h3 id="namespace-stdtocchar">namespace Std::ToCChar</h3>
 <h4 id="c_char">c_char</h4>
 <p>Type: <code>[a : Std::ToCChar] a -&gt; Std::FFI::CChar</code></p>
+<p>Trait member of <code>Std::ToCChar</code></p>
 <p>Casts a value into <code>CChar</code> type.</p>
 <h3 id="namespace-stdtocdouble">namespace Std::ToCDouble</h3>
 <h4 id="c_double">c_double</h4>
 <p>Type: <code>[a : Std::ToCDouble] a -&gt; Std::FFI::CDouble</code></p>
+<p>Trait member of <code>Std::ToCDouble</code></p>
 <p>Casts a value into <code>CDouble</code> type.</p>
 <h3 id="namespace-stdtocfloat">namespace Std::ToCFloat</h3>
 <h4 id="c_float">c_float</h4>
 <p>Type: <code>[a : Std::ToCFloat] a -&gt; Std::FFI::CFloat</code></p>
+<p>Trait member of <code>Std::ToCFloat</code></p>
 <p>Casts a value into <code>CFloat</code> type.</p>
 <h3 id="namespace-stdtocint">namespace Std::ToCInt</h3>
 <h4 id="c_int">c_int</h4>
 <p>Type: <code>[a : Std::ToCInt] a -&gt; Std::FFI::CInt</code></p>
+<p>Trait member of <code>Std::ToCInt</code></p>
 <p>Casts a value into <code>CInt</code> type.</p>
 <h3 id="namespace-stdtoclong">namespace Std::ToCLong</h3>
 <h4 id="c_long">c_long</h4>
 <p>Type: <code>[a : Std::ToCLong] a -&gt; Std::FFI::CLong</code></p>
+<p>Trait member of <code>Std::ToCLong</code></p>
 <p>Casts a value into <code>CLong</code> type.</p>
 <h3 id="namespace-stdtoclonglong">namespace Std::ToCLongLong</h3>
 <h4 id="c_long_long">c_long_long</h4>
 <p>Type: <code>[a : Std::ToCLongLong] a -&gt; Std::FFI::CLongLong</code></p>
+<p>Trait member of <code>Std::ToCLongLong</code></p>
 <p>Casts a value into <code>CLongLong</code> type.</p>
 <h3 id="namespace-stdtocshort">namespace Std::ToCShort</h3>
 <h4 id="c_short">c_short</h4>
 <p>Type: <code>[a : Std::ToCShort] a -&gt; Std::FFI::CShort</code></p>
+<p>Trait member of <code>Std::ToCShort</code></p>
 <p>Casts a value into <code>CShort</code> type.</p>
 <h3 id="namespace-stdtocsizet">namespace Std::ToCSizeT</h3>
 <h4 id="c_size_t">c_size_t</h4>
 <p>Type: <code>[a : Std::ToCSizeT] a -&gt; Std::FFI::CSizeT</code></p>
+<p>Trait member of <code>Std::ToCSizeT</code></p>
 <p>Casts a value into <code>CSizeT</code> type.</p>
 <h3 id="namespace-stdtocunsignedchar">namespace Std::ToCUnsignedChar</h3>
 <h4 id="c_unsigned_char">c_unsigned_char</h4>
 <p>Type: <code>[a : Std::ToCUnsignedChar] a -&gt; Std::FFI::CUnsignedChar</code></p>
+<p>Trait member of <code>Std::ToCUnsignedChar</code></p>
 <p>Casts a value into <code>CUnsignedChar</code> type.</p>
 <h3 id="namespace-stdtocunsignedint">namespace Std::ToCUnsignedInt</h3>
 <h4 id="c_unsigned_int">c_unsigned_int</h4>
 <p>Type: <code>[a : Std::ToCUnsignedInt] a -&gt; Std::FFI::CUnsignedInt</code></p>
+<p>Trait member of <code>Std::ToCUnsignedInt</code></p>
 <p>Casts a value into <code>CUnsignedInt</code> type.</p>
 <h3 id="namespace-stdtocunsignedlong">namespace Std::ToCUnsignedLong</h3>
 <h4 id="c_unsigned_long">c_unsigned_long</h4>
 <p>Type: <code>[a : Std::ToCUnsignedLong] a -&gt; Std::FFI::CUnsignedLong</code></p>
+<p>Trait member of <code>Std::ToCUnsignedLong</code></p>
 <p>Casts a value into <code>CUnsignedLong</code> type.</p>
 <h3 id="namespace-stdtocunsignedlonglong">namespace Std::ToCUnsignedLongLong</h3>
 <h4 id="c_unsigned_long_long">c_unsigned_long_long</h4>
 <p>Type: <code>[a : Std::ToCUnsignedLongLong] a -&gt; Std::FFI::CUnsignedLongLong</code></p>
+<p>Trait member of <code>Std::ToCUnsignedLongLong</code></p>
 <p>Casts a value into <code>CUnsignedLongLong</code> type.</p>
 <h3 id="namespace-stdtocunsignedshort">namespace Std::ToCUnsignedShort</h3>
 <h4 id="c_unsigned_short">c_unsigned_short</h4>
 <p>Type: <code>[a : Std::ToCUnsignedShort] a -&gt; Std::FFI::CUnsignedShort</code></p>
+<p>Trait member of <code>Std::ToCUnsignedShort</code></p>
 <p>Casts a value into <code>CUnsignedShort</code> type.</p>
 <h3 id="namespace-stdtof32">namespace Std::ToF32</h3>
 <h4 id="f32">f32</h4>
 <p>Type: <code>[a : Std::ToF32] a -&gt; Std::F32</code></p>
+<p>Trait member of <code>Std::ToF32</code></p>
 <p>Casts a value into <code>F32</code> type.</p>
 <h3 id="namespace-stdtof64">namespace Std::ToF64</h3>
 <h4 id="f64">f64</h4>
 <p>Type: <code>[a : Std::ToF64] a -&gt; Std::F64</code></p>
+<p>Trait member of <code>Std::ToF64</code></p>
 <p>Casts a value into <code>F64</code> type.</p>
 <h3 id="namespace-stdtoi16">namespace Std::ToI16</h3>
 <h4 id="i16">i16</h4>
 <p>Type: <code>[a : Std::ToI16] a -&gt; Std::I16</code></p>
+<p>Trait member of <code>Std::ToI16</code></p>
 <p>Casts a value into <code>I16</code> type.</p>
 <h3 id="namespace-stdtoi32">namespace Std::ToI32</h3>
 <h4 id="i32">i32</h4>
 <p>Type: <code>[a : Std::ToI32] a -&gt; Std::I32</code></p>
+<p>Trait member of <code>Std::ToI32</code></p>
 <p>Casts a value into <code>I32</code> type.</p>
 <h3 id="namespace-stdtoi64">namespace Std::ToI64</h3>
 <h4 id="i64">i64</h4>
 <p>Type: <code>[a : Std::ToI64] a -&gt; Std::I64</code></p>
+<p>Trait member of <code>Std::ToI64</code></p>
 <p>Casts a value into <code>I64</code> type.</p>
 <h3 id="namespace-stdtoi8">namespace Std::ToI8</h3>
 <h4 id="i8">i8</h4>
 <p>Type: <code>[a : Std::ToI8] a -&gt; Std::I8</code></p>
+<p>Trait member of <code>Std::ToI8</code></p>
 <p>Casts a value into <code>I8</code> type.</p>
 <h3 id="namespace-stdtostring">namespace Std::ToString</h3>
 <h4 id="to_string">to_string</h4>
 <p>Type: <code>[a : Std::ToString] a -&gt; Std::String</code></p>
+<p>Trait member of <code>Std::ToString</code></p>
 <h3 id="namespace-stdtou16">namespace Std::ToU16</h3>
 <h4 id="u16">u16</h4>
 <p>Type: <code>[a : Std::ToU16] a -&gt; Std::U16</code></p>
+<p>Trait member of <code>Std::ToU16</code></p>
 <p>Casts a value into <code>U16</code> type.</p>
 <h3 id="namespace-stdtou32">namespace Std::ToU32</h3>
 <h4 id="u32">u32</h4>
 <p>Type: <code>[a : Std::ToU32] a -&gt; Std::U32</code></p>
+<p>Trait member of <code>Std::ToU32</code></p>
 <p>Casts a value into <code>U32</code> type.</p>
 <h3 id="namespace-stdtou64">namespace Std::ToU64</h3>
 <h4 id="u64">u64</h4>
 <p>Type: <code>[a : Std::ToU64] a -&gt; Std::U64</code></p>
+<p>Trait member of <code>Std::ToU64</code></p>
 <p>Casts a value into <code>U64</code> type.</p>
 <h3 id="namespace-stdtou8">namespace Std::ToU8</h3>
 <h4 id="u8">u8</h4>
 <p>Type: <code>[a : Std::ToU8] a -&gt; Std::U8</code></p>
+<p>Trait member of <code>Std::ToU8</code></p>
 <p>Casts a value into <code>U8</code> type.</p>
 <h3 id="namespace-stdu16">namespace Std::U16</h3>
 <h4 id="bit_and_4">bit_and</h4>
@@ -47387,6 +47429,7 @@ let str = unsafe_from_c_str_ptr(ptr);
 <h3 id="namespace-stdzero">namespace Std::Zero</h3>
 <h4 id="zero">zero</h4>
 <p>Type: <code>[a : Std::Zero] a</code></p>
+<p>Trait member of <code>Std::Zero</code></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-std_1">namespace Std</h3>
 <h4 id="array">Array</h4>

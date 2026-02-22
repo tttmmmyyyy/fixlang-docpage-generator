@@ -4958,6 +4958,7 @@
 <h3 id="namespace-minilibmonadcontmonadcontif">namespace Minilib.Monad.Cont::MonadContIF</h3>
 <h4 id="call_cc">call_cc</h4>
 <p>Type: <code>[cm : Minilib.Monad.Cont::MonadContIF] ((a -&gt; cm b) -&gt; cm a) -&gt; cm a</code></p>
+<p>Trait member of <code>Minilib.Monad.Cont::MonadContIF</code></p>
 <p><code>call_cc(f)</code> calls <code>f</code> with the current continuation, and returns a continuation monad.
 <code>f</code> takes the current continuation (the exit function) and should return a continuation monad.
 For example, <code>call_cc(|exit| ... if condition { exit(false) }; ... pure(true))</code>.

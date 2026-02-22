@@ -7989,9 +7989,11 @@
 </ul>
 <h4 id="compare">compare</h4>
 <p>Type: <code>[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.Trait::KeyCompare::Key kc -&gt; Minilib.Collection.Trait::KeyCompare::Key kc -&gt; kc -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::KeyCompare</code></p>
 <p>Returns false if and only if the first key should appear after the second key.</p>
 <h4 id="empty">empty</h4>
 <p>Type: <code>[kc : Minilib.Collection.Trait::KeyCompare] kc</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::KeyCompare</code></p>
 <p>An empty key comparator.</p>
 <h3 id="namespace-minilibcollectiontraitkeycomparewithfunc">namespace Minilib.Collection.Trait::KeyCompareWithFunc</h3>
 <h4 id="make">make</h4>
@@ -8004,6 +8006,7 @@
 <h3 id="namespace-minilibcollectiontraitmap">namespace Minilib.Collection.Trait::Map</h3>
 <h4 id="act">act</h4>
 <p>Type: <code>[f : Std::Functor, map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; (Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; f (Std::Option (Minilib.Collection.Trait::Map::MapValue map))) -&gt; map -&gt; f map</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Modifies a map by a functorial action.</p>
 <p>Semantically, <code>map.act(key, fun)</code> is equivalent to
 <code>fun(map.find(key)).Functor::map(|opt_v| map.set(key, opt_v))</code>.</p>
@@ -8021,6 +8024,7 @@
 </ul>
 <h4 id="contains_key">contains_key</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Checks whether any entry exists whose key is equivalent to the specified key.</p>
 <h5 id="parameters_4">Parameters</h5>
 <ul>
@@ -8029,6 +8033,7 @@
 </ul>
 <h4 id="erase">erase</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; map</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Erases all entries whose key is equivalent to the specified key.</p>
 <h5 id="parameters_5">Parameters</h5>
 <ul>
@@ -8037,6 +8042,7 @@
 </ul>
 <h4 id="find">find</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map)</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Finds an entry whose key is equivalent to the specified key.
 If an entry is found, returns <code>some(v)</code> where <code>v</code> is the value.
 If no entry is found, returns <code>none()</code>.</p>
@@ -8047,6 +8053,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="get_size">get_size</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Std::I64</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Gets the number of entries in a map.</p>
 <h5 id="parameters_7">Parameters</h5>
 <ul>
@@ -8054,6 +8061,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="insert">insert</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Inserts an entry into a map.</p>
 <h5 id="parameters_8">Parameters</h5>
 <ul>
@@ -8062,6 +8070,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="is_empty">is_empty</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Checks whether a map is empty.</p>
 <h5 id="parameters_9">Parameters</h5>
 <ul>
@@ -8069,6 +8078,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="set">set</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] Minilib.Collection.Trait::Map::MapKey map -&gt; Std::Option (Minilib.Collection.Trait::Map::MapValue map) -&gt; map -&gt; map</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Inserts an entry to a map, or erases an entry from a map.</p>
 <p>Semantically, <code>map.set(key, opt_v)</code> is equivalent to
 <code>match opt_v { some(v) =&gt; map.insert(key, v), none() =&gt; map.erase(key) }</code>.</p>
@@ -8080,6 +8090,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="to_array">to_array</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Std::Array (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map)</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Converts a map into an array of entries.</p>
 <h5 id="parameters_11">Parameters</h5>
 <ul>
@@ -8087,6 +8098,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="to_iter">to_iter</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::Map] map -&gt; Minilib.Collection.Trait::Map::MapIterator map</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Map</code></p>
 <p>Converts a map into an iterator of entries.</p>
 <h5 id="parameters_12">Parameters</h5>
 <ul>
@@ -8102,6 +8114,7 @@ If no entry is found, returns <code>none()</code>.</p>
 <h3 id="namespace-minilibcollectiontraitset">namespace Minilib.Collection.Trait::Set</h3>
 <h4 id="contains">contains</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Checks whether a set contains the specified element.</p>
 <h5 id="parameters_13">Parameters</h5>
 <ul>
@@ -8110,6 +8123,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="erase_1">erase</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; set</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Erases all elements which is equivalent to the specified element.</p>
 <h5 id="parameters_14">Parameters</h5>
 <ul>
@@ -8118,6 +8132,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="get_size_1">get_size</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Std::I64</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Gets the number of elements in a set.</p>
 <h5 id="parameters_15">Parameters</h5>
 <ul>
@@ -8125,6 +8140,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="insert_1">insert</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] Minilib.Collection.Trait::Set::SetElem set -&gt; set -&gt; set</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Inserts an element into a set.</p>
 <h5 id="parameters_16">Parameters</h5>
 <ul>
@@ -8133,6 +8149,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="intersect">intersect</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; set -&gt; set</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Calculates intersection of two sets.</p>
 <h5 id="parameters_17">Parameters</h5>
 <ul>
@@ -8141,6 +8158,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="is_empty_1">is_empty</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Std::Bool</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Checks whether a set is empty.</p>
 <h5 id="parameters_18">Parameters</h5>
 <ul>
@@ -8148,6 +8166,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="merge">merge</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; set -&gt; set</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Calculates union of two sets.</p>
 <h5 id="parameters_19">Parameters</h5>
 <ul>
@@ -8156,6 +8175,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="to_array_1">to_array</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Std::Array (Minilib.Collection.Trait::Set::SetElem set)</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Converts a set into an array.</p>
 <h5 id="parameters_20">Parameters</h5>
 <ul>
@@ -8163,6 +8183,7 @@ If no entry is found, returns <code>none()</code>.</p>
 </ul>
 <h4 id="to_iter_1">to_iter</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::Set] set -&gt; Minilib.Collection.Trait::Set::SetIterator set</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::Set</code></p>
 <p>Converts a set into an iterator.</p>
 <h5 id="parameters_21">Parameters</h5>
 <ul>
@@ -8178,6 +8199,7 @@ If no entry is found, returns <code>none()</code>.</p>
 <h3 id="namespace-minilibcollectiontraitsortedmapif">namespace Minilib.Collection.Trait::SortedMapIF</h3>
 <h4 id="select_range">select_range</h4>
 <p>Type: <code>[map : Minilib.Collection.Trait::SortedMapIF] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -&gt; Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -&gt; Std::Bool -&gt; map -&gt; Minilib.Collection.Trait::Map::MapIterator map</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::SortedMapIF</code></p>
 <p>Finds all entries in the specified range.</p>
 <h5 id="parameters_22">Parameters</h5>
 <ul>
@@ -8196,6 +8218,7 @@ map.select_range(unbound(), unbound(), true)    // finds all entries in ascendin
 <h3 id="namespace-minilibcollectiontraitsortedsetif">namespace Minilib.Collection.Trait::SortedSetIF</h3>
 <h4 id="select_range_1">select_range</h4>
 <p>Type: <code>[set : Minilib.Collection.Trait::SortedSetIF] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -&gt; Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -&gt; Std::Bool -&gt; set -&gt; Minilib.Collection.Trait::Set::SetIterator set</code></p>
+<p>Trait member of <code>Minilib.Collection.Trait::SortedSetIF</code></p>
 <p>Finds all elements in the specified range.</p>
 <h5 id="parameters_23">Parameters</h5>
 <ul>
