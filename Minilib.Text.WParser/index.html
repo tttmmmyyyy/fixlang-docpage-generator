@@ -4129,6 +4129,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#impl-minilibtextwparserwparser-minilibmonaderrormonaderrorif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Text.WParser::WParser : Minilib.Monad.Error::MonadErrorIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-minilibtextwparserwparser-stdfunctor" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5351,6 +5362,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#impl-minilibtextwparserwparser-minilibmonaderrormonaderrorif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Text.WParser::WParser : Minilib.Monad.Error::MonadErrorIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-minilibtextwparserwparser-stdfunctor" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5417,7 +5439,7 @@
 
 
 <h1 id="minilibtextwparser">Minilib.Text.WParser</h1>
-<p>Defined in minilib-text@0.8.3</p>
+<p>Defined in minilib-text@0.9.0</p>
 <p>Wide-character text parser. Customizable by monadic operations.
 - Stream of wide-characters
 - Basic parsers such as wide-character matching
@@ -5429,6 +5451,7 @@
 <p>Prints the parser result.</p>
 <h4 id="error_parser">error_parser</h4>
 <p>Type: <code>Std::ErrMsg -&gt; Minilib.Text.WParser::WParser a</code></p>
+<p>Deprecated: Use <code>MonadErrorIF::error</code>.</p>
 <p>Raises the specified string as an error.</p>
 <h4 id="eval_wparser">eval_wparser</h4>
 <p>Type: <code>Minilib.Text.WParser::WStream::WStream -&gt; Minilib.Text.WParser::WParser a -&gt; Std::Result Std::ErrMsg a</code></p>
@@ -5462,7 +5485,7 @@ If the match fails (eg. the end of stream), a <code>_NotMatch</code> error is ra
 <p>Matches zero-length string at the end of stream.</p>
 <h4 id="match_integer">match_integer</h4>
 <p>Type: <code>Minilib.Text.WParser::WParser Std::I64</code></p>
-<p>Matches an integer.</p>
+<p>Matches a non-negative integer.</p>
 <h4 id="match_one_of_wchar">match_one_of_wchar</h4>
 <p>Type: <code>[str : Minilib.Text.Unicode::ToUTF32String] str -&gt; Minilib.Text.WParser::WParser Minilib.Text.Unicode::UTF32String</code></p>
 <p>Matches a wide-character which is included in the specified string.
@@ -5575,6 +5598,7 @@ and offset from the beginning of the file.</p>
 <p>Type: <code>Std::Array Minilib.Text.WideChar::WideChar</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-minilibtextwparserwparser-minilibmonaderrormonaderrorif">impl <code>Minilib.Text.WParser::WParser : Minilib.Monad.Error::MonadErrorIF</code></h3>
 <h3 id="impl-minilibtextwparserwparser-stdfunctor">impl <code>Minilib.Text.WParser::WParser : Std::Functor</code></h3>
 <h3 id="impl-minilibtextwparserwparser-stdmonad">impl <code>Minilib.Text.WParser::WParser : Std::Monad</code></h3>
 <h3 id="impl-minilibtextwparserwstreamwstream-stdfromstring">impl <code>Minilib.Text.WParser::WStream::WStream : Std::FromString</code></h3>

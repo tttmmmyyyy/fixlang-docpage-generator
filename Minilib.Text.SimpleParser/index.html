@@ -4093,10 +4093,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-iter" class="md-nav__link">
+  <a href="#field-array" class="md-nav__link">
     <span class="md-ellipsis">
       
-        field iter
+        field array
       
     </span>
   </a>
@@ -4140,6 +4140,17 @@
   
     <nav class="md-nav" aria-label="Trait implementations">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibtextsimpleparserparser-minilibmonaderrormonaderrorif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Text.SimpleParser::Parser : Minilib.Monad.Error::MonadErrorIF
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#impl-minilibtextsimpleparserparser-stdfunctor" class="md-nav__link">
@@ -5490,10 +5501,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-iter" class="md-nav__link">
+  <a href="#field-array" class="md-nav__link">
     <span class="md-ellipsis">
       
-        field iter
+        field array
       
     </span>
   </a>
@@ -5537,6 +5548,17 @@
   
     <nav class="md-nav" aria-label="Trait implementations">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-minilibtextsimpleparserparser-minilibmonaderrormonaderrorif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Minilib.Text.SimpleParser::Parser : Minilib.Monad.Error::MonadErrorIF
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#impl-minilibtextsimpleparserparser-stdfunctor" class="md-nav__link">
@@ -5605,7 +5627,7 @@
 
 
 <h1 id="minilibtextsimpleparser">Minilib.Text.SimpleParser</h1>
-<p>Defined in minilib-text@0.8.3</p>
+<p>Defined in minilib-text@0.9.0</p>
 <p>Simple text parser. Customizable by monadic operations.
 - Stream of characters
 - Basic parsers such as character matching
@@ -5621,6 +5643,7 @@
 <p>Prints the parser result.</p>
 <h4 id="error_parser">error_parser</h4>
 <p>Type: <code>Std::String -&gt; Minilib.Text.SimpleParser::Parser a</code></p>
+<p>Deprecated: Use <code>MonadErrorIF::error</code>.</p>
 <p>Raises the specified string as an error.</p>
 <h4 id="eval_parser">eval_parser</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Stream::Stream -&gt; Minilib.Text.SimpleParser::Parser a -&gt; Std::Result Std::ErrMsg a</code></p>
@@ -5659,6 +5682,7 @@ If the match fails, a <code>_NotMatch</code> error is raised.</p>
 <p>Matches a character satisfying the specified condition.</p>
 <h4 id="match_char_if_exists">match_char_if_exists</h4>
 <p>Type: <code>Std::U8 -&gt; Minilib.Text.SimpleParser::Parser (Std::Option Std::U8)</code></p>
+<p>Deprecated: Please use <code>match_char(c).if_exists</code>.</p>
 <p>Matches a single character if it exists.
 The parsed result is <code>some(c)</code> if it exists,
 <code>none()</code> if it does not exist.</p>
@@ -5670,7 +5694,7 @@ The parsed result is <code>some(c)</code> if it exists,
 <p>Matches zero-length string at the end of stream.</p>
 <h4 id="match_integer">match_integer</h4>
 <p>Type: <code>Minilib.Text.SimpleParser::Parser Std::I64</code></p>
-<p>Matches an integer.</p>
+<p>Matches a non-negative integer.</p>
 <h4 id="match_one_of_char">match_one_of_char</h4>
 <p>Type: <code>Std::String -&gt; Minilib.Text.SimpleParser::Parser Std::String</code></p>
 <p>Matches a character which is included in the specified string.
@@ -5783,10 +5807,11 @@ and offset from the beginning of the file.</p>
 <p>Type: <code>Std::I64</code></p>
 <h5 id="field-position">field <code>position</code></h5>
 <p>Type: <code>Std::I64</code></p>
-<h5 id="field-iter">field <code>iter</code></h5>
-<p>Type: <code>Std::Iterator::DynIterator Minilib.Text.SimpleParser::Char</code></p>
+<h5 id="field-array">field <code>array</code></h5>
+<p>Type: <code>Std::Array Minilib.Text.SimpleParser::Char</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-minilibtextsimpleparserparser-minilibmonaderrormonaderrorif">impl <code>Minilib.Text.SimpleParser::Parser : Minilib.Monad.Error::MonadErrorIF</code></h3>
 <h3 id="impl-minilibtextsimpleparserparser-stdfunctor">impl <code>Minilib.Text.SimpleParser::Parser : Std::Functor</code></h3>
 <h3 id="impl-minilibtextsimpleparserparser-stdmonad">impl <code>Minilib.Text.SimpleParser::Parser : Std::Monad</code></h3>
 <h3 id="impl-minilibtextsimpleparserstreamstream-stdfromstring">impl <code>Minilib.Text.SimpleParser::Stream::Stream : Std::FromString</code></h3>
