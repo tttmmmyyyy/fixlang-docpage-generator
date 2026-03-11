@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -3130,10 +3130,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-m-stdmonad-minilibmonadresultresultt-e-m-minilibmonadaltmonadaltif" class="md-nav__link">
+  <a href="#impl-m-stdmonad-e-stdzero-minilibmonadresultresultt-e-m-minilibmonadaltmonadaltif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [m : Std::Monad] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Alt::MonadAltIF
+        impl [m : Std::Monad, e : Std::Zero] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Alt::MonadAltIF
       
     </span>
   </a>
@@ -4860,10 +4860,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-m-stdmonad-minilibmonadresultresultt-e-m-minilibmonadaltmonadaltif" class="md-nav__link">
+  <a href="#impl-m-stdmonad-e-stdzero-minilibmonadresultresultt-e-m-minilibmonadaltmonadaltif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [m : Std::Monad] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Alt::MonadAltIF
+        impl [m : Std::Monad, e : Std::Zero] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Alt::MonadAltIF
       
     </span>
   </a>
@@ -4948,7 +4948,7 @@
 
 
 <h1 id="minilibmonadalt">Minilib.Monad.Alt</h1>
-<p>Defined in minilib-monad@0.11.1</p>
+<p>Defined in minilib-monad@0.11.2</p>
 <p>The interface and implementations of Alternative Monad (<code>MonadAlt</code>), which is either a success or a failure.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadalt">namespace Minilib.Monad.Alt</h3>
@@ -5024,7 +5024,7 @@ ma1.or_else(ma2).or_else(ma3) == ma1.or_else(ma2.or_else(ma3))
 </ul>
 <h2 id="trait-implementations">Trait implementations</h2>
 <h3 id="impl-m-stdmonad-minilibmonadoptionoptiont-m-minilibmonadaltmonadaltif">impl <code>[m : Std::Monad] Minilib.Monad.Option::OptionT m : Minilib.Monad.Alt::MonadAltIF</code></h3>
-<h3 id="impl-m-stdmonad-minilibmonadresultresultt-e-m-minilibmonadaltmonadaltif">impl <code>[m : Std::Monad] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Alt::MonadAltIF</code></h3>
+<h3 id="impl-m-stdmonad-e-stdzero-minilibmonadresultresultt-e-m-minilibmonadaltmonadaltif">impl <code>[m : Std::Monad, e : Std::Zero] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Alt::MonadAltIF</code></h3>
 <h3 id="impl-m-minilibmonadaltmonadalt-minilibmonadstatestatet-s-m-minilibmonadaltmonadaltif">impl <code>[m : Minilib.Monad.Alt::MonadAlt] Minilib.Monad.State::StateT s m : Minilib.Monad.Alt::MonadAltIF</code></h3>
 <h3 id="impl-stdarray-minilibmonadaltmonadaltif">impl <code>Std::Array : Minilib.Monad.Alt::MonadAltIF</code></h3>
 <h3 id="impl-stdioiofail-minilibmonadaltmonadaltif">impl <code>Std::IO::IOFail : Minilib.Monad.Alt::MonadAltIF</code></h3>
