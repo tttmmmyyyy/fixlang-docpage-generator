@@ -1,0 +1,7494 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Cairo.Rsvg/">
+      
+      
+        <link rel="next" href="../Cairo/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Cairo.XlibSurface - Fix DocPage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cairoxlibsurface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Fix DocPage" class="md-header__button md-logo" aria-label="Fix DocPage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fix DocPage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cairo.XlibSurface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Fix DocPage" class="md-nav__button md-logo" aria-label="Fix DocPage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fix DocPage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AsyncTask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AsyncTask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap.BinaryArrayTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BinaryHeap.BinaryArrayTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BinaryHeap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BinaryHeap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BoolArray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BoolArray
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Arithmetic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Bipartite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Bipartite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Bits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Bits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.DSegtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.DSegtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.IO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.LDSegtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.LDSegtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.LSegtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.LSegtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.MaxFlow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.MaxFlow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.MinCostFlow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.MinCostFlow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Misc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Segtree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Segtree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.String/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.Trait/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.Trait
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.TwoSat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.TwoSat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.UnionFind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.UnionFind
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPLib.ZP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPLib.ZP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cairo.ImageSurface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cairo.ImageSurface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cairo.Rsvg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cairo.Rsvg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cairo.XlibSurface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cairo.XlibSurface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_back_surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_back_surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_front_surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_front_surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_simple_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_simple_window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        destroy_window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events_queued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        events_queued
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        flush
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycode_to_keysym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        keycode_to_keysym
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        next_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_to_keysym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        string_to_keysym
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap_buffers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        swap_buffers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfaceeventmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::EventMask
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::EventMask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#button_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        button_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        button_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exposure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        key_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        key_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer_motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pointer_motion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure_notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        structure_notify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfacequeuedmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::QueuedMode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::QueuedMode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#after_flush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        after_flush
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#already" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        already
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfacexbeswapaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::XbeSwapAction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::XbeSwapAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copied" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copied
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        undefined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#untouched" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        untouched
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backbufferid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackBufferId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DisplayHandle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-key_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant key_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-key_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant key_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-button_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant button_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-button_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant button_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-motion_notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant motion_notify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-expose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant expose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-destroy_notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant destroy_notify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-unimplemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant unimplemented
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EventMask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyCode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keysym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeySym
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queuedmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QueuedMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-_display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field height
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WindowId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xbeswapaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XbeSwapAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfaceevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::Event
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buttonevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ButtonEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ButtonEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_subwindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _subwindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-same_screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field same_screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroynotifyevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DestroyNotifyEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DestroyNotifyEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exposeevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExposeEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ExposeEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-width_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-height_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field height
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field count
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KeyEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_root_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_subwindow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _subwindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-time_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_root_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_root_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-keycode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field keycode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-same_screen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field same_screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motionevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MotionEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MotionEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_root_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_subwindow_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _subwindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-time_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_root_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_root_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-is_hint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field is_hint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-same_screen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field same_screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits and aliases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trait implementations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cairo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cairo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EZS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EZS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GMP.Q/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GMP.Q
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GMP.Z/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GMP.Z
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HashSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MPFR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPFR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.App.Clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.App.Clap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Deque/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Deque
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Internal.PatTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Internal.PatTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Internal.RBTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Internal.RBTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.OrderedMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.OrderedMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.PTreeMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.PTreeMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.PTreeSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.PTreeSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.Trait/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.Trait
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreapMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreapMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreapSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreapSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreeMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Collection.TreeSet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Collection.TreeSet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Assert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.Assert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.Common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.Common
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IOEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IOEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IORef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IORef
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.IteratorEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.IteratorEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.RandomEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.RandomEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Common.TimeEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Common.TimeEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Cofree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Cofree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.IOStore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.IOStore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.IdentityC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.IdentityC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Store/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Comonad.Traced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Comonad.Traced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES.GCM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.AES.GCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.AES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.AES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacMD5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC.HmacMD5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC.HmacSHA1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC.HmacSHA256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC.HmacSHA256
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.HMAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.HMAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.MD5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.MD5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SHA1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SHA256
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SHA512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SHA512
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Crypto.SecureRandom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Crypto.SecureRandom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Base64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Base64
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Binary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonDecoder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Json.JsonDecoder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json.JsonEncoder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Json.JsonEncoder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlHelpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Xml.XmlHelpers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml.XmlParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Xml.XmlParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Encoding.Xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Encoding.Xml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Functor.Pair/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Functor.Pair
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Errno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Errno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.FileSystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.FileSystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.IO.Signal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.IO.Signal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigFloat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.BigFloat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigInt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.BigInt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.BigNat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.BigNat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Complex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Complex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Euclid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Rational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Rational
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Ring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Math.Types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Math.Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Media.Image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Png/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Media.Png
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Media.Svg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Media.Svg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Alt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Alt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Cont/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Cont
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Error
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Free
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.FreeRandom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.FreeRandom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.IO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Iden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Iden
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Option/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Option
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Reader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Reader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Result/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Result
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.State/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Trans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Trans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Writer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Writer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Monad.Yield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Monad.Yield
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HTML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.HttpServer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.HttpServer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.Tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.Tcp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Net.URL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Net.URL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Random.XorShift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Random.XorShift
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Testing.UnitTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Testing.UnitTest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Hex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Hex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Locale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Locale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.SimpleParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.SimpleParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.StringEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.StringEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.Unicode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.Unicode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.WParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.WParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Text.WideChar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Text.WideChar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Thread.Channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.Future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Thread.Future
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Thread.TaskPool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Thread.TaskPool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Comonad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Comonad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Dual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Dual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Lifter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Lifter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Monoid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Monoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Rng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Rng
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Semigroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Semigroup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minilib.Trait.Traversable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minilib.Trait.Traversable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpNFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.RegExpNFA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.RegExpPattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.RegExpPattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.SimpleParser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.SimpleParser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp.StringEx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp.StringEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegExp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegExp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RingBuffer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RingBuffer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Std/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Std
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subprocess
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_back_surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_back_surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_front_surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_front_surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_simple_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_simple_window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        destroy_window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events_queued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        events_queued
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        flush
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycode_to_keysym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        keycode_to_keysym
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        next_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_to_keysym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        string_to_keysym
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap_buffers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        swap_buffers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfaceeventmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::EventMask
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::EventMask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#button_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        button_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        button_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exposure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        key_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        key_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer_motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pointer_motion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure_notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        structure_notify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfacequeuedmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::QueuedMode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::QueuedMode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#after_flush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        after_flush
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#already" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        already
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfacexbeswapaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::XbeSwapAction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::XbeSwapAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copied" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copied
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        undefined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#untouched" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        untouched
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types and aliases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backbufferid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackBufferId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DisplayHandle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-key_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant key_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-key_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant key_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-button_press" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant button_press
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-button_release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant button_release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-motion_notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant motion_notify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-expose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant expose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-destroy_notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant destroy_notify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-unimplemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variant unimplemented
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EventMask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyCode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keysym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeySym
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queuedmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QueuedMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-_display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field height
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WindowId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xbeswapaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XbeSwapAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-cairoxlibsurfaceevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespace Cairo.XlibSurface::Event
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespace Cairo.XlibSurface::Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buttonevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ButtonEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ButtonEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_subwindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _subwindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-same_screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field same_screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroynotifyevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DestroyNotifyEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DestroyNotifyEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exposeevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExposeEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ExposeEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-width_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-height_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field height
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field count
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KeyEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KeyEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_root_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_subwindow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _subwindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-time_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_root_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_root_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-keycode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field keycode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-same_screen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field same_screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motionevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MotionEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MotionEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-type__4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field type_
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-serial_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field serial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-send_event_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field send_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_display_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_window_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_root_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-_subwindow_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field _subwindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-time_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-x_root_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field x_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-y_root_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field y_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-state_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-is_hint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field is_hint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-same_screen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        field same_screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits-and-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits and aliases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trait implementations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cairoxlibsurface">Cairo.XlibSurface</h1>
+<p>Defined in cairo-fix@0.3.0</p>
+<h2 id="values">Values</h2>
+<h3 id="namespace-cairoxlibsurface">namespace Cairo.XlibSurface</h3>
+<h4 id="create_back_surface">create_back_surface</h4>
+<p>Type: <code>Cairo.XlibSurface::Window -&gt; Std::IO Cairo::Surface</code></p>
+<h4 id="create_front_surface">create_front_surface</h4>
+<p>Type: <code>Cairo.XlibSurface::Window -&gt; Std::IO Cairo::Surface</code></p>
+<h4 id="create_simple_window">create_simple_window</h4>
+<p>Type: <code>(Std::I64, Std::I64) -&gt; Std::IO Cairo.XlibSurface::Window</code></p>
+<h4 id="destroy_window">destroy_window</h4>
+<p>Type: <code>Cairo.XlibSurface::Window -&gt; Std::IO ()</code></p>
+<h4 id="events_queued">events_queued</h4>
+<p>Type: <code>Cairo.XlibSurface::QueuedMode -&gt; Cairo.XlibSurface::Window -&gt; Std::IO Std::I64</code></p>
+<h4 id="flush">flush</h4>
+<p>Type: <code>Cairo.XlibSurface::Window -&gt; Std::IO ()</code></p>
+<h4 id="keycode_to_keysym">keycode_to_keysym</h4>
+<p>Type: <code>Cairo.XlibSurface::KeyCode -&gt; Cairo.XlibSurface::Window -&gt; Std::IO Cairo.XlibSurface::KeySym</code></p>
+<h4 id="next_event">next_event</h4>
+<p>Type: <code>Cairo.XlibSurface::Window -&gt; Std::IO Cairo.XlibSurface::Event</code></p>
+<h4 id="select_input">select_input</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask -&gt; Cairo.XlibSurface::Window -&gt; Std::IO ()</code></p>
+<h4 id="string_to_keysym">string_to_keysym</h4>
+<p>Type: <code>Std::String -&gt; Cairo.XlibSurface::KeySym</code></p>
+<h4 id="swap_buffers">swap_buffers</h4>
+<p>Type: <code>Cairo.XlibSurface::XbeSwapAction -&gt; Cairo.XlibSurface::Window -&gt; Std::IO ()</code></p>
+<h3 id="namespace-cairoxlibsurfaceeventmask">namespace Cairo.XlibSurface::EventMask</h3>
+<h4 id="button_press">button_press</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h4 id="button_release">button_release</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h4 id="exposure">exposure</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h4 id="key_press">key_press</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h4 id="key_release">key_release</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h4 id="pointer_motion">pointer_motion</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h4 id="structure_notify">structure_notify</h4>
+<p>Type: <code>Cairo.XlibSurface::EventMask</code></p>
+<h3 id="namespace-cairoxlibsurfacequeuedmode">namespace Cairo.XlibSurface::QueuedMode</h3>
+<h4 id="after_flush">after_flush</h4>
+<p>Type: <code>Cairo.XlibSurface::QueuedMode</code></p>
+<h4 id="already">already</h4>
+<p>Type: <code>Cairo.XlibSurface::QueuedMode</code></p>
+<h4 id="reading">reading</h4>
+<p>Type: <code>Cairo.XlibSurface::QueuedMode</code></p>
+<h3 id="namespace-cairoxlibsurfacexbeswapaction">namespace Cairo.XlibSurface::XbeSwapAction</h3>
+<h4 id="background">background</h4>
+<p>Type: <code>Cairo.XlibSurface::XbeSwapAction</code></p>
+<h4 id="copied">copied</h4>
+<p>Type: <code>Cairo.XlibSurface::XbeSwapAction</code></p>
+<h4 id="undefined">undefined</h4>
+<p>Type: <code>Cairo.XlibSurface::XbeSwapAction</code></p>
+<h4 id="untouched">untouched</h4>
+<p>Type: <code>Cairo.XlibSurface::XbeSwapAction</code></p>
+<h2 id="types-and-aliases">Types and aliases</h2>
+<h3 id="namespace-cairoxlibsurface_1">namespace Cairo.XlibSurface</h3>
+<h4 id="backbufferid">BackBufferId</h4>
+<p>Defined as: <code>type BackBufferId = Std::U64</code></p>
+<h4 id="displayhandle">DisplayHandle</h4>
+<p>Defined as: <code>type DisplayHandle = Std::Ptr</code></p>
+<h4 id="event">Event</h4>
+<p>Defined as: <code>type Event = unbox union { ...variants... }</code></p>
+<h5 id="variant-key_press">variant <code>key_press</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::KeyEvent</code></p>
+<h5 id="variant-key_release">variant <code>key_release</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::KeyEvent</code></p>
+<h5 id="variant-button_press">variant <code>button_press</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::ButtonEvent</code></p>
+<h5 id="variant-button_release">variant <code>button_release</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::ButtonEvent</code></p>
+<h5 id="variant-motion_notify">variant <code>motion_notify</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::MotionEvent</code></p>
+<h5 id="variant-expose">variant <code>expose</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::ExposeEvent</code></p>
+<h5 id="variant-destroy_notify">variant <code>destroy_notify</code></h5>
+<p>Type: <code>Cairo.XlibSurface::Event::DestroyNotifyEvent</code></p>
+<h5 id="variant-unimplemented">variant <code>unimplemented</code></h5>
+<p>Type: <code>()</code></p>
+<h4 id="eventmask">EventMask</h4>
+<p>Defined as: <code>type EventMask = Std::U64</code></p>
+<h4 id="keycode">KeyCode</h4>
+<p>Defined as: <code>type KeyCode = Std::U32</code></p>
+<h4 id="keysym">KeySym</h4>
+<p>Defined as: <code>type KeySym = Std::U64</code></p>
+<h4 id="queuedmode">QueuedMode</h4>
+<p>Defined as: <code>type QueuedMode = Std::I32</code></p>
+<h4 id="window">Window</h4>
+<p>Defined as: <code>type Window = box struct { ...fields... }</code></p>
+<h5 id="field-_display">field <code>_display</code></h5>
+<p>Type: <code>Cairo.XlibSurface::DisplayHandle</code></p>
+<h5 id="field-_window_id">field <code>_window_id</code></h5>
+<p>Type: <code>Cairo.XlibSurface::WindowId</code></p>
+<h5 id="field-width">field <code>width</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-height">field <code>height</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h4 id="windowid">WindowId</h4>
+<p>Defined as: <code>type WindowId = Std::U64</code></p>
+<h4 id="xbeswapaction">XbeSwapAction</h4>
+<p>Defined as: <code>type XbeSwapAction = Std::U8</code></p>
+<h3 id="namespace-cairoxlibsurfaceevent">namespace Cairo.XlibSurface::Event</h3>
+<h4 id="buttonevent">ButtonEvent</h4>
+<p>Defined as: <code>type ButtonEvent = box struct { ...fields... }</code></p>
+<h5 id="field-type_">field <code>type_</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-serial">field <code>serial</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-send_event">field <code>send_event</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-_display_1">field <code>_display</code></h5>
+<p>Type: <code>Std::Ptr</code></p>
+<h5 id="field-_window">field <code>_window</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_root">field <code>_root</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_subwindow">field <code>_subwindow</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-time">field <code>time</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-x">field <code>x</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y">field <code>y</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-x_root">field <code>x_root</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y_root">field <code>y_root</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-state">field <code>state</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-button">field <code>button</code></h5>
+<p>Type: <code>Std::U32</code></p>
+<h5 id="field-same_screen">field <code>same_screen</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h4 id="destroynotifyevent">DestroyNotifyEvent</h4>
+<p>Defined as: <code>type DestroyNotifyEvent = box struct { ...fields... }</code></p>
+<h5 id="field-type__1">field <code>type_</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-serial_1">field <code>serial</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-send_event_1">field <code>send_event</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-_display_2">field <code>_display</code></h5>
+<p>Type: <code>Std::Ptr</code></p>
+<h5 id="field-_event">field <code>_event</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_window_1">field <code>_window</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h4 id="exposeevent">ExposeEvent</h4>
+<p>Defined as: <code>type ExposeEvent = box struct { ...fields... }</code></p>
+<h5 id="field-type__2">field <code>type_</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-serial_2">field <code>serial</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-send_event_2">field <code>send_event</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-_display_3">field <code>_display</code></h5>
+<p>Type: <code>Std::Ptr</code></p>
+<h5 id="field-_window_2">field <code>_window</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-x_1">field <code>x</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y_1">field <code>y</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-width_1">field <code>width</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-height_1">field <code>height</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-count">field <code>count</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h4 id="keyevent">KeyEvent</h4>
+<p>Defined as: <code>type KeyEvent = box struct { ...fields... }</code></p>
+<h5 id="field-type__3">field <code>type_</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-serial_3">field <code>serial</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-send_event_3">field <code>send_event</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-_display_4">field <code>_display</code></h5>
+<p>Type: <code>Std::Ptr</code></p>
+<h5 id="field-_window_3">field <code>_window</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_root_1">field <code>_root</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_subwindow_1">field <code>_subwindow</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-time_1">field <code>time</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-x_2">field <code>x</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y_2">field <code>y</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-x_root_1">field <code>x_root</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y_root_1">field <code>y_root</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-state_1">field <code>state</code></h5>
+<p>Type: <code>Std::U32</code></p>
+<h5 id="field-keycode">field <code>keycode</code></h5>
+<p>Type: <code>Std::U32</code></p>
+<h5 id="field-same_screen_1">field <code>same_screen</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h4 id="motionevent">MotionEvent</h4>
+<p>Defined as: <code>type MotionEvent = box struct { ...fields... }</code></p>
+<h5 id="field-type__4">field <code>type_</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-serial_4">field <code>serial</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-send_event_4">field <code>send_event</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-_display_5">field <code>_display</code></h5>
+<p>Type: <code>Std::Ptr</code></p>
+<h5 id="field-_window_4">field <code>_window</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_root_2">field <code>_root</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-_subwindow_2">field <code>_subwindow</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-time_2">field <code>time</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-x_3">field <code>x</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y_3">field <code>y</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-x_root_2">field <code>x_root</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-y_root_2">field <code>y_root</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h5 id="field-state_2">field <code>state</code></h5>
+<p>Type: <code>Std::U64</code></p>
+<h5 id="field-is_hint">field <code>is_hint</code></h5>
+<p>Type: <code>Std::U8</code></p>
+<h5 id="field-same_screen_2">field <code>same_screen</code></h5>
+<p>Type: <code>Std::I32</code></p>
+<h2 id="traits-and-aliases">Traits and aliases</h2>
+<h2 id="trait-implementations">Trait implementations</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/search-boost.js"></script>
+      
+    
+  </body>
+</html>
