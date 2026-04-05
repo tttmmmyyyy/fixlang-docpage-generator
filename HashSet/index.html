@@ -1630,17 +1630,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#hashsetiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HashSetIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -5262,17 +5251,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#hashsetiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HashSetIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -5323,7 +5301,7 @@
 
 
 <h1 id="hashset">HashSet</h1>
-<p>Defined in hashset@1.2.1</p>
+<p>Defined in hashset@2.0.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-hashset">namespace HashSet</h3>
 <h4 id="capacity">@capacity</h4>
@@ -5423,7 +5401,7 @@ for the foreseeable future to maintain backward compatibility.</p>
 <li><code>set</code> : The HashSet to reserve.</li>
 </ul>
 <h4 id="to_iter">to_iter</h4>
-<p>Type: <code>HashSet::HashSet k -&gt; HashSet::HashSetIterator k</code></p>
+<p>Type: <code>[?it : Std::Iterator, Std::Iterator::Item ?it = k] HashSet::HashSet k -&gt; ?it</code></p>
 <p>Converts a HashSet into an iterator.</p>
 <h5 id="parameters_12">Parameters</h5>
 <ul>
@@ -5435,8 +5413,6 @@ for the foreseeable future to maintain backward compatibility.</p>
 <p>Defined as: <code>type HashSet k = unbox struct { ...fields... }</code></p>
 <h5 id="field-_hashmap">field <code>_hashmap</code></h5>
 <p>Type: <code>HashMap::HashMap k ()</code></p>
-<h4 id="hashsetiterator">HashSetIterator</h4>
-<p>Defined as: <code>type HashSetIterator a = Std::Iterator::MapIterator (HashMap::HashMapIterator (a, ())) (a, ()) a</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 

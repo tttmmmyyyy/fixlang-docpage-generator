@@ -1586,17 +1586,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#hashmapiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HashMapIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -5228,17 +5217,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#hashmapiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HashMapIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -5289,7 +5267,7 @@
 
 
 <h1 id="hashmap">HashMap</h1>
-<p>Defined in hashmap@1.2.0</p>
+<p>Defined in hashmap@2.0.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-hashmap">namespace HashMap</h3>
 <h4 id="capacity">@capacity</h4>
@@ -5384,7 +5362,7 @@ for the foreseeable future to maintain backward compatibility.</p>
 <li><code>mp</code> : HashMap to reserve.</li>
 </ul>
 <h4 id="to_iter">to_iter</h4>
-<p>Type: <code>HashMap::HashMap k v -&gt; HashMap::HashMapIterator (k, v)</code></p>
+<p>Type: <code>[?it : Std::Iterator, Std::Iterator::Item ?it = (k, v)] HashMap::HashMap k v -&gt; ?it</code></p>
 <p>Converts a HashMap into an iterator.</p>
 <h5 id="parameters_11">Parameters</h5>
 <ul>
@@ -5398,8 +5376,6 @@ for the foreseeable future to maintain backward compatibility.</p>
 <p>Type: <code>Std::Array (Std::Array (Std::Option (k, v)))</code></p>
 <h5 id="field-_size">field <code>_size</code></h5>
 <p>Type: <code>Std::I64</code></p>
-<h4 id="hashmapiterator">HashMapIterator</h4>
-<p>Defined as: <code>type HashMapIterator kv = Std::Iterator::FlattenIterator (Std::Iterator::MapIterator Std::Iterator::RangeIterator Std::I64 (Std::Iterator::FlattenIterator (Std::Iterator::MapIterator Std::Iterator::RangeIterator Std::I64 (Std::Option::OptionIterator (Std::Option kv))) (Std::Option::OptionIterator (Std::Option kv)))) (Std::Iterator::FlattenIterator (Std::Iterator::MapIterator Std::Iterator::RangeIterator Std::I64 (Std::Option::OptionIterator (Std::Option kv))) (Std::Option::OptionIterator (Std::Option kv)))</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 
