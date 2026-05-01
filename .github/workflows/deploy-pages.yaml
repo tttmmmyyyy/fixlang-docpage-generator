@@ -45,7 +45,7 @@ jobs:
           sudo apt-get install -y libgmp-dev libmpfr-dev
 
       - name: Build Markdown files
-        run: fix run
+        run: fix run --allow-preliminary-commands
 
       - name: Build HTML files
         run: mkdocs build --verbose --clean
