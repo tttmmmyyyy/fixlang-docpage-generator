@@ -1500,34 +1500,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondequedeque_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace Minilib.Collection.Deque::Deque
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque::Deque">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dequeiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DequeIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4798,34 +4770,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectiondequedeque_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace Minilib.Collection.Deque::Deque
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.Deque::Deque">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dequeiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DequeIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4871,7 +4815,7 @@
 
 
 <h1 id="minilibcollectiondeque">Minilib.Collection.Deque</h1>
-<p>Defined in minilib-collection@0.7.1</p>
+<p>Defined in minilib-collection@0.8.1</p>
 <p>Deque (double-ended queue).
 Deque can be used as a FIFO such as a message queue.
 When used as a FIFO, the amortized costs of <code>push_back()</code> and
@@ -4906,7 +4850,7 @@ When used as a FIFO, the amortized costs of <code>push_back()</code> and
 <p>Type: <code>a -&gt; Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque a</code></p>
 <p>Pushes an element to the front of the queue.</p>
 <h4 id="to_iter">to_iter</h4>
-<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Minilib.Collection.Deque::Deque::DequeIterator a</code></p>
+<p>Type: <code>[?i : Std::Iterator, Std::Iterator::Item ?i = a] Minilib.Collection.Deque::Deque a -&gt; ?i</code></p>
 <p>Returns an iterator of elements.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibcollectiondeque">namespace Minilib.Collection.Deque</h3>
@@ -4917,9 +4861,6 @@ When used as a FIFO, the amortized costs of <code>push_back()</code> and
 <p>Type: <code>Std::Array a</code></p>
 <h5 id="field-back">field <code>back</code></h5>
 <p>Type: <code>Std::Array a</code></p>
-<h3 id="namespace-minilibcollectiondequedeque_1">namespace Minilib.Collection.Deque::Deque</h3>
-<h4 id="dequeiterator">DequeIterator</h4>
-<p>Defined as: <code>type DequeIterator a = Std::Iterator::AppendIterator (Std::Iterator::ReverseIterator (Std::Iterator::ArrayIterator a) a) (Std::Iterator::ArrayIterator a)</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 

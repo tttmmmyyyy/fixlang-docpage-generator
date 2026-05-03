@@ -3689,17 +3689,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#byte_to_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        byte_to_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#fill" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4058,17 +4047,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#split_ex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        split_ex
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#split_first" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4093,28 +4071,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subarray" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        subarray
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#substring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        substring
-      
-    </span>
-  </a>
   
 </li>
         
@@ -5115,17 +5071,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#byte_to_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        byte_to_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#fill" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5484,17 +5429,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#split_ex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        split_ex
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#split_first" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5519,28 +5453,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subarray" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        subarray
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#substring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        substring
-      
-    </span>
-  </a>
   
 </li>
         
@@ -5879,7 +5791,7 @@
 
 
 <h1 id="minilibtextstringex">Minilib.Text.StringEx</h1>
-<p>Defined in minilib-common@0.12.4</p>
+<p>Defined in minilib-common@0.13.1</p>
 <p>String utility functions.</p>
 <p>Features:
 - Array U8 -&gt; String conversion
@@ -5887,14 +5799,6 @@
 - Format</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibtextstringex">namespace Minilib.Text.StringEx</h3>
-<h4 id="byte_to_string">byte_to_string</h4>
-<p>Type: <code>Std::U8 -&gt; Std::String</code></p>
-<p>Deprecated: Please use <code>Std::String::from_U8</code>.</p>
-<p>Converts a byte (a character) to a string of length 1.</p>
-<p>Example:</p>
-<pre><code>0x41_U8.byte_to_string
-==&gt; &quot;A&quot;
-</code></pre>
 <h4 id="fill">fill</h4>
 <p>Type: <code>Std::I64 -&gt; Std::U8 -&gt; Std::String</code></p>
 <p>Creates a string of the specified length, where each byte is equal to the specified byte.</p>
@@ -6071,7 +5975,7 @@ Returns <code>err("suffix does not match: str")</code> if the replacement fails.
 <p>Type: <code>Std::I64 -&gt; Std::String -&gt; Std::String</code></p>
 <p><code>right</code> is a synonym of <code>get_suffix</code>.</p>
 <h4 id="split_by">split_by</h4>
-<p>Type: <code>(Std::U8 -&gt; Std::Bool) -&gt; Std::String -&gt; Std::Iterator::DynIterator Std::String</code></p>
+<p>Type: <code>[?o : Std::Iterator, Std::Iterator::Item ?o = Std::String] (Std::U8 -&gt; Std::Bool) -&gt; Std::String -&gt; ?o</code></p>
 <p>Splits a string by a function that checks whether a character is a delimiter or not.
 The result will not contain any empty string.</p>
 <h5 id="parameters_11">Parameters</h5>
@@ -6083,16 +5987,6 @@ The result will not contain any empty string.</p>
 <p>Example:</p>
 <pre><code>&quot;  aa bb  12 &quot;.split_by(Character::is_space).to_array
 ==&gt;  [&quot;aa&quot;, &quot;bb&quot;, &quot;12&quot;]
-</code></pre>
-<h4 id="split_ex">split_ex</h4>
-<p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Iterator::DynIterator Std::String</code></p>
-<p>Deprecated: Please use <code>Std::String::split</code>.</p>
-<p>Same as Std::String::split, except that <code>"foo".split_ex(",")</code> returns a singleton iterator of "foo".</p>
-<p>Example:</p>
-<pre><code>&quot;foo,bar,baz&quot;.split_ex(&quot;,&quot;).to_array
-==&gt; [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;]
-&quot;foo&quot;.split_ex(&quot;,&quot;).to_array
-==&gt; [&quot;foo&quot;]
 </code></pre>
 <h4 id="split_first">split_first</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; (Std::String, Std::String)</code></p>
@@ -6117,32 +6011,6 @@ If <code>str</code> is empty, returns <code>("", "")</code>.</p>
 &quot;aaa/bbb/ccc&quot;.split_first(&quot;!&quot;)
 ==&gt; (&quot;aaa/bbb/ccc&quot;, &quot;&quot;)
 </code></pre>
-<h4 id="subarray">subarray</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::Array a -&gt; Std::Array a</code></p>
-<p>Deprecated: Please use <code>Std::Array::get_sub</code>.</p>
-<p>Returns a subarray extracted from a specified range from an array.
-If the specified range exceeds the array, it will be truncated to fit within the array.</p>
-<p>Example:</p>
-<pre><code>[10, 11, 12, 13, 14].subarray(1, 2)
-==&gt; [11, 12]
-[10, 11, 12, 13, 14].subarray(0, 5)
-==&gt; [10, 11, 12, 13, 14]
-[10, 11, 12, 13, 14].subarray(-1, 6)
-==&gt; [10, 11, 12, 13, 14]
-</code></pre>
-<h4 id="substring">substring</h4>
-<p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::String -&gt; Std::String</code></p>
-<p>Deprecated: Please use <code>Std::String::get_sub</code>.</p>
-<p>Returns a substring extracted from a specified range from a string.
-If the specified range exceeds the string, it will be truncated to fit within the string.</p>
-<p>Example:</p>
-<pre><code>&quot;abcdef&quot;.substring(2, 3)
-==&gt; &quot;cde&quot;
-&quot;abcdef&quot;.substring(0, 6)
-==&gt; &quot;abcdef&quot;
-&quot;abcdef&quot;.substring(-1, 7)
-==&gt; &quot;abcdef&quot;
-</code></pre>
 <h4 id="to_array">to_array</h4>
 <p>Type: <code>Std::String -&gt; Std::Array Std::U8</code></p>
 <p>Converts a string to a byte array. Specifically, it calls <code>String::get_bytes</code>
@@ -6158,7 +6026,7 @@ and removes a null character at the end of the byte array.</p>
 ==&gt; [ 'A', 'B', 'C' ]
 </code></pre>
 <h4 id="to_iter">to_iter</h4>
-<p>Type: <code>Std::String -&gt; Std::Iterator::ArrayIterator Std::U8</code></p>
+<p>Type: <code>[?o : Std::Iterator, Std::Iterator::Item ?o = Std::U8] Std::String -&gt; ?o</code></p>
 <p>Converts a string to an iterator of bytes.</p>
 <p><code>str.to_iter</code> is equal to <code>str.to_array.to_iter</code>.</p>
 <h5 id="parameters_14">Parameters</h5>

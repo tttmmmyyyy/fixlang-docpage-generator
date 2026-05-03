@@ -5199,7 +5199,7 @@
 
 
 <h1 id="minilibcommoniteratorex">Minilib.Common.IteratorEx</h1>
-<p>Defined in minilib-common@0.12.4</p>
+<p>Defined in minilib-common@0.13.1</p>
 <p>Extensions for <code>Std::Iterator</code>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcommoniteratorex">namespace Minilib.Common.IteratorEx</h3>
@@ -5220,14 +5220,14 @@
 <li><code>iter</code> - The iterator to be taken from.</li>
 </ul>
 <h4 id="repeat">repeat</h4>
-<p>Type: <code>a -&gt; Std::Iterator::MapIterator Std::Iterator::CountUpIterator Std::I64 a</code></p>
+<p>Type: <code>[?o : Std::Iterator, Std::Iterator::Item ?o = a] a -&gt; ?o</code></p>
 <p>Create an iterator that generates the same element infinitely.</p>
 <h5 id="parameters_2">Parameters</h5>
 <ul>
 <li><code>a</code> - A value of type <code>a</code>.</li>
 </ul>
 <h4 id="scan">scan</h4>
-<p>Type: <code>[i : Std::Iterator, Std::Iterator::Item i = a] s -&gt; (a -&gt; s -&gt; s) -&gt; i -&gt; Minilib.Common.IteratorEx::ScanIterator i s a</code></p>
+<p>Type: <code>[?o : Std::Iterator, i : Std::Iterator, Std::Iterator::Item ?o = s, Std::Iterator::Item i = a] s -&gt; (a -&gt; s -&gt; s) -&gt; i -&gt; ?o</code></p>
 <p>Create an iterator that generates the inclusive scan of an iterator.</p>
 <p>Conceptually, <code>[a0, a1, a2, ...].to_iter.scan(s, op) = [s1, s2, ...].to_iter</code> such that
 <code>s0 = s, s1 = op(a0,s0), s2 = op(a1,s1), ...</code>.</p>
@@ -5238,7 +5238,7 @@
 <li><code>iter</code> - The iterator to be scaned.</li>
 </ul>
 <h4 id="scan_ex">scan_ex</h4>
-<p>Type: <code>[i : Std::Iterator, Std::Iterator::Item i = a] s -&gt; (a -&gt; s -&gt; s) -&gt; i -&gt; Std::Iterator::ConsIterator (Minilib.Common.IteratorEx::ScanIterator i s a) s</code></p>
+<p>Type: <code>[?o : Std::Iterator, i : Std::Iterator, Std::Iterator::Item ?o = s, Std::Iterator::Item i = a] s -&gt; (a -&gt; s -&gt; s) -&gt; i -&gt; ?o</code></p>
 <p>Create an iterator that generates the exclusive scan of an iterator.</p>
 <p>Conceptually, <code>[a0, a1, a2, ...].to_iter.scan_ex(s, op) = [s0, s1, s2, ...].to_iter</code> such that
 <code>s0 = s, s1 = op(a0,s0), s2 = op(a1,s1), ...</code>.</p>
@@ -5249,7 +5249,7 @@
 <li><code>iter</code> - The iterator to be scaned.</li>
 </ul>
 <h4 id="tails">tails</h4>
-<p>Type: <code>[i : Std::Iterator] i -&gt; Minilib.Common.IteratorEx::TailsIterator i</code></p>
+<p>Type: <code>[?o : Std::Iterator, i : Std::Iterator, Std::Iterator::Item ?o = i] i -&gt; ?o</code></p>
 <p>Creates an iterator that yields a tail starting from each element.</p>
 <p>Conceptually, <code>[a1, a2, ..., an].to_iter.tails = [t1, t2, ..., tn, nil].to_iter</code> such that
 <code>t1 = [a1, a2, ..., an].to_iter, t2 = [a2, a3, ..., an].to_iter, ..., tn = [an].to_iter, nil = [].to_iter</code>.</p>
@@ -5258,7 +5258,7 @@
 <li><code>iter</code> - An iterator.</li>
 </ul>
 <h4 id="transpose">transpose</h4>
-<p>Type: <code>[i : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i2 = i] i2 -&gt; Minilib.Common.IteratorEx::TransposeIterator i</code></p>
+<p>Type: <code>[?o : Std::Iterator, ?o2 : Std::Iterator, i : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item ?o = a, Std::Iterator::Item ?o2 = ?o, Std::Iterator::Item i = a, Std::Iterator::Item i2 = i] i2 -&gt; ?o2</code></p>
 <p>Transposes an iterator of iterators.</p>
 <p>Conceptually, <code>[a1, a2, ..., an].to_iter.transpose = [b1, b2, ..., bm].to_iter</code> where
 <code>a1 = [a11, a12, ..., a1m].to_iter, ..., an = [an1, an2, ..., anm].to_iter</code> then

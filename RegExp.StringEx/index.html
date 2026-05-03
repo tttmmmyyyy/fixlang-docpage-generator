@@ -4547,40 +4547,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types and aliases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpstringex_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.StringEx
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.StringEx">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#splitbyiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SplitByIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -5171,40 +5137,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types and aliases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#namespace-regexpstringex_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace RegExp.StringEx
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace RegExp.StringEx">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#splitbyiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SplitByIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -5247,7 +5179,7 @@
 
 
 <h1 id="regexpstringex">RegExp.StringEx</h1>
-<p>Defined in regexp@1.1.2</p>
+<p>Defined in regexp@1.1.3</p>
 <p>String extensions, such as:
 - ToString for Tuple, Option, Result, Array, HashMap
 - Array U8 -&gt; String conversion
@@ -5306,7 +5238,7 @@ Example:</p>
 &quot;test.jpg&quot;.replace_suffix(&quot;.txt&quot;, &quot;.tmp&quot;)  ==&gt; err(&quot;suffix does not match: test.jpg&quot;)
 </code></pre>
 <h4 id="split_by">split_by</h4>
-<p>Type: <code>(Std::U8 -&gt; Std::Bool) -&gt; Std::String -&gt; RegExp.StringEx::SplitByIterator</code></p>
+<p>Type: <code>[?it : Std::Iterator, Std::Iterator::Item ?it = Std::String] (Std::U8 -&gt; Std::Bool) -&gt; Std::String -&gt; ?it</code></p>
 <p>Splits a string by a function that checks whether a character is a delimiter or not.
 The result will not contain any empty string.</p>
 <h4 id="split_ex">split_ex</h4>
@@ -5360,9 +5292,6 @@ with <code>a</code>, <code>b</code>, <code>c</code>.</p>
 <p><code>(a, b, c, d).format(str)</code> replaces each occurence of <code>{}</code> in the format string <code>str</code>
 with <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
-<h3 id="namespace-regexpstringex_1">namespace RegExp.StringEx</h3>
-<h4 id="splitbyiterator">SplitByIterator</h4>
-<p>Defined as: <code>type SplitByIterator = Std::Iterator::ArrayIterator Std::String</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 

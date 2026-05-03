@@ -1581,34 +1581,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionorderedmaporderedmap_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace Minilib.Collection.OrderedMap::OrderedMap
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.OrderedMap::OrderedMap">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#orderedmapiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OrderedMapIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4826,34 +4798,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#namespace-minilibcollectionorderedmaporderedmap_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        namespace Minilib.Collection.OrderedMap::OrderedMap
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="namespace Minilib.Collection.OrderedMap::OrderedMap">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#orderedmapiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OrderedMapIterator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4927,7 +4871,7 @@
 
 
 <h1 id="minilibcollectionorderedmap">Minilib.Collection.OrderedMap</h1>
-<p>Defined in minilib-collection@0.7.1</p>
+<p>Defined in minilib-collection@0.8.1</p>
 <p>Ordered map.
 This is similar to HashMap except it preserves the order of entries.</p>
 <h2 id="values">Values</h2>
@@ -4960,7 +4904,7 @@ This is similar to HashMap except it preserves the order of entries.</p>
 <p>Type: <code>[k : Hash::HashKey] Std::I64 -&gt; Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Minilib.Collection.OrderedMap::OrderedMap k v</code></p>
 <p>Reserve an OrderedMap so that it will not rehash until size exceeds the spacified value.</p>
 <h4 id="to_iter">to_iter</h4>
-<p>Type: <code>Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Minilib.Collection.OrderedMap::OrderedMap::OrderedMapIterator k v</code></p>
+<p>Type: <code>[?i : Std::Iterator, Std::Iterator::Item ?i = (k, v)] Minilib.Collection.OrderedMap::OrderedMap k v -&gt; ?i</code></p>
 <p>Convert an OrderedMap into an iterator. The order of the elements is the same as
 when they were inserted into the map.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
@@ -4972,9 +4916,6 @@ when they were inserted into the map.</p>
 <p>Type: <code>HashMap::HashMap k (Std::I64, v)</code></p>
 <h5 id="field-serial">field <code>serial</code></h5>
 <p>Type: <code>Std::I64</code></p>
-<h3 id="namespace-minilibcollectionorderedmaporderedmap_1">namespace Minilib.Collection.OrderedMap::OrderedMap</h3>
-<h4 id="orderedmapiterator">OrderedMapIterator</h4>
-<p>Defined as: <code>type OrderedMapIterator k v = Std::Iterator::MapIterator (Std::Iterator::ArrayIterator (k, (Std::I64, v))) (k, (Std::I64, v)) (k, v)</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 <h3 id="impl-k-hashhashkey-v-stdeq-minilibcollectionorderedmaporderedmap-k-v-stdeq">impl <code>[k : Hash::HashKey, v : Std::Eq] Minilib.Collection.OrderedMap::OrderedMap k v : Std::Eq</code></h3>
