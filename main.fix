@@ -107,7 +107,7 @@ build_docs = (
         };
 
         // If the latest tag found, checkout it.
-        when(tag.get_size > 0, 
+        when(tag.@size > 0, 
             ["git", "checkout", "--quiet", tag].ez_run_o(ezsc).forget
         );;
 
@@ -126,8 +126,8 @@ build_docs = (
         let md_files = *["find", tmp, "-name", "*.md"].ez_run_o(ezsc);
 
         // Parse `md_files` to get the list of module names.
-        let md_files = md_files.split("\n").map(strip_spaces).filter(|s| s.get_size > 0);
-        let modules = md_files.map(|md_file| md_file.get_sub((tmp + "/").get_size, md_file.get_size - ".md".get_size));
+        let md_files = md_files.split("\n").map(strip_spaces).filter(|s| s.@size > 0);
+        let modules = md_files.map(|md_file| md_file.get_sub((tmp + "/").@size, md_file.@size - ".md".@size));
         let modules = modules.to_array.sort_by(|(a, b)| a < b);
 
         // Move all contents in `tmp` to `docs_dir`.
