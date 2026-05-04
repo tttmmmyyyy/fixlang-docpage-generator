@@ -1313,6 +1313,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#empty" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4583,6 +4594,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#empty" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4815,13 +4837,16 @@
 
 
 <h1 id="minilibcollectiondeque">Minilib.Collection.Deque</h1>
-<p>Defined in minilib-collection@0.8.1</p>
+<p>Defined in minilib-collection@0.8.2</p>
 <p>Deque (double-ended queue).
 Deque can be used as a FIFO such as a message queue.
 When used as a FIFO, the amortized costs of <code>push_back()</code> and
 <code>pop_front()</code> are <code>O(1)</code>.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiondequedeque">namespace Minilib.Collection.Deque::Deque</h3>
+<h4 id="size">@size</h4>
+<p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::I64</code></p>
+<p>Gets the size of the queue.</p>
 <h4 id="empty">empty</h4>
 <p>Type: <code>Std::I64 -&gt; Minilib.Collection.Deque::Deque a</code></p>
 <p>Creates an empty double-ended queue.</p>
@@ -4832,8 +4857,8 @@ When used as a FIFO, the amortized costs of <code>push_back()</code> and
 <p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::Option a</code></p>
 <p>Gets the front element of the queue.</p>
 <h4 id="get_size">get_size</h4>
+<p><strong>Deprecated</strong>: Use <code>@size</code> instead.</p>
 <p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::I64</code></p>
-<p>Gets the size of the queue.</p>
 <h4 id="is_empty">is_empty</h4>
 <p>Type: <code>Minilib.Collection.Deque::Deque a -&gt; Std::Bool</code></p>
 <p>Returns true iff the queue is empty.</p>

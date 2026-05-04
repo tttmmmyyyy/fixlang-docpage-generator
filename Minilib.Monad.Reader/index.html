@@ -5183,7 +5183,7 @@
 
 
 <h1 id="minilibmonadreader">Minilib.Monad.Reader</h1>
-<p>Defined in minilib-monad@0.11.4</p>
+<p>Defined in minilib-monad@0.11.5</p>
 <p>Reader monad.</p>
 <p>For details, see <a href="https://www.olivierverdier.com/posts/2014/12/31/reader-writer-monad-comonad/">blog post: The Reader and Writer Monads and Comonads</a>.</p>
 <p>Example:</p>
@@ -5207,6 +5207,7 @@ main: IO () = (
 <p>Type: <code>[m : Std::Monad, n : Std::Monad] (m a -&gt; n b) -&gt; Minilib.Monad.Reader::ReaderT e m a -&gt; Minilib.Monad.Reader::ReaderT e n b</code></p>
 <p>Maps an underlying monad and a value using the specified function.</p>
 <h4 id="read">read</h4>
+<p><strong>Deprecated</strong>: Use <code>MonadReaderIF::ask</code> instead.</p>
 <p>Type: <code>[m : Std::Monad] Minilib.Monad.Reader::ReaderT e m e</code></p>
 <p>A reader monad that returns the environment as a value.</p>
 <h4 id="reader">reader</h4>

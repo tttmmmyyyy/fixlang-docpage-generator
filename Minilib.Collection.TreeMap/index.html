@@ -1712,17 +1712,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-size" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field size
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#field-key_less_than" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4834,17 +4823,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#field-size" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        field size
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#field-key_less_than" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5005,7 +4983,7 @@
 
 
 <h1 id="minilibcollectiontreemap">Minilib.Collection.TreeMap</h1>
-<p>Defined in minilib-collection@0.8.1</p>
+<p>Defined in minilib-collection@0.8.2</p>
 <p>TreeMap is a map that manages keys in sorted order.</p>
 <p><code>TreeMap</code> implements the <code>Map</code> and <code>SortedMap</code> trait.
  If you import this module, you should also import <code>Minilib.Collection.Trait</code>.</p>
@@ -5030,11 +5008,8 @@ then <code>x</code> and <code>y</code> are considered equivalent.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectiontreemaptreemap">namespace Minilib.Collection.TreeMap::TreeMap</h3>
 <h4 id="find_range">find_range</h4>
+<p><strong>Deprecated</strong>: Use <code>select_range</code> instead.</p>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] k -&gt; k -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v -&gt; Std::Iterator::DynIterator (k, v)</code></p>
-<p>Deprecated: Use <code>select_range</code>.</p>
-<p><code>tm.find_range(begin, end)</code> finds all entries <code>(k,v)</code>
-where <code>!less_than(k, begin) &amp;&amp; less_than(k, end)</code> is true.
-In default <code>LessThan</code> ordering, that condition is same as <code>begin &lt;= k &amp;&amp; k &lt; end</code>.</p>
 <h4 id="find_raw_range">find_raw_range</h4>
 <p>Type: <code>[k : Minilib.Collection.TreeMap::TreeMap::TreeMapKey, v : Minilib.Collection.TreeMap::TreeMap::TreeMapValue] ((k, v) -&gt; Std::Bool) -&gt; ((k, v) -&gt; Std::Bool) -&gt; Minilib.Collection.TreeMap::TreeMap::TreeMap k v -&gt; Std::Iterator::DynIterator (k, v)</code></p>
 <p><code>tm.find_raw_range(lt_begin, lt_end)</code> finds all entries <code>(k,v)</code>
@@ -5073,8 +5048,6 @@ then <code>(k1,v1)</code> is replaced with <code>(k, updater(v1))</code>.</p>
 <p><code>TreeMap</code> is a structure that stores key-value pairs into a red-black tree.</p>
 <h5 id="field-root">field <code>root</code></h5>
 <p>Type: <code>Minilib.Collection.Internal.RBTree::RBNode::RBNode (k, v)</code></p>
-<h5 id="field-size">field <code>size</code></h5>
-<p>Type: <code>Std::I64</code></p>
 <h5 id="field-key_less_than">field <code>key_less_than</code></h5>
 <p>Type: <code>k -&gt; k -&gt; Std::Bool</code></p>
 <h5 id="field-entry_less_than">field <code>entry_less_than</code></h5>

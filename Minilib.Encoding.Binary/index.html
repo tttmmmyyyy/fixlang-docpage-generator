@@ -2478,6 +2478,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#empty" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5336,6 +5347,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#empty" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5935,7 +5957,7 @@
 
 
 <h1 id="minilibencodingbinary">Minilib.Encoding.Binary</h1>
-<p>Defined in minilib-binary@0.6.3</p>
+<p>Defined in minilib-binary@0.6.4</p>
 <p>Binary utility, such as:
 - Byte order
 - Byte buffer</p>
@@ -5990,6 +6012,9 @@
 <p>Type: <code>Std::I64 -&gt; Std::U8 -&gt; Std::Array Std::U8 -&gt; Std::Array Std::U8</code></p>
 <p>Encodes U8 into <code>array</code> at position <code>i</code> with little endian.</p>
 <h3 id="namespace-minilibencodingbinarybytebuffer">namespace Minilib.Encoding.Binary::ByteBuffer</h3>
+<h4 id="size">@size</h4>
+<p>Type: <code>Minilib.Encoding.Binary::ByteBuffer -&gt; Std::I64</code></p>
+<p>Gets the size of internal byte array.</p>
 <h4 id="empty">empty</h4>
 <p>Type: <code>Std::I64 -&gt; Minilib.Encoding.Binary::ByteOrder -&gt; Minilib.Encoding.Binary::ByteBuffer</code></p>
 <p><code>ByteBuffer::empty(capacity, byte_order)</code> creates new byte buffer such that:
@@ -6014,7 +6039,7 @@ If not, appends zeros at the end of the byte buffer.</p>
 <p>Gets the read/write position.</p>
 <h4 id="get_size">get_size</h4>
 <p>Type: <code>Minilib.Encoding.Binary::ByteBuffer -&gt; Std::I64</code></p>
-<p>Gets the size of internal byte array.</p>
+<p>Synonym of <code>ByteBuffer::@size</code>.</p>
 <h4 id="get_u16">get_u16</h4>
 <p>Type: <code>Std::I64 -&gt; Minilib.Encoding.Binary::ByteBuffer -&gt; Std::U16</code></p>
 <p>Decodes U16 from the byte buffer at position <code>i</code>.</p>

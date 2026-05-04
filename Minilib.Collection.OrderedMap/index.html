@@ -1394,6 +1394,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#contains_key" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4611,6 +4622,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#contains_key" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4871,11 +4893,14 @@
 
 
 <h1 id="minilibcollectionorderedmap">Minilib.Collection.OrderedMap</h1>
-<p>Defined in minilib-collection@0.8.1</p>
+<p>Defined in minilib-collection@0.8.2</p>
 <p>Ordered map.
 This is similar to HashMap except it preserves the order of entries.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibcollectionorderedmaporderedmap">namespace Minilib.Collection.OrderedMap::OrderedMap</h3>
+<h4 id="size">@size</h4>
+<p>Type: <code>Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Std::I64</code></p>
+<p>Get size (number of elements) in an OrderedMap.</p>
 <h4 id="contains_key">contains_key</h4>
 <p>Type: <code>[k : Hash::HashKey] k -&gt; Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Std::Bool</code></p>
 <p>Check whether an OrderedMap contains a key.</p>
@@ -4895,8 +4920,8 @@ This is similar to HashMap except it preserves the order of entries.</p>
 <p>Type: <code>Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Std::I64</code></p>
 <p>Get capacity of an OrderedMap.</p>
 <h4 id="get_size">get_size</h4>
+<p><strong>Deprecated</strong>: Use <code>@size</code> instead.</p>
 <p>Type: <code>Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Std::I64</code></p>
-<p>Get size (number of elements) in an OrderedMap.</p>
 <h4 id="insert">insert</h4>
 <p>Type: <code>[k : Hash::HashKey] k -&gt; v -&gt; Minilib.Collection.OrderedMap::OrderedMap k v -&gt; Minilib.Collection.OrderedMap::OrderedMap k v</code></p>
 <p>Insert an element into an OrderedMap.</p>

@@ -5717,7 +5717,7 @@
 
 
 <h1 id="minilibmonadstate">Minilib.Monad.State</h1>
-<p>Defined in minilib-monad@0.11.4</p>
+<p>Defined in minilib-monad@0.11.5</p>
 <p>State Monad which maintains a mutable state.</p>
 <p>Example:</p>
 <pre><code>main: IO () = (
@@ -5810,7 +5810,7 @@ change_foo = change_bar.lens_state_t(Foo::act_bar);
         State::mod_state(concat(&quot; world&quot;));;
         pure $ 42
     };
-    let (str, i64) = *sm.run_state_t(&quot;hello&quot;);  // returns (&quot;hello world&quot;, 42)
+    let (str, i64val) = *sm.run_state_t(&quot;hello&quot;);  // returns (&quot;hello world&quot;, 42)
 </code></pre>
 <h4 id="state">state</h4>
 <p>Type: <code>(s -&gt; (s, a)) -&gt; Minilib.Monad.State::State s a</code></p>

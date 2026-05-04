@@ -5139,7 +5139,7 @@
 
 
 <h1 id="minilibmonadcont">Minilib.Monad.Cont</h1>
-<p>Defined in minilib-monad@0.11.4</p>
+<p>Defined in minilib-monad@0.11.5</p>
 <p>Continuation Monad.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmonadcont">namespace Minilib.Monad.Cont</h3>
@@ -5156,9 +5156,8 @@
 <p>Type: <code>[m : Std::Monad] Minilib.Monad.Cont::ContT r m r -&gt; m r</code></p>
 <p>Runs a ContT monad with <code>pure</code> as a continuation function.</p>
 <h4 id="lift_cont">lift_cont</h4>
+<p><strong>Deprecated</strong>: Use <code>MonadTrans::lift_t</code> instead.</p>
 <p>Type: <code>[m : Std::Monad] m a -&gt; Minilib.Monad.Cont::ContT r m a</code></p>
-<p>Deprecated: Please use <code>MonadTrans::lift_t</code>.</p>
-<p>Lifts an underlying monad to a continuation monad.</p>
 <h4 id="map_cont">map_cont</h4>
 <p>Type: <code>(r -&gt; r) -&gt; Minilib.Monad.Cont::Cont r a -&gt; Minilib.Monad.Cont::Cont r a</code></p>
 <p>Applys a function to the result of a Cont monad.</p>

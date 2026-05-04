@@ -5271,7 +5271,7 @@
 
 
 <h1 id="minilibmonadwriter">Minilib.Monad.Writer</h1>
-<p>Defined in minilib-monad@0.11.4</p>
+<p>Defined in minilib-monad@0.11.5</p>
 <p>Writer monad.</p>
 <p>For details, see <a href="https://www.olivierverdier.com/posts/2014/12/31/reader-writer-monad-comonad/">blog post: The Reader and Writer Monads and Comonads</a>.</p>
 <h2 id="values">Values</h2>
@@ -5298,6 +5298,7 @@
 <p>Type: <code>[m : Std::Monad] Minilib.Monad.Writer::WriterT e m a -&gt; m (e, a)</code></p>
 <p>Runs a generic writer monad to get an enviroment and a value.</p>
 <h4 id="write">write</h4>
+<p><strong>Deprecated</strong>: Use <code>MonadWriterIF::tell</code> instead.</p>
 <p>Type: <code>[e : Minilib.Trait.Monoid::Monoid, m : Std::Monad] e -&gt; Minilib.Monad.Writer::WriterT e m ()</code></p>
 <p>Creates a writer monad that appends to the environment.</p>
 <h4 id="writer">writer</h4>
