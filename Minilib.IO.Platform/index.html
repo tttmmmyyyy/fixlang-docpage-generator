@@ -4727,7 +4727,7 @@
 
 
 <h1 id="minilibioplatform">Minilib.IO.Platform</h1>
-<p>Defined in minilib-io@0.8.4</p>
+<p>Defined in minilib-io@0.8.5</p>
 <p>Get kernel information such as system name, machine archtecture.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibioplatform">namespace Minilib.IO.Platform</h3>
@@ -4739,12 +4739,8 @@
 <p>Gets the name and information of current kernel.
 It calls POSIX C function <code>uname()</code>.</p>
 <h4 id="uname">uname</h4>
+<p><strong>Deprecated</strong>: Use <code>get_uname</code> instead.</p>
 <p>Type: <code>Minilib.IO.Platform::UName</code></p>
-<p>NOTE: <code>uname</code> is deprecated. Please use <code>get_uname</code>.</p>
-<p>The name and information of current kernel.
-Calls POSIX C function <code>uname()</code>, and split the result by null characters.
-NOTE: The system information does not change during program execution,
-so this variable is constant.</p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-minilibioplatform_1">namespace Minilib.IO.Platform</h3>
 <h4 id="uname_1">UName</h4>

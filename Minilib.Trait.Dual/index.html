@@ -5095,17 +5095,19 @@
 
 
 <h1 id="minilibtraitdual">Minilib.Trait.Dual</h1>
-<p>Defined in minilib-comonad@0.6.5</p>
+<p>Defined in minilib-comonad@0.6.6</p>
 <p>Dual functors.</p>
 <p>Dual functors are a pair of functors that can be annihilated with the <code>zap</code> function.</p>
-<p>Here is an example of a list of dual functors:
-- <code>Identity</code> &lt;-&gt; <code>IdentityC</code>
-- <code>Arrow e</code> &lt;-&gt; <code>Tuple2 e</code>
-- <code>ReaderT e m</code> &lt;-&gt; <code>EnvT e w</code>
-- <code>StateT e m</code> &lt;-&gt; <code>StoreT e w</code>
-- <code>WriterT e m</code> &lt;-&gt; <code>TracedT e w</code>
-- <code>Free f</code> &lt;-&gt; <code>Cofree g</code>, when <code>f</code> and <code>g</code> is dual
-- <code>IO</code> &lt;-&gt; <code>IOStore</code></p>
+<p>Here is an example of a list of dual functors:</p>
+<ul>
+<li><code>Identity</code> &lt;-&gt; <code>IdentityC</code></li>
+<li><code>Arrow e</code> &lt;-&gt; <code>Tuple2 e</code></li>
+<li><code>ReaderT e m</code> &lt;-&gt; <code>EnvT e w</code></li>
+<li><code>StateT e m</code> &lt;-&gt; <code>StoreT e w</code></li>
+<li><code>WriterT e m</code> &lt;-&gt; <code>TracedT e w</code></li>
+<li><code>Free f</code> &lt;-&gt; <code>Cofree g</code>, when <code>f</code> and <code>g</code> is dual</li>
+<li><code>IO</code> &lt;-&gt; <code>IOStore</code></li>
+</ul>
 <p>For more information, see the following blog post:
 <a href="http://comonad.com/reader/2008/the-cofree-comonad-and-the-expression-problem/">The Comonad.Reader: The Cofree Comonad and the Expression Problem</a>.</p>
 <h2 id="values">Values</h2>

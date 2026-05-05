@@ -2751,6 +2751,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#i64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        i64
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#is_even" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2843,17 +2854,6 @@
     <span class="md-ellipsis">
       
         shift_right
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_i64" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_I64
       
     </span>
   </a>
@@ -4952,6 +4952,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#i64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        i64
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#is_even" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5044,17 +5055,6 @@
     <span class="md-ellipsis">
       
         shift_right
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_i64" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_I64
       
     </span>
   </a>
@@ -5377,7 +5377,7 @@
 
 
 <h1 id="minilibmathbigint">Minilib.Math.BigInt</h1>
-<p>Defined in minilib-math@0.7.4</p>
+<p>Defined in minilib-math@0.7.5</p>
 <p>Arbitrary-precision integer.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-minilibmathbigint">namespace Minilib.Math.BigInt</h3>
@@ -5396,16 +5396,19 @@ Returns 0 if <code>a</code> is zero.</p>
 <p><code>BigInt::divmod_by_two(a)</code> returns <code>(a/2, a%2)</code>.</p>
 <h4 id="from_i64">from_I64</h4>
 <p>Type: <code>Std::I64 -&gt; Minilib.Math.BigInt::BigInt</code></p>
-<p><code>BigInt::from_I64(i64)</code> creates new BigInt object from <code>i64</code>.</p>
+<p><code>BigInt::from_I64(i64val)</code> creates new BigInt object from <code>i64val</code>.</p>
 <h4 id="from_u64">from_U64</h4>
 <p>Type: <code>Std::U64 -&gt; Minilib.Math.BigInt::BigInt</code></p>
-<p><code>BigInt::from_U64(u64)</code> creates new BigInt object from <code>u64</code>.</p>
+<p><code>BigInt::from_U64(u64val)</code> creates new BigInt object from <code>u64val</code>.</p>
 <h4 id="generate_bigint">generate_bigint</h4>
 <p>Type: <code>[m : Minilib.Monad.Random::MonadRandom] Std::I64 -&gt; m Minilib.Math.BigInt::BigInt</code></p>
 <p><code>generate_bigint(bit_length)</code> generates a random BigInt of the specified bit length.</p>
 <h4 id="generate_bigint_range">generate_bigint_range</h4>
 <p>Type: <code>[m : Minilib.Monad.Random::MonadRandom] Minilib.Math.BigInt::BigInt -&gt; Minilib.Math.BigInt::BigInt -&gt; m Minilib.Math.BigInt::BigInt</code></p>
 <p><code>generate_bigint_range(begin, end)</code> generates a random BigInt <code>r</code> such that <code>begin &lt;= r &amp;&amp; r &lt; end</code>.</p>
+<h4 id="i64">i64</h4>
+<p>Type: <code>Minilib.Math.BigInt::BigInt -&gt; Std::I64</code></p>
+<p>Converts BigInt to I64. If overflow, it produces unexpected result.</p>
 <h4 id="is_even">is_even</h4>
 <p>Type: <code>Minilib.Math.BigInt::BigInt -&gt; Std::Bool</code></p>
 <p><code>a.is_even</code> returns true iff <code>a</code> is an even number.</p>
@@ -5434,9 +5437,6 @@ Returns 0 if <code>a</code> is zero.</p>
 <h4 id="shift_right">shift_right</h4>
 <p>Type: <code>Std::U64 -&gt; Minilib.Math.BigInt::BigInt -&gt; Minilib.Math.BigInt::BigInt</code></p>
 <p>Shifts <code>@nat</code> to right. NOTE <code>@sign</code> does not affect at all.</p>
-<h4 id="to_i64">to_I64</h4>
-<p>Type: <code>Minilib.Math.BigInt::BigInt -&gt; Std::I64</code></p>
-<p>Converts BigInt to I64. If overflow, it produces unexpected result.</p>
 <h4 id="two">two</h4>
 <p>Type: <code>Minilib.Math.BigInt::BigInt</code></p>
 <p>BigInt constant representing 2.</p>

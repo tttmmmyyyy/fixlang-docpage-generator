@@ -2658,6 +2658,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#f64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f64
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#from_f64" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2794,17 +2805,6 @@
     <span class="md-ellipsis">
       
         sqrt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_f64" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_F64
       
     </span>
   </a>
@@ -4842,6 +4842,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#f64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f64
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#from_f64" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4978,17 +4989,6 @@
     <span class="md-ellipsis">
       
         sqrt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to_f64" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        to_F64
       
     </span>
   </a>
@@ -5289,7 +5289,7 @@
 
 
 <h1 id="minilibmathbigfloat">Minilib.Math.BigFloat</h1>
-<p>Defined in minilib-math@0.7.4</p>
+<p>Defined in minilib-math@0.7.5</p>
 <p>Arbitrary-precision floating point number.</p>
 <p>A BigFloat is composed from a mantissa and the exponent of base 2.</p>
 <p>Each BigFloat has a precision. It is same as the precision of the mantissa,
@@ -5305,6 +5305,9 @@ and determined by the length of the underlying array (= BigNat).</p>
 <h4 id="epsilon">epsilon</h4>
 <p>Type: <code>Minilib.Math.BigFloat::BigFloat -&gt; Minilib.Math.BigFloat::BigFloat</code></p>
 <p>Gets a BigInt that represents the smallest change in the mantissa of this BigInt.</p>
+<h4 id="f64">f64</h4>
+<p>Type: <code>Minilib.Math.BigFloat::BigFloat -&gt; Std::F64</code></p>
+<p>Converts BigFloat to F64. If BigFloat is out of range of F64, unexpected result is returned.</p>
 <h4 id="from_f64">from_F64</h4>
 <p>Type: <code>Std::F64 -&gt; Minilib.Math.BigFloat::BigFloat</code></p>
 <p>Converts F64 to BigFloat.</p>
@@ -5347,9 +5350,6 @@ It calls <code>set_prec()</code> after converting the precision to base 2.</p>
 <h4 id="sqrt">sqrt</h4>
 <p>Type: <code>Minilib.Math.BigFloat::BigFloat -&gt; Minilib.Math.BigFloat::BigFloat</code></p>
 <p>Returns the square root of <code>a</code>.</p>
-<h4 id="to_f64">to_F64</h4>
-<p>Type: <code>Minilib.Math.BigFloat::BigFloat -&gt; Std::F64</code></p>
-<p>Converts BigFloat to F64. If BigFloat is out of range of F64, unexpected result is returned.</p>
 <h4 id="to_string_exp">to_string_exp</h4>
 <p>Type: <code>Minilib.Math.BigFloat::BigFloat -&gt; Std::String</code></p>
 <p>Convert a BigFloat to a string of exponential form.</p>
