@@ -4614,6 +4614,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-timetime-stdtof64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Time::Time : Std::ToF64
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4981,6 +4998,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Trait implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impl-timetime-stdtof64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl Time::Time : Std::ToF64
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -5001,7 +5035,7 @@
 
 
 <h1 id="time">Time</h1>
-<p>Defined in time@1.0.2</p>
+<p>Defined in time@1.1.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-time">namespace Time</h3>
 <h4 id="from_local">from_local</h4>
@@ -5018,6 +5052,7 @@ This function depends on timezone, so it returns <code>IOFail</code> value.</p>
 <p>Type: <code>Std::IO Time::Time</code></p>
 <p>Get current time using CLOCK_MONOTONIC.</p>
 <h4 id="to_f64">to_F64</h4>
+<p><strong>Deprecated</strong>: Use the trait member <code>ToF64::f64</code> instead.</p>
 <p>Type: <code>Time::Time -&gt; Std::F64</code></p>
 <p>Convert time to 64-bit floating value.</p>
 <h4 id="to_local">to_local</h4>
@@ -5062,6 +5097,7 @@ This struct has two fields, <code>sec: I64</code> and <code>nanosec: U32</code>.
 <p>Type: <code>Std::U32</code></p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
+<h3 id="impl-timetime-stdtof64">impl <code>Time::Time : Std::ToF64</code></h3>
 
 
 
