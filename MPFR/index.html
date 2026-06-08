@@ -4256,34 +4256,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zero" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        zero
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="zero">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_107" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#zeta" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4296,7 +4268,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_108" class="md-nav__link">
+  <a href="#parameters_107" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4324,7 +4296,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_109" class="md-nav__link">
+  <a href="#parameters_108" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -4610,6 +4582,17 @@
     <span class="md-ellipsis">
       
         impl MPFR::MPFR : Std::Neg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impl-mpfrmpfr-stdone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl MPFR::MPFR : Std::One
       
     </span>
   </a>
@@ -10815,34 +10798,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zero" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        zero
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="zero">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_107" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#zeta" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10855,7 +10810,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_108" class="md-nav__link">
+  <a href="#parameters_107" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -10883,7 +10838,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_109" class="md-nav__link">
+  <a href="#parameters_108" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameters
@@ -11176,6 +11131,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#impl-mpfrmpfr-stdone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impl MPFR::MPFR : Std::One
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#impl-mpfrmpfr-stdsub" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11231,13 +11197,13 @@
 
 
 <h1 id="mpfr">MPFR</h1>
-<p>Defined in mpfr-fix@0.4.0</p>
+<p>Defined in mpfr-fix@0.6.0</p>
 <p>Provides arbitrary-precision floating-point type <code>MPFR</code> and related functions.</p>
 <p>This is a wrapper for the GNU MPFR (Multiple Precision Floating-Point Reliable) Library.</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-mpfr">namespace MPFR</h3>
 <h4 id="c_size_of_mpfr">c_SIZE_OF_MPFR</h4>
-<p>Type: <code>Std::FFI::CInt</code></p>
+<p>Type: <code>Std::FFI::CSizeT</code></p>
 <p>Size of <code>__mpfr_struct</code>.
 On 64-bit systems, this is typically 32 bytes.</p>
 <h3 id="namespace-mpfrmpfr">namespace MPFR::MPFR</h3>
@@ -12062,24 +12028,17 @@ the decimal point (e.g., "3.14", "-123.456").</p>
 <li><code>n</code>: The order.</li>
 <li><code>x</code>: The value.</li>
 </ul>
-<h4 id="zero">zero</h4>
-<p>Type: <code>MPFR::Precision -&gt; MPFR::MPFR</code></p>
-<p>Create an MPFR value representing zero.</p>
-<h5 id="parameters_107">Parameters</h5>
-<ul>
-<li><code>prec</code>: The precision in bits.</li>
-</ul>
 <h4 id="zeta">zeta</h4>
 <p>Type: <code>MPFR::MPFR -&gt; MPFR::MPFR</code></p>
 <p>Riemann zeta function.</p>
-<h5 id="parameters_108">Parameters</h5>
+<h5 id="parameters_107">Parameters</h5>
 <ul>
 <li><code>x</code>: The value.</li>
 </ul>
 <h4 id="zeta_ui">zeta_ui</h4>
 <p>Type: <code>Std::U64 -&gt; MPFR::Precision -&gt; MPFR::MPFR</code></p>
 <p>Riemann zeta function for unsigned integer argument.</p>
-<h5 id="parameters_109">Parameters</h5>
+<h5 id="parameters_108">Parameters</h5>
 <ul>
 <li><code>n</code>: The unsigned integer argument.</li>
 <li><code>prec</code>: The precision in bits.</li>
@@ -12121,6 +12080,7 @@ the decimal point (e.g., "3.14", "-123.456").</p>
 <h3 id="impl-mpfrmpfr-stdlessthanoreq">impl <code>MPFR::MPFR : Std::LessThanOrEq</code></h3>
 <h3 id="impl-mpfrmpfr-stdmul">impl <code>MPFR::MPFR : Std::Mul</code></h3>
 <h3 id="impl-mpfrmpfr-stdneg">impl <code>MPFR::MPFR : Std::Neg</code></h3>
+<h3 id="impl-mpfrmpfr-stdone">impl <code>MPFR::MPFR : Std::One</code></h3>
 <h3 id="impl-mpfrmpfr-stdsub">impl <code>MPFR::MPFR : Std::Sub</code></h3>
 <h3 id="impl-mpfrmpfr-stdtostring">impl <code>MPFR::MPFR : Std::ToString</code></h3>
 <h3 id="impl-mpfrmpfr-stdzero">impl <code>MPFR::MPFR : Std::Zero</code></h3>
