@@ -1,4 +1,4 @@
-proj_file_hash = "d6fe00ebcd09f9cffd58737953ab8ebc"
+proj_file_hash = "9d461ae6410d6fd394d534fbcc8b0779"
 
 [[dependencies]]
 name = "character"
@@ -11,81 +11,81 @@ rev = "fd75a6634ec0c919f2d1703112d25da9a3c2346e"
 
 [[dependencies]]
 name = "ez-scripting"
-version = "0.1.0"
-path = ".fixlang/deps/ez-scripting_0.1.0"
+version = "0.4.0"
+path = ".fixlang/deps/ez-scripting_0.4.0"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/ez_scripting.git"
-rev = "1c2e7be5b8d5a97ff475456a0596736bacb6e9e9"
+rev = "43d254a1c2d5f5dbc04b443b083517f16a9bbf58"
 
 [[dependencies]]
 name = "hash"
-version = "1.1.2"
-path = ".fixlang/deps/hash_1.1.2"
+version = "1.1.3"
+path = ".fixlang/deps/hash_1.1.3"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-hash.git"
-rev = "dbf95379b6ee7b26ec4858116f24c0251467cb83"
+rev = "089e73272bff2a97131736c54c07511425a69ed6"
 
 [[dependencies]]
 name = "hashmap"
-version = "2.0.1"
-path = ".fixlang/deps/hashmap_2.0.1"
+version = "2.1.0"
+path = ".fixlang/deps/hashmap_2.1.0"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-hashmap.git"
-rev = "103595c593e92849be0b23df5cfee254da274a3e"
+rev = "718607174a1cd5afff619558718fc583d29434b8"
 
 [[dependencies]]
 name = "minilib-collection"
-version = "0.8.1"
-path = ".fixlang/deps/minilib-collection_0.8.1"
+version = "0.9.0"
+path = ".fixlang/deps/minilib-collection_0.9.0"
 
 [dependencies.git]
 repo = "https://github.com/pt9999/fixlang-minilib-collection.git"
-rev = "77f23dd29c4dfb641d3e1668c4f59a257bf09b6e"
+rev = "b9bb9c9b64551cc4e8da5a4cc619099d86db8e44"
 
 [[dependencies]]
 name = "minilib-common"
-version = "0.13.1"
-path = ".fixlang/deps/minilib-common_0.13.1"
+version = "0.14.0"
+path = ".fixlang/deps/minilib-common_0.14.0"
 
 [dependencies.git]
 repo = "https://github.com/pt9999/fixlang-minilib-common.git"
-rev = "87c043b05ab35881c81a53587cdbc72f0ae0e5cf"
+rev = "f29b872b8eca13fc5f30abfac94b4ef3a9a590d7"
 
 [[dependencies]]
 name = "minilib-json"
-version = "0.6.4"
-path = ".fixlang/deps/minilib-json_0.6.4"
+version = "0.7.0"
+path = ".fixlang/deps/minilib-json_0.7.0"
 
 [dependencies.git]
 repo = "https://github.com/pt9999/fixlang-minilib-json.git"
-rev = "1eeae97ec7d1bb4a6ceee62ff320982f3815fd6b"
+rev = "0ee37506a91b1eb423c3ebbd7fdf1ca33b8f982d"
 
 [[dependencies]]
 name = "minilib-text"
-version = "0.9.3"
-path = ".fixlang/deps/minilib-text_0.9.3"
+version = "0.10.0"
+path = ".fixlang/deps/minilib-text_0.10.0"
 
 [dependencies.git]
 repo = "https://github.com/pt9999/fixlang-minilib-text.git"
-rev = "4e13ac1b88f5c66776da4724493c54dac0e366ec"
+rev = "7d1493b006867b55ea5372b77281fe978f0a93db"
 
 [[dependencies]]
 name = "subprocess"
-version = "1.1.2"
-path = ".fixlang/deps/subprocess_1.1.2"
+version = "2.0.0"
+path = ".fixlang/deps/subprocess_2.0.0"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-subprocess.git"
-rev = "8015f4ce7eeff4e00b001c9b96680e9e904f736b"
+rev = "b610e67529defe6fdd8adf8f7d420667d6e40b64"
 
 [[dependencies]]
 name = "time"
-version = "1.0.2"
-path = ".fixlang/deps/time_1.0.2"
+version = "2.0.0"
+path = ".fixlang/deps/time_2.0.0"
 
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-time.git"
-rev = "7af8a5c115e7437f94dcb4353807c03d816856f6"
+rev = "bcf93dd61eb167e3ffe64ca9ca83ac2aea06587e"
