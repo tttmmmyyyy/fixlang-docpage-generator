@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
      
       - name: Install MkDocs
         run: python3 -m pip install -r requirements.txt     
@@ -27,16 +27,13 @@ jobs:
           echo "LLVM_SYS_170_PREFIX=$LLVM_PATH" >> $GITHUB_ENV
 
       - name: Download Fixlang
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: tttmmmyyyy/fixlang
           path: fixlang
 
       - name: Install Fixlang
-        uses: actions-rs/cargo@v1
-        with:
-          command: install
-          args: --locked --path fixlang
+        run: cargo install --locked --path fixlang
 
       - name: Install dependencies
         run: |
