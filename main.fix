@@ -1,6 +1,5 @@
 module Main;
 
-import Subprocess;
 import Minilib.Encoding.Json.JsonDecoder;
 import Minilib.Encoding.Json;
 import Minilib.Collection.OrderedMap;
@@ -46,20 +45,20 @@ namespace ProjInfo {
 
 build_docs : IO ();
 build_docs = (
-    let ezsc = EZSConfig::default.set_eprint_stderr(true).set_execution_trace(true);
+    let ctx = Context::default.set_eprint_stderr(true).set_execution_trace(true);
 
     // Prepare a directory to store the documentation.
     let docs_dir = "docs";
-    ["rm", "-rf", docs_dir].ez_run_o(ezsc);;    // Remove the directory if it exists.
-    ["mkdir", "-p", docs_dir].ez_run_o(ezsc);;    // Create the directory.
+    ctx.run_o(["rm", "-rf", docs_dir]);;    // Remove the directory if it exists.
+    ctx.run_o(["mkdir", "-p", docs_dir]);;    // Create the directory.
 
     // Download the standard library documentation.
     let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md";
     let std_doc = docs_dir + "/" + "Std.md";
-    ["wget", "-q", std_doc_url, "-O", std_doc].ez_run_o(ezsc);;
+    ctx.run_o(["wget", "-q", std_doc_url, "-O", std_doc]);;
 
     // Run `fix deps list --json` to get the list of all available fix projects.
-    let packages = *["fix", "deps", "list", "--json"].ez_run_o(ezsc);
+    let packages = *ctx.run_o(["fix", "deps", "list", "--json"]);
 
     // Parse `packages`.
     let packages = JsonDecoder::decode(packages);
@@ -78,52 +77,54 @@ build_docs = (
 
     // Remove the working directory if it exists.
     let packages_dir = "packages";
-    ["rm", "-rf", packages_dir].ez_run_o(ezsc);;
+    ctx.run_o(["rm", "-rf", packages_dir]);;
 
     // Create working directory.
-    ["mkdir", "-p", packages_dir].ez_run_o(ezsc);;
+    ctx.run_o(["mkdir", "-p", packages_dir]);;
 
     // Move to working directory.
-    ez_cd(packages_dir);;
+    ctx.cd(packages_dir);;
 
     // Clone each projects.
     let packages = *packages.to_iter.loop_iter_m([], |prj_info, packages|
         // Create the directory to clone the repository.
         let work_dir = prj_info.@name;
-        ["mkdir", "-p", work_dir].ez_run_o(ezsc);;
+        ctx.run_o(["mkdir", "-p", work_dir]);;
 
         // Clone the repository.
-        ["git", "clone", "--quiet", "--tags", prj_info.@git, work_dir].ez_run_o(ezsc);;
+        ctx.run_o(["git", "clone", "--quiet", "--tags", prj_info.@git, work_dir]);;
 
         // cd to the working directory.
-        ez_cd(work_dir);;
+        ctx.cd(work_dir);;
 
         // If the tag is not specified, get the latest tag.
         let tag = *if !prj_info.@tag.is_empty {
             prj_info.@tag.pure
         } else {
-            let tag = *["git", "describe", "--tags", "--abbrev=0"].ez_run_o(ezsc);
+            let tag = *ctx.run_o(["git", "describe", "--tags", "--abbrev=0"]);
             tag.strip_spaces.pure
         };
 
         // If the latest tag found, checkout it.
         when(tag.@size > 0, 
-            ["git", "checkout", "--quiet", tag].ez_run_o(ezsc).forget
+            ctx.run_o(["git", "checkout", "--quiet", tag]).forget
         );;
 
-        // Install dependencies.
-        ["fix", "deps", "install"].ez_run_o(ezsc);;
+        // Resolve the dependencies and install them. The lock file committed in the cloned
+        // project can be out of date with respect to the installed `fix`, and `fix deps update`
+        // re-resolves it.
+        ctx.run_o(["fix", "deps", "update"]);;
 
         // Prepare empty `tmp` directory.
         let tmp = "../../tmp";
-        ["rm", "-rf", tmp].ez_run_o(ezsc);; // Remove the directory if it exists.
-        ["mkdir", "-p", tmp].ez_run_o(ezsc);; // Create the directory.
+        ctx.run_o(["rm", "-rf", tmp]);; // Remove the directory if it exists.
+        ctx.run_o(["mkdir", "-p", tmp]);; // Create the directory.
 
         // Generate documentation in `tmp`.
-        ["fix", "docs", "-o", tmp].ez_run_o(ezsc);;
+        ctx.run_o(["fix", "docs", "-o", tmp]);;
 
         // Get the list of markdown files in `tmp`.
-        let md_files = *["find", tmp, "-name", "*.md"].ez_run_o(ezsc);
+        let md_files = *ctx.run_o(["find", tmp, "-name", "*.md"]);
 
         // Parse `md_files` to get the list of module names.
         let md_files = md_files.split("\n").map(strip_spaces).filter(|s| s.@size > 0);
@@ -132,11 +133,11 @@ build_docs = (
 
         // Move all contents in `tmp` to `docs_dir`.
         modules.to_iter.fold_m((), |mod, _|
-            ["mv", tmp + "/" + mod + ".md", "../../" + docs_dir].ez_run_o(ezsc).forget
+            ctx.run_o(["mv", tmp + "/" + mod + ".md", "../../" + docs_dir]).forget
         );;
 
         // Pop the working directory.
-        ez_cd("..");;
+        ctx.cd("..");;
 
         let prj_info = prj_info.set_tag(tag).set_modules(modules);
         let packages = packages.push_back(prj_info);
@@ -145,7 +146,7 @@ build_docs = (
     );
 
     // Pop the working directory.
-    ez_cd("..");;
+    ctx.cd("..");;
 
     // Create `index.md`.
     println("Creating index.md...");;
