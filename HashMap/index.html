@@ -5211,12 +5211,12 @@
 
 
 <h1 id="hashmap">HashMap</h1>
-<p>Defined in hashmap@2.0.1</p>
+<p>Defined in hashmap@2.1.0</p>
 <h2 id="values">Values</h2>
 <h3 id="namespace-hashmap">namespace HashMap</h3>
 <h4 id="capacity">@capacity</h4>
 <p>Type: <code>HashMap::HashMap k v -&gt; Std::I64</code></p>
-<p>Gets capacity of a HashMap.</p>
+<p>Gets capacity of a HashMap: the number of elements it holds before it grows.</p>
 <h5 id="parameters">Parameters</h5>
 <ul>
 <li><code>mp</code> : HashMap to get capacity of.</li>
@@ -5230,7 +5230,7 @@
 </ul>
 <h4 id="contains_key">contains_key</h4>
 <p>Type: <code>[k : Hash::HashKey] k -&gt; HashMap::HashMap k v -&gt; Std::Bool</code></p>
-<p>Checks whether a hashmap contains a key.</p>
+<p>Checks whether a HashMap contains a key.</p>
 <h5 id="parameters_2">Parameters</h5>
 <ul>
 <li><code>k</code> : Key to search for.</li>
@@ -5238,10 +5238,10 @@
 </ul>
 <h4 id="empty">empty</h4>
 <p>Type: <code>Std::I64 -&gt; HashMap::HashMap k v</code></p>
-<p>Creates an empty HashMap which is reserved so that it will not rehash until size exceeds the spacified value.</p>
+<p>Creates an empty HashMap which is reserved so that it will not rehash until size exceeds the specified value.</p>
 <h5 id="parameters_3">Parameters</h5>
 <ul>
-<li><code>capacity</code> : Initial capacity of the HashMap.</li>
+<li><code>capacity</code> : Number of elements the HashMap is to hold before it rehashes.</li>
 </ul>
 <h4 id="erase">erase</h4>
 <p>Type: <code>[k : Hash::HashKey] k -&gt; HashMap::HashMap k v -&gt; HashMap::HashMap k v</code></p>
@@ -5298,11 +5298,11 @@ for the foreseeable future to maintain backward compatibility.</p>
 <li><code>mp</code> : HashMap to insert into.</li>
 </ul>
 <h4 id="reserve">reserve</h4>
-<p>Type: <code>[k : Hash::HashKey] Std::I64 -&gt; HashMap::HashMap k v -&gt; HashMap::HashMap k v</code></p>
-<p>Reserves a HashMap so that it will not rehash until size exceeds the spacified value.</p>
+<p>Type: <code>Std::I64 -&gt; HashMap::HashMap k v -&gt; HashMap::HashMap k v</code></p>
+<p>Reserves a HashMap so that it will not rehash until size exceeds the specified value.</p>
 <h5 id="parameters_10">Parameters</h5>
 <ul>
-<li><code>capacity</code> : Capacity to reserve.</li>
+<li><code>capacity</code> : Number of elements the HashMap is to hold before it rehashes.</li>
 <li><code>mp</code> : HashMap to reserve.</li>
 </ul>
 <h4 id="to_iter">to_iter</h4>
@@ -5316,6 +5316,14 @@ for the foreseeable future to maintain backward compatibility.</p>
 <h3 id="namespace-hashmap_1">namespace HashMap</h3>
 <h4 id="hashmap_1">HashMap</h4>
 <p>Defined as: <code>type HashMap k v = unbox struct { ...fields... }</code></p>
+<p>A hash table, holding a value under each key.</p>
+<p>The entries lie directly in one array, a free slot holding <code>none</code>. An entry whose slot is taken
+goes into the next free slot after it, and a lookup starts at the slot the hash names and steps
+forward until it meets the entry or a free slot. A third of the slots are kept free, so that a
+lookup soon meets one.</p>
+<p>An entry carries the hash of its key beside the key, so a lookup rules a slot out by comparing
+two 64-bit words, and both a deletion and a rehash find the slot an entry belongs in without
+hashing its key again.</p>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
 <h2 id="trait-implementations">Trait implementations</h2>
 
