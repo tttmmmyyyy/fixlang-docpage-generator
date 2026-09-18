@@ -12435,15 +12435,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#subtract_ptr" class="md-nav__link">
+  <a href="#offset_from" class="md-nav__link">
     <span class="md-ellipsis">
       
-        subtract_ptr
+        offset_from
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="subtract_ptr">
+    <nav class="md-nav" aria-label="offset_from">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -12459,6 +12459,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtract_ptr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        subtract_ptr
+      
+    </span>
+  </a>
   
 </li>
         
@@ -32805,15 +32816,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#subtract_ptr" class="md-nav__link">
+  <a href="#offset_from" class="md-nav__link">
     <span class="md-ellipsis">
       
-        subtract_ptr
+        offset_from
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="subtract_ptr">
+    <nav class="md-nav" aria-label="offset_from">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -32829,6 +32840,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtract_ptr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        subtract_ptr
+      
+    </span>
+  </a>
   
 </li>
         
@@ -47468,18 +47490,24 @@ away from <code>b</code>. <code>s</code> must not be 0.</p>
 <p>Adds an offset to a pointer.</p>
 <h5 id="parameters_198">Parameters</h5>
 <ul>
-<li><code>offset</code></li>
-<li><code>ptr</code></li>
+<li><code>offset</code> - The number of bytes to add. It may be negative.</li>
+<li><code>ptr</code> - The pointer whose address the offset is added to.</li>
 </ul>
-<h4 id="subtract_ptr">subtract_ptr</h4>
+<h4 id="offset_from">offset_from</h4>
 <p>Type: <code>Std::Ptr -&gt; Std::Ptr -&gt; Std::I64</code></p>
-<p>Subtracts two pointers.</p>
-<p>Note that <code>x.subtract_ptr(y)</code> calculates <code>x - y</code>, so <code>subtract_ptr(x, y)</code> calculates <code>y - x</code>.</p>
+<p>The distance in bytes from one pointer to another.</p>
+<p><code>ptr.offset_from(origin)</code> is the number of bytes from <code>origin</code> to <code>ptr</code>. It is negative when <code>ptr</code>
+holds the lower address.</p>
 <h5 id="parameters_199">Parameters</h5>
 <ul>
-<li><code>rhs</code></li>
-<li><code>lhs</code></li>
+<li><code>origin</code> - The pointer the distance is measured from.</li>
+<li><code>ptr</code> - The pointer the distance is measured to.</li>
 </ul>
+<h4 id="subtract_ptr">subtract_ptr</h4>
+<p><strong>Deprecated</strong>: Use <code>Std::Ptr::offset_from</code> instead.</p>
+<p>Type: <code>Std::Ptr -&gt; Std::Ptr -&gt; Std::I64</code></p>
+<p>Deprecated alias for <code>Std::Ptr::offset_from</code>. Kept for backward
+compatibility; <code>offset_from</code> is the canonical name.</p>
 <h3 id="namespace-stdrem">namespace Std::Rem</h3>
 <h4 id="rem">rem</h4>
 <p>Type: <code>[a : Std::Rem] a -&gt; a -&gt; a</code></p>
