@@ -1148,6 +1148,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../Json.Decode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Json.Decode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../MPFR/" class="md-nav__link">
         
   
@@ -45228,8 +45282,7 @@ It is not allowed to mutate the array through the borrowed pointer; to do that, 
 <h4 id="get_capacity">get_capacity</h4>
 <p><strong>Deprecated</strong>: Use <code>Std::Array::@capacity</code> instead.</p>
 <p>Type: <code>Std::Array a -&gt; Std::I64</code></p>
-<p>Deprecated alias for <code>Std::Array::@capacity</code>. Kept for backward
-compatibility; <code>@capacity</code> is the canonical accessor.</p>
+<p>Deprecated alias for <code>Std::Array::@capacity</code>.</p>
 <h4 id="get_first">get_first</h4>
 <p>Type: <code>Std::Array a -&gt; Std::Option a</code></p>
 <p>Gets the first element of an array. Returns none if the array is empty.</p>
@@ -45247,8 +45300,7 @@ compatibility; <code>@capacity</code> is the canonical accessor.</p>
 <h4 id="get_size">get_size</h4>
 <p><strong>Deprecated</strong>: Use <code>Std::Array::@size</code> instead.</p>
 <p>Type: <code>Std::Array a -&gt; Std::I64</code></p>
-<p>Deprecated alias for <code>Std::Array::@size</code>. Kept for backward
-compatibility; <code>@size</code> is the canonical accessor.</p>
+<p>Deprecated alias for <code>Std::Array::@size</code>.</p>
 <h4 id="get_sub">get_sub</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::Array a -&gt; Std::Array a</code></p>
 <p><code>arr.get_sub(start, end)</code> returns an array <code>[ arr.@(i) | i ∈ [start, end) ]</code>.</p>
@@ -46071,7 +46123,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <p>Type: <code>Std::I16</code></p>
 <h4 id="shift_left">shift_left</h4>
 <p>Type: <code>Std::I16 -&gt; Std::I16 -&gt; Std::I16</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_85">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46079,7 +46132,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 </ul>
 <h4 id="shift_right">shift_right</h4>
 <p>Type: <code>Std::I16 -&gt; Std::I16 -&gt; Std::I16</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_86">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46217,7 +46271,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <p>Type: <code>Std::I32</code></p>
 <h4 id="shift_left_1">shift_left</h4>
 <p>Type: <code>Std::I32 -&gt; Std::I32 -&gt; Std::I32</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_91">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46225,7 +46280,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 </ul>
 <h4 id="shift_right_1">shift_right</h4>
 <p>Type: <code>Std::I32 -&gt; Std::I32 -&gt; Std::I32</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_92">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46363,7 +46419,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <p>Type: <code>Std::I64</code></p>
 <h4 id="shift_left_2">shift_left</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_97">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46371,7 +46428,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 </ul>
 <h4 id="shift_right_2">shift_right</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_98">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46509,7 +46567,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <p>Type: <code>Std::I8</code></p>
 <h4 id="shift_left_3">shift_left</h4>
 <p>Type: <code>Std::I8 -&gt; Std::I8 -&gt; Std::I8</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_103">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -46517,7 +46576,8 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 </ul>
 <h4 id="shift_right_3">shift_right</h4>
 <p>Type: <code>Std::I8 -&gt; Std::I8 -&gt; Std::I8</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_104">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -47506,8 +47566,7 @@ holds the lower address.</p>
 <h4 id="subtract_ptr">subtract_ptr</h4>
 <p><strong>Deprecated</strong>: Use <code>Std::Ptr::offset_from</code> instead.</p>
 <p>Type: <code>Std::Ptr -&gt; Std::Ptr -&gt; Std::I64</code></p>
-<p>Deprecated alias for <code>Std::Ptr::offset_from</code>. Kept for backward
-compatibility; <code>offset_from</code> is the canonical name.</p>
+<p>Deprecated alias for <code>Std::Ptr::offset_from</code>.</p>
 <h3 id="namespace-stdrem">namespace Std::Rem</h3>
 <h4 id="rem">rem</h4>
 <p>Type: <code>[a : Std::Rem] a -&gt; a -&gt; a</code></p>
@@ -47553,18 +47612,19 @@ compatibility; <code>offset_from</code> is the canonical name.</p>
 <h4 id="concat">concat</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::String</code></p>
 <p>Concatenate two strings.</p>
-<p>Note: Since <code>s1.concat(s2)</code> puts <code>s2</code> after <code>s1</code>, <code>concat(lhs, rhs)</code> puts <code>lhs</code> after <code>rhs</code>.</p>
+<p>Note: Since <code>s1.concat(s2)</code> puts <code>s2</code> after <code>s1</code>, the argument written first is the one that
+goes second in the result.</p>
 <h5 id="parameters_205">Parameters</h5>
 <ul>
-<li><code>first</code> - The first string.</li>
-<li><code>second</code> - The second string.</li>
+<li><code>rhs</code> - The string that goes second.</li>
+<li><code>lhs</code> - The string that goes first.</li>
 </ul>
 <h4 id="concat_iter">concat_iter</h4>
 <p>Type: <code>[strs : Std::Iterator, Std::Iterator::Item strs = Std::String] strs -&gt; Std::String</code></p>
 <p>Concatenate an iterator of strings.</p>
 <h5 id="parameters_206">Parameters</h5>
 <ul>
-<li><code>iter_strs</code> - The iterator of strings.</li>
+<li><code>iter</code> - The iterator of strings.</li>
 </ul>
 <h4 id="contains">contains</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Bool</code></p>
@@ -47591,9 +47651,10 @@ compatibility; <code>offset_from</code> is the canonical name.</p>
 </ul>
 <h4 id="find">find</h4>
 <p>Type: <code>Std::String -&gt; Std::I64 -&gt; Std::String -&gt; Std::Option Std::I64</code></p>
-<p><code>str.find(token, start_idx)</code> finds the index where <code>token</code> firstly appears in <code>str</code> starting from <code>start_idx</code>.</p>
-<p>Note that this function basically returns a number less than or equal to <code>start_idx</code>, but there is an exception:
-<code>str.find("", start_idx)</code> with <code>start_idx &gt;= str.@size</code> returns <code>str.@size</code>, not <code>start_idx</code>.</p>
+<p><code>str.find(token, start_idx)</code> finds the index where <code>token</code> first appears in <code>str</code>, searching
+from <code>start_idx</code>.</p>
+<p>The index it answers with is at least <code>start_idx</code>, with one exception:
+<code>str.find("", start_idx)</code> with <code>start_idx &gt;= str.@size</code> answers with <code>str.@size</code>.</p>
 <h5 id="parameters_210">Parameters</h5>
 <ul>
 <li><code>token</code> - The token to be searched.</li>
@@ -47662,7 +47723,7 @@ assert_eq(|_|&quot;&quot;, String::from_U8('\x00'), &quot;&quot;);;
 <h5 id="parameters_218">Parameters</h5>
 <ul>
 <li><code>sep</code> - The separator to be used for joining.</li>
-<li><code>iter_strs</code> - The iterator of strings to be joined.</li>
+<li><code>iter</code> - The iterator of strings to be joined.</li>
 </ul>
 <h4 id="pop_back_byte">pop_back_byte</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
@@ -47955,7 +48016,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 <p>Type: <code>Std::U16</code></p>
 <h4 id="shift_left_4">shift_left</h4>
 <p>Type: <code>Std::U16 -&gt; Std::U16 -&gt; Std::U16</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_236">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -47963,7 +48025,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 </ul>
 <h4 id="shift_right_4">shift_right</h4>
 <p>Type: <code>Std::U16 -&gt; Std::U16 -&gt; Std::U16</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_237">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48099,7 +48162,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 <p>Type: <code>Std::U32</code></p>
 <h4 id="shift_left_5">shift_left</h4>
 <p>Type: <code>Std::U32 -&gt; Std::U32 -&gt; Std::U32</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_242">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48107,7 +48171,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 </ul>
 <h4 id="shift_right_5">shift_right</h4>
 <p>Type: <code>Std::U32 -&gt; Std::U32 -&gt; Std::U32</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_243">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48243,7 +48308,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 <p>Type: <code>Std::U64</code></p>
 <h4 id="shift_left_6">shift_left</h4>
 <p>Type: <code>Std::U64 -&gt; Std::U64 -&gt; Std::U64</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_248">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48251,7 +48317,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 </ul>
 <h4 id="shift_right_6">shift_right</h4>
 <p>Type: <code>Std::U64 -&gt; Std::U64 -&gt; Std::U64</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_249">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48387,7 +48454,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 <p>Type: <code>Std::U8</code></p>
 <h4 id="shift_left_7">shift_left</h4>
 <p>Type: <code>Std::U8 -&gt; Std::U8 -&gt; Std::U8</code></p>
-<p><code>v.shift_left(bits)</code> shifts <code>v</code> to left by <code>bits</code> bits.</p>
+<p><code>v.shift_left(bits)</code> shifts <code>v</code> to the left by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_254">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48395,7 +48463,8 @@ let str = unsafe_from_c_str_ptr(ptr);
 </ul>
 <h4 id="shift_right_7">shift_right</h4>
 <p>Type: <code>Std::U8 -&gt; Std::U8 -&gt; Std::U8</code></p>
-<p><code>v.shift_right(bits)</code> shifts <code>v</code> to right by <code>bits</code> bits.</p>
+<p><code>v.shift_right(bits)</code> shifts <code>v</code> to the right by <code>bits</code> bits.</p>
+<p><code>bits</code> must be at least zero and less than the number of bits in the type of <code>v</code>. Outside that range the result is an unspecified value of that type, and <code>--check-integer-operations</code> stops the program.</p>
 <h5 id="parameters_255">Parameters</h5>
 <ul>
 <li><code>bits</code> - The number of bits to shift.</li>
@@ -48838,6 +48907,7 @@ consider converting it to an <code>ArrayIterator</code> using <code>bang</code> 
 <p>The iterator over bytes of a string, excluding null-terminator.</p>
 <h4 id="stringsplititerator">StringSplitIterator</h4>
 <p>Defined as: <code>type StringSplitIterator = unbox struct { ...fields... }</code></p>
+<p>The iterator over the parts a string is split into by a separator.</p>
 <h5 id="field-idx_2">field <code>idx</code></h5>
 <p>Type: <code>Std::I64</code></p>
 <h5 id="field-str">field <code>str</code></h5>
