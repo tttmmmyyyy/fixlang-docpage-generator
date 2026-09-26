@@ -1,0 +1,230 @@
+// Brings the store up to date with the registries and the Fix repository.
+//
+// The latest version of each package is generated on every run, so that a package the current
+// compiler no longer builds is caught; the other versions are attempted once. A failed attempt
+// leaves the documentation an earlier attempt saved where it is.
+module Generate;
+
+import EZS::{cd, run_o, run_oec, Context};
+import Records::{Failure, Generation, Package, Package::{@git, @name}};
+import Semver::{Version, Version::{@major, is_release, parse_tag}};
+import Std::{
+    Array, IO, Option, String, 
+    Array::{@, @size, append, get_last, get_sub, is_empty, push_back, sort, sort_by, to_iter}, 
+    Functor::{forget, map}, Iterator::{filter, filter_map, fold, fold_m, loop_iter_m, map, to_array}, 
+    LessThan::max, LoopState::{break_m, continue_m}, Monad::pure, 
+    Option::{as_some, is_none, is_some, map_or, none, some}, 
+    String::{@size, ends_with, find, get_sub, join, split, strip_last_newlines, strip_spaces}, 
+    ToString::to_string
+};
+import Store::{
+    read_failure, read_generation, remove_failure, write_failure, write_generation, Store, 
+    Store::{package_dir, std_dir, version_dir}
+};
+
+// What every step of a run shares.
+type Run = struct {
+    ctx : Context,
+    // The absolute path of the directory the generator works in.
+    root : String,
+    store : Store,
+    // What `fix --version` answers with.
+    compiler : String,
+    // The day of the run, as `YYYY-MM-DD` in UTC.
+    date : String
+};
+
+namespace Run {
+    // The directory a package is cloned into.
+    //
+    // # Parameters
+    // * `name` - The name of the package.
+    // * `run` - The run.
+    clone_dir : String -> Run -> String = |name, run| run.@root + "/packages/" + name;
+
+    // The directory `fix docs` writes into.
+    //
+    // # Parameters
+    // * `run` - The run.
+    out_dir : Run -> String = |run| run.@root + "/tmp";
+
+    // A failure record of this run.
+    //
+    // # Parameters
+    // * `tag` - The tag the attempt was made on, empty where none was chosen.
+    // * `step` - The command that failed.
+    // * `log` - What the command printed.
+    // * `run` - The run.
+    failure : String -> String -> String -> Run -> Failure = |tag, step, log, run| Failure {
+        tag : tag, step : step, compiler : run.@compiler, date : run.@date, log : log
+    };
+}
+
+// The URL of the Fix repository, which `Std` is taken from.
+fixlang_git : String = "https://github.com/tttmmmyyyy/fixlang.git";
+
+// Brings a package up to date, and answers with what went wrong that has to be reported: a failure
+// of the package as a whole or of its latest version.
+//
+// # Parameters
+// * `package` - The package.
+// * `run` - The run.
+update_package : Package -> Run -> IO (Array String) = |package, run| (
+    let ctx = run.@ctx;
+    let name = package.@name;
+    let package_dir = run.@store.package_dir(name);
+    let clone_dir = run.clone_dir(name);
+
+    ctx.run_o(["rm", "-rf", clone_dir]);;
+    let failed = *_run_steps([["git", "clone", "--quiet", package.@git, clone_dir]], ctx);
+    if failed.is_some {
+        let (step, log) = failed.as_some;
+        write_failure(run.failure("", step, log), package_dir, ctx);;
+        pure $ [name + ": `" + step + "` failed"]
+    };
+
+    let tags = *ctx.run_o(["git", "-C", clone_dir, "tag", "--list"]);
+    let versions = _versions(tags);
+    if versions.is_empty {
+        let step = "git tag --list";
+        write_failure(run.failure("", step, "No tag reads as a semver version."), package_dir, ctx);;
+        pure $ [name + ": no tag reads as a semver version"]
+    };
+    remove_failure(package_dir, ctx);;
+
+    let (latest, _) = versions.@(0);
+    versions.to_iter.fold_m([], |(version, tag), problems|
+        let version_dir = run.@store.version_dir(name, version);
+        let is_latest = version == latest;
+        let attempted = (*read_generation(version_dir)).is_some || (*read_failure(version_dir)).is_some;
+        if !is_latest && attempted { pure $ problems };
+        let failed = *_generate_version(clone_dir, tag, version_dir, run);
+        if is_latest && failed.is_some {
+            pure $ problems.push_back(name + " " + version.to_string + ": `" + failed.as_some + "` failed")
+        };
+        pure $ problems
+    )
+);
+
+// Brings `Std` up to date: `main` on every run, and each release from 1.0.0 on once.
+//
+// # Parameters
+// * `run` - The run.
+update_std : Run -> IO (Array String) = |run| (
+    let ctx = run.@ctx;
+    let problems = *_fetch_std("main", "main", run);
+    let refs = *ctx.run_o(["git", "ls-remote", "--tags", "--refs", fixlang_git]);
+    let releases = refs.split("\n").filter_map(|line|
+        let prefix = "refs/tags/";
+        let at = line.find(prefix, 0);
+        if at.is_none { none() };
+        let tag = line.get_sub(at.as_some + prefix.@size, line.@size).strip_spaces;
+        let version = *Version::parse_tag(tag);
+        if !version.is_release || version.@major < 1 { none() };
+        some $ (version, tag)
+    ).to_array;
+    releases.to_iter.fold_m(problems, |(version, tag), problems|
+        if (*read_generation(run.@store.std_dir(version.to_string))).is_some { pure $ problems };
+        let failed = *_fetch_std(version.to_string, tag, run);
+        pure $ problems.append(failed)
+    )
+);
+
+// The tags that read as versions, highest first, each version once.
+//
+// # Parameters
+// * `tags` - The output of `git tag --list`.
+_versions : String -> Array (Version, String) = |tags| (
+    let versions = tags.split("\n").map(strip_spaces).filter_map(|tag| Version::parse_tag(tag).map(|v| (v, tag))).to_array;
+    let versions = versions.sort_by(|((a, _), (b, _))| b < a);
+    versions.to_iter.fold([], |(version, tag), kept|
+        if kept.get_last.map_or(false, |(last, _)| last == version) { kept };
+        kept.push_back((version, tag))
+    )
+);
+
+// Generates the documentation of one version and saves it, or saves a failure record. Answers
+// with the command that failed, if one did.
+//
+// # Parameters
+// * `clone_dir` - The directory the package is cloned into.
+// * `tag` - The tag of the version.
+// * `version_dir` - The directory of the version in the store.
+// * `run` - The run.
+_generate_version : String -> String -> String -> Run -> IO (Option String) = |clone_dir, tag, version_dir, run| (
+    let ctx = run.@ctx;
+    let out_dir = run.out_dir;
+    ctx.run_o(["rm", "-rf", out_dir]);;
+    ctx.cd(clone_dir);;
+    let failed = *_run_steps([
+        ["git", "checkout", "--quiet", "--force", tag],
+        ["git", "clean", "-fdq"],
+        // The lock file committed in the project can be out of date with respect to the
+        // installed `fix`, and `fix deps update` resolves the dependencies again.
+        ["fix", "deps", "update"],
+        ["fix", "docs", "-o", out_dir]
+    ], ctx);
+    ctx.cd(run.@root);;
+    if failed.is_some {
+        let (step, log) = failed.as_some;
+        write_failure(run.failure(tag, step, log), version_dir, ctx);;
+        pure $ some(step)
+    };
+
+    let files = *ctx.run_o(["find", out_dir, "-name", "*.md", "-printf", "%f\n"]);
+    let modules = files.split("\n").filter(|f| f.ends_with(".md")).map(|f| f.get_sub(0, f.@size - ".md".@size)).to_array.sort;
+    let modules_dir = version_dir + "/modules";
+    ctx.run_o(["rm", "-rf", modules_dir]);;
+    ctx.run_o(["mkdir", "-p", modules_dir]);;
+    modules.to_iter.fold_m((), |mod, _| ctx.run_o(["mv", out_dir + "/" + mod + ".md", modules_dir]).forget);;
+    let generation = Generation { tag : tag, compiler : run.@compiler, date : run.@date, modules : modules };
+    write_generation(generation, version_dir, ctx);;
+    pure $ none()
+);
+
+// Fetches `Std.md` as `std_doc/Std.md` stands at `ref` in the Fix repository and saves it, or
+// answers with what went wrong. The documentation saved before stays where the fetch fails.
+//
+// # Parameters
+// * `version` - `main` or the release, which names the directory in the store.
+// * `ref` - The branch or tag to fetch from.
+// * `run` - The run.
+_fetch_std : String -> String -> Run -> IO (Array String) = |version, ref, run| (
+    let ctx = run.@ctx;
+    let url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/" + ref + "/std_doc/Std.md";
+    let fetched = run.@root + "/tmp/Std.md";
+    ctx.run_o(["mkdir", "-p", run.out_dir]);;
+    let failed = *_run_steps([["wget", "-q", url, "-O", fetched]], ctx);
+    if failed.is_some { pure $ ["Std " + version + ": fetching " + url + " failed"] };
+    let dir = run.@store.std_dir(version);
+    ctx.run_o(["mkdir", "-p", dir]);;
+    ctx.run_o(["mv", fetched, dir + "/Std.md"]);;
+    let generation = Generation { tag : ref, compiler : "", date : run.@date, modules : ["Std"] };
+    write_generation(generation, dir, ctx);;
+    pure $ []
+);
+
+// Runs the commands one after another up to the first that fails, and answers with that command
+// and the end of what it printed.
+//
+// # Parameters
+// * `steps` - The commands.
+// * `ctx` - The context to run commands in.
+_run_steps : Array (Array String) -> Context -> IO (Option (String, String)) = |steps, ctx| (
+    steps.to_iter.loop_iter_m(none(), |step, _|
+        let (out, err, code) = *ctx.run_oec(step);
+        if code == 0_U8 { continue_m $ none() };
+        break_m $ some $ (step.to_iter.join(" "), _tail(out + err))
+    )
+);
+
+// The last lines of what a command printed.
+//
+// # Parameters
+// * `text` - What the command printed.
+_tail : String -> String = |text| (
+    let max_lines = 100;
+    let lines = text.strip_last_newlines.split("\n").to_array;
+    let from = max(0, lines.@size - max_lines);
+    lines.get_sub(from, lines.@size).to_iter.join("\n")
+);

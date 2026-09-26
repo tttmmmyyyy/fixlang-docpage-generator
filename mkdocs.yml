@@ -5,6 +5,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - search.share
@@ -16,6 +17,11 @@ plugins:
       # 検索の柔軟性を高める設定
       pipeline:
         - trimmer
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 extra_javascript:
   - javascripts/search-boost.js

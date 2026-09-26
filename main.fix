@@ -1,175 +1,50 @@
 module Main;
 
-import Minilib.Encoding.Json.JsonDecoder;
-import Minilib.Encoding.Json;
-import Minilib.Collection.OrderedMap;
-import EZS;
-
-// Information of a package.
-type ProjInfo = box struct {
-    name : String,
-    git : String,
-    tag : String,
-    modules : Array String
+import EZS::{cd, cwd, run_o, Context::{default, set_eprint_stderr, set_execution_trace}};
+import Generate::{update_package, update_std, Run};
+import Json.Decode::Decoder::decode;
+import Records::Package::read_list;
+import Site::render;
+import Std::{
+    IO, Array::{append, is_empty, to_iter}, 
+    IO::{eprintln, exit_with_msg, println, write_file_string, IOFail::try}, Iterator::{fold_m, map}, 
+    Monad::pure, Result::{as_err, as_ok, is_err}, String::{concat_iter, strip_spaces}
 };
+import Store::Store;
 
-namespace ProjInfo {
-    structure : Json -> Result ErrMsg (Array ProjInfo);
-    structure = |json| (
-        let errmsg_base = "error: failed to parse the output of `fix deps list --json`: ";
-        match json {
-            Json::array(packages) => (
-                packages.to_iter.map(|entry|
-                    if !entry.is_object { Result::err $ errmsg_base + "expected an array of objects" };
-                    let entry = entry.as_object;
-
-                    let name = entry.find("name");
-                    if name.is_none { Result::err $ errmsg_base + "expected a field `name`" };
-                    let name = name.as_some;
-                    if !name.is_string { Result::err $ errmsg_base + "expected a string for the field `name`" };
-                    let name = name.as_string;
-
-                    let git = entry.find("git");
-                    if git.is_none { Result::err $ errmsg_base + "expected a field `git`" };
-                    let git = git.as_some;
-                    if !git.is_string { Result::err $ errmsg_base + "expected a string for the field `git`" };
-                    let git = git.as_string;
-
-                    Result::ok $ ProjInfo { name : name, git : git, tag : "", modules : [] }
-                ).collect_m
-            ),
-            _ => Result::err $ errmsg_base + "expected an array",
-        }
-    );
-}
-
-build_docs : IO ();
-build_docs = (
+// Brings the store in `store/` up to date, lays it out as the MkDocs pages in `docs/` with the
+// configuration `mkdocs.site.yml`, and writes what went wrong into `failures.txt`, which is empty
+// when nothing did.
+//
+// A failure is written into `failures.txt` rather than ending the program, so that the pages of
+// every other package are still brought up to date.
+main : IO () = (
     let ctx = Context::default.set_eprint_stderr(true).set_execution_trace(true);
+    let root = *ctx.cwd;
+    let store = Store { root : root + "/store" };
 
-    // Prepare a directory to store the documentation.
-    let docs_dir = "docs";
-    ctx.run_o(["rm", "-rf", docs_dir]);;    // Remove the directory if it exists.
-    ctx.run_o(["mkdir", "-p", docs_dir]);;    // Create the directory.
-
-    // Download the standard library documentation.
-    let std_doc_url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/refs/heads/main/std_doc/Std.md";
-    let std_doc = docs_dir + "/" + "Std.md";
-    ctx.run_o(["wget", "-q", std_doc_url, "-O", std_doc]);;
-
-    // Run `fix deps list --json` to get the list of all available fix projects.
     let packages = *ctx.run_o(["fix", "deps", "list", "--json"]);
-
-    // Parse `packages`.
-    let packages = JsonDecoder::decode(packages);
+    let packages = Package::read_list.decode(packages);
     if packages.is_err {
-        eprintln("error: failed to parse the output of `fix deps list --json`: ");;
-        eprintln(packages.as_err);;
-        exit(1)
-    };
-    let packages = packages.as_ok;
-    let packages = packages.structure;
-    if packages.is_err {
-        eprintln(packages.as_err);;
-        exit(1)
+        exit_with_msg(1, "error: failed to parse the output of `fix deps list --json`: " + packages.as_err)
     };
     let packages = packages.as_ok;
 
-    // Remove the working directory if it exists.
-    let packages_dir = "packages";
-    ctx.run_o(["rm", "-rf", packages_dir]);;
+    let compiler = (*ctx.run_o(["fix", "--version"])).strip_spaces;
+    let date = (*ctx.run_o(["date", "-u", "+%Y-%m-%d"])).strip_spaces;
+    let run = Run { ctx : ctx, root : root, store : store, compiler : compiler, date : date };
 
-    // Create working directory.
-    ctx.run_o(["mkdir", "-p", packages_dir]);;
-
-    // Move to working directory.
-    ctx.cd(packages_dir);;
-
-    // Clone each projects.
-    let packages = *packages.to_iter.loop_iter_m([], |prj_info, packages|
-        // Create the directory to clone the repository.
-        let work_dir = prj_info.@name;
-        ctx.run_o(["mkdir", "-p", work_dir]);;
-
-        // Clone the repository.
-        ctx.run_o(["git", "clone", "--quiet", "--tags", prj_info.@git, work_dir]);;
-
-        // cd to the working directory.
-        ctx.cd(work_dir);;
-
-        // If the tag is not specified, get the latest tag.
-        let tag = *if !prj_info.@tag.is_empty {
-            prj_info.@tag.pure
-        } else {
-            let tag = *ctx.run_o(["git", "describe", "--tags", "--abbrev=0"]);
-            tag.strip_spaces.pure
-        };
-
-        // If the latest tag found, checkout it.
-        when(tag.@size > 0, 
-            ctx.run_o(["git", "checkout", "--quiet", tag]).forget
-        );;
-
-        // Resolve the dependencies and install them. The lock file committed in the cloned
-        // project can be out of date with respect to the installed `fix`, and `fix deps update`
-        // re-resolves it.
-        ctx.run_o(["fix", "deps", "update"]);;
-
-        // Prepare empty `tmp` directory.
-        let tmp = "../../tmp";
-        ctx.run_o(["rm", "-rf", tmp]);; // Remove the directory if it exists.
-        ctx.run_o(["mkdir", "-p", tmp]);; // Create the directory.
-
-        // Generate documentation in `tmp`.
-        ctx.run_o(["fix", "docs", "-o", tmp]);;
-
-        // Get the list of markdown files in `tmp`.
-        let md_files = *ctx.run_o(["find", tmp, "-name", "*.md"]);
-
-        // Parse `md_files` to get the list of module names.
-        let md_files = md_files.split("\n").map(strip_spaces).filter(|s| s.@size > 0);
-        let modules = md_files.map(|md_file| md_file.get_sub((tmp + "/").@size, md_file.@size - ".md".@size));
-        let modules = modules.to_array.sort_by(|(a, b)| a < b);
-
-        // Move all contents in `tmp` to `docs_dir`.
-        modules.to_iter.fold_m((), |mod, _|
-            ctx.run_o(["mv", tmp + "/" + mod + ".md", "../../" + docs_dir]).forget
-        );;
-
-        // Pop the working directory.
-        ctx.cd("..");;
-
-        let prj_info = prj_info.set_tag(tag).set_modules(modules);
-        let packages = packages.push_back(prj_info);
-
-        continue_m $ packages
+    let problems = *update_std(run);
+    let problems = *packages.to_iter.fold_m(problems, |package, problems|
+        let found = *update_package(package, run);
+        pure $ problems.append(found)
     );
+    ctx.cd(root);;
+    let found = *render(packages, root + "/docs", root + "/mkdocs.site.yml", store, ctx);
+    let problems = problems.append(found);
 
-    // Pop the working directory.
-    ctx.cd("..");;
-
-    // Create `index.md`.
-    println("Creating index.md...");;
-    let index_md = "docs/index.md";
-    with_file(index_md, "w", |file|
-        write_string(file, "# Index\n\n");;
-        write_string(file, "This page contains the documentation of the following projects and modules (and \"Std\"): \n\n");;
-        packages.to_iter.fold_m((), |prj_info, _|
-            write_string(file, "- [" + prj_info.@name + "](" + prj_info.@git + ")@" + prj_info.@tag + "\n");;
-            let mod_links = prj_info.@modules.to_iter.map(|mod| "[" + mod + "](" + mod + ".md)").join(", ");
-            write_string(file, "    - " + mod_links + "\n")
-        );;
-        write_string(file, "\n");;
-        write_string(file, "This page was generated by [fixlang-docpage-generator](https://github.com/tttmmmyyyy/fixlang-docpage-generator/).\n\n")
-    ).try(exit_with_msg(1));;
-
-    // Done.
-    println("Done.");;
-    
-    pure()
-);
-
-main : IO ();
-main = (
-    build_docs
+    let report = problems.to_iter.map(|problem| problem + "\n").concat_iter;
+    write_file_string(root + "/failures.txt", report).try(exit_with_msg(1));;
+    if problems.is_empty { println("Done.") };
+    eprintln("Done, with failures:\n" + report)
 );
