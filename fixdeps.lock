@@ -1,13 +1,4 @@
-proj_file_hash = "9d461ae6410d6fd394d534fbcc8b0779"
-
-[[dependencies]]
-name = "character"
-version = "1.0.1"
-path = ".fixlang/deps/character_1.0.1"
-
-[dependencies.git]
-repo = "https://github.com/tttmmmyyyy/fixlang-character.git"
-rev = "fd75a6634ec0c919f2d1703112d25da9a3c2346e"
+proj_file_hash = "4f57c34eb82c9e1de16524f79e3db17d"
 
 [[dependencies]]
 name = "ez-scripting"
@@ -19,58 +10,13 @@ repo = "https://github.com/tttmmmyyyy/ez_scripting.git"
 rev = "43d254a1c2d5f5dbc04b443b083517f16a9bbf58"
 
 [[dependencies]]
-name = "hash"
-version = "1.1.3"
-path = ".fixlang/deps/hash_1.1.3"
+name = "json"
+version = "0.5.0"
+path = ".fixlang/deps/json_0.5.0"
 
 [dependencies.git]
-repo = "https://github.com/tttmmmyyyy/fixlang-hash.git"
-rev = "089e73272bff2a97131736c54c07511425a69ed6"
-
-[[dependencies]]
-name = "hashmap"
-version = "2.1.0"
-path = ".fixlang/deps/hashmap_2.1.0"
-
-[dependencies.git]
-repo = "https://github.com/tttmmmyyyy/fixlang-hashmap.git"
-rev = "718607174a1cd5afff619558718fc583d29434b8"
-
-[[dependencies]]
-name = "minilib-collection"
-version = "0.9.0"
-path = ".fixlang/deps/minilib-collection_0.9.0"
-
-[dependencies.git]
-repo = "https://github.com/pt9999/fixlang-minilib-collection.git"
-rev = "b9bb9c9b64551cc4e8da5a4cc619099d86db8e44"
-
-[[dependencies]]
-name = "minilib-common"
-version = "0.14.0"
-path = ".fixlang/deps/minilib-common_0.14.0"
-
-[dependencies.git]
-repo = "https://github.com/pt9999/fixlang-minilib-common.git"
-rev = "f29b872b8eca13fc5f30abfac94b4ef3a9a590d7"
-
-[[dependencies]]
-name = "minilib-json"
-version = "0.7.0"
-path = ".fixlang/deps/minilib-json_0.7.0"
-
-[dependencies.git]
-repo = "https://github.com/pt9999/fixlang-minilib-json.git"
-rev = "0ee37506a91b1eb423c3ebbd7fdf1ca33b8f982d"
-
-[[dependencies]]
-name = "minilib-text"
-version = "0.10.0"
-path = ".fixlang/deps/minilib-text_0.10.0"
-
-[dependencies.git]
-repo = "https://github.com/pt9999/fixlang-minilib-text.git"
-rev = "7d1493b006867b55ea5372b77281fe978f0a93db"
+repo = "https://github.com/tttmmmyyyy/fixlang-json.git"
+rev = "0f95b46c97553c26434301588a7078812bc20567"
 
 [[dependencies]]
 name = "subprocess"
@@ -80,12 +26,3 @@ path = ".fixlang/deps/subprocess_2.0.0"
 [dependencies.git]
 repo = "https://github.com/tttmmmyyyy/fixlang-subprocess.git"
 rev = "b610e67529defe6fdd8adf8f7d420667d6e40b64"
-
-[[dependencies]]
-name = "time"
-version = "2.0.0"
-path = ".fixlang/deps/time_2.0.0"
-
-[dependencies.git]
-repo = "https://github.com/tttmmmyyyy/fixlang-time.git"
-rev = "bcf93dd61eb167e3ffe64ca9ca83ac2aea06587e"

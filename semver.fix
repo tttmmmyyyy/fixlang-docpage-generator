@@ -1,0 +1,138 @@
+// Semantic versions, read from the tags a repository carries.
+module Semver;
+
+// A semantic version, ordered by semver precedence.
+//
+// Build metadata takes no part in precedence, so it is not held.
+type Version = box struct {
+    major : I64,
+    minor : I64,
+    patch : I64,
+    // The identifiers of the pre-release part, empty for a release.
+    pre : Array Identifier
+};
+
+// An identifier of the pre-release part of a version.
+type Identifier = union {
+    numeric : I64,
+    alphanumeric : String
+};
+
+impl Identifier : Eq {
+    eq = |lhs, rhs| (
+        match lhs {
+            numeric(n) => rhs.is_numeric && rhs.as_numeric == n,
+            alphanumeric(s) => rhs.is_alphanumeric && rhs.as_alphanumeric == s
+        }
+    );
+}
+
+// A numeric identifier precedes an alphanumeric one; two of a kind compare by number or by bytes.
+impl Identifier : LessThan {
+    less_than = |lhs, rhs| (
+        match lhs {
+            numeric(n) => !rhs.is_numeric || n < rhs.as_numeric,
+            alphanumeric(s) => rhs.is_alphanumeric && s < rhs.as_alphanumeric
+        }
+    );
+}
+
+impl Version : Eq {
+    eq = |lhs, rhs| (
+        lhs.@major == rhs.@major && lhs.@minor == rhs.@minor && lhs.@patch == rhs.@patch
+            && lhs.@pre == rhs.@pre
+    );
+}
+
+// A pre-release precedes the release of the same numbers. Two pre-releases compare their
+// identifiers one by one, and a list that is a prefix of the other precedes it.
+impl Version : LessThan {
+    less_than = |lhs, rhs| (
+        if lhs.@major != rhs.@major { lhs.@major < rhs.@major };
+        if lhs.@minor != rhs.@minor { lhs.@minor < rhs.@minor };
+        if lhs.@patch != rhs.@patch { lhs.@patch < rhs.@patch };
+        if lhs.@pre.is_empty { false };
+        if rhs.@pre.is_empty { true };
+        lhs.@pre < rhs.@pre
+    );
+}
+
+// Writes the version as semver, without a `v` in front.
+impl Version : ToString {
+    to_string = |v| (
+        let core = [v.@major, v.@minor, v.@patch].to_iter.map(to_string).join(".");
+        if v.@pre.is_empty { core };
+        let pre = v.@pre.to_iter.map(|id|
+            match id {
+                numeric(n) => n.to_string,
+                alphanumeric(s) => s
+            }
+        ).join(".");
+        core + "-" + pre
+    );
+}
+
+namespace Version {
+    // Reads a tag as a version, the way the Fix compiler reads the tags of a dependency: a `v` in
+    // front is dropped, and the rest has to be semver.
+    //
+    // # Parameters
+    // * `tag` - The name of the tag.
+    parse_tag : String -> Option Version;
+    parse_tag = |tag| (
+        let text = if tag.starts_with("v") { tag.get_sub(1, tag.@size) } else { tag };
+        let text = match text.find("+", 0) {
+            some(i) => text.get_sub(0, i),
+            none() => text
+        };
+        let (core, pre) = match text.find("-", 0) {
+            some(i) => (text.get_sub(0, i), some $ text.get_sub(i + 1, text.@size)),
+            none() => (text, none())
+        };
+        let numbers = core.split(".").to_array;
+        if numbers.@size != 3 { none() };
+        let numbers = *numbers.to_iter.map(_parse_number).collect_m;
+        let pre = *match pre {
+            none() => some $ [],
+            some(pre) => pre.split(".").map(_parse_identifier).collect_m
+        };
+        some $ Version { major : numbers.@(0), minor : numbers.@(1), patch : numbers.@(2), pre : pre }
+    );
+
+    // Whether the version is a release, one with no pre-release part.
+    //
+    // # Parameters
+    // * `version` - The version to look at.
+    is_release : Version -> Bool;
+    is_release = |version| version.@pre.is_empty;
+}
+
+// Reads a number written in decimal digits with no leading zero.
+_parse_number : String -> Option I64;
+_parse_number = |text| (
+    if text.is_empty || !_bytes(text).to_iter.check_all(_is_digit) { none() };
+    if text.@size > 1 && text.get_first_byte == some('0') { none() };
+    let number = from_string(text);
+    if number.is_err { none() };
+    some $ number.as_ok
+);
+
+// Reads an identifier of the pre-release part: a number, or a run of ASCII letters, digits and
+// hyphens that is not all digits.
+_parse_identifier : String -> Option Identifier;
+_parse_identifier = |text| (
+    let bytes = _bytes(text).to_iter;
+    if text.is_empty || !bytes.check_all(|b| _is_digit(b) || _is_letter(b) || b == '-') { none() };
+    if bytes.check_all(_is_digit) { _parse_number(text).map(Identifier::numeric) };
+    some $ Identifier::alphanumeric(text)
+);
+
+// The bytes of a string, without the null terminator.
+_bytes : String -> Array U8;
+_bytes = |text| text.get_bytes.pop_back;
+
+_is_digit : U8 -> Bool;
+_is_digit = |b| '0' <= b && b <= '9';
+
+_is_letter : U8 -> Bool;
+_is_letter = |b| ('a' <= b && b <= 'z') || ('A' <= b && b <= 'Z');

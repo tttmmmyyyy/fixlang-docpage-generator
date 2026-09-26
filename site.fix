@@ -1,0 +1,249 @@
+// Lays the store out as the Markdown pages and the navigation MkDocs builds the site from.
+//
+// The pages are laid out as:
+//
+// ```
+// index.md                                  the packages, each with the modules of its shown version
+// Std/index.md                              the versions of `Std`
+// Std/<version>/Std.md                      <version> is `main` or a release
+// <package>/index.md                        the repository, the versions, and a failure if any
+// <package>/<version>/index.md              the tag and the modules of the version
+// <package>/<version>/<Module>.md
+// ```
+//
+// The shown version of a package is the highest one with saved documentation. Search covers the
+// shown version of each package and `Std` at `main`.
+module Site;
+
+import EZS;
+import Records;
+import Semver;
+import Store;
+
+// What the site shows of a package.
+type PackagePage = box struct {
+    package : Package,
+    // The versions with saved documentation, highest first.
+    saved : Array (Version, Generation),
+    // The failure of the package as a whole, or else of its latest version, if there is one.
+    failure : Option Failure
+};
+
+namespace PackagePage {
+    // The version whose pages search covers and the index lists.
+    //
+    // # Parameters
+    // * `page` - The package.
+    shown : PackagePage -> Option (Version, Generation);
+    shown = |page| page.@saved.get_first;
+}
+
+// Writes the pages into `docs_dir` and the MkDocs configuration carrying their navigation into
+// `config`, and answers with the pages that could not be laid out as expected.
+//
+// # Parameters
+// * `packages` - The packages of the registries.
+// * `docs_dir` - The directory to write the pages into, emptied first.
+// * `config` - The path of the MkDocs configuration to write.
+// * `store` - The store.
+// * `ctx` - The context to run commands in.
+render : Array Package -> String -> String -> Store -> Context -> IO (Array String);
+render = |packages, docs_dir, config, store, ctx| (
+    ctx.run_o(["rm", "-rf", docs_dir]);;
+    ctx.run_o(["mkdir", "-p", docs_dir]);;
+    let pages = *packages.to_iter.map(|package| _package_page(package, store, ctx)).collect_m;
+    let problems = *_write_std(docs_dir, store, ctx);
+    let problems = *pages.to_iter.fold_m(problems, |page, problems|
+        let found = *_write_package(page, docs_dir, store, ctx);
+        pure $ problems.append(found)
+    );
+    _write_file(docs_dir + "/index.md", _index(pages));;
+    _write_file(config, _config(pages));;
+    pure $ problems
+);
+
+_package_page : Package -> Store -> Context -> IO PackagePage;
+_package_page = |package, store, ctx| (
+    let name = package.@name;
+    let versions = *store.package_versions(name, ctx);
+    let saved = *versions.to_iter.fold_m([], |version, saved|
+        let generation = *read_generation(store.version_dir(name, version));
+        pure $ generation.map_or(saved, |generation| saved.push_back((version, generation)))
+    );
+    let failure = *read_failure(store.package_dir(name));
+    let failure = *if failure.is_some || versions.is_empty { pure $ failure } else {
+        read_failure(store.version_dir(name, versions.@(0)))
+    };
+    pure $ PackagePage { package : package, saved : saved, failure : failure }
+);
+
+_write_package : PackagePage -> String -> Store -> Context -> IO (Array String);
+_write_package = |page, docs_dir, store, ctx| (
+    let package = page.@package;
+    let name = package.@name;
+    let dir = docs_dir + "/" + name;
+    ctx.run_o(["mkdir", "-p", dir]);;
+    _write_file(dir + "/index.md", _package_index(page));;
+    let shown = page.shown.map(|(version, _)| version);
+    page.@saved.to_iter.fold_m([], |(version, generation), problems|
+        let is_shown = shown == some(version);
+        let page_dir = dir + "/" + version.to_string;
+        ctx.run_o(["mkdir", "-p", page_dir]);;
+        _write_file(page_dir + "/index.md", _version_index(package, version, generation, is_shown));;
+        let banner = if is_shown { page.@failure.map(|failure| _module_banner(name, version, failure)) } else { none() };
+        generation.@modules.to_iter.fold_m(problems, |mod, problems|
+            let saved = store.version_dir(name, version) + "/modules/" + mod + ".md";
+            let text = *read_file_string(saved).try(exit_with_msg(1));
+            let url = package.tree_url(generation.@tag);
+            let text = _link_definition(name, url, banner, text);
+            if text.is_err { pure $ problems.push_back(name + " " + version.to_string + " " + mod + ": " + text.as_err) };
+            _write_file(page_dir + "/" + mod + ".md", _front_matter(is_shown) + text.as_ok);;
+            pure $ problems
+        )
+    )
+);
+
+_write_std : String -> Store -> Context -> IO (Array String);
+_write_std = |docs_dir, store, ctx| (
+    let releases = *store.std_releases(ctx);
+    let versions = [("main", true)].append(releases.map(|v| (v.to_string, false)));
+    let dir = docs_dir + "/Std";
+    ctx.run_o(["mkdir", "-p", dir]);;
+    let (written, problems) = *versions.to_iter.fold_m(([], []), |(version, is_shown), (written, problems)|
+        let generation = *read_generation(store.std_dir(version));
+        if generation.is_none { pure $ (written, problems) };
+        let text = *read_file_string(store.std_dir(version) + "/Std.md").try(exit_with_msg(1));
+        let url = "https://github.com/tttmmmyyyy/fixlang/tree/" + generation.as_some.@tag;
+        let text = _link_definition("std-doc", url, none(), text);
+        if text.is_err { pure $ (written, problems.push_back("Std " + version + ": " + text.as_err)) };
+        ctx.run_o(["mkdir", "-p", dir + "/" + version]);;
+        _write_file(dir + "/" + version + "/Std.md", _front_matter(is_shown) + text.as_ok);;
+        pure $ (written.push_back(version), problems)
+    );
+    let lines = [
+        "# Std", "",
+        "The documentation of `Std` at the `main` branch of [Fix](https://github.com/tttmmmyyyy/fixlang), and at each release.", "",
+        "## Versions", ""
+    ].append(written.map(|version| "- [" + version + "](" + version + "/Std.md)"));
+    _write_file(dir + "/index.md", _lines(lines));;
+    pure $ problems
+);
+
+// Makes the `Defined in <name>@<version>` line of a module page a link to `url`, and puts `banner`
+// behind it.
+_link_definition : String -> String -> Option String -> String -> Result ErrMsg String;
+_link_definition = |name, url, banner, text| (
+    let prefix = "Defined in ";
+    let lines = text.split("\n").to_array;
+    let at = lines.find_by(|line| line.starts_with(prefix + name + "@"));
+    if at.is_none { err $ "no line reads `" + prefix + name + "@<version>`" };
+    let at = at.as_some;
+    let line = lines.@(at);
+    let definition = line.get_sub(prefix.@size, line.@size).strip_spaces;
+    let linked = prefix + "[" + definition + "](" + url + ")";
+    let linked = banner.map_or(linked, |banner| linked + "\n\n" + banner);
+    ok $ lines.set(at, linked).to_iter.join("\n")
+);
+
+_front_matter : Bool -> String;
+_front_matter = |searched| if searched { "" } else { _lines(["---", "search:", "  exclude: true", "---", ""]) };
+
+_index : Array PackagePage -> String;
+_index = |pages| (
+    let header = [
+        "# Fix DocPage", "",
+        "The documentation of [Std](Std/main/Std.md) and of the packages in the registries `fix deps list` reads. The documentation of every version is on the page of each package, and that of `Std` at each release on [its page](Std/index.md).", "",
+        "## Packages", ""
+    ];
+    let entries = pages.to_iter.map(|page|
+        let name = page.@package.@name;
+        let title = "- [" + name + "](" + name + "/index.md)";
+        let title = page.shown.map_or(title, |(version, _)| title + " " + version.to_string);
+        let title = page.@failure.map_or(title, |failure| title + " (**" + _failure_title(failure) + "**)");
+        let modules = page.shown.map_or([], |(version, generation)|
+            let links = generation.@modules.to_iter.map(|mod| "[" + mod + "](" + name + "/" + version.to_string + "/" + mod + ".md)").join(", ");
+            ["    - " + links]
+        );
+        [title].append(modules)
+    ).to_array.flatten;
+    let footer = ["", "This page was generated by [fixlang-docpage-generator](https://github.com/tttmmmyyyy/fixlang-docpage-generator/)."];
+    _lines(header.append(entries).append(footer))
+);
+
+_package_index : PackagePage -> String;
+_package_index = |page| (
+    let package = page.@package;
+    let header = ["# " + package.@name, "", "Repository: <" + package.web_url + ">", ""];
+    let failure = page.@failure.map_or([], |failure| _failure_admonition(page, failure));
+    let versions = if page.@saved.is_empty { ["No version has documentation."] } else {
+        page.@saved.to_iter.map(|(version, _)| "- [" + version.to_string + "](" + version.to_string + "/index.md)").to_array
+    };
+    _lines(header.append(failure).append(["## Versions", ""]).append(versions))
+);
+
+_version_index : Package -> Version -> Generation -> Bool -> String;
+_version_index = |package, version, generation, is_shown| (
+    let lines = [
+        "# " + package.@name + " " + version.to_string, "",
+        "Generated from the tag [" + generation.@tag + "](" + package.tree_url(generation.@tag) + ") by " + generation.@compiler + " on " + generation.@date + ".", "",
+        "## Modules", ""
+    ].append(generation.@modules.map(|mod| "- [" + mod + "](" + mod + ".md)"));
+    _front_matter(is_shown) + _lines(lines)
+);
+
+_failure_title : Failure -> String;
+_failure_title = |failure| (
+    if failure.@tag.is_empty { "Generating the documentation failed" };
+    "Generating the documentation of " + failure.@tag + " failed"
+);
+
+_failure_admonition : PackagePage -> Failure -> Array String;
+_failure_admonition = |page, failure| (
+    let title = _failure_title(failure);
+    let shown = page.shown.map_or("No version has documentation.", |(version, generation)|
+        "The pages show " + version.to_string + ", generated from the tag " + generation.@tag + " by " + generation.@compiler + " on " + generation.@date + "."
+    );
+    [
+        "!!! failure \"" + title + "\"", "",
+        "    `" + failure.@step + "` failed with " + failure.@compiler + " on " + failure.@date + ". " + shown, "",
+        "    ??? \"Log\"", "",
+        "        ```"
+    ].append(failure.@log.split("\n").map(|line| "        " + line).to_array).append(["        ```", ""])
+);
+
+_module_banner : String -> Version -> Failure -> String;
+_module_banner = |name, shown, failure| (
+    let shown_is_failed = Version::parse_tag(failure.@tag) == some(shown);
+    let body = if shown_is_failed { "This page is the one an earlier run generated." } else {
+        "This page documents " + shown.to_string + ", the latest version with documentation."
+    };
+    _lines([
+        "!!! warning \"" + _failure_title(failure) + "\"", "",
+        "    " + body + " See [" + name + "](../index.md) for the log."
+    ])
+);
+
+_config : Array PackagePage -> String;
+_config = |pages| (
+    let packages = pages.to_iter.map(|page|
+        let name = page.@package.@name;
+        let modules = page.shown.map_or([], |(version, generation)|
+            generation.@modules.map(|mod| "      - \"" + mod + "\": " + name + "/" + version.to_string + "/" + mod + ".md")
+        );
+        ["  - \"" + name + "\":", "      - " + name + "/index.md"].append(modules)
+    ).to_array.flatten;
+    _lines([
+        "INHERIT: mkdocs.yml",
+        "nav:",
+        "  - Home: index.md",
+        "  - Std:",
+        "      - Std/index.md",
+        "      - Std: Std/main/Std.md"
+    ].append(packages))
+);
+
+_lines : Array String -> String;
+_lines = |lines| lines.to_iter.map(|line| line + "\n").concat_iter;
+
+_write_file : String -> String -> IO ();
+_write_file = |path, text| write_file_string(path, text).try(exit_with_msg(1));
