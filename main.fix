@@ -1,11 +1,16 @@
 module Main;
 
-import EZS;
-import Generate;
-import Json.Decode;
-import Records;
-import Site;
-import Store;
+import EZS::{cd, cwd, run_o, Context::{default, set_eprint_stderr, set_execution_trace}};
+import Generate::{update_package, update_std, Run};
+import Json.Decode::Decoder::decode;
+import Records::Package::read_list;
+import Site::render;
+import Std::{
+    IO, Array::{append, is_empty, to_iter}, 
+    IO::{eprintln, exit_with_msg, println, write_file_string, IOFail::try}, Iterator::{fold_m, map}, 
+    Monad::pure, Result::{as_err, as_ok, is_err}, String::{concat_iter, strip_spaces}
+};
+import Store::Store;
 
 // Brings the store in `store/` up to date, lays it out as the MkDocs pages in `docs/` with the
 // configuration `mkdocs.site.yml`, and writes what went wrong into `failures.txt`, which is empty
@@ -13,8 +18,7 @@ import Store;
 //
 // A failure is written into `failures.txt` rather than ending the program, so that the pages of
 // every other package are still brought up to date.
-main : IO ();
-main = (
+main : IO () = (
     let ctx = Context::default.set_eprint_stderr(true).set_execution_trace(true);
     let root = *ctx.cwd;
     let store = Store { root : root + "/store" };

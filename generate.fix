@@ -5,13 +5,25 @@
 // leaves the documentation an earlier attempt saved where it is.
 module Generate;
 
-import EZS;
-import Records;
-import Semver;
-import Store;
+import EZS::{cd, run_o, run_oec, Context};
+import Records::{Failure, Generation, Package, Package::{@git, @name}};
+import Semver::{Version, Version::{@major, is_release, parse_tag}};
+import Std::{
+    Array, IO, Option, String, 
+    Array::{@, @size, append, get_last, get_sub, is_empty, push_back, sort, sort_by, to_iter}, 
+    Functor::{forget, map}, Iterator::{filter, filter_map, fold, fold_m, loop_iter_m, map, to_array}, 
+    LessThan::max, LoopState::{break_m, continue_m}, Monad::pure, 
+    Option::{as_some, is_none, is_some, map_or, none, some}, 
+    String::{@size, ends_with, find, get_sub, join, split, strip_last_newlines, strip_spaces}, 
+    ToString::to_string
+};
+import Store::{
+    read_failure, read_generation, remove_failure, write_failure, write_generation, Store, 
+    Store::{package_dir, std_dir, version_dir}
+};
 
 // What every step of a run shares.
-type Run = box struct {
+type Run = struct {
     ctx : Context,
     // The absolute path of the directory the generator works in.
     root : String,
@@ -28,15 +40,13 @@ namespace Run {
     // # Parameters
     // * `name` - The name of the package.
     // * `run` - The run.
-    clone_dir : String -> Run -> String;
-    clone_dir = |name, run| run.@root + "/packages/" + name;
+    clone_dir : String -> Run -> String = |name, run| run.@root + "/packages/" + name;
 
     // The directory `fix docs` writes into.
     //
     // # Parameters
     // * `run` - The run.
-    out_dir : Run -> String;
-    out_dir = |run| run.@root + "/tmp";
+    out_dir : Run -> String = |run| run.@root + "/tmp";
 
     // A failure record of this run.
     //
@@ -45,8 +55,7 @@ namespace Run {
     // * `step` - The command that failed.
     // * `log` - What the command printed.
     // * `run` - The run.
-    failure : String -> String -> String -> Run -> Failure;
-    failure = |tag, step, log, run| Failure {
+    failure : String -> String -> String -> Run -> Failure = |tag, step, log, run| Failure {
         tag : tag, step : step, compiler : run.@compiler, date : run.@date, log : log
     };
 }
@@ -60,8 +69,7 @@ fixlang_git : String = "https://github.com/tttmmmyyyy/fixlang.git";
 // # Parameters
 // * `package` - The package.
 // * `run` - The run.
-update_package : Package -> Run -> IO (Array String);
-update_package = |package, run| (
+update_package : Package -> Run -> IO (Array String) = |package, run| (
     let ctx = run.@ctx;
     let name = package.@name;
     let package_dir = run.@store.package_dir(name);
@@ -102,8 +110,7 @@ update_package = |package, run| (
 //
 // # Parameters
 // * `run` - The run.
-update_std : Run -> IO (Array String);
-update_std = |run| (
+update_std : Run -> IO (Array String) = |run| (
     let ctx = run.@ctx;
     let problems = *_fetch_std("main", "main", run);
     let refs = *ctx.run_o(["git", "ls-remote", "--tags", "--refs", fixlang_git]);
@@ -124,8 +131,10 @@ update_std = |run| (
 );
 
 // The tags that read as versions, highest first, each version once.
-_versions : String -> Array (Version, String);
-_versions = |tags| (
+//
+// # Parameters
+// * `tags` - The output of `git tag --list`.
+_versions : String -> Array (Version, String) = |tags| (
     let versions = tags.split("\n").map(strip_spaces).filter_map(|tag| Version::parse_tag(tag).map(|v| (v, tag))).to_array;
     let versions = versions.sort_by(|((a, _), (b, _))| b < a);
     versions.to_iter.fold([], |(version, tag), kept|
@@ -136,8 +145,13 @@ _versions = |tags| (
 
 // Generates the documentation of one version and saves it, or saves a failure record. Answers
 // with the command that failed, if one did.
-_generate_version : String -> String -> String -> Run -> IO (Option String);
-_generate_version = |clone_dir, tag, version_dir, run| (
+//
+// # Parameters
+// * `clone_dir` - The directory the package is cloned into.
+// * `tag` - The tag of the version.
+// * `version_dir` - The directory of the version in the store.
+// * `run` - The run.
+_generate_version : String -> String -> String -> Run -> IO (Option String) = |clone_dir, tag, version_dir, run| (
     let ctx = run.@ctx;
     let out_dir = run.out_dir;
     ctx.run_o(["rm", "-rf", out_dir]);;
@@ -170,8 +184,12 @@ _generate_version = |clone_dir, tag, version_dir, run| (
 
 // Fetches `Std.md` as `std_doc/Std.md` stands at `ref` in the Fix repository and saves it, or
 // answers with what went wrong. The documentation saved before stays where the fetch fails.
-_fetch_std : String -> String -> Run -> IO (Array String);
-_fetch_std = |version, ref, run| (
+//
+// # Parameters
+// * `version` - `main` or the release, which names the directory in the store.
+// * `ref` - The branch or tag to fetch from.
+// * `run` - The run.
+_fetch_std : String -> String -> Run -> IO (Array String) = |version, ref, run| (
     let ctx = run.@ctx;
     let url = "https://raw.githubusercontent.com/tttmmmyyyy/fixlang/" + ref + "/std_doc/Std.md";
     let fetched = run.@root + "/tmp/Std.md";
@@ -188,8 +206,11 @@ _fetch_std = |version, ref, run| (
 
 // Runs the commands one after another up to the first that fails, and answers with that command
 // and the end of what it printed.
-_run_steps : Array (Array String) -> Context -> IO (Option (String, String));
-_run_steps = |steps, ctx| (
+//
+// # Parameters
+// * `steps` - The commands.
+// * `ctx` - The context to run commands in.
+_run_steps : Array (Array String) -> Context -> IO (Option (String, String)) = |steps, ctx| (
     steps.to_iter.loop_iter_m(none(), |step, _|
         let (out, err, code) = *ctx.run_oec(step);
         if code == 0_U8 { continue_m $ none() };
@@ -198,8 +219,10 @@ _run_steps = |steps, ctx| (
 );
 
 // The last lines of what a command printed.
-_tail : String -> String;
-_tail = |text| (
+//
+// # Parameters
+// * `text` - What the command printed.
+_tail : String -> String = |text| (
     let max_lines = 100;
     let lines = text.strip_last_newlines.split("\n").to_array;
     let from = max(0, lines.@size - max_lines);

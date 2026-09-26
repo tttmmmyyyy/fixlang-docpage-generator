@@ -15,12 +15,18 @@
 // an earlier attempt stays when a later one fails.
 module Store;
 
-import EZS;
-import Json.Decode;
-import Records;
-import Semver;
+import EZS::{run_o, Context};
+import Json.Decode::{Decoder, Decoder::decode};
+import Records::{Failure, Generation, Failure::{read, write}, Generation::{read, write}};
+import Semver::{Version, Version::parse_tag};
+import Std::{
+    Array, IO, Option, String, Array::{sort_by, to_iter}, Functor::forget, 
+    IO::{exit_with_msg, read_file_string, write_file_string, IOFail::{to_result, try}}, 
+    Iterator::{filter, filter_map, to_array}, Monad::pure, Option::{none, some}, 
+    Result::{as_err, as_ok, is_err}, String::{is_empty, split}, ToString::to_string
+};
 
-type Store = box struct {
+type Store = struct {
     // The absolute path of the directory.
     root : String
 };
@@ -31,8 +37,7 @@ namespace Store {
     // # Parameters
     // * `name` - The name of the package.
     // * `store` - The store.
-    package_dir : String -> Store -> String;
-    package_dir = |name, store| store.@root + "/packages/" + name;
+    package_dir : String -> Store -> String = |name, store| store.@root + "/packages/" + name;
 
     // The directory of a version of a package.
     //
@@ -40,16 +45,14 @@ namespace Store {
     // * `name` - The name of the package.
     // * `version` - The version.
     // * `store` - The store.
-    version_dir : String -> Version -> Store -> String;
-    version_dir = |name, version, store| store.package_dir(name) + "/" + version.to_string;
+    version_dir : String -> Version -> Store -> String = |name, version, store| store.package_dir(name) + "/" + version.to_string;
 
     // The directory of a version of `Std`, which is `main` or a release.
     //
     // # Parameters
     // * `version` - `main` or the release.
     // * `store` - The store.
-    std_dir : String -> Store -> String;
-    std_dir = |version, store| store.@root + "/std/" + version;
+    std_dir : String -> Store -> String = |version, store| store.@root + "/std/" + version;
 
     // The versions of a package that have a directory, highest first.
     //
@@ -57,8 +60,7 @@ namespace Store {
     // * `name` - The name of the package.
     // * `ctx` - The context to run commands in.
     // * `store` - The store.
-    package_versions : String -> Context -> Store -> IO (Array Version);
-    package_versions = |name, ctx, store| (
+    package_versions : String -> Context -> Store -> IO (Array Version) = |name, ctx, store| (
         let names = *list_dirs(store.package_dir(name), ctx);
         pure $ names.to_iter.filter_map(Version::parse_tag).to_array.sort_by(|(a, b)| b < a)
     );
@@ -68,8 +70,7 @@ namespace Store {
     // # Parameters
     // * `ctx` - The context to run commands in.
     // * `store` - The store.
-    std_releases : Context -> Store -> IO (Array Version);
-    std_releases = |ctx, store| (
+    std_releases : Context -> Store -> IO (Array Version) = |ctx, store| (
         let names = *list_dirs(store.@root + "/std", ctx);
         pure $ names.to_iter.filter(|name| name != "main").filter_map(Version::parse_tag).to_array.sort_by(|(a, b)| b < a)
     );
@@ -80,8 +81,7 @@ namespace Store {
 // # Parameters
 // * `dir` - The directory to look in.
 // * `ctx` - The context to run commands in.
-list_dirs : String -> Context -> IO (Array String);
-list_dirs = |dir, ctx| (
+list_dirs : String -> Context -> IO (Array String) = |dir, ctx| (
     ctx.run_o(["mkdir", "-p", dir]);;
     let out = *ctx.run_o(["find", dir, "-mindepth", "1", "-maxdepth", "1", "-type", "d", "-printf", "%f\n"]);
     pure $ out.split("\n").filter(|line| !line.is_empty).to_array
@@ -91,15 +91,13 @@ list_dirs = |dir, ctx| (
 //
 // # Parameters
 // * `dir` - The version directory.
-read_generation : String -> IO (Option Generation);
-read_generation = |dir| _read_record(dir + "/generation.json", Generation::read);
+read_generation : String -> IO (Option Generation) = |dir| _read_record(dir + "/generation.json", Generation::read);
 
 // The failure record in `dir`, if there is one.
 //
 // # Parameters
 // * `dir` - The package or version directory.
-read_failure : String -> IO (Option Failure);
-read_failure = |dir| _read_record(dir + "/failure.json", Failure::read);
+read_failure : String -> IO (Option Failure) = |dir| _read_record(dir + "/failure.json", Failure::read);
 
 // Saves the documentation record in `dir`, and removes the failure record there.
 //
@@ -107,8 +105,7 @@ read_failure = |dir| _read_record(dir + "/failure.json", Failure::read);
 // * `generation` - The record.
 // * `dir` - The version directory.
 // * `ctx` - The context to run commands in.
-write_generation : Generation -> String -> Context -> IO ();
-write_generation = |generation, dir, ctx| (
+write_generation : Generation -> String -> Context -> IO () = |generation, dir, ctx| (
     write_file_string(dir + "/generation.json", generation.write).try(exit_with_msg(1));;
     remove_failure(dir, ctx)
 );
@@ -119,8 +116,7 @@ write_generation = |generation, dir, ctx| (
 // * `failure` - The record.
 // * `dir` - The package or version directory.
 // * `ctx` - The context to run commands in.
-write_failure : Failure -> String -> Context -> IO ();
-write_failure = |failure, dir, ctx| (
+write_failure : Failure -> String -> Context -> IO () = |failure, dir, ctx| (
     ctx.run_o(["mkdir", "-p", dir]);;
     write_file_string(dir + "/failure.json", failure.write).try(exit_with_msg(1))
 );
@@ -130,13 +126,15 @@ write_failure = |failure, dir, ctx| (
 // # Parameters
 // * `dir` - The package or version directory.
 // * `ctx` - The context to run commands in.
-remove_failure : String -> Context -> IO ();
-remove_failure = |dir, ctx| ctx.run_o(["rm", "-f", dir + "/failure.json"]).forget;
+remove_failure : String -> Context -> IO () = |dir, ctx| ctx.run_o(["rm", "-f", dir + "/failure.json"]).forget;
 
 // Reads the record at `path`, or answers with `none` where there is no file. A file that does not
 // read as the record ends the program, since the store would be left in a state no run expects.
-_read_record : String -> Decoder a -> IO (Option a);
-_read_record = |path, decoder| (
+//
+// # Parameters
+// * `path` - The path of the record.
+// * `decoder` - The reading of the record.
+_read_record : String -> Decoder a -> IO (Option a) = |path, decoder| (
     let text = *read_file_string(path).to_result;
     if text.is_err { pure $ none() };
     let record = decoder.decode(text.as_ok);

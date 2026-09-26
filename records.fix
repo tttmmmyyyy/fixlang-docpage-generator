@@ -2,11 +2,15 @@
 // generating the documentation of each version.
 module Records;
 
-import Json;
-import Json.Decode;
+import Json::{write, Json::{array, object, string}};
+import Json.Decode::{Decoder, Decoder::{fail_expecting, is_named, read_array, read_object, read_text, read_text_span}};
+import Std::{
+    Array, String, Array::push_back, Functor::map, Monad::pure, 
+    String::{@size, ends_with, get_sub, is_empty, starts_with}
+};
 
 // A package listed in a registry.
-type Package = box struct {
+type Package = struct {
     name : String,
     // The URL the repository is cloned from.
     git : String
@@ -15,11 +19,10 @@ type Package = box struct {
 namespace Package {
     // Reads the output of `fix deps list --json`: an array of objects, each carrying the fields
     // `name` and `git`. Other fields are passed over.
-    read_list : Decoder (Array Package);
-    read_list = read_array([], |packages| let package = *_read_package; pure $ packages.push_back(package));
+    read_list : Decoder (Array Package) = read_array([], |packages| let package = *_read_package; pure $ packages.push_back(package));
 
-    _read_package : Decoder Package;
-    _read_package = (
+    // Reads one entry of the output of `fix deps list --json`.
+    _read_package : Decoder Package = (
         let package = *read_object(Package { name : "", git : "" }, |field, package|
             if *is_named(field, "name") { let name = *_read_text_value; pure $ package.set_name(name) };
             if *is_named(field, "git") { let git = *_read_text_value; pure $ package.set_git(git) };
@@ -34,8 +37,7 @@ namespace Package {
     //
     // # Parameters
     // * `package` - The package.
-    web_url : Package -> String;
-    web_url = |package| (
+    web_url : Package -> String = |package| (
         let git = package.@git;
         if !git.starts_with("https://github.com/") { git };
         if git.ends_with(".git") { git.get_sub(0, git.@size - ".git".@size) };
@@ -48,15 +50,14 @@ namespace Package {
     // # Parameters
     // * `tag` - The tag.
     // * `package` - The package.
-    tree_url : String -> Package -> String;
-    tree_url = |tag, package| (
+    tree_url : String -> Package -> String = |tag, package| (
         if !package.@git.starts_with("https://github.com/") { package.web_url };
         package.web_url + "/tree/" + tag
     );
 }
 
 // The documentation saved for one version: the modules it covers, and how it was generated.
-type Generation = box struct {
+type Generation = struct {
     // The tag the documentation was generated from.
     tag : String,
     // What `fix --version` answered with, empty for documentation fetched as it stands.
@@ -71,8 +72,7 @@ namespace Generation {
     //
     // # Parameters
     // * `generation` - The record.
-    write : Generation -> String;
-    write = |generation| Json::write $ Json::object([
+    write : Generation -> String = |generation| Json::write $ Json::object([
         ("tag", Json::string(generation.@tag)),
         ("compiler", Json::string(generation.@compiler)),
         ("date", Json::string(generation.@date)),
@@ -80,8 +80,7 @@ namespace Generation {
     ]);
 
     // Reads the record back from what `write` wrote.
-    read : Decoder Generation;
-    read = read_object(Generation { tag : "", compiler : "", date : "", modules : [] }, |field, generation|
+    read : Decoder Generation = read_object(Generation { tag : "", compiler : "", date : "", modules : [] }, |field, generation|
         if *is_named(field, "tag") { let v = *_read_text_value; pure $ generation.set_tag(v) };
         if *is_named(field, "compiler") { let v = *_read_text_value; pure $ generation.set_compiler(v) };
         if *is_named(field, "date") { let v = *_read_text_value; pure $ generation.set_date(v) };
@@ -94,7 +93,7 @@ namespace Generation {
 }
 
 // The last attempt at generating documentation, where it failed.
-type Failure = box struct {
+type Failure = struct {
     // The tag the attempt was made on, empty where it failed before one was chosen.
     tag : String,
     // The command that failed.
@@ -112,8 +111,7 @@ namespace Failure {
     //
     // # Parameters
     // * `failure` - The record.
-    write : Failure -> String;
-    write = |failure| Json::write $ Json::object([
+    write : Failure -> String = |failure| Json::write $ Json::object([
         ("tag", Json::string(failure.@tag)),
         ("step", Json::string(failure.@step)),
         ("compiler", Json::string(failure.@compiler)),
@@ -122,8 +120,7 @@ namespace Failure {
     ]);
 
     // Reads the record back from what `write` wrote.
-    read : Decoder Failure;
-    read = read_object(Failure { tag : "", step : "", compiler : "", date : "", log : "" }, |field, failure|
+    read : Decoder Failure = read_object(Failure { tag : "", step : "", compiler : "", date : "", log : "" }, |field, failure|
         if *is_named(field, "tag") { let v = *_read_text_value; pure $ failure.set_tag(v) };
         if *is_named(field, "step") { let v = *_read_text_value; pure $ failure.set_step(v) };
         if *is_named(field, "compiler") { let v = *_read_text_value; pure $ failure.set_compiler(v) };
@@ -134,5 +131,4 @@ namespace Failure {
 }
 
 // Reads the string the cursor stands on, with its escapes resolved.
-_read_text_value : Decoder String;
-_read_text_value = let span = *read_text_span; read_text(span);
+_read_text_value : Decoder String = let span = *read_text_span; read_text(span);
