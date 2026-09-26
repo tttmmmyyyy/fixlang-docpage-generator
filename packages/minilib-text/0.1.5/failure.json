@@ -1,0 +1,1 @@
+{"tag":"0.1.5","step":"fix docs -o /home/runner/work/fixlang-docpage-generator/fixlang-docpage-generator/tmp","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","log":"info: Loading source files...\nerror: Unknown optimization level: \"separated\"\n\n1:1-1:1 in \"fixproj.toml\", \n  | \n1 | [general]\n  | ^"}

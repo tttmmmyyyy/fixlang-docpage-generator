@@ -1,0 +1,1 @@
+{"tag":"0.13.0","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","modules":["CPLib.Arithmetic","CPLib.Bipartite","CPLib.Bits","CPLib.Convolution","CPLib.DSegtree","CPLib.Graph","CPLib.IO","CPLib.LDSegtree","CPLib.LSegtree","CPLib.MaxFlow","CPLib.Memoize","CPLib.MinCostFlow","CPLib.Misc","CPLib.Segtree","CPLib.String","CPLib.Trait","CPLib.TwoSat","CPLib.UnionFind","CPLib.ZP"]}

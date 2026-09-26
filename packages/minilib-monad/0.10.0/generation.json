@@ -1,0 +1,1 @@
+{"tag":"0.10.0","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","modules":["Minilib.Functor.Pair","Minilib.Monad.Alt","Minilib.Monad.Cont","Minilib.Monad.Iden","Minilib.Monad.Option","Minilib.Monad.Reader","Minilib.Monad.Result","Minilib.Monad.State","Minilib.Monad.Trans","Minilib.Monad.Writer","Minilib.Monad.Yield","Minilib.Trait.Monoid","Minilib.Trait.Semigroup"]}

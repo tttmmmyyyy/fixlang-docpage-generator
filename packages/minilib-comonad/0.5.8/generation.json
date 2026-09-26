@@ -1,0 +1,1 @@
+{"tag":"0.5.8","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","modules":["Minilib.Comonad.Env","Minilib.Comonad.IdentityC","Minilib.Comonad.Traced","Minilib.Trait.Comonad"]}

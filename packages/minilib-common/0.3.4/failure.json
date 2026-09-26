@@ -1,0 +1,1 @@
+{"tag":"0.3.4","step":"fix docs -o /home/runner/work/fixlang-docpage-generator/fixlang-docpage-generator/tmp","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","log":"info: Loading source files...\nerror: Unknown type or associated type name `Iterator`.\n\n48:6-48:14 in \"lib/trait/traversable.fix\", \n   | \n48 | impl Iterator: Traversable {\n   |      ^^^^^^^^"}

@@ -1,0 +1,1 @@
+{"tag":"0.3.6","step":"fix docs -o /home/runner/work/fixlang-docpage-generator/fixlang-docpage-generator/tmp","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","log":"info: Loading source files...\nerror: Cannot find module `Minilib.Monad.Identity`.\n\n6:8-6:30 in \"lib/monad/random.fix\", \n  | \n6 | import Minilib.Monad.Identity;\n  |        ^^^^^^^^^^^^^^^^^^^^^^"}

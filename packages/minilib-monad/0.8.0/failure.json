@@ -1,0 +1,1 @@
+{"tag":"0.8.0","step":"fix deps update","compiler":"fix 1.5.0 (8bf4ea9)","date":"2026-09-26","log":"info: Resolving dependency for \"minilib-monad\"...\nerror: Failed to open file \"../fixlang-minilib-common/fixproj.toml\". Os { code: 2, kind: NotFound, message: \"No such file or directory\" }"}

@@ -1,0 +1,87 @@
+# Minilib.Monad.Result
+
+Defined in minilib-monad@0.10.0
+
+A monad transformer that wraps `m (Result e a)`.
+
+## Values
+
+### namespace Minilib.Monad.Result
+
+#### map_result_t
+
+Type: `(m (Std::Result e a) -> m2 (Std::Result e2 a2)) -> Minilib.Monad.Result::ResultT e m a -> Minilib.Monad.Result::ResultT e2 m2 a2`
+
+Maps a ResultT monad with the specified function.
+
+#### result_t
+
+Type: `m (Std::Result e a) -> Minilib.Monad.Result::ResultT e m a`
+
+Creates a ResultT monad from an operation result.
+
+#### run_result_t
+
+Type: `Minilib.Monad.Result::ResultT e m a -> m (Std::Result e a)`
+
+Gets the operation result.
+
+### namespace Minilib.Monad.Result::ResultT
+
+#### from_iofail
+
+Type: `Std::IO::IOFail a -> Minilib.Monad.Result::ResultT Std::ErrMsg Std::IO a`
+
+Converts an `IOFail` monad to a `ResultT ErrMsg IO` monad.
+
+#### to_iofail
+
+Type: `Minilib.Monad.Result::ResultT Std::ErrMsg Std::IO a -> Std::IO::IOFail a`
+
+Converts a `ResultT ErrMsg IO` monad to an `IOFail` monad.
+
+## Types and aliases
+
+### namespace Minilib.Monad.Result
+
+#### ResultT
+
+Defined as: `type [m : *->*] ResultT e m a = unbox struct { ...fields... }`
+
+A monad transformer that wraps `m (Result e a)`.
+This represents an operation result (success or error).
+`e` is a type of an error if the operation fails.
+`m` is a type of an underlying monad.
+`a` is a type of an operation result if operation is successful.
+
+##### field `data`
+
+Type: `m (Std::Result e a)`
+
+## Traits and aliases
+
+## Trait implementations
+
+### impl `[m : Std::Monad] Minilib.Monad.Result::ResultT Std::String m : Minilib.Monad.Error::MonadErrorIF`
+
+### impl `[m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Result::ResultT Std::String m : Minilib.Monad.IO::MonadIOFailIF`
+
+Implementation of `MonadIOFailIF`.
+
+NOTE: If `lift_iofail` is called and the lifted `IOFail` monad raises an error,
+the error is recorded in the `ResultT` monad, not the underlying monad.
+
+The reason for this behavior change is to ensure that `ResultT ErrMsg (StateT s m)`
+will not lose state even if an error occurs.
+
+### impl `Minilib.Monad.Result::ResultT e : Minilib.Monad.Trans::MonadTrans`
+
+### impl `[m : Minilib.Monad.IO::MonadIO] Minilib.Monad.Result::ResultT e m : Minilib.Monad.IO::MonadIOIF`
+
+### impl `[m : Minilib.Monad.Reader::MonadReader] Minilib.Monad.Result::ResultT e m : Minilib.Monad.Reader::MonadReaderIF`
+
+### impl `[m : Minilib.Monad.State::MonadState] Minilib.Monad.Result::ResultT e m : Minilib.Monad.State::MonadStateIF`
+
+### impl `[m : Std::Functor] Minilib.Monad.Result::ResultT e m : Std::Functor`
+
+### impl `[m : Std::Monad] Minilib.Monad.Result::ResultT e m : Std::Monad`

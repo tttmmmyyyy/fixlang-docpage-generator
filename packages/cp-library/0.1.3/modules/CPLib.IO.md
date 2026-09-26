@@ -1,0 +1,117 @@
+# CPLib.IO
+
+Defined in cp-library@0.1.3
+
+入出力や数値のパースを楽にする機能のためのモジュール
+
+## Values
+
+### namespace CPLib.IO
+
+#### input_line_f
+
+Type: `Std::IO Std::F64`
+
+標準入力から1行読み込み、`F64`として返す。
+
+#### input_line_fa
+
+Type: `Std::IO (Std::Array Std::F64)`
+
+"X Y Z"というフォーマットの行を標準入力から読み込み、`F64`の配列`[X, Y, Z]`として返す。
+
+#### input_line_i
+
+Type: `Std::IO Std::I64`
+
+標準入力から1行読み込み、`I64`として返す。
+
+#### input_line_ia
+
+Type: `Std::IO (Std::Array Std::I64)`
+
+"X Y Z"というフォーマットの行を標準入力から読み込み、`I64`の配列`[X, Y, Z]`として返す。
+
+#### input_line_ui
+
+Type: `Std::IO Std::U64`
+
+標準入力から1行読み込み、`U64`として返す。
+
+#### input_line_uia
+
+Type: `Std::IO (Std::Array Std::U64)`
+
+"X Y Z"というフォーマットの行を標準入力から読み込み、`U64`の配列`[X, Y, Z]`として返す。
+
+#### stof
+
+Type: `Std::String -> Std::F64`
+
+文字列をパースして`F64`整数に変換する
+
+##### Parameters
+
+- `s`: 変換したい文字列
+
+#### stofa
+
+Type: `Std::String -> Std::Array Std::F64`
+
+"X Y Z"というフォーマットの文字列をパースして`F64`の配列`[X, Y, Z]`に変換する。
+
+"stofa" = "String TO Float Array"
+
+##### Parameters
+
+- `s`: 変換したい文字列
+
+#### stoi
+
+Type: `Std::String -> Std::I64`
+
+文字列をパースして`I64`整数に変換する
+
+##### Parameters
+
+- `s`: 変換したい文字列
+
+#### stoia
+
+Type: `Std::String -> Std::Array Std::I64`
+
+"X Y Z"というフォーマットの文字列をパースして`I64`の配列`[X, Y, Z]`に変換する。
+
+"stoia" = "String TO Integer Array"
+
+##### Parameters
+
+- `s`: 変換したい文字列
+
+#### stoui
+
+Type: `Std::String -> Std::U64`
+
+文字列をパースして`U64`整数に変換する
+
+##### Parameters
+
+- `s`: 変換したい文字列
+
+#### stouia
+
+Type: `Std::String -> Std::Array Std::U64`
+
+"X Y Z"というフォーマットの文字列をパースして`U64`の配列`[X, Y, Z]`に変換する。
+
+"stouia" = "String TO Unsigned Integer Array"
+
+##### Parameters
+
+- `s`: 変換したい文字列
+
+## Types and aliases
+
+## Traits and aliases
+
+## Trait implementations
