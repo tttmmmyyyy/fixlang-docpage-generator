@@ -7,3 +7,6 @@ site
 tmp_docs
 packages
 tmp
+store
+mkdocs.site.yml
+failures.txt

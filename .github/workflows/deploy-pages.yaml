@@ -7,6 +7,15 @@ on:
     branches:
       - main
 
+# Two runs pushing to the store at once would have one of them rejected.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false
+
+permissions:
+  # Pushing the store to the branch `docs-store`.
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,9 +23,18 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-     
+
+      - name: Checkout the documentation store
+        run: |
+          if git ls-remote --exit-code --heads origin docs-store; then
+            git fetch --depth=1 origin docs-store
+            git worktree add --detach store FETCH_HEAD
+          else
+            git worktree add --orphan -b docs-store store
+          fi
+
       - name: Install MkDocs
-        run: python3 -m pip install -r requirements.txt     
+        run: python3 -m pip install -r requirements.txt
 
       - name: Download & install LLVM
         run: |
@@ -41,14 +59,33 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgmp-dev libmpfr-dev
 
+      # A package whose documentation fails to generate is written into `failures.txt`, which the
+      # last step reports, so that the pages of every other package are still deployed.
       - name: Build Markdown files
         run: fix run --allow-preliminary-commands
 
+      - name: Save the documentation store
+        working-directory: store
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Update the documentation store"
+            git push origin HEAD:docs-store
+          fi
+
       - name: Build HTML files
-        run: mkdocs build --verbose --clean
-     
+        run: mkdocs build --verbose --clean -f mkdocs.site.yml
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./site
+
+      - name: Report generation failures
+        run: |
+          if [ -s failures.txt ]; then
+            cat failures.txt
+            exit 1
+          fi
