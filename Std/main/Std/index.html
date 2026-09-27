@@ -49776,21 +49776,27 @@ If you want to handle errors, use <code>read_line(stdin)</code> instead.</p>
 The function <code>worker</code> should return an updated state as <code>LoopState</code> value, i.e., a value created by <code>continue</code> or <code>break</code>.
 When the <code>handle</code> reaches to the EOF or <code>worker</code> returns a <code>break</code> value, <code>loop_lines</code> returns the last state value.</p>
 <p>Note that the line string passed to <code>worker</code> may contain a newline code at the end. To remove it, use <code>String::strip_last_spaces</code>.</p>
+<p>The file is divided into lines at each newline, as a text editor numbers them. After a last line
+that ends in a newline, <code>worker</code> is called once more with the empty string, and on an empty file
+it is called once with the empty string. These are the only cases in which <code>worker</code> receives the
+empty string: an empty line elsewhere comes as <code>"\n"</code>. To skip that empty string, <code>break</code> when
+<code>worker</code> receives it.</p>
 <h5 id="parameters_114">Parameters</h5>
 <ul>
 <li><code>handle</code> - The IOHandle to be read.</li>
-<li><code>s0</code> - The initial state.</li>
-<li><code>work</code> - The function to be called on the pair of current state and a line string read from <code>handle</code>.</li>
+<li><code>state</code> - The initial state.</li>
+<li><code>worker</code> - The function to be called on the pair of current state and a line string read from <code>handle</code>.</li>
 </ul>
 <h4 id="loop_lines_io">loop_lines_io</h4>
 <p>Type: <code>Std::IO::IOHandle -&gt; s -&gt; (s -&gt; Std::String -&gt; Std::IO::IOFail (Std::LoopState s s)) -&gt; Std::IO::IOFail s</code></p>
 <p>Loop on lines read from an <code>IOHandle</code>.</p>
-<p>Similar to <code>loop_lines</code>, but the worker function can perform an IO action.</p>
+<p>Similar to <code>loop_lines</code>, but the worker function can perform an IO action. It passes <code>worker</code> the
+same lines as <code>loop_lines</code>, the empty string after a last newline included.</p>
 <h5 id="parameters_115">Parameters</h5>
 <ul>
 <li><code>handle</code> - The IOHandle to be read.</li>
-<li><code>s0</code> - The initial state.</li>
-<li><code>work</code> - The function to be called on the pair of current state and a line string read from <code>handle</code>.</li>
+<li><code>state</code> - The initial state.</li>
+<li><code>worker</code> - The function to be called on the pair of current state and a line string read from <code>handle</code>.</li>
 </ul>
 <h4 id="open_file">open_file</h4>
 <p>Type: <code>Std::Path -&gt; Std::String -&gt; Std::IO::IOFail Std::IO::IOHandle</code></p>
@@ -49837,8 +49843,11 @@ When the <code>handle</code> reaches to the EOF or <code>worker</code> returns a
 </ul>
 <h4 id="read_line">read_line</h4>
 <p>Type: <code>Std::IO::IOHandle -&gt; Std::IO::IOFail Std::String</code></p>
-<p>Reads characters from a IOHandle upto newline or EOF.
-The returned string may include newline at its end.</p>
+<p>Reads one line from an IOHandle: the characters up to and including the next newline, or up to
+the end of the file where the last line has no newline.</p>
+<p>A line keeps its newline, so an empty line is returned as <code>"\n"</code>. Once every line has been read,
+this function returns the empty string, and it is the only case in which it does. To read every
+line, call this function until it returns the empty string.</p>
 <h5 id="parameters_122">Parameters</h5>
 <ul>
 <li><code>handle</code> - The IOHandle to be read.</li>
