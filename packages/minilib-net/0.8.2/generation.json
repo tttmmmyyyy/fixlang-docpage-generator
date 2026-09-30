@@ -1,1 +1,1 @@
-{"tag":"0.8.2","compiler":"fix 1.5.1 (95fe4dd)","date":"2026-09-29","modules":["Minilib.Net.HTML","Minilib.Net.HttpServer","Minilib.Net.Request","Minilib.Net.Router","Minilib.Net.Tcp","Minilib.Net.URL"]}
+{"tag":"0.8.2","compiler":"fix 1.5.1 (e166a3c)","date":"2026-09-30","modules":["Minilib.Net.HTML","Minilib.Net.HttpServer","Minilib.Net.Request","Minilib.Net.Router","Minilib.Net.Tcp","Minilib.Net.URL"]}
