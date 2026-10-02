@@ -1,0 +1,489 @@
+# Minilib.Text.StringEx
+
+Defined in minilib-common@0.14.1
+
+String utility functions.
+
+Features:
+- Array U8 -> String conversion
+- Search, replace, split, comparison of String
+- Format
+
+## Values
+
+### namespace Minilib.Text.StringEx
+
+#### fill
+
+Type: `Std::I64 -> Std::U8 -> Std::String`
+
+Creates a string of the specified length, where each byte is equal to the specified byte.
+
+##### Parameters
+
+* `size` - the length of the string
+* `c` - a byte (a character)
+
+Example:
+```
+StringEx::fill(5, 'A')
+==> "AAAAA"
+```
+
+#### find_byte
+
+Type: `Std::U8 -> Std::String -> Std::Option Std::I64`
+
+Searches for the specified byte from the beginning of a string.
+If found, returns the index of that byte.
+
+##### Parameters
+
+* `c` - a byte (a character)
+* `str` - a string
+
+Example:
+```
+"aaa/bbb/ccc".find_byte('/')
+==> some(3)
+"aaa".find_byte('/')
+==> none()
+```
+
+#### find_last_byte
+
+Type: `Std::U8 -> Std::String -> Std::Option Std::I64`
+
+Searches for the specified byte from the end of a string.
+If found, returns the index of that byte.
+
+##### Parameters
+
+* `c` - a byte (a character)
+* `str` - a string
+
+Example:
+```
+"aaa/bbb/ccc".find_last_byte('/')
+==> some(7)
+"aaa".find_last_byte('/')
+==> none()
+```
+
+#### from_array
+
+Type: `Std::Array Std::U8 -> Std::String`
+
+Converts a byte array to a string. Specifically, it calls `String::_unsafe_from_c_str()`
+after appending a null character to the end of the byte array.
+
+##### Parameters
+
+* `bytes` - a byte array
+
+Example:
+```
+[ 'a', 'b', 'c' ].StringEx::from_array
+==> "abc"
+[ 0x41_U8, 0x42_U8, 0x43_U8 ].StringEx::from_array
+==> "ABC"
+```
+
+#### from_iter
+
+Type: `[iter : Std::Iterator, Std::Iterator::Item iter = Std::U8] iter -> Std::String`
+
+Converts an iterator of bytes to a string.
+
+`StringEx::from_iter(iter)` is equal to `StringEx::from_array(iter.to_array)`.
+
+##### Parameters
+
+* `iter` - an iterator of bytes
+
+Example:
+```
+[ 'a', 'b', 'c' ].to_iter.StringEx::from_iter
+==> "abc"
+[ 0x41_U8, 0x42_U8, 0x43_U8 ].to_iter.StringEx::from_iter
+==> "ABC"
+```
+
+#### get_prefix
+
+Type: `Std::I64 -> Std::String -> Std::String`
+
+Gets the prefix of a string up to a specified length.
+
+##### Parameters
+
+* `size` - the length of the prefix
+* `str` - a string
+
+Example:
+```
+"ABCDE".get_prefix(3)
+==> "ABC"
+"ABCDE".get_prefix(10)
+==> "ABCDE"
+```
+
+#### get_suffix
+
+Type: `Std::I64 -> Std::String -> Std::String`
+
+Gets the suffix of a string up to a specified length.
+
+##### Parameters
+
+* `size` - the length of the suffix
+* `str` - a string
+
+Example:
+```
+"ABCDE".get_suffix(3)
+==> "CDE"
+"ABCDE".get_suffix(10)
+==> "ABCDE"
+```
+
+#### left
+
+Type: `Std::I64 -> Std::String -> Std::String`
+
+`left` is a synonym of `get_prefix`.
+
+#### pad_left
+
+Type: `Std::I64 -> Std::U8 -> Std::String -> Std::String`
+
+Pads on the left with the specified byte until it reaches the specified length.
+
+##### Parameters
+
+* `size` - the minimum length of the padded string
+* `c` - a byte (a character)
+* `str` - a string
+
+Example:
+```
+"123".pad_left(5, '0')
+==> "00123"
+"1234567".pad_left(5, '0')
+==> "1234567"
+```
+
+#### pad_right
+
+Type: `Std::I64 -> Std::U8 -> Std::String -> Std::String`
+
+Pads on the right with the specified byte until it reaches the specified length.
+
+##### Parameters
+
+* `size` - the minimum length of the padded string
+* `c` - a byte (a character)
+* `str` - a string
+
+Example:
+```
+"abc".pad_right(5, ' ')
+==> "abc  "
+"abcdefg".pad_right(5, ' ')
+==> "abcdefg"
+```
+
+#### replace_all
+
+Type: `Std::String -> Std::String -> Std::String -> Std::String`
+
+`input.replace_all(from, to)` replaces all occurrences of `from` in the input string with `to`.
+If `from` is empty, returns the input string unchanged.
+
+##### Parameters
+
+* `from` - a string to be searched
+* `to` - a string to replace with
+* `input` - a string to be replaced
+
+Returns the modified string.
+If `from` is empty, returns the input string unchanged.
+If `from` is not found, returns the input string unchanged.
+If `to` is empty, removes all occurrences of `from` from the input string.
+If `input` is empty, returns an empty string.
+
+Example:
+```
+"foo1:11,foo2:22,Foo3:33".replace_all("foo", "piyo")
+==> "piyo1:11,piyo2:22,Foo3:33"
+"foo1:11,foo2:22,Foo3:33".replace_all("foo", "")
+==> "1:11,2:22,Foo3:33"
+"foo1:11,foo2:22,Foo3:33".replace_all("", "piyo")
+==> "foo1:11,foo2:22,Foo3:33"
+```
+
+#### replace_suffix
+
+Type: `Std::String -> Std::String -> Std::String -> Std::Result Std::ErrMsg Std::String`
+
+`str.replace_suffix(from, to)` replaces `from` at the end of `str` with `to`.
+if `str` does not end with `from`, an error occurs.
+
+##### Parameters
+
+* `from` - a string to be searched
+* `to` - a string to replace with
+* `str` - a string to be replaced
+
+Returns `ok(str)` if the replacement is successful.
+Returns `err("suffix does not match: str")` if the replacement fails.
+
+Example:
+```
+"test.txt".replace_suffix(".txt", ".tmp")
+ ==> ok("test.tmp")
+"test.jpg".replace_suffix(".txt", ".tmp")
+ ==> err("suffix does not match: test.jpg")
+```
+
+#### right
+
+Type: `Std::I64 -> Std::String -> Std::String`
+
+`right` is a synonym of `get_suffix`.
+
+#### split_by
+
+Type: `[?o : Std::Iterator, Std::Iterator::Item ?o = Std::String] (Std::U8 -> Std::Bool) -> Std::String -> ?o`
+
+Splits a string by a function that checks whether a character is a delimiter or not.
+The result will not contain any empty string.
+
+##### Parameters
+
+* `is_delim` - a function that checks whether a character is a delimiter or not
+* `str` - a string to be split
+
+Returns a dynamic iterator of strings.
+
+Example:
+```
+"  aa bb  12 ".split_by(Character::is_space).to_array
+==>  ["aa", "bb", "12"]
+```
+
+#### split_first
+
+Type: `Std::String -> Std::String -> (Std::String, Std::String)`
+
+`str.split_first(delim)` splits the string `str` into two parts at the first occurence of the delimiter `delim`.
+Returns `(left, right)` where `left` is the left part of the delimiter, and
+`right` is the right part of the delimiter.
+Returns `(str, "")` if the delimiter is not found.
+
+##### Parameters
+
+* `delim` - a string to be searched
+* `str` - a string to be split
+
+Returns a tuple of two strings.
+If `delim` is empty, returns `(str, "")`.
+If `delim` is not found, returns `(str, "")`.
+If `str` is empty, returns `("", "")`.
+
+Example:
+```
+"aaa/bbb/ccc".split_first("/")
+==> ("aaa", "bbb/ccc")
+"aaa/bbb/ccc".split_first("bb")
+==> ("aaa/", "b/ccc")
+"aaa/bbb/ccc".split_first("!")
+==> ("aaa/bbb/ccc", "")
+```
+
+#### to_array
+
+Type: `Std::String -> Std::Array Std::U8`
+
+Converts a string to a byte array. Specifically, it calls `String::get_bytes`
+and removes a null character at the end of the byte array.
+
+##### Parameters
+
+* `str` - a string
+
+Example:
+```
+"abc".to_array
+==> [ 'a', 'b', 'c' ]
+"ABC".to_array
+==> [ 'A', 'B', 'C' ]
+```
+
+#### to_iter
+
+Type: `[?o : Std::Iterator, Std::Iterator::Item ?o = Std::U8] Std::String -> ?o`
+
+Converts a string to an iterator of bytes.
+
+`str.to_iter` is equal to `str.to_array.to_iter`.
+
+##### Parameters
+
+* `str` - a string
+
+Example:
+```
+"abc".to_iter.to_array
+==> [ 'a', 'b', 'c' ]
+"ABC".to_iter.to_array
+==> [ 'A', 'B', 'C' ]
+```
+
+#### to_lower
+
+Type: `Std::String -> Std::String`
+
+Converts the specified string to lowercase.
+
+NOTE: This function is affected by the locale.
+
+##### Parameters
+
+* `str` - a string
+
+Example:
+```
+"ABCdef123".to_lower
+==> "abcdef123"
+```
+
+#### to_upper
+
+Type: `Std::String -> Std::String`
+
+Converts the specified string to uppercase.
+
+NOTE: This function is affected by the locale.
+
+##### Parameters
+
+* `str` - a string
+
+Example:
+```
+"ABCdef123".to_upper
+==> "ABCDEF123"
+```
+
+### namespace Minilib.Text.StringEx::Format
+
+#### format
+
+Type: `[a : Minilib.Text.StringEx::Format] Std::String -> a -> Std::String`
+
+Trait member of `Minilib.Text.StringEx::Format`
+
+## Types and aliases
+
+## Traits and aliases
+
+### namespace Minilib.Text.StringEx
+
+#### trait `a : Format`
+
+`args.format(str)` replaces each occurence of `{}` in the format string `str`
+with each element of `args`.
+Currently only supports `{}`.
+
+##### Parameters
+
+* `str` - a format string
+* `args` - a collection of elements
+
+Returns a formatted string.
+
+Example:
+```
+["1", "2", "3"].format("foo={} bar={} baz={}")
+==> "foo=1 bar=2 baz=3"
+["1"].format("foo={} bar={} baz={}")
+==> "foo=1 bar={} baz={}"
+```
+
+##### method `format`
+
+Type: `Std::String -> a -> Std::String`
+
+## Trait implementations
+
+### impl `[a : Std::ToString, b : Std::ToString] (a, b) : Minilib.Text.StringEx::Format`
+
+`(a, b).format(str)` replaces each occurence of `{}` in the format string `str`
+with `a`, `b`.
+
+Example:
+```
+(12, "abc").format("int={} str={}")
+==> "int=12 str=abc"
+```
+
+### impl `[a : Std::ToString, b : Std::ToString, c : Std::ToString] (a, b, c) : Minilib.Text.StringEx::Format`
+
+`(a, b, c).format(str)` replaces each occurence of `{}` in the format string `str`
+with `a`, `b`, `c`.
+
+Example:
+```
+(12, 345.678, "abc").format("int={} float={} str={}")
+==> "int=12 float=345.678000 str=abc"
+```
+
+### impl `[a : Std::ToString, b : Std::ToString, c : Std::ToString, d : Std::ToString] (a, b, c, d) : Minilib.Text.StringEx::Format`
+
+`(a, b, c, d).format(str)` replaces each occurence of `{}` in the format string `str`
+with `a`, `b`, `c`, `d`.
+
+Example:
+```
+(12, 345.678, "abc", some(1)).format("int={} float={} str={} option={}")
+==> "int=12 float=345.678000 str=abc option=some(1)"
+```
+
+### impl `[a : Std::ToString, b : Std::ToString, c : Std::ToString, d : Std::ToString, e : Std::ToString] (a, b, c, d, e) : Minilib.Text.StringEx::Format`
+
+`(a, b, c, d, e).format(str)` replaces each occurence of `{}` in the format string `str`
+with `a`, `b`, `c`, `d`, `e`.
+
+Example:
+```
+(12, 345.678, "abc", some(1), [1, 2, 3]).format("int={} float={} str={} option={} array={}")
+==> "int=12 float=345.678000 str=abc option=some(1) array=[1, 2, 3]"
+```
+
+### impl `[a : Std::ToString] (a,) : Minilib.Text.StringEx::Format`
+
+`(a, ).format(str)` replaces an occurence of `{}` in the format string `str`
+with `a`.
+
+Example:
+```
+(12.345, ).format("float={}")
+==> "float=12.345000"
+([1, 2, 3], ).format("arr={}")
+==> "arr=[1, 2, 3]"
+```
+
+### impl `[a : Std::ToString] Std::Array a : Minilib.Text.StringEx::Format`
+
+`array.format(str)` replaces each occurence of `{}` in the format string `str`
+with each element of `array`.
+Currently only supports `{}`.
+
+Example:
+```
+[some(1), some(2), none()].format("foo={} bar={} baz={}")
+==> "foo=some(1) bar=some(2) baz=none()"
+[some(1)].format("foo={} bar={} baz={}")
+==> "foo=some(1) bar={} baz={}"
+```
