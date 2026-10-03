@@ -1,1 +1,1 @@
-{"tag":"0.8.2","compiler":"fix 1.5.1 (15cc34d)","date":"2026-10-02","modules":["Minilib.Thread.Channel","Minilib.Thread.Future","Minilib.Thread.TaskPool"]}
+{"tag":"0.8.2","compiler":"fix 1.6.0 (39f5521)","date":"2026-10-03","modules":["Minilib.Thread.Channel","Minilib.Thread.Future","Minilib.Thread.TaskPool"]}
