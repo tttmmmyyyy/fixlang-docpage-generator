@@ -1,1 +1,1 @@
-{"tag":"1.2.0","compiler":"fix 1.6.0 (39f5521)","date":"2026-10-03","modules":["RegExp","RegExp.RegExpNFA","RegExp.RegExpPattern","RegExp.SimpleParser","RegExp.StdBytes","RegExp.StringEx"]}
+{"tag":"1.2.0","compiler":"fix 1.6.0 (7035bfb)","date":"2026-10-04","modules":["RegExp","RegExp.RegExpNFA","RegExp.RegExpPattern","RegExp.SimpleParser","RegExp.StdBytes","RegExp.StringEx"]}
