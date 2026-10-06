@@ -1,1 +1,1 @@
-{"tag":"0.9.2","compiler":"fix 1.6.0 (30d618c)","date":"2026-10-05","modules":["Minilib.IO.Errno","Minilib.IO.FileSystem","Minilib.IO.Path","Minilib.IO.Platform","Minilib.IO.Signal"]}
+{"tag":"0.9.2","compiler":"fix 1.6.0 (30d618c)","date":"2026-10-06","modules":["Minilib.IO.Errno","Minilib.IO.FileSystem","Minilib.IO.Path","Minilib.IO.Platform","Minilib.IO.Signal"]}
