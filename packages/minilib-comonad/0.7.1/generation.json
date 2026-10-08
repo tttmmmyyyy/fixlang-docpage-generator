@@ -1,1 +1,1 @@
-{"tag":"0.7.1","compiler":"fix 1.6.0 (30d618c)","date":"2026-10-07","modules":["Minilib.Comonad.Cofree","Minilib.Comonad.Env","Minilib.Comonad.IOStore","Minilib.Comonad.IdentityC","Minilib.Comonad.Store","Minilib.Comonad.Traced","Minilib.Trait.Comonad","Minilib.Trait.Dual"]}
+{"tag":"0.7.1","compiler":"fix 1.6.0 (0e6996e)","date":"2026-10-08","modules":["Minilib.Comonad.Cofree","Minilib.Comonad.Env","Minilib.Comonad.IOStore","Minilib.Comonad.IdentityC","Minilib.Comonad.Store","Minilib.Comonad.Traced","Minilib.Trait.Comonad","Minilib.Trait.Dual"]}
