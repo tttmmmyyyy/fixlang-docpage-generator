@@ -29722,7 +29722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../regexp/1.2.0/RegExp/" class="md-nav__link">
+      <a href="../../../regexp/1.3.0/RegExp/" class="md-nav__link">
         
   
   
@@ -29750,7 +29750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../regexp/1.2.0/RegExp.RegExpNFA/" class="md-nav__link">
+      <a href="../../../regexp/1.3.0/RegExp.RegExpNFA/" class="md-nav__link">
         
   
   
@@ -29778,7 +29778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../regexp/1.2.0/RegExp.RegExpPattern/" class="md-nav__link">
+      <a href="../../../regexp/1.3.0/RegExp.RegExpPattern/" class="md-nav__link">
         
   
   
@@ -29806,7 +29806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../regexp/1.2.0/RegExp.SimpleParser/" class="md-nav__link">
+      <a href="../../../regexp/1.3.0/RegExp.SimpleParser/" class="md-nav__link">
         
   
   
@@ -29834,7 +29834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../regexp/1.2.0/RegExp.StdBytes/" class="md-nav__link">
+      <a href="../../../regexp/1.3.0/RegExp.StdBytes/" class="md-nav__link">
         
   
   
@@ -29862,7 +29862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../regexp/1.2.0/RegExp.StringEx/" class="md-nav__link">
+      <a href="../../../regexp/1.3.0/RegExp.StringEx/" class="md-nav__link">
         
   
   
@@ -53158,9 +53158,7 @@ The document for <code>Std</code> module describes about them up to N=3, but you
 <p><code>fix</code> enables you to make a recursive function locally.</p>
 <p>The idiom is <code>fix $ |loop, arg| -&gt; {loop_body}</code>. In <code>{loop_body}</code>, you can call <code>loop</code> to make a recursion.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>module Main;
-
-main : IO ();
+<div class="highlight"><pre><span></span><code>main : IO ();
 main = (
     let fact = fix $ |loop, n| if n == 0 { 1 } else { n * loop (n-1) };
     println $ fact(5).to_string // evaluates to 5 * 4 * 3 * 2 * 1 = 120
@@ -53176,9 +53174,7 @@ It first calls <code>body</code> on <code>s0</code>.
 If <code>body</code> returns <code>break(r)</code>, then the loop ends and returns <code>r</code> as the result.
 If <code>body</code> returns <code>continue(s)</code>, then the loop calls again <code>body</code> on <code>s</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>module Main;
-
-main : IO ();
+<div class="highlight"><pre><span></span><code>main : IO ();
 main = (
     let sum = loop((0, 0), |(i, sum)|
         if i == 100 { break $ sum };
@@ -53197,9 +53193,7 @@ main = (
 <p>Monadic loop function. This is similar to <code>loop</code> but can be used to perform monadic action at each loop.</p>
 <p>It is convenient to use <code>continue_m</code> and <code>break_m</code> to create monadic loop body function.</p>
 <p>The following program prints "Hello World! (i)" for i = 0, 1, 2.</p>
-<div class="highlight"><pre><span></span><code>module Main;
-
-main : IO ();
+<div class="highlight"><pre><span></span><code>main : IO ();
 main = (
     loop_m(0, |i| (
         if i == 3 { break_m $ () };
@@ -53256,9 +53250,7 @@ but if the program does reach <code>undefined</code>, it will result in undefine
 <p>This function checks if a boxed value is uniquely referenced by a name, and returns the result paired with the given value itself.</p>
 <p>The <code>[a : Boxed]</code> constraint was added in Fix 1.5.0. Before 1.5.0 the constraint was absent and this returned <code>true</code> for any unboxed value.</p>
 <p>Example: 
-<div class="highlight"><pre><span></span><code>module Main;
-
-type Resource = box struct { id : I64 };
+<div class="highlight"><pre><span></span><code>type Resource = box struct { id : I64 };
 
 main : IO ();
 main = (
@@ -53391,8 +53383,8 @@ It is not allowed to mutate the array through the borrowed pointer; to do that, 
 <li><code>arr</code> - The input array.</li>
 </ul>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>[1,1,2,2,3].deduplicate == [1,2,3]
-[1,2,1,2].deduplicate == [1,2,1,2]  // non-consecutive duplicates are kept
+<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1,1,2,2,3].dedup, [1,2,3]);;
+assert_eq(|_|&quot;&quot;, [1,2,1,2].dedup, [1,2,1,2]) // non-consecutive duplicates are kept
 </code></pre></div>
 <h4 id="empty">empty</h4>
 <p>Type: <code>Std::I64 -&gt; Std::Array a</code></p>
@@ -54099,9 +54091,7 @@ If you want to get a pointer to the data of the boxed value, use <code>borrow_bo
 This function is used to release a pointer obtained by <code>boxed_to_retained_ptr</code>.</p>
 <p>Note that this function is requires a value of type <code>Lazy a</code>, not of <code>a</code>.
 So you can get release function for a boxed type <code>T</code> even when you don't have a value of type <code>T</code> -- you can just use <code>|_| undefined("") : T</code>:</p>
-<div class="highlight"><pre><span></span><code>module Main;
-
-type VoidType = box struct {};
+<div class="highlight"><pre><span></span><code>type VoidType = box struct {};
 // No constructor for `VoidType` is provided.
 
 main: IO ();
@@ -55400,7 +55390,7 @@ assert_eq(|_|&quot;&quot;, arr, [1, 42, 3])
 <h5 id="examples_9">Examples</h5>
 <div class="highlight"><pre><span></span><code>let arr = [1, 2, 3];
 let (arr, x) = arr[1].ixchg(42);
-assert_eq(|_|&quot;&quot;, x, 2);
+assert_eq(|_|&quot;&quot;, x, 2);;
 assert_eq(|_|&quot;&quot;, arr, [1, 42, 3])
 </code></pre></div>
 <h5 id="parameters_163">Parameters</h5>
@@ -55587,7 +55577,7 @@ On the other hand, iteration may be faster by banging.</p>
 <p>Type: <code>[?out : Std::Iterator, input : Std::Iterator, Std::Iterator::Item ?out = a, Std::Iterator::Item input = a] a -&gt; input -&gt; ?out</code></p>
 <p>Intersperse an element between elements of an iterator.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3].from_array.intersperse(0).to_array, [1, 0, 2, 0, 3]);;
+<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3].from_array.intersperse(0).to_array, [1, 0, 2, 0, 3])
 </code></pre></div></p>
 <h5 id="parameters_185">Parameters</h5>
 <ul>
@@ -55672,7 +55662,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <p>Create an iterator that yields the Cartesian product of two iterators.</p>
 <p>NOTE: Since this function is designed so that <code>iter1.product(iter2)</code> yields the Cartesian product, the elements of <code>product(iter2, iter1)</code> are in the opposite order.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, range(1, 4).product([&#39;a&#39;, &#39;b&#39;].from_array).to_array, [(1, &#39;a&#39;), (2, &#39;a&#39;), (3, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;b&#39;), (3, &#39;b&#39;)]);;
+<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, range(1, 4).product([&#39;a&#39;, &#39;b&#39;].from_array).to_array, [(1, &#39;a&#39;), (2, &#39;a&#39;), (3, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;b&#39;), (3, &#39;b&#39;)])
 </code></pre></div></p>
 <h5 id="parameters_194">Parameters</h5>
 <ul>
@@ -56019,7 +56009,7 @@ from <code>start_idx</code>.</p>
 <p>Creates a string from a byte.</p>
 <p>Example:
 <div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, String::from_U8(&#39;a&#39;), &quot;a&quot;);;
-assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;);;
+assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;)
 </code></pre></div></p>
 <h5 id="parameters_230">Parameters</h5>
 <ul>
@@ -56107,7 +56097,7 @@ assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;);;
 <p>Example:
 <div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;Ex. 1&quot;, &quot;ab,c,&quot;.split(&quot;,&quot;).to_array, [&quot;ab&quot;, &quot;c&quot;, &quot;&quot;]);;
 assert_eq(|_|&quot;Ex. 2&quot;, &quot;abc&quot;.split(&quot;,&quot;).to_array, [&quot;abc&quot;]);;
-assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]);; // Special behavior when the separator is empty.
+assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]) // Special behavior when the separator is empty.
 </code></pre></div></p>
 <h5 id="parameters_240">Parameters</h5>
 <ul>
@@ -57257,30 +57247,43 @@ and you can evaluate a lazy value <code>v</code> by <code>v()</code>.</p>
 <h3 id="namespace-stdffi_1">namespace Std::FFI</h3>
 <h4 id="cchar">CChar</h4>
 <p>Defined as: <code>type CChar = Std::I8</code></p>
+<p>C's <code>char</code>, with the sign <code>char</code> has on the target: <code>I8</code> on x86-64 and on macOS, and <code>U8</code> on Linux on arm64.</p>
 <h4 id="cdouble">CDouble</h4>
 <p>Defined as: <code>type CDouble = Std::F64</code></p>
+<p>C's <code>double</code>.</p>
 <h4 id="cfloat">CFloat</h4>
 <p>Defined as: <code>type CFloat = Std::F32</code></p>
+<p>C's <code>float</code>.</p>
 <h4 id="cint">CInt</h4>
 <p>Defined as: <code>type CInt = Std::I32</code></p>
+<p>C's <code>int</code>.</p>
 <h4 id="clong">CLong</h4>
 <p>Defined as: <code>type CLong = Std::I64</code></p>
+<p>C's <code>long</code>, which is <code>I64</code> on Linux and macOS.</p>
 <h4 id="clonglong">CLongLong</h4>
 <p>Defined as: <code>type CLongLong = Std::I64</code></p>
+<p>C's <code>long long</code>.</p>
 <h4 id="cshort">CShort</h4>
 <p>Defined as: <code>type CShort = Std::I16</code></p>
+<p>C's <code>short</code>.</p>
 <h4 id="csizet">CSizeT</h4>
 <p>Defined as: <code>type CSizeT = Std::U64</code></p>
+<p>C's <code>size_t</code>.</p>
 <h4 id="cunsignedchar">CUnsignedChar</h4>
 <p>Defined as: <code>type CUnsignedChar = Std::U8</code></p>
+<p>C's <code>unsigned char</code>.</p>
 <h4 id="cunsignedint">CUnsignedInt</h4>
 <p>Defined as: <code>type CUnsignedInt = Std::U32</code></p>
+<p>C's <code>unsigned int</code>.</p>
 <h4 id="cunsignedlong">CUnsignedLong</h4>
 <p>Defined as: <code>type CUnsignedLong = Std::U64</code></p>
+<p>C's <code>unsigned long</code>, which is <code>U64</code> on Linux and macOS.</p>
 <h4 id="cunsignedlonglong">CUnsignedLongLong</h4>
 <p>Defined as: <code>type CUnsignedLongLong = Std::U64</code></p>
+<p>C's <code>unsigned long long</code>.</p>
 <h4 id="cunsignedshort">CUnsignedShort</h4>
 <p>Defined as: <code>type CUnsignedShort = Std::U16</code></p>
+<p>C's <code>unsigned short</code>.</p>
 <h4 id="destructor">Destructor</h4>
 <p>Defined as: <code>type Destructor a = box struct { ...fields... }</code></p>
 <p><code>Destructor</code> is a type for managing resources allocated in foreign languages.
