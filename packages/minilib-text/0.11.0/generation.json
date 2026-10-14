@@ -1,0 +1,1 @@
+{"tag":"0.11.0","compiler":"fix 1.6.0 (e72fd1c)","date":"2026-10-14","modules":["Minilib.Text.Locale","Minilib.Text.SimpleParser","Minilib.Text.Unicode","Minilib.Text.WParser","Minilib.Text.WideChar"]}

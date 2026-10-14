@@ -1,1 +1,1 @@
-{"tag":"0.8.1","compiler":"fix 1.6.0 (bff9485)","date":"2026-10-13","modules":["Minilib.Common.RandomEx","Minilib.Crypto.SecureRandom","Minilib.Monad.FreeRandom","Minilib.Monad.Random","Minilib.Random.XorShift","Minilib.Trait.Lifter","Minilib.Trait.Rng"]}
+{"tag":"0.8.1","compiler":"fix 1.6.0 (e72fd1c)","date":"2026-10-14","modules":["Minilib.Common.RandomEx","Minilib.Crypto.SecureRandom","Minilib.Monad.FreeRandom","Minilib.Monad.Random","Minilib.Random.XorShift","Minilib.Trait.Lifter","Minilib.Trait.Rng"]}
