@@ -1,1 +1,1 @@
-{"tag":"0.4.2","compiler":"fix 1.6.0 (e72fd1c)","date":"2026-10-14","modules":["Cairo","Cairo.ImageSurface","Cairo.XlibSurface"]}
+{"tag":"0.4.2","compiler":"fix 1.6.0 (e72fd1c)","date":"2026-10-15","modules":["Cairo","Cairo.ImageSurface","Cairo.XlibSurface"]}

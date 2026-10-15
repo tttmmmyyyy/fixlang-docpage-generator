@@ -1,1 +1,1 @@
-{"tag":"0.8.0","compiler":"fix 1.6.0 (e72fd1c)","date":"2026-10-14","modules":["Minilib.Encoding.Base64","Minilib.Encoding.Binary","Minilib.Text.Hex"]}
+{"tag":"0.8.0","compiler":"fix 1.6.0 (e72fd1c)","date":"2026-10-15","modules":["Minilib.Encoding.Base64","Minilib.Encoding.Binary","Minilib.Text.Hex"]}
