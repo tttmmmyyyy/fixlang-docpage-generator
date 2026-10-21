@@ -20196,10 +20196,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-it-stditerator-a-stdformat-stdformatjoined-it-stdformat" class="md-nav__link">
+  <a href="#impl-it-stditerator-a-stdformat-stditeratoritem-it-a-stdformatjoined-it-stdformat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [it : Std::Iterator, a : Std::Format] Std::Format::Joined it : Std::Format
+        impl [it : Std::Iterator, a : Std::Format, Std::Iterator::Item it = a] Std::Format::Joined it : Std::Format
       
     </span>
   </a>
@@ -22616,10 +22616,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i1-stditerator-i2-stditerator-stditeratorappenditerator-i1-i2-stditerator" class="md-nav__link">
+  <a href="#impl-i1-stditerator-i2-stditerator-stditeratoritem-i1-a-stditeratoritem-i2-a-stditeratorappenditerator-i1-i2-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::AppendIterator i1 i2 : Std::Iterator
+        impl [i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = a] Std::Iterator::AppendIterator i1 i2 : Std::Iterator
       
     </span>
   </a>
@@ -22638,10 +22638,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorconsiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorconsiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::ConsIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::ConsIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -22748,10 +22748,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorfilteriterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorfilteriterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::FilterIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::FilterIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -22759,10 +22759,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorfiltermapiterator-i-a-b-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorfiltermapiterator-i-a-b-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::FilterMapIterator i a b : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::FilterMapIterator i a b : Std::Iterator
       
     </span>
   </a>
@@ -22770,10 +22770,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i2-stditerator-i1-stditerator-stditeratorflatteniterator-i2-i1-stditerator" class="md-nav__link">
+  <a href="#impl-i2-stditerator-i1-stditerator-stditeratoritem-i2-i1-stditeratorflatteniterator-i2-i1-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i2 : Std::Iterator, i1 : Std::Iterator] Std::Iterator::FlattenIterator i2 i1 : Std::Iterator
+        impl [i2 : Std::Iterator, i1 : Std::Iterator, Std::Iterator::Item i2 = i1] Std::Iterator::FlattenIterator i2 i1 : Std::Iterator
       
     </span>
   </a>
@@ -22781,10 +22781,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorintersperseiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorintersperseiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::IntersperseIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::IntersperseIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -22792,10 +22792,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratormapiterator-i-a-b-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratormapiterator-i-a-b-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::MapIterator i a b : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::MapIterator i a b : Std::Iterator
       
     </span>
   </a>
@@ -22803,10 +22803,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i1-stditerator-i2-stditerator-stditeratorproductiterator-i1-i2-a-b-stditerator" class="md-nav__link">
+  <a href="#impl-i1-stditerator-i2-stditerator-stditeratoritem-i1-a-stditeratoritem-i2-b-stditeratorproductiterator-i1-i2-a-b-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::ProductIterator i1 i2 a b : Std::Iterator
+        impl [i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = b] Std::Iterator::ProductIterator i1 i2 a b : Std::Iterator
       
     </span>
   </a>
@@ -22836,10 +22836,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorreverseiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorreverseiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::ReverseIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::ReverseIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -22869,10 +22869,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratortakewhileiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratortakewhileiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::TakeWhileIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::TakeWhileIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -26322,7 +26322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Arithmetic/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Arithmetic/" class="md-nav__link">
         
   
   
@@ -26350,7 +26350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Bipartite/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Bipartite/" class="md-nav__link">
         
   
   
@@ -26378,7 +26378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Bits/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Bits/" class="md-nav__link">
         
   
   
@@ -26406,7 +26406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Convolution/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Convolution/" class="md-nav__link">
         
   
   
@@ -26434,7 +26434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.DSegtree/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.DSegtree/" class="md-nav__link">
         
   
   
@@ -26462,7 +26462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Graph/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Graph/" class="md-nav__link">
         
   
   
@@ -26490,7 +26490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.IO/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.IO/" class="md-nav__link">
         
   
   
@@ -26518,7 +26518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.LDSegtree/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.LDSegtree/" class="md-nav__link">
         
   
   
@@ -26546,7 +26546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.LSegtree/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.LSegtree/" class="md-nav__link">
         
   
   
@@ -26574,7 +26574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.MaxFlow/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.MaxFlow/" class="md-nav__link">
         
   
   
@@ -26602,7 +26602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Memoize/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Memoize/" class="md-nav__link">
         
   
   
@@ -26630,7 +26630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.MinCostFlow/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.MinCostFlow/" class="md-nav__link">
         
   
   
@@ -26658,7 +26658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Misc/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Misc/" class="md-nav__link">
         
   
   
@@ -26686,7 +26686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Monoid/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Monoid/" class="md-nav__link">
         
   
   
@@ -26714,7 +26714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Segtree/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Segtree/" class="md-nav__link">
         
   
   
@@ -26742,7 +26742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.String/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.String/" class="md-nav__link">
         
   
   
@@ -26770,7 +26770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.Trait/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.Trait/" class="md-nav__link">
         
   
   
@@ -26798,7 +26798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.TwoSat/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.TwoSat/" class="md-nav__link">
         
   
   
@@ -26826,7 +26826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.UnionFind/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.UnionFind/" class="md-nav__link">
         
   
   
@@ -26854,7 +26854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cp-library/0.15.0/CPLib.ZP/" class="md-nav__link">
+      <a href="../../../cp-library/0.15.1/CPLib.ZP/" class="md-nav__link">
         
   
   
@@ -27607,7 +27607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/2.0.1/Math/" class="md-nav__link">
+      <a href="../../../math/2.0.2/Math/" class="md-nav__link">
         
   
   
@@ -52389,10 +52389,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-it-stditerator-a-stdformat-stdformatjoined-it-stdformat" class="md-nav__link">
+  <a href="#impl-it-stditerator-a-stdformat-stditeratoritem-it-a-stdformatjoined-it-stdformat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [it : Std::Iterator, a : Std::Format] Std::Format::Joined it : Std::Format
+        impl [it : Std::Iterator, a : Std::Format, Std::Iterator::Item it = a] Std::Format::Joined it : Std::Format
       
     </span>
   </a>
@@ -54809,10 +54809,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i1-stditerator-i2-stditerator-stditeratorappenditerator-i1-i2-stditerator" class="md-nav__link">
+  <a href="#impl-i1-stditerator-i2-stditerator-stditeratoritem-i1-a-stditeratoritem-i2-a-stditeratorappenditerator-i1-i2-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::AppendIterator i1 i2 : Std::Iterator
+        impl [i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = a] Std::Iterator::AppendIterator i1 i2 : Std::Iterator
       
     </span>
   </a>
@@ -54831,10 +54831,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorconsiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorconsiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::ConsIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::ConsIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -54941,10 +54941,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorfilteriterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorfilteriterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::FilterIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::FilterIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -54952,10 +54952,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorfiltermapiterator-i-a-b-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorfiltermapiterator-i-a-b-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::FilterMapIterator i a b : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::FilterMapIterator i a b : Std::Iterator
       
     </span>
   </a>
@@ -54963,10 +54963,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i2-stditerator-i1-stditerator-stditeratorflatteniterator-i2-i1-stditerator" class="md-nav__link">
+  <a href="#impl-i2-stditerator-i1-stditerator-stditeratoritem-i2-i1-stditeratorflatteniterator-i2-i1-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i2 : Std::Iterator, i1 : Std::Iterator] Std::Iterator::FlattenIterator i2 i1 : Std::Iterator
+        impl [i2 : Std::Iterator, i1 : Std::Iterator, Std::Iterator::Item i2 = i1] Std::Iterator::FlattenIterator i2 i1 : Std::Iterator
       
     </span>
   </a>
@@ -54974,10 +54974,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorintersperseiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorintersperseiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::IntersperseIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::IntersperseIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -54985,10 +54985,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratormapiterator-i-a-b-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratormapiterator-i-a-b-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::MapIterator i a b : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::MapIterator i a b : Std::Iterator
       
     </span>
   </a>
@@ -54996,10 +54996,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i1-stditerator-i2-stditerator-stditeratorproductiterator-i1-i2-a-b-stditerator" class="md-nav__link">
+  <a href="#impl-i1-stditerator-i2-stditerator-stditeratoritem-i1-a-stditeratoritem-i2-b-stditeratorproductiterator-i1-i2-a-b-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::ProductIterator i1 i2 a b : Std::Iterator
+        impl [i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = b] Std::Iterator::ProductIterator i1 i2 a b : Std::Iterator
       
     </span>
   </a>
@@ -55029,10 +55029,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratorreverseiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratorreverseiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::ReverseIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::ReverseIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -55062,10 +55062,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#impl-i-stditerator-stditeratortakewhileiterator-i-a-stditerator" class="md-nav__link">
+  <a href="#impl-i-stditerator-stditeratoritem-i-a-stditeratortakewhileiterator-i-a-stditerator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        impl [i : Std::Iterator] Std::Iterator::TakeWhileIterator i a : Std::Iterator
+        impl [i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::TakeWhileIterator i a : Std::Iterator
       
     </span>
   </a>
@@ -63055,7 +63055,7 @@ threshold.</p>
 <h3 id="impl-stdf64-stdtou8">impl <code>Std::F64 : Std::ToU8</code></h3>
 <h3 id="impl-stdf64-stdzero">impl <code>Std::F64 : Std::Zero</code></h3>
 <h3 id="impl-stdffidestructor-a-stdboxed">impl <code>Std::FFI::Destructor a : Std::Boxed</code></h3>
-<h3 id="impl-it-stditerator-a-stdformat-stdformatjoined-it-stdformat">impl <code>[it : Std::Iterator, a : Std::Format] Std::Format::Joined it : Std::Format</code></h3>
+<h3 id="impl-it-stditerator-a-stdformat-stditeratoritem-it-a-stdformatjoined-it-stdformat">impl <code>[it : Std::Iterator, a : Std::Format, Std::Iterator::Item it = a] Std::Format::Joined it : Std::Format</code></h3>
 <p>Writes each element with <code>write_text</code>, and calls <code>flush_if_full</code> after it.</p>
 <h3 id="impl-a-stdformat-stdformatleftaligned-a-stdformat">impl <code>[a : Std::Format] Std::Format::LeftAligned a : Std::Format</code></h3>
 <h3 id="impl-a-stdformat-stdformatrightaligned-a-stdformat">impl <code>[a : Std::Format] Std::Format::RightAligned a : Std::Format</code></h3>
@@ -63277,9 +63277,9 @@ threshold.</p>
 <h3 id="impl-stdidentity-stdmonad">impl <code>Std::Identity : Std::Monad</code></h3>
 <h3 id="impl-stdidentity-stdtextwriter">impl <code>Std::Identity : Std::TextWriter</code></h3>
 <p><code>format</code> runs in <code>Identity</code>, which keeps the whole text.</p>
-<h3 id="impl-i1-stditerator-i2-stditerator-stditeratorappenditerator-i1-i2-stditerator">impl <code>[i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::AppendIterator i1 i2 : Std::Iterator</code></h3>
+<h3 id="impl-i1-stditerator-i2-stditerator-stditeratoritem-i1-a-stditeratoritem-i2-a-stditeratorappenditerator-i1-i2-stditerator">impl <code>[i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = a] Std::Iterator::AppendIterator i1 i2 : Std::Iterator</code></h3>
 <h3 id="impl-stditeratorarrayiterator-a-stditerator">impl <code>Std::Iterator::ArrayIterator a : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratorconsiterator-i-a-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::ConsIterator i a : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratorconsiterator-i-a-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::ConsIterator i a : Std::Iterator</code></h3>
 <h3 id="impl-stditeratorcountupiterator-stditerator">impl <code>Std::Iterator::CountUpIterator : Std::Iterator</code></h3>
 <h3 id="impl-stditeratordyniterator-stdfunctor">impl <code>Std::Iterator::DynIterator : Std::Functor</code></h3>
 <h3 id="impl-stditeratordyniterator-stdmonad">impl <code>Std::Iterator::DynIterator : Std::Monad</code></h3>
@@ -63291,18 +63291,18 @@ threshold.</p>
 <p>Creates an empty dynamic iterator.</p>
 <h3 id="impl-stditeratoremptyiterator-a-stditerator">impl <code>Std::Iterator::EmptyIterator a : Std::Iterator</code></h3>
 <h3 id="impl-it-stditerator-stditeratorenumerateiterator-it-stditerator">impl <code>[it : Std::Iterator] Std::Iterator::EnumerateIterator it : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratorfilteriterator-i-a-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::FilterIterator i a : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratorfiltermapiterator-i-a-b-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::FilterMapIterator i a b : Std::Iterator</code></h3>
-<h3 id="impl-i2-stditerator-i1-stditerator-stditeratorflatteniterator-i2-i1-stditerator">impl <code>[i2 : Std::Iterator, i1 : Std::Iterator] Std::Iterator::FlattenIterator i2 i1 : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratorintersperseiterator-i-a-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::IntersperseIterator i a : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratormapiterator-i-a-b-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::MapIterator i a b : Std::Iterator</code></h3>
-<h3 id="impl-i1-stditerator-i2-stditerator-stditeratorproductiterator-i1-i2-a-b-stditerator">impl <code>[i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::ProductIterator i1 i2 a b : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratorfilteriterator-i-a-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::FilterIterator i a : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratorfiltermapiterator-i-a-b-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::FilterMapIterator i a b : Std::Iterator</code></h3>
+<h3 id="impl-i2-stditerator-i1-stditerator-stditeratoritem-i2-i1-stditeratorflatteniterator-i2-i1-stditerator">impl <code>[i2 : Std::Iterator, i1 : Std::Iterator, Std::Iterator::Item i2 = i1] Std::Iterator::FlattenIterator i2 i1 : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratorintersperseiterator-i-a-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::IntersperseIterator i a : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratormapiterator-i-a-b-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::MapIterator i a b : Std::Iterator</code></h3>
+<h3 id="impl-i1-stditerator-i2-stditerator-stditeratoritem-i1-a-stditeratoritem-i2-b-stditeratorproductiterator-i1-i2-a-b-stditerator">impl <code>[i1 : Std::Iterator, i2 : Std::Iterator, Std::Iterator::Item i1 = a, Std::Iterator::Item i2 = b] Std::Iterator::ProductIterator i1 i2 a b : Std::Iterator</code></h3>
 <h3 id="impl-stditeratorrangeiterator-stditerator">impl <code>Std::Iterator::RangeIterator : Std::Iterator</code></h3>
 <h3 id="impl-stditeratorrangestepiterator-stditerator">impl <code>Std::Iterator::RangeStepIterator : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratorreverseiterator-i-a-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::ReverseIterator i a : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratorreverseiterator-i-a-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::ReverseIterator i a : Std::Iterator</code></h3>
 <h3 id="impl-stditeratorstateiterator-s-a-stditerator">impl <code>Std::Iterator::StateIterator s a : Std::Iterator</code></h3>
 <h3 id="impl-i-stditerator-stditeratortakeiterator-i-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::TakeIterator i : Std::Iterator</code></h3>
-<h3 id="impl-i-stditerator-stditeratortakewhileiterator-i-a-stditerator">impl <code>[i : Std::Iterator] Std::Iterator::TakeWhileIterator i a : Std::Iterator</code></h3>
+<h3 id="impl-i-stditerator-stditeratoritem-i-a-stditeratortakewhileiterator-i-a-stditerator">impl <code>[i : Std::Iterator, Std::Iterator::Item i = a] Std::Iterator::TakeWhileIterator i a : Std::Iterator</code></h3>
 <h3 id="impl-i1-stditerator-i2-stditerator-stditeratorzipiterator-i1-i2-stditerator">impl <code>[i1 : Std::Iterator, i2 : Std::Iterator] Std::Iterator::ZipIterator i1 i2 : Std::Iterator</code></h3>
 <h3 id="impl-stdoption-stdfunctor">impl <code>Std::Option : Std::Functor</code></h3>
 <h3 id="impl-stdoption-stdmonad">impl <code>Std::Option : Std::Monad</code></h3>
