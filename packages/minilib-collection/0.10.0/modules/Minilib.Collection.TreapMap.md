@@ -179,14 +179,14 @@ Type: `Std::Array (Std::Result Minilib.Collection.TreapMap::TNodeIndex (k, v))`
 
 ## Trait implementations
 
-### impl `[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.TreapMap::TreapMap kc k v : Minilib.Collection.Trait::Map`
+### impl `[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.TreapMap::TreapMap kc k v : Minilib.Collection.Trait::Map`
 
 Implementation of the `Map` trait.
 
-### impl `[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.TreapMap::TreapMap kc k v : Minilib.Collection.Trait::SortedMapIF`
+### impl `[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.TreapMap::TreapMap kc k v : Minilib.Collection.Trait::SortedMapIF`
 
 Implementation of the `SortedMapIF` trait.
 
 ### impl `Minilib.Collection.TreapMap::TreapMap kc k v : Std::Indexable`
 
-### impl `[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.TreapMap::TreapMap::TreapMapIterator kc k v : Std::Iterator`
+### impl `[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.TreapMap::TreapMap::TreapMapIterator kc k v : Std::Iterator`

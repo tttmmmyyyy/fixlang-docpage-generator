@@ -85,10 +85,10 @@ Type: `Minilib.Collection.TreapMap::TreapMap kc k ()`
 
 ## Trait implementations
 
-### impl `[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.TreapSet::TreapSet kc k : Minilib.Collection.Trait::Set`
+### impl `[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.TreapSet::TreapSet kc k : Minilib.Collection.Trait::Set`
 
 Implementation of the `Set` trait.
 
-### impl `[kc : Minilib.Collection.Trait::KeyCompare] Minilib.Collection.TreapSet::TreapSet kc k : Minilib.Collection.Trait::SortedSetIF`
+### impl `[kc : Minilib.Collection.Trait::KeyCompare, Minilib.Collection.Trait::KeyCompare::Key kc = k] Minilib.Collection.TreapSet::TreapSet kc k : Minilib.Collection.Trait::SortedSetIF`
 
 Implementation of the `SortedSetIF` trait.

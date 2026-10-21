@@ -632,7 +632,7 @@ Semantically, `map.act(key, fun)` is equivalent to
 
 ##### method `to_iter`
 
-Type: `[?i : Std::Iterator] map -> ?i`
+Type: `[?i : Std::Iterator, Std::Iterator::Item ?i = (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map)] map -> ?i`
 
 Converts a map into an iterator of entries.
 
@@ -652,7 +652,7 @@ Converts a map into an array of entries.
 
 ##### method `select_range`
 
-Type: `[?i : Std::Iterator] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -> Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -> Std::Bool -> map -> ?i`
+Type: `[?i : Std::Iterator, Std::Iterator::Item ?i = (Minilib.Collection.Trait::Map::MapKey map, Minilib.Collection.Trait::Map::MapValue map)] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -> Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Map::MapKey map) -> Std::Bool -> map -> ?i`
 
 Finds all entries in the specified range.
 
@@ -763,7 +763,7 @@ Calculates union of two sets.
 
 ##### method `to_iter`
 
-Type: `[?i : Std::Iterator] set -> ?i`
+Type: `[?i : Std::Iterator, Std::Iterator::Item ?i = Minilib.Collection.Trait::Set::SetElem set] set -> ?i`
 
 Converts a set into an iterator.
 
@@ -783,7 +783,7 @@ Converts a set into an array.
 
 ##### method `select_range`
 
-Type: `[?i : Std::Iterator] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -> Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -> Std::Bool -> set -> ?i`
+Type: `[?i : Std::Iterator, Std::Iterator::Item ?i = Minilib.Collection.Trait::Set::SetElem set] Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -> Minilib.Collection.Trait::Bound (Minilib.Collection.Trait::Set::SetElem set) -> Std::Bool -> set -> ?i`
 
 Finds all elements in the specified range.
 

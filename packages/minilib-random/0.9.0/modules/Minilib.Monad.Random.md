@@ -93,7 +93,7 @@ Type: `Std::I64 -> m (Std::Array Std::U8)`
 
 ## Trait implementations
 
-### impl `[rg : Minilib.Trait.Rng::Rng, lf1 : Minilib.Trait.Lifter::Lifter, lf2 : Minilib.Trait.Lifter::Lifter, m : Std::Monad] Minilib.Monad.State::StateT rg m : Minilib.Monad.Random::MonadRandomIF`
+### impl `[rg : Minilib.Trait.Rng::Rng, lf1 : Minilib.Trait.Lifter::Lifter, lf2 : Minilib.Trait.Lifter::Lifter, m : Std::Monad, Minilib.Trait.Rng::Rng::RngLift rg m (rg, Std::U64) = lf1, Minilib.Trait.Rng::Rng::RngResult rg (rg, Std::U64) = from1, Minilib.Trait.Lifter::Lifter::LiftFrom lf1 = from1, Minilib.Trait.Lifter::Lifter::LiftTo lf1 = m (rg, Std::U64), Minilib.Trait.Rng::Rng::RngLift rg m (rg, Std::Array Std::U8) = lf2, Minilib.Trait.Rng::Rng::RngResult rg (rg, Std::Array Std::U8) = from2, Minilib.Trait.Lifter::Lifter::LiftFrom lf2 = from2, Minilib.Trait.Lifter::Lifter::LiftTo lf2 = m (rg, Std::Array Std::U8)] Minilib.Monad.State::StateT rg m : Minilib.Monad.Random::MonadRandomIF`
 
 An implementation of `MonadRandomIF` for the `StateT` monad.
 

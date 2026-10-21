@@ -81,25 +81,25 @@ Type: `(a -> b -> c) -> f a -> Minilib.Trait.Dual::Dual::DualOf f b -> c`
 
 ## Trait implementations
 
-### impl `[g : Minilib.Trait.Dual::Dual, f : Minilib.Trait.Dual::Dual] Minilib.Comonad.Cofree::Cofree g : Minilib.Trait.Dual::Dual`
+### impl `[g : Minilib.Trait.Dual::Dual, f : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf g = f, Minilib.Trait.Dual::Dual::DualOf f = g] Minilib.Comonad.Cofree::Cofree g : Minilib.Trait.Dual::Dual`
 
-### impl `[w : Minilib.Trait.Comonad::Comonad, m : Std::Monad, w : Minilib.Trait.Dual::Dual] Minilib.Comonad.Env::EnvT e w : Minilib.Trait.Dual::Dual`
+### impl `[w : Minilib.Trait.Comonad::Comonad, m : Std::Monad, w : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf w = m] Minilib.Comonad.Env::EnvT e w : Minilib.Trait.Dual::Dual`
 
 ### impl `Minilib.Comonad.IOStore::IOStore : Minilib.Trait.Dual::Dual`
 
 ### impl `Minilib.Comonad.IdentityC::IdentityC : Minilib.Trait.Dual::Dual`
 
-### impl `[w : Minilib.Trait.Comonad::Comonad, m : Std::Monad, w : Minilib.Trait.Dual::Dual] Minilib.Comonad.Store::StoreT s w : Minilib.Trait.Dual::Dual`
+### impl `[w : Minilib.Trait.Comonad::Comonad, m : Std::Monad, w : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf w = m] Minilib.Comonad.Store::StoreT s w : Minilib.Trait.Dual::Dual`
 
-### impl `[w : Minilib.Trait.Comonad::Comonad, m : Std::Monad, w : Minilib.Trait.Dual::Dual] Minilib.Comonad.Traced::TracedT e w : Minilib.Trait.Dual::Dual`
+### impl `[w : Minilib.Trait.Comonad::Comonad, m : Std::Monad, w : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf w = m] Minilib.Comonad.Traced::TracedT e w : Minilib.Trait.Dual::Dual`
 
 ### impl `[f : Minilib.Trait.Dual::Dual] Minilib.Monad.Free::Free f : Minilib.Trait.Dual::Dual`
 
-### impl `[m : Std::Monad, w : Minilib.Trait.Comonad::Comonad, m : Minilib.Trait.Dual::Dual] Minilib.Monad.Reader::ReaderT e m : Minilib.Trait.Dual::Dual`
+### impl `[m : Std::Monad, w : Minilib.Trait.Comonad::Comonad, m : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf m = w] Minilib.Monad.Reader::ReaderT e m : Minilib.Trait.Dual::Dual`
 
-### impl `[m : Std::Monad, w : Minilib.Trait.Comonad::Comonad, m : Minilib.Trait.Dual::Dual] Minilib.Monad.State::StateT s m : Minilib.Trait.Dual::Dual`
+### impl `[m : Std::Monad, w : Minilib.Trait.Comonad::Comonad, m : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf m = w] Minilib.Monad.State::StateT s m : Minilib.Trait.Dual::Dual`
 
-### impl `[m : Std::Monad, w : Minilib.Trait.Comonad::Comonad, m : Minilib.Trait.Dual::Dual] Minilib.Monad.Writer::WriterT e m : Minilib.Trait.Dual::Dual`
+### impl `[m : Std::Monad, w : Minilib.Trait.Comonad::Comonad, m : Minilib.Trait.Dual::Dual, Minilib.Trait.Dual::Dual::DualOf m = w] Minilib.Monad.Writer::WriterT e m : Minilib.Trait.Dual::Dual`
 
 ### impl `Std::Arrow e : Minilib.Trait.Dual::Dual`
 

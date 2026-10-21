@@ -137,7 +137,7 @@ Type: `Std::Array i`
 
 ## Trait implementations
 
-### impl `[i : Std::Iterator] Minilib.Common.IteratorEx::ScanIterator i s a : Std::Iterator`
+### impl `[i : Std::Iterator, Std::Iterator::Item i = a] Minilib.Common.IteratorEx::ScanIterator i s a : Std::Iterator`
 
 ### impl `[i : Std::Iterator] Minilib.Common.IteratorEx::TailsIterator i : Std::Iterator`
 
