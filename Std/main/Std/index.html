@@ -58087,9 +58087,9 @@ and then returns the mutated <code>arr</code> paired with the result of <code>io
 <p>The IO action <code>io(ptr)</code> is expected to modify the elements of <code>arr</code> through the obtained pointer.
 Do not perform any IO operations other than mutating the elements of <code>arr</code>.</p>
 <p>This function first clones the array if it is shared. The pointer is valid only while <code>io</code> runs.</p>
-<p>For example, the callback can use its IO context and the FFI to store into this array a boxed value made somewhere far away.
-Doing that inside a global value's initializer can let an optimization break the program: what an initializer's result reaches stops being reference-counted once the initializer finishes, and the program goes on counting references to what it holds, so nothing may be both.
-<code>dev-docs/2026-08-03-initializer-contract-violation/</code> holds a program that makes something be both.</p>
+<p>NOTE:
+The result of a global value's initializer must not include a boxed value that existed before the initializer started, except the values of other global values.
+So, inside an initializer, do not use the pointer to write such a value into the array (for example, one given to C with <code>boxed_to_retained_ptr</code>). Doing so is undefined behavior.</p>
 <h5 id="parameters_26">Parameters</h5>
 <ul>
 <li><code>act</code> - The action to perform on the pointer to the first element.</li>
@@ -58811,6 +58811,9 @@ It is not allowed to mutate a boxed value through the borrowed pointer. If you w
 <p>Creates a boxed value from a retained pointer obtained by <code>boxed_to_retained_ptr</code>.</p>
 <p>NOTE:
 It is the user's responsibility to ensure that the argument is actually a pointer to the type of the return value, and undefined behavior will occur if it is not.</p>
+<p>NOTE:
+The result of a global value's initializer must not include a boxed value that existed before the initializer started, except the values of other global values.
+So, inside an initializer, if the pointer was made before the initializer started, do not put the returned value into the initializer's result. Doing so is undefined behavior.</p>
 <h5 id="parameters_76">Parameters</h5>
 <ul>
 <li><code>retained_ptr</code> - The pointer to the value.</li>
@@ -58868,6 +58871,9 @@ This function is used to retain a pointer obtained by <code>boxed_to_retained_pt
 Do not perform any IO operations other than mutating the value of <code>x</code>.</p>
 <p>For more details on the pointer passed to <code>io</code>, see the document of <code>borrow_boxed</code>.</p>
 <p>This function first clones the value if <code>x</code> is not unique.</p>
+<p>NOTE:
+The result of a global value's initializer must not include a boxed value that existed before the initializer started, except the values of other global values.
+So, inside an initializer, do not use the pointer to write such a value into <code>x</code> (for example, one given to C with <code>boxed_to_retained_ptr</code>). Doing so is undefined behavior.</p>
 <p>See also: <code>borrow_boxed</code>, <code>mutate_boxed_io</code>, <code>mutate_boxed</code>.</p>
 <h5 id="parameters_80">Parameters</h5>
 <ul>
