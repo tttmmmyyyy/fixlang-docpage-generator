@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -7969,9 +7969,9 @@ for the matches after.</p>
 first. A group that captured nothing stands as <code>(-1, -1)</code>. After a match that holds no byte
 the search goes on from the next byte. The global flag (<code>"g"</code>) makes no difference here.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile(&quot;([a-z]+)([0-9]+)&quot;, &quot;&quot;).as_ok;
-let found = regexp.find_all(&quot;abc012 def345&quot;).to_array;
-assert_eq(|_|&quot;&quot;, found, [[(0, 6), (0, 3), (3, 6)], [(7, 13), (7, 10), (10, 13)]])
+<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile("([a-z]+)([0-9]+)", "").as_ok;
+let found = regexp.find_all("abc012 def345").to_array;
+assert_eq(|_|"", found, [[(0, 6), (0, 3), (3, 6)], [(7, 13), (7, 10), (10, 13)]])
 </code></pre></div></p>
 <h5 id="parameters_7">Parameters</h5>
 <ul>
@@ -7994,9 +7994,9 @@ the byte position <code>from</code>, and reports where each of its groups stands
 them. It reports <code>none()</code> where no match begins at or after <code>from</code>. A negative <code>from</code> counts
 as <code>0</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile(&quot;[0-9]+&quot;, &quot;&quot;).as_ok;
-let found = regexp.find_from(4, &quot;abc012 def345&quot;);
-assert_eq(|_|&quot;&quot;, found, some([(4, 6)]))
+<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile("[0-9]+", "").as_ok;
+let found = regexp.find_from(4, "abc012 def345");
+assert_eq(|_|"", found, some([(4, 6)]))
 </code></pre></div></p>
 <h5 id="parameters_9">Parameters</h5>
 <ul>
@@ -8029,14 +8029,14 @@ JavaScript. This is the one function the flag changes.</p>
 <p>Without <code>g</code>, it returns the groups of the first match. Group 0 is the substring the whole
 regular expression matches, and group 1 and beyond are the substrings each group captured,
 the empty string standing for a group that captured nothing.</p>
-<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile(&quot;[a-z]+([0-9]+)&quot;, &quot;&quot;).as_ok;
-let groups = regexp.match_one(&quot;abc012 def345&quot;).as_some;
-assert_eq(|_|&quot;&quot;, groups, [&quot;abc012&quot;, &quot;012&quot;])
+<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile("[a-z]+([0-9]+)", "").as_ok;
+let groups = regexp.match_one("abc012 def345").as_some;
+assert_eq(|_|"", groups, ["abc012", "012"])
 </code></pre></div>
 <p>With <code>g</code>, it returns the substring of every match, without the groups.</p>
-<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile(&quot;[a-z]+([0-9]+)&quot;, &quot;g&quot;).as_ok;
-let groups = regexp.match_one(&quot;abc012 def345&quot;).as_some;
-assert_eq(|_|&quot;&quot;, groups, [&quot;abc012&quot;, &quot;def345&quot;])
+<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile("[a-z]+([0-9]+)", "g").as_ok;
+let groups = regexp.match_one("abc012 def345").as_some;
+assert_eq(|_|"", groups, ["abc012", "def345"])
 </code></pre></div>
 <p>Where <code>regexp</code> matches nowhere in <code>target</code>, it returns <code>none()</code>.</p>
 <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match">String.match()</a>
@@ -8049,11 +8049,11 @@ that state, and keeps the answer. <code>Matcher</code>'s matching functions hand
 program that matches many strings against one regular expression pays for the working out
 once, where <code>RegExp</code>'s own matching functions make a scanner for each match and let it go.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>let matcher = RegExp::compile(&quot;[a-z]+&quot;, &quot;g&quot;).as_ok.matcher;
-let (first, matcher) = matcher.match_all(&quot;abc def&quot;);
-let (second, matcher) = matcher.match_all(&quot;ghi jkl&quot;);
-assert_eq(|_|&quot;&quot;, first, [[&quot;abc&quot;], [&quot;def&quot;]]);;
-assert_eq(|_|&quot;&quot;, second, [[&quot;ghi&quot;], [&quot;jkl&quot;]])
+<div class="highlight"><pre><span></span><code>let matcher = RegExp::compile("[a-z]+", "g").as_ok.matcher;
+let (first, matcher) = matcher.match_all("abc def");
+let (second, matcher) = matcher.match_all("ghi jkl");
+assert_eq(|_|"", first, [["abc"], ["def"]]);;
+assert_eq(|_|"", second, [["ghi"], ["jkl"]])
 </code></pre></div></p>
 <h4 id="replace_all_1">replace_all</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; RegExp::RegExp -&gt; Std::String</code></p>
@@ -8066,9 +8066,9 @@ assert_eq(|_|&quot;&quot;, second, [[&quot;ghi&quot;], [&quot;jkl&quot;]])
   has that group; otherwise the first digit is, and the second stands for itself.
 - <code>$0</code>, the number of a group the pattern lacks, and every other text stand for themselves.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile(&quot;(\\w\\w)(\\w)&quot;, &quot;&quot;).as_ok;
-let result = regexp.replace_all(&quot;abc def ijk&quot;, &quot;$2$1&quot;);
-assert_eq(|_|&quot;&quot;, result, &quot;cab fde kij&quot;)
+<div class="highlight"><pre><span></span><code>let regexp = RegExp::compile("(\\w\\w)(\\w)", "").as_ok;
+let result = regexp.replace_all("abc def ijk", "$2$1");
+assert_eq(|_|"", result, "cab fde kij")
 </code></pre></div></p>
 <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll">String.replaceAll()</a>
 of JavaScript.</p>
@@ -8135,10 +8135,10 @@ of JavaScript.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

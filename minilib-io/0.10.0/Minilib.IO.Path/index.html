@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1847,7 +1847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1875,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6864,7 +6864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7458,7 +7458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -7660,28 +7660,28 @@
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p><code>basename(path)</code> returns the last non-slash component. The trailing slashes are removed.
 Example:
-<div class="highlight"><pre><span></span><code>basename(&quot;foo/bar/&quot;)
-==&gt; &quot;bar&quot;
-basename(&quot;foo/bar/baz&quot;)
-==&gt; &quot;baz&quot;
-basename(&quot;foo&quot;)
-==&gt; &quot;foo&quot;
-basename(&quot;/you/can/specify/absolute/path&quot;)
-==&gt; &quot;path&quot;
+<div class="highlight"><pre><span></span><code>basename("foo/bar/")
+==&gt; "bar"
+basename("foo/bar/baz")
+==&gt; "baz"
+basename("foo")
+==&gt; "foo"
+basename("/you/can/specify/absolute/path")
+==&gt; "path"
 </code></pre></div></p>
 <h4 id="dirname">dirname</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p><code>dirname(path)</code> returns the path with its last non-slash component and trailing slashes removed.
 if <code>path</code> contains no <code>/</code>s, returns <code>"."</code>.
 Example:
-<div class="highlight"><pre><span></span><code>dirname(&quot;foo/bar/&quot;)
-==&gt; &quot;foo&quot;
-dirname(&quot;foo/bar/baz&quot;)
-==&gt; &quot;foo/bar&quot;
-dirname(&quot;foo&quot;)
-==&gt; &quot;.&quot;
-dirname(&quot;/you/can/specify/absolute/path&quot;)
-==&gt; &quot;/you/can/specify/absolute&quot;
+<div class="highlight"><pre><span></span><code>dirname("foo/bar/")
+==&gt; "foo"
+dirname("foo/bar/baz")
+==&gt; "foo/bar"
+dirname("foo")
+==&gt; "."
+dirname("/you/can/specify/absolute/path")
+==&gt; "/you/can/specify/absolute"
 </code></pre></div></p>
 <h4 id="is_path_sep">is_path_sep</h4>
 <p>Type: <code>Std::U8 -&gt; Std::Bool</code></p>
@@ -7690,10 +7690,10 @@ dirname(&quot;/you/can/specify/absolute/path&quot;)
 <p>Type: <code>Std::Array Std::String -&gt; Std::String</code></p>
 <p><code>join_paths(path_segments)</code> joins segments into a path.
 Example:
-<div class="highlight"><pre><span></span><code>join_paths([&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;])
-==&gt; &quot;foo/bar/baz&quot;
-join_paths([&quot;/usr/&quot;, &quot;local&quot;, &quot;bin/fix&quot;])
-==&gt; &quot;/usr/local/bin/fix&quot;
+<div class="highlight"><pre><span></span><code>join_paths(["foo", "bar", "baz"])
+==&gt; "foo/bar/baz"
+join_paths(["/usr/", "local", "bin/fix"])
+==&gt; "/usr/local/bin/fix"
 </code></pre></div></p>
 <h4 id="relativize">relativize</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String</code></p>
@@ -7701,12 +7701,12 @@ join_paths([&quot;/usr/&quot;, &quot;local&quot;, &quot;bin/fix&quot;])
 <code>base</code> and <code>target</code> should have the same type (i.e. relative path or absolute path).
 If only one of <code>base</code> and <code>target</code> is an absolute path, "different type of path" error is returned.
 If <code>base</code> == <code>target</code>, then an empty string is returned.
-<div class="highlight"><pre><span></span><code>&quot;/usr/&quot;.relativize(&quot;/usr/bin/ls&quot;)
-==&gt; &quot;bin/ls&quot;
-&quot;/usr/local&quot;.relativize(&quot;/usr/bin/ls&quot;)
-==&gt; &quot;../bin/ls&quot;
-&quot;foo/bar/baz&quot;.relativize(&quot;abc/def&quot;)
-==&gt; &quot;../../../abc/def&quot;
+<div class="highlight"><pre><span></span><code>"/usr/".relativize("/usr/bin/ls")
+==&gt; "bin/ls"
+"/usr/local".relativize("/usr/bin/ls")
+==&gt; "../bin/ls"
+"foo/bar/baz".relativize("abc/def")
+==&gt; "../../../abc/def"
 </code></pre></div></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
@@ -7760,10 +7760,10 @@ If <code>base</code> == <code>target</code>, then an empty string is returned.
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

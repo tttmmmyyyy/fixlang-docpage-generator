@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -7769,15 +7769,15 @@
 <p>Converts a byte (a character) to a string of length 1.</p>
 <p>Example:
 <div class="highlight"><pre><span></span><code>0x41_U8.byte_to_string
-==&gt; &quot;A&quot;
+==&gt; "A"
 </code></pre></div></p>
 <h4 id="ends_with">ends_with</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Bool</code></p>
 <p>Checks if a string ends with the specified suffix.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;/foo/bar.txt&quot;.ends_with(&quot;.txt&quot;)
+<div class="highlight"><pre><span></span><code>"/foo/bar.txt".ends_with(".txt")
 ==&gt; true
-&quot;foo/bar.txt&quot;.ends_with(&quot;.bin&quot;)
+"foo/bar.txt".ends_with(".bin")
 ==&gt; false
 </code></pre></div></p>
 <h4 id="find_byte">find_byte</h4>
@@ -7785,9 +7785,9 @@
 <p>Searches for the specified byte from the beginning of a string.
 If found, returns the index of that byte.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;aaa/bbb/ccc&quot;.find_byte(&#39;/&#39;)
+<div class="highlight"><pre><span></span><code>"aaa/bbb/ccc".find_byte('/')
 ==&gt; some(3)
-&quot;aaa&quot;.find_byte(&#39;/&#39;)
+"aaa".find_byte('/')
 ==&gt; none()
 </code></pre></div></p>
 <h4 id="find_last_byte">find_last_byte</h4>
@@ -7795,9 +7795,9 @@ If found, returns the index of that byte.</p>
 <p>Searches for the specified byte from the end of a string.
 If found, returns the index of that byte.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;aaa/bbb/ccc&quot;.find_last_byte(&#39;/&#39;)
+<div class="highlight"><pre><span></span><code>"aaa/bbb/ccc".find_last_byte('/')
 ==&gt; some(7)
-&quot;aaa&quot;.find_last_byte(&#39;/&#39;)
+"aaa".find_last_byte('/')
 ==&gt; none()
 </code></pre></div></p>
 <h4 id="formatv">formatv</h4>
@@ -7806,50 +7806,50 @@ If found, returns the index of that byte.</p>
 with each element of <code>array</code>.
 Currently only supports <code>{}</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;].formatv(&quot;foo={} bar={} baz={}&quot;)
-==&gt; &quot;foo=1 bar=2 baz=3&quot;
-[&quot;1&quot;].formatv(&quot;foo={} bar={} baz={}&quot;)
-==&gt; &quot;foo=1 bar={} baz={}&quot;
+<div class="highlight"><pre><span></span><code>["1", "2", "3"].formatv("foo={} bar={} baz={}")
+==&gt; "foo=1 bar=2 baz=3"
+["1"].formatv("foo={} bar={} baz={}")
+==&gt; "foo=1 bar={} baz={}"
 </code></pre></div></p>
 <h4 id="replace_all">replace_all</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::String -&gt; Std::String</code></p>
 <p><code>input.replace_all(from, to)</code> replaces all occurrences of <code>from</code> in the input string with <code>to</code>.
 If <code>from</code> is empty, returns the input string unchanged.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;foo1:11,foo2:22,Foo3:33&quot;.replace_all(&quot;foo&quot;, &quot;piyo&quot;)
-==&gt; &quot;piyo1:11,piyo2:22,Foo3:33&quot;
-&quot;foo1:11,foo2:22,Foo3:33&quot;.replace_all(&quot;foo&quot;, &quot;&quot;)
-==&gt; &quot;1:11,2:22,Foo3:33&quot;
-&quot;foo1:11,foo2:22,Foo3:33&quot;.replace_all(&quot;&quot;, &quot;piyo&quot;)
-==&gt; &quot;foo1:11,foo2:22,Foo3:33&quot;
+<div class="highlight"><pre><span></span><code>"foo1:11,foo2:22,Foo3:33".replace_all("foo", "piyo")
+==&gt; "piyo1:11,piyo2:22,Foo3:33"
+"foo1:11,foo2:22,Foo3:33".replace_all("foo", "")
+==&gt; "1:11,2:22,Foo3:33"
+"foo1:11,foo2:22,Foo3:33".replace_all("", "piyo")
+==&gt; "foo1:11,foo2:22,Foo3:33"
 </code></pre></div></p>
 <h4 id="replace_suffix">replace_suffix</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::String -&gt; Std::Result Std::ErrMsg Std::String</code></p>
 <p><code>str.replace_suffix(from, to)</code> replaces <code>from</code> at the end of <code>str</code> with <code>to</code>.
 if <code>str</code> does not end with <code>from</code>, an error occurs.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;test.txt&quot;.replace_suffix(&quot;.txt&quot;, &quot;.tmp&quot;)
- ==&gt; ok(&quot;test.tmp&quot;)
-&quot;test.jpg&quot;.replace_suffix(&quot;.txt&quot;, &quot;.tmp&quot;)
- ==&gt; err(&quot;suffix does not match: test.jpg&quot;)
+<div class="highlight"><pre><span></span><code>"test.txt".replace_suffix(".txt", ".tmp")
+ ==&gt; ok("test.tmp")
+"test.jpg".replace_suffix(".txt", ".tmp")
+ ==&gt; err("suffix does not match: test.jpg")
 </code></pre></div></p>
 <h4 id="split_by">split_by</h4>
 <p>Type: <code>(Std::U8 -&gt; Std::Bool) -&gt; Std::String -&gt; Std::Iterator::DynIterator Std::String</code></p>
 <p>Splits a string by a function that checks whether a character is a delimiter or not.
 The result will not contain any empty string.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;  aa bb  12 &quot;.split_by(Character::is_space).to_array
-==&gt;  [&quot;aa&quot;, &quot;bb&quot;, &quot;12&quot;]
+<div class="highlight"><pre><span></span><code>"  aa bb  12 ".split_by(Character::is_space).to_array
+==&gt;  ["aa", "bb", "12"]
 </code></pre></div></p>
 <h4 id="split_ex">split_ex</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Iterator::DynIterator Std::String</code></p>
 <p>Deprecated: Please use <code>Std::String::split</code>.</p>
 <p>Same as Std::String::split, except that <code>"foo".split_ex(",")</code> returns a singleton iterator of "foo".</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;foo,bar,baz&quot;.split_ex(&quot;,&quot;).to_array
-==&gt; [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;]
-&quot;foo&quot;.split_ex(&quot;,&quot;).to_array
-==&gt; [&quot;foo&quot;]
+<div class="highlight"><pre><span></span><code>"foo,bar,baz".split_ex(",").to_array
+==&gt; ["foo", "bar", "baz"]
+"foo".split_ex(",").to_array
+==&gt; ["foo"]
 </code></pre></div></p>
 <h4 id="split_first">split_first</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; (Std::String, Std::String)</code></p>
@@ -7858,20 +7858,20 @@ Returns <code>(left, right)</code> where <code>left</code> is the left part of t
 <code>right</code> is the right part of the delimiter.
 Returns <code>(str, "")</code> if the delimiter is not found.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;aaa/bbb/ccc&quot;.split_first(&quot;/&quot;)
-==&gt; (&quot;aaa&quot;, &quot;bbb/ccc&quot;)
-&quot;aaa/bbb/ccc&quot;.split_first(&quot;bb&quot;)
-==&gt; (&quot;aaa/&quot;, &quot;b/ccc&quot;)
-&quot;aaa/bbb/ccc&quot;.split_first(&quot;!&quot;)
-==&gt; (&quot;aaa/bbb/ccc&quot;, &quot;&quot;)
+<div class="highlight"><pre><span></span><code>"aaa/bbb/ccc".split_first("/")
+==&gt; ("aaa", "bbb/ccc")
+"aaa/bbb/ccc".split_first("bb")
+==&gt; ("aaa/", "b/ccc")
+"aaa/bbb/ccc".split_first("!")
+==&gt; ("aaa/bbb/ccc", "")
 </code></pre></div></p>
 <h4 id="starts_with">starts_with</h4>
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::Bool</code></p>
 <p>Checks if a string starts with the specified prefix.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;/foo/bar.txt&quot;.starts_with(&quot;/&quot;)
+<div class="highlight"><pre><span></span><code>"/foo/bar.txt".starts_with("/")
 ==&gt; true
-&quot;foo/bar.txt&quot;.starts_with(&quot;/&quot;)
+"foo/bar.txt".starts_with("/")
 ==&gt; false
 </code></pre></div></p>
 <h4 id="subarray">subarray</h4>
@@ -7893,26 +7893,26 @@ If the specified range exceeds the array, it will be truncated to fit within the
 <p>Returns a substring extracted from a specified range from a string.
 If the specified range exceeds the string, it will be truncated to fit within the string.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;abcdef&quot;.substring(2, 3)
-==&gt; &quot;cde&quot;
-&quot;abcdef&quot;.substring(0, 6)
-==&gt; &quot;abcdef&quot;
-&quot;abcdef&quot;.substring(-1, 7)
-==&gt; &quot;abcdef&quot;
+<div class="highlight"><pre><span></span><code>"abcdef".substring(2, 3)
+==&gt; "cde"
+"abcdef".substring(0, 6)
+==&gt; "abcdef"
+"abcdef".substring(-1, 7)
+==&gt; "abcdef"
 </code></pre></div></p>
 <h4 id="to_lower">to_lower</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p>Converts the specified string to lowercase.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;ABCdef123&quot;.to_lower
-==&gt; &quot;abcdef123&quot;
+<div class="highlight"><pre><span></span><code>"ABCdef123".to_lower
+==&gt; "abcdef123"
 </code></pre></div></p>
 <h4 id="to_upper">to_upper</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
 <p>Converts the specified string to uppercase.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>&quot;ABCdef123&quot;.to_upper
-==&gt; &quot;ABCDEF123&quot;
+<div class="highlight"><pre><span></span><code>"ABCdef123".to_upper
+==&gt; "ABCDEF123"
 </code></pre></div></p>
 <h3 id="namespace-minilibtextstringexarray">namespace Minilib.Text.StringEx::Array</h3>
 <h4 id="format">format</h4>
@@ -7921,10 +7921,10 @@ If the specified range exceeds the string, it will be truncated to fit within th
 with each element of <code>array</code>.
 Currently only supports <code>{}</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>[some(1), some(2), none()].format(&quot;foo={} bar={} baz={}&quot;)
-==&gt; &quot;foo=some(1) bar=some(2) baz=none()&quot;
-[some(1)].format(&quot;foo={} bar={} baz={}&quot;)
-==&gt; &quot;foo=some(1) bar={} baz={}&quot;
+<div class="highlight"><pre><span></span><code>[some(1), some(2), none()].format("foo={} bar={} baz={}")
+==&gt; "foo=some(1) bar=some(2) baz=none()"
+[some(1)].format("foo={} bar={} baz={}")
+==&gt; "foo=some(1) bar={} baz={}"
 </code></pre></div></p>
 <h3 id="namespace-minilibtextstringextuple1">namespace Minilib.Text.StringEx::Tuple1</h3>
 <h4 id="format_1">format</h4>
@@ -7932,10 +7932,10 @@ Currently only supports <code>{}</code>.</p>
 <p><code>(a, ).format(str)</code> replaces an occurence of <code>{}</code> in the format string <code>str</code>
 with <code>a</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>(12.345, ).format(&quot;float={}&quot;)
-==&gt; &quot;float=12.345000&quot;
-([1, 2, 3], ).format(&quot;arr={}&quot;)
-==&gt; &quot;arr=[1, 2, 3]&quot;
+<div class="highlight"><pre><span></span><code>(12.345, ).format("float={}")
+==&gt; "float=12.345000"
+([1, 2, 3], ).format("arr={}")
+==&gt; "arr=[1, 2, 3]"
 </code></pre></div></p>
 <h3 id="namespace-minilibtextstringextuple2">namespace Minilib.Text.StringEx::Tuple2</h3>
 <h4 id="format_2">format</h4>
@@ -7943,8 +7943,8 @@ with <code>a</code>.</p>
 <p><code>(a, b).format(str)</code> replaces each occurence of <code>{}</code> in the format string <code>str</code>
 with <code>a</code>, <code>b</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>(12, &quot;abc&quot;).format(&quot;int={} str={}&quot;)
-==&gt; &quot;int=12 str=abc&quot;
+<div class="highlight"><pre><span></span><code>(12, "abc").format("int={} str={}")
+==&gt; "int=12 str=abc"
 </code></pre></div></p>
 <h3 id="namespace-minilibtextstringextuple3">namespace Minilib.Text.StringEx::Tuple3</h3>
 <h4 id="format_3">format</h4>
@@ -7952,8 +7952,8 @@ with <code>a</code>, <code>b</code>.</p>
 <p><code>(a, b, c).format(str)</code> replaces each occurence of <code>{}</code> in the format string <code>str</code>
 with <code>a</code>, <code>b</code>, <code>c</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>(12, 345.678, &quot;abc&quot;).format(&quot;int={} float={} str={}&quot;)
-==&gt; &quot;int=12 float=345.678000 str=abc&quot;
+<div class="highlight"><pre><span></span><code>(12, 345.678, "abc").format("int={} float={} str={}")
+==&gt; "int=12 float=345.678000 str=abc"
 </code></pre></div></p>
 <h3 id="namespace-minilibtextstringextuple4">namespace Minilib.Text.StringEx::Tuple4</h3>
 <h4 id="format_4">format</h4>
@@ -7961,8 +7961,8 @@ with <code>a</code>, <code>b</code>, <code>c</code>.</p>
 <p><code>(a, b, c, d).format(str)</code> replaces each occurence of <code>{}</code> in the format string <code>str</code>
 with <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>(12, 345.678, &quot;abc&quot;, some(1)).format(&quot;int={} float={} str={} option={}&quot;)
-==&gt; &quot;int=12 float=345.678000 str=abc option=some(1)&quot;
+<div class="highlight"><pre><span></span><code>(12, 345.678, "abc", some(1)).format("int={} float={} str={} option={}")
+==&gt; "int=12 float=345.678000 str=abc option=some(1)"
 </code></pre></div></p>
 <h3 id="namespace-minilibtextstringextuple5">namespace Minilib.Text.StringEx::Tuple5</h3>
 <h4 id="format_5">format</h4>
@@ -7970,8 +7970,8 @@ with <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>.</p>
 <p><code>(a, b, c, d, e).format(str)</code> replaces each occurence of <code>{}</code> in the format string <code>str</code>
 with <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code>.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>(12, 345.678, &quot;abc&quot;, some(1), [1, 2, 3]).format(&quot;int={} float={} str={} option={} array={}&quot;)
-==&gt; &quot;int=12 float=345.678000 str=abc option=some(1) array=[1, 2, 3]&quot;
+<div class="highlight"><pre><span></span><code>(12, 345.678, "abc", some(1), [1, 2, 3]).format("int={} float={} str={} option={} array={}")
+==&gt; "int=12 float=345.678000 str=abc option=some(1) array=[1, 2, 3]"
 </code></pre></div></p>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
@@ -8028,10 +8028,10 @@ with <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</co
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

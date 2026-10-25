@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -2297,7 +2297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -2325,7 +2325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -7143,7 +7143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7737,7 +7737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -8215,11 +8215,11 @@
 <p>文字列を受ける関数は、文字列をバイトの列として扱います。各関数には、任意の要素型の配列を受ける関数（名前の末尾が<code>_any</code>）があります。</p>
 <p><code>s[i..j)</code>は<code>s</code>の<code>i</code>番目から<code>j - 1</code>番目までの部分列を表し、<code>j</code>を省いた<code>s[i..)</code>は<code>i</code>番目以降からなる接尾辞を表します。</p>
 <h2 id="examples">Examples</h2>
-<div class="highlight"><pre><span></span><code>let s = &quot;abab&quot;;
-let sa = calc_suffix_array(s); // 接尾辞を辞書順に並べると &quot;ab&quot;, &quot;abab&quot;, &quot;b&quot;, &quot;bab&quot;
-assert_eq(|_|&quot;&quot;, sa, [2, 0, 3, 1]);;
-assert_eq(|_|&quot;&quot;, calc_lcp_array(sa, s), [2, 0, 1]);;
-assert_eq(|_|&quot;&quot;, calc_z_array(s), [4, 0, 2, 0])
+<div class="highlight"><pre><span></span><code>let s = "abab";
+let sa = calc_suffix_array(s); // 接尾辞を辞書順に並べると "ab", "abab", "b", "bab"
+assert_eq(|_|"", sa, [2, 0, 3, 1]);;
+assert_eq(|_|"", calc_lcp_array(sa, s), [2, 0, 1]);;
+assert_eq(|_|"", calc_z_array(s), [4, 0, 2, 0])
 </code></pre></div>
 <h2 id="values">Values</h2>
 <h3 id="namespace-cplibstring">namespace CPLib.String</h3>
@@ -8236,10 +8236,10 @@ assert_eq(|_|&quot;&quot;, calc_z_array(s), [4, 0, 2, 0])
 <li><code>s</code> : 対象の文字列</li>
 </ul>
 <h5 id="examples_1">Examples</h5>
-<div class="highlight"><pre><span></span><code>let s = &quot;abab&quot;;
-let sa = calc_suffix_array(s); // 接尾辞を辞書順に並べると &quot;ab&quot;, &quot;abab&quot;, &quot;b&quot;, &quot;bab&quot;
-assert_eq(|_|&quot;&quot;, sa, [2, 0, 3, 1]);;
-assert_eq(|_|&quot;&quot;, calc_lcp_array(sa, s), [2, 0, 1])
+<div class="highlight"><pre><span></span><code>let s = "abab";
+let sa = calc_suffix_array(s); // 接尾辞を辞書順に並べると "ab", "abab", "b", "bab"
+assert_eq(|_|"", sa, [2, 0, 3, 1]);;
+assert_eq(|_|"", calc_lcp_array(sa, s), [2, 0, 1])
 </code></pre></div>
 <h4 id="calc_lcp_array_any">calc_lcp_array_any</h4>
 <p>Type: <code>[a : Std::Eq] Std::Array Std::I64 -&gt; Std::Array a -&gt; Std::Array Std::I64</code></p>
@@ -8278,8 +8278,8 @@ assert_eq(|_|&quot;&quot;, calc_lcp_array(sa, s), [2, 0, 1])
 <li><code>s</code> : 対象の配列</li>
 </ul>
 <h5 id="examples_2">Examples</h5>
-<div class="highlight"><pre><span></span><code>// 接尾辞を辞書順に並べると &quot;ab&quot;, &quot;abab&quot;, &quot;b&quot;, &quot;bab&quot;
-assert_eq(|_|&quot;&quot;, calc_suffix_array_any([&quot;a&quot;, &quot;b&quot;, &quot;a&quot;, &quot;b&quot;]), [2, 0, 3, 1])
+<div class="highlight"><pre><span></span><code>// 接尾辞を辞書順に並べると "ab", "abab", "b", "bab"
+assert_eq(|_|"", calc_suffix_array_any(["a", "b", "a", "b"]), [2, 0, 3, 1])
 </code></pre></div>
 <h4 id="calc_suffix_array_i64">calc_suffix_array_i64</h4>
 <p>Type: <code>Std::Array Std::I64 -&gt; Std::Array Std::I64</code></p>
@@ -8376,10 +8376,10 @@ assert_eq(|_|&quot;&quot;, calc_suffix_array_any([&quot;a&quot;, &quot;b&quot;, 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -22888,7 +22888,7 @@ main : IO ();
 main = (
     loop_m(0, |i| (
         if i == 3 { break_m $ () };
-        println(&quot;Hello World! (&quot; + i.to_string + &quot;)&quot;);;
+        println("Hello World! (" + i.to_string + ")");;
         continue_m $ i + 1
     ))
 );
@@ -22912,13 +22912,13 @@ main = (
 Since <code>undefined(msg)</code> has generic type <code>a</code>, you can put it anywhere and it will be type-checked.</p>
 <p>This is useful when you want to write a placeholder that will be implemented later:</p>
 <div class="highlight"><pre><span></span><code>truth : I64;
-truth = undefined(&quot;I will implement the truth later.&quot;);
+truth = undefined("I will implement the truth later.");
 </code></pre></div>
 <p>Another use case is aborting the program when a certain branch of the code should not be reached:</p>
 <div class="highlight"><pre><span></span><code>if condition {
     // Do something.
 } else {
-    undefined(&quot;This branch should not be reached.&quot;);
+    undefined("This branch should not be reached.");
 }
 </code></pre></div>
 <h5 id="parameters_4">Parameters</h5>
@@ -22939,19 +22939,19 @@ main = (
     let int_val = 42;
     let (unique, _) = int_val.unsafe_is_unique;
     let use = int_val + 1;
-    assert_eq(|_|&quot;fail: int_val is shared&quot;, unique, true);;
+    assert_eq(|_|"fail: int_val is shared", unique, true);;
 
-    // For boxed value, it returns true if the value isn&#39;t used later.
+    // For boxed value, it returns true if the value isn't used later.
     let arr = Array::fill(10, 10);
     let (unique, arr) = arr.unsafe_is_unique;
     let use = arr.@(0); // This `arr` is not the one passed to `is_unique`, but the one returned by `is_unique`.
-    assert_eq(|_|&quot;fail: arr is shared&quot;, unique, true);;
+    assert_eq(|_|"fail: arr is shared", unique, true);;
 
     // Fox boxed value, it returns false if the value will be used later.
     let arr = Array::fill(10, 10);
     let (unique, _) = arr.unsafe_is_unique;
     let use = arr.@(0);
-    assert_eq(|_|&quot;fail: arr is unique&quot;, unique, false);;
+    assert_eq(|_|"fail: arr is unique", unique, false);;
 
     pure()
 );
@@ -23608,7 +23608,7 @@ type VoidType = box struct {};
 
 main: IO ();
 main = (
-    let release = (|_| undefined(&quot;&quot;) : VoidType).get_funptr_release; // Release function of `VoidType`.
+    let release = (|_| undefined("") : VoidType).get_funptr_release; // Release function of `VoidType`.
     pure()
 );
 </code></pre></div>
@@ -24693,7 +24693,7 @@ On the other hand, iteration may be faster by banging.</p>
 <p>Type: <code>[i : Std::Iterator, Std::Iterator::Item i = a] a -&gt; i -&gt; Std::Iterator::IntersperseIterator i a</code></p>
 <p>Intersperse an element between elements of an iterator.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3].from_array.intersperse(0).to_array, [1, 0, 2, 0, 3]);;
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2, 3].from_array.intersperse(0).to_array, [1, 0, 2, 0, 3]);;
 </code></pre></div></p>
 <h5 id="parameters_148">Parameters</h5>
 <ul>
@@ -24780,7 +24780,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <p>Create an iterator that yields the Cartesian product of two iterators.</p>
 <p>NOTE: Since this function is designed so that <code>iter1.product(iter2)</code> yields the Cartesian product, the elements of <code>product(iter2, iter1)</code> are in the opposite order.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, range(1, 4).product([&#39;a&#39;, &#39;b&#39;].from_array).to_array, [(1, &#39;a&#39;), (2, &#39;a&#39;), (3, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;b&#39;), (3, &#39;b&#39;)]);;
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", range(1, 4).product(['a', 'b'].from_array).to_array, [(1, 'a'), (2, 'a'), (3, 'a'), (1, 'b'), (2, 'b'), (3, 'b')]);;
 </code></pre></div></p>
 <h5 id="parameters_157">Parameters</h5>
 <ul>
@@ -25100,8 +25100,8 @@ The uniqueness of the array is ensured in the <code>Array::act</code> function.<
 <p>Type: <code>Std::U8 -&gt; Std::String</code></p>
 <p>Creates a string from a byte.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, String::from_U8(&#39;a&#39;), &quot;a&quot;);;
-assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;);;
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", String::from_U8('a'), "a");;
+assert_eq(|_|"", String::from_U8('\x00'), "");;
 </code></pre></div></p>
 <h5 id="parameters_192">Parameters</h5>
 <ul>
@@ -25187,9 +25187,9 @@ assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;);;
 <p>Type: <code>Std::String -&gt; Std::String -&gt; Std::String::StringSplitIterator</code></p>
 <p><code>str.split(sep)</code> splits <code>str</code> by <code>sep</code> into an iterator.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;Ex. 1&quot;, &quot;ab,c,&quot;.split(&quot;,&quot;).to_array, [&quot;ab&quot;, &quot;c&quot;, &quot;&quot;]);;
-assert_eq(|_|&quot;Ex. 2&quot;, &quot;abc&quot;.split(&quot;,&quot;).to_array, [&quot;abc&quot;]);;
-assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]);; // Special behavior when the separator is empty.
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"Ex. 1", "ab,c,".split(",").to_array, ["ab", "c", ""]);;
+assert_eq(|_|"Ex. 2", "abc".split(",").to_array, ["abc"]);;
+assert_eq(|_|"Ex. 3", "abc".split("").to_array, ["a", "b", "c"]);; // Special behavior when the separator is empty.
 </code></pre></div></p>
 <h5 id="parameters_202">Parameters</h5>
 <ul>
@@ -26532,10 +26532,10 @@ More precisely, an iterator is a type whose data is "the current state" and has 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

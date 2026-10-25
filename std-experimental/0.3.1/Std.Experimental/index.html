@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -9000,9 +9000,9 @@ Anything here may change or be removed in any version. When its design settles, 
 <p><code>String::format</code> fills the placeholders <code>{}</code> of a template with values of any types that
 implement <code>Format</code>. A wrapper such as <code>with_precision</code> or <code>right_aligned_to</code> changes how a value
 is written, and one wrapper can wrap another:</p>
-<div class="highlight"><pre><span></span><code>let name = &quot;pi&quot;.left_aligned_to(4);
+<div class="highlight"><pre><span></span><code>let name = "pi".left_aligned_to(4);
 let value = 3.14159.with_precision(2_U8).right_aligned_to(6);
-assert_eq(|_|&quot;&quot;, &quot;{}|{}&quot;.format((name, value)), &quot;pi  |  3.14&quot;)
+assert_eq(|_|"", "{}|{}".format((name, value)), "pi  |  3.14")
 </code></pre></div>
 <h2 id="values">Values</h2>
 <h3 id="namespace-stdexperimentalarray">namespace Std.Experimental::Array</h3>
@@ -9013,7 +9013,7 @@ copy.</p>
 <p><code>begin</code> and <code>end</code> are clamped to <code>[0, array.@size]</code>, as <code>get_sub</code> clamps them, and an <code>end</code>
 at or before <code>begin</code> gives an empty slice.</p>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3, 4].get_slice(1, 3).to_array, [2, 3])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2, 3, 4].get_slice(1, 3).to_array, [2, 3])
 </code></pre></div>
 <h5 id="parameters">Parameters</h5>
 <ul>
@@ -9032,7 +9032,7 @@ at or before <code>begin</code> gives an empty slice.</p>
 <p>Type: <code>Std::String -&gt; Std::Array a -&gt; Std.Experimental::Format::WithSeparator a</code></p>
 <p>Wraps <code>elements</code> so that <code>format</code> writes them with <code>separator</code> between them.</p>
 <h5 id="examples_1">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format(([1, 2, 3].with_separator(&quot;, &quot;),)), &quot;1, 2, 3&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format(([1, 2, 3].with_separator(", "),)), "1, 2, 3")
 </code></pre></div>
 <h5 id="parameters_2">Parameters</h5>
 <ul>
@@ -9045,7 +9045,7 @@ at or before <code>begin</code> gives an empty slice.</p>
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F32::to_string_precision</code> does.</p>
 <h5 id="examples_2">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((3.14159_F32.with_precision(2_U8),)), &quot;3.14&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((3.14159_F32.with_precision(2_U8),)), "3.14")
 </code></pre></div>
 <h5 id="parameters_3">Parameters</h5>
 <ul>
@@ -9058,7 +9058,7 @@ at or before <code>begin</code> gives an empty slice.</p>
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F64::to_string_precision</code> does.</p>
 <h5 id="examples_3">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((3.14159.with_precision(2_U8),)), &quot;3.14&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((3.14159.with_precision(2_U8),)), "3.14")
 </code></pre></div>
 <h5 id="parameters_4">Parameters</h5>
 <ul>
@@ -9071,7 +9071,7 @@ at or before <code>begin</code> gives an empty slice.</p>
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the right to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_4">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((42.left_aligned_to(5),)), &quot;[42   ]&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "[{}]".format((42.left_aligned_to(5),)), "[42   ]")
 </code></pre></div>
 <h5 id="parameters_5">Parameters</h5>
 <ul>
@@ -9083,7 +9083,7 @@ points. A text that already has <code>width</code> code points or more is writte
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the left to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_5">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((42.right_aligned_to(5),)), &quot;[   42]&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "[{}]".format((42.right_aligned_to(5),)), "[   42]")
 </code></pre></div>
 <h5 id="parameters_6">Parameters</h5>
 <ul>
@@ -9159,7 +9159,7 @@ slice of the same array.</p>
 an empty slice.</p>
 <h5 id="examples_6">Examples</h5>
 <div class="highlight"><pre><span></span><code>let slice = [1, 2, 3, 4, 5].get_slice(1, 5);   // [2, 3, 4, 5]
-assert_eq(|_|&quot;&quot;, slice.get_slice(1, 3).to_array, [3, 4])
+assert_eq(|_|"", slice.get_slice(1, 3).to_array, [3, 4])
 </code></pre></div>
 <h5 id="parameters_14">Parameters</h5>
 <ul>
@@ -9192,9 +9192,9 @@ written as <code>{</code> and <code>}</code>.</p>
 <p>The program aborts if the number of placeholders differs from the number of values, or if the
 template has a <code>{</code> or <code>}</code> that is not part of a placeholder or an escape.</p>
 <h5 id="examples_7">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{} + {} = {}&quot;.format((1, 2.5, &quot;three&quot;)), &quot;1 + 2.5 = three&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;x = {}&quot;.format((42,)), &quot;x = 42&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;{{{}}}&quot;.format((1,)), &quot;{1}&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{} + {} = {}".format((1, 2.5, "three")), "1 + 2.5 = three");;
+assert_eq(|_|"", "x = {}".format((42,)), "x = 42");;
+assert_eq(|_|"", "{{{}}}".format((1,)), "{1}")
 </code></pre></div>
 <h5 id="parameters_17">Parameters</h5>
 <ul>
@@ -9206,7 +9206,7 @@ assert_eq(|_|&quot;&quot;, &quot;{{{}}}&quot;.format((1,)), &quot;{1}&quot;)
 <p>A string holding the bytes of <code>slice</code>, copied. Where <code>slice</code> holds a null byte, the string
 ends before it, since a string holds no null byte.</p>
 <h5 id="examples_8">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, from_slice(&quot;abc,def&quot;.get_slice(4, 7)), &quot;def&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", from_slice("abc,def".get_slice(4, 7)), "def")
 </code></pre></div>
 <h5 id="parameters_18">Parameters</h5>
 <ul>
@@ -9218,7 +9218,7 @@ ends before it, since a string holds no null byte.</p>
 <p><code>begin</code> and <code>end</code> are clamped to <code>[0, str.@size]</code>, and an <code>end</code> at or before <code>begin</code> gives an
 empty slice.</p>
 <h5 id="examples_9">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;abc,def&quot;.get_slice(4, 7).@(0), &#39;d&#39;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "abc,def".get_slice(4, 7).@(0), 'd')
 </code></pre></div>
 <h5 id="parameters_19">Parameters</h5>
 <ul>
@@ -9278,7 +9278,7 @@ written, and the text written so far.</p>
 </code></pre></div>
 <p>Writing each part directly is faster, because it creates no intermediate string:</p>
 <div class="highlight"><pre><span></span><code>impl Point : Format {
-    write_text = |p, out| out.write_text(&quot;(&quot;).write_text(p.@x).write_text(&quot;, &quot;).write_text(p.@y).write_text(&quot;)&quot;);
+    write_text = |p, out| out.write_text("(").write_text(p.@x).write_text(", ").write_text(p.@y).write_text(")");
 }
 </code></pre></div>
 <h5 id="method-write_text">method <code>write_text</code></h5>
@@ -9409,10 +9409,10 @@ that placeholder.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

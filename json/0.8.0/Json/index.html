@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -7684,12 +7684,12 @@
 carry one into the other.</p>
 <p><code>read</code> turns a text into a <code>Json</code>, whose members <code>Object::find</code> looks up by name, and <code>write</code>
 turns a <code>Json</code> built from <code>object</code>, <code>array</code>, <code>number</code> and the other variants back into text.</p>
-<div class="highlight"><pre><span></span><code>let document = read(&quot;{\&quot;name\&quot;:\&quot;a point\&quot;,\&quot;at\&quot;:[1.5,-2.25]}&quot;).as_ok;
-let at = document.as_object.find(&quot;at&quot;).as_some.as_array;
-assert_eq(|_|&quot;&quot;, at.@(1).as_number, -2.25);;
+<div class="highlight"><pre><span></span><code>let document = read("{\"name\":\"a point\",\"at\":[1.5,-2.25]}").as_ok;
+let at = document.as_object.find("at").as_some.as_array;
+assert_eq(|_|"", at.@(1).as_number, -2.25);;
 
-let point = object([(&quot;x&quot;, number(1.5)), (&quot;y&quot;, number(-2.25))]);
-assert_eq(|_|&quot;&quot;, write(point), &quot;{\&quot;x\&quot;:1.5,\&quot;y\&quot;:-2.25}&quot;)
+let point = object([("x", number(1.5)), ("y", number(-2.25))]);
+assert_eq(|_|"", write(point), "{\"x\":1.5,\"y\":-2.25}")
 </code></pre></div>
 <h2 id="values">Values</h2>
 <h3 id="namespace-json">namespace Json</h3>
@@ -7721,9 +7721,9 @@ itself, so reading the text answers with the tree that was written.</p>
 <li><code>members</code> - The members of an object.</li>
 </ul>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>let members = read(&quot;{\&quot;x\&quot;:1.5,\&quot;y\&quot;:2.5}&quot;).as_ok.as_object;
-assert_eq(|_|&quot;&quot;, members.find(&quot;x&quot;), some(number(1.5)));;
-assert(|_|&quot;&quot;, members.find(&quot;z&quot;).is_none)
+<div class="highlight"><pre><span></span><code>let members = read("{\"x\":1.5,\"y\":2.5}").as_ok.as_object;
+assert_eq(|_|"", members.find("x"), some(number(1.5)));;
+assert(|_|"", members.find("z").is_none)
 </code></pre></div>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h3 id="namespace-json_1">namespace Json</h3>
@@ -7809,10 +7809,10 @@ members in another order gives another value.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

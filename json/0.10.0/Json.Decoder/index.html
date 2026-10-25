@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1847,7 +1847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1875,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -7517,7 +7517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -8111,7 +8111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -8968,12 +8968,12 @@ read_x : Decoder F64;
 read_x = (
     enter_object;;
     let span = *read_member;
-    let is_x = *is_named(span, &quot;x&quot;);
-    if !is_x { fail_expecting(&quot;the member x&quot;) };
+    let is_x = *is_named(span, "x");
+    if !is_x { fail_expecting("the member x") };
     read_number
 );
 
-assert_eq(|_|&quot;&quot;, read_x.decode(&quot;{\&quot;x\&quot;: 1.5}&quot;), ok(1.5))
+assert_eq(|_|"", read_x.decode("{\"x\": 1.5}"), ok(1.5))
 </code></pre></div>
 <p>A string comes back as a <code>Span</code>, where its bytes stand in the document, and those bytes are the
 ones the document holds: an escape such as <code>\n</code> or <code>\u0041</code> stands there as the escape.
@@ -9012,8 +9012,8 @@ among.</p>
 <li><code>decoder</code> - The reading to run.</li>
 </ul>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, read_number.decode(&quot;1.5&quot;), ok(1.5));;
-assert(|_|&quot;&quot;, read_number.decode(&quot;x&quot;).is_err)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", read_number.decode("1.5"), ok(1.5));;
+assert(|_|"", read_number.decode("x").is_err)
 </code></pre></div>
 <h4 id="enter_array">enter_array</h4>
 <p>Type: <code>Json.Decoder::Decoder ()</code></p>
@@ -9072,8 +9072,8 @@ state it answers with to the next one.</p>
 <div class="highlight"><pre><span></span><code>read_numbers : Decoder (Array F64);
 read_numbers = read_array([], |values| let v = *read_number; pure $ values.push_back(v));
 
-assert_eq(|_|&quot;&quot;, read_numbers.decode(&quot;[1.0, 2.0, 3.0]&quot;), ok([1.0, 2.0, 3.0]));;
-assert_eq(|_|&quot;&quot;, read_numbers.decode(&quot;[]&quot;), ok([]))
+assert_eq(|_|"", read_numbers.decode("[1.0, 2.0, 3.0]"), ok([1.0, 2.0, 3.0]));;
+assert_eq(|_|"", read_numbers.decode("[]"), ok([]))
 </code></pre></div>
 <h4 id="read_bool">read_bool</h4>
 <p>Type: <code>Json.Decoder::Decoder Std::Bool</code></p>
@@ -9104,14 +9104,14 @@ alone.</p>
 
 read_point : Decoder Point;
 read_point = read_object(Point { x : 0.0, y : 0.0 }, |name, point|
-    if *is_named(name, &quot;x&quot;) { let v = *read_number; pure $ point.set_x(v) };
-    if *is_named(name, &quot;y&quot;) { let v = *read_number; pure $ point.set_y(v) };
+    if *is_named(name, "x") { let v = *read_number; pure $ point.set_x(v) };
+    if *is_named(name, "y") { let v = *read_number; pure $ point.set_y(v) };
     pure $ point
 );
 
 // The members come in any order, and `z` is passed over.
-let point = read_point.decode(&quot;{ \&quot;y\&quot; : 2.0, \&quot;z\&quot; : 9.0, \&quot;x\&quot; : 1.0 }&quot;).as_ok;
-assert_eq(|_|&quot;&quot;, (point.@x, point.@y), (1.0, 2.0))
+let point = read_point.decode("{ \"y\" : 2.0, \"z\" : 9.0, \"x\" : 1.0 }").as_ok;
+assert_eq(|_|"", (point.@x, point.@y), (1.0, 2.0))
 </code></pre></div>
 <h4 id="read_separator">read_separator</h4>
 <p>Type: <code>Std::U8 -&gt; Json.Decoder::Decoder Std::Bool</code></p>
@@ -9137,10 +9137,10 @@ read_string_text = (let span = *read_text_span; read_text(span));
 read_name : Decoder String;
 read_name = (enter_object;; let name = *read_member; read_text(name));
 
-assert_eq(|_|&quot;&quot;, read_string_text.decode(&quot;\&quot;a b\&quot;&quot;), ok(&quot;a b&quot;));;
+assert_eq(|_|"", read_string_text.decode("\"a b\""), ok("a b"));;
 // The escape is resolved here.
-assert_eq(|_|&quot;&quot;, read_string_text.decode(&quot;\&quot;\\u0078\&quot;&quot;), ok(&quot;x&quot;));;
-assert_eq(|_|&quot;&quot;, read_name.decode(&quot;{\&quot;x\&quot;:1.5}&quot;), ok(&quot;x&quot;))
+assert_eq(|_|"", read_string_text.decode("\"\\u0078\""), ok("x"));;
+assert_eq(|_|"", read_name.decode("{\"x\":1.5}"), ok("x"))
 </code></pre></div>
 <h4 id="read_text_span">read_text_span</h4>
 <p>Type: <code>Json.Decoder::Decoder Json.Decoder::Span</code></p>
@@ -9253,10 +9253,10 @@ read by asking here first.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

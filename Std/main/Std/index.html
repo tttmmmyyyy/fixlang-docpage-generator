@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -27054,7 +27054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -27082,7 +27082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -31900,7 +31900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -32494,7 +32494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -57724,7 +57724,7 @@
 
 
 <h1 id="std">Std</h1>
-<p>Defined in <a href="https://github.com/tttmmmyyyy/fixlang/tree/main">std-doc@1.6.0</a></p>
+<p>Defined in <a href="https://github.com/tttmmmyyyy/fixlang/tree/main">std-doc@1.6.1</a></p>
 <p>Module <code>Std</code> provides basic types, traits and values.</p>
 <p>This module is special in the sense that:</p>
 <ul>
@@ -57747,8 +57747,8 @@ The document for <code>Std</code> module describes about them up to N=3, but you
 </ul>
 <h5 id="examples">Examples</h5>
 <div class="highlight"><pre><span></span><code>let add_then_double = add(1) &gt;&gt; mul(2);
-assert_eq(|_|&quot;&quot;, add_then_double(3), 8);;
-assert_eq(|_|&quot;&quot;, compose(add(1), mul(2))(3), 8)
+assert_eq(|_|"", add_then_double(3), 8);;
+assert_eq(|_|"", compose(add(1), mul(2))(3), 8)
 </code></pre></div>
 <h4 id="fix">fix</h4>
 <p>Type: <code>((a -&gt; b) -&gt; a -&gt; b) -&gt; a -&gt; b</code></p>
@@ -57780,7 +57780,7 @@ If <code>body</code> returns <code>continue(s)</code>, then the loop calls again
     if i == 100 { break $ sum };
     continue $ (i + 1, sum + i)
 );
-assert_eq(|_|&quot;&quot;, sum, 4950) // 0 + 1 + ... + 99
+assert_eq(|_|"", sum, 4950) // 0 + 1 + ... + 99
 </code></pre></div>
 <h4 id="loop_m">loop_m</h4>
 <p>Type: <code>[m : Std::Monad] s -&gt; (s -&gt; m (Std::LoopState s r)) -&gt; m r</code></p>
@@ -57791,7 +57791,7 @@ assert_eq(|_|&quot;&quot;, sum, 4950) // 0 + 1 + ... + 99
 main = (
     loop_m(0, |i| (
         if i == 3 { break_m $ () };
-        println(&quot;Hello World! (&quot; + i.to_string + &quot;)&quot;);;
+        println("Hello World! (" + i.to_string + ")");;
         continue_m $ i + 1
     ))
 );
@@ -57823,13 +57823,13 @@ main = (
 Since <code>undefined(msg)</code> has generic type <code>a</code>, you can put it anywhere and it will be type-checked.</p>
 <p>This is useful when you want to write a placeholder that will be implemented later:</p>
 <div class="highlight"><pre><span></span><code>truth : I64;
-truth = undefined(&quot;I will implement the truth later.&quot;);
+truth = undefined("I will implement the truth later.");
 </code></pre></div>
 <p>Another use case is aborting the program when a certain branch of the code should not be reached:</p>
 <div class="highlight"><pre><span></span><code>if condition {
     // Do something.
 } else {
-    undefined(&quot;This branch should not be reached.&quot;);
+    undefined("This branch should not be reached.");
 }
 </code></pre></div>
 <p>When the <code>--no-runtime-check</code> option is enabled, the compiler assumes that the program will never reach <code>undefined</code>.
@@ -57848,19 +57848,19 @@ but if the program does reach <code>undefined</code>, it will result in undefine
 
 main : IO ();
 main = (
-    // For a boxed value, it returns true if the value isn&#39;t used later.
+    // For a boxed value, it returns true if the value isn't used later.
     let res = Resource { id : 42 };
     let (unique, res) = res.unsafe_is_unique;
     let use = res.@id; // This `res` is the one returned by `unsafe_is_unique`, not the one passed to it.
     eval use; // `eval` ensures that the computation of `use` is not optimized away
-    assert_eq(|_|&quot;fail: res is shared&quot;, unique, true);;
+    assert_eq(|_|"fail: res is shared", unique, true);;
 
     // For a boxed value, it returns false if the value will be used later.
     let res = Resource { id : 42 };
     let (unique, _) = res.unsafe_is_unique;
     let use = res.@id;
     eval use; // `eval` ensures that the computation of `use` is not optimized away
-    assert_eq(|_|&quot;fail: res is unique&quot;, unique, false);;
+    assert_eq(|_|"fail: res is unique", unique, false);;
 
     pure()
 );
@@ -57943,8 +57943,8 @@ This means that you don't need to pay cloning cost when your action failed, as e
 </ul>
 <h5 id="examples_2">Examples</h5>
 <div class="highlight"><pre><span></span><code>let halve = |x| if x % 2 == 0 { some(x / 2) } else { none() };
-assert_eq(|_|&quot;&quot;, [4, 6, 8].act(1, halve), some([4, 3, 8]));;
-assert_eq(|_|&quot;&quot;, [4, 5, 8].act(1, halve), none()) // the action failed on the element
+assert_eq(|_|"", [4, 6, 8].act(1, halve), some([4, 3, 8]));;
+assert_eq(|_|"", [4, 5, 8].act(1, halve), none()) // the action failed on the element
 </code></pre></div>
 <h4 id="append">append</h4>
 <p>Type: <code>Std::Array a -&gt; Std::Array a -&gt; Std::Array a</code></p>
@@ -57956,7 +57956,7 @@ assert_eq(|_|&quot;&quot;, [4, 5, 8].act(1, halve), none()) // the action failed
 <li><code>first</code> - The array to which <code>second</code> is appended.</li>
 </ul>
 <h5 id="examples_3">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2].append([3, 4]), [1, 2, 3, 4])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2].append([3, 4]), [1, 2, 3, 4])
 </code></pre></div>
 <h4 id="borrow_elements">borrow_elements</h4>
 <p>Type: <code>(Std::Ptr -&gt; b) -&gt; Std::Array a -&gt; b</code></p>
@@ -57985,8 +57985,8 @@ It is not allowed to mutate the array through the borrowed pointer; to do that, 
 <li><code>arr</code> - The input array.</li>
 </ul>
 <h5 id="examples_4">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1,1,2,2,3].dedup, [1,2,3]);;
-assert_eq(|_|&quot;&quot;, [1,2,1,2].dedup, [1,2,1,2]) // non-consecutive duplicates are kept
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1,1,2,2,3].dedup, [1,2,3]);;
+assert_eq(|_|"", [1,2,1,2].dedup, [1,2,1,2]) // non-consecutive duplicates are kept
 </code></pre></div>
 <h4 id="empty">empty</h4>
 <p>Type: <code>Std::I64 -&gt; Std::Array a</code></p>
@@ -58005,7 +58005,7 @@ assert_eq(|_|&quot;&quot;, [1,2,1,2].dedup, [1,2,1,2]) // non-consecutive duplic
 <li><code>value</code> - The value to fill the array with.</li>
 </ul>
 <h5 id="examples_5">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, fill(3, &#39;a&#39;), [&#39;a&#39;, &#39;a&#39;, &#39;a&#39;])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", fill(3, 'a'), ['a', 'a', 'a'])
 </code></pre></div>
 <h4 id="find_by">find_by</h4>
 <p>Type: <code>(a -&gt; Std::Bool) -&gt; Std::Array a -&gt; Std::Option Std::I64</code></p>
@@ -58166,7 +58166,7 @@ or truncating if the new size is smaller than the current size.</p>
 <li><code>array</code> - The array to be searched.</li>
 </ul>
 <h5 id="examples_6">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 3, 5, 7].search_partition_point(|x| x &lt; 5), 2) // the index of the first element not less than 5
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 3, 5, 7].search_partition_point(|x| x &lt; 5), 2) // the index of the first element not less than 5
 </code></pre></div>
 <h4 id="set">set</h4>
 <p>Type: <code>Std::I64 -&gt; a -&gt; Std::Array a -&gt; Std::Array a</code></p>
@@ -58197,7 +58197,7 @@ or truncating if the new size is smaller than the current size.</p>
 <li><code>arr</code>: An array of elements to be sorted.</li>
 </ul>
 <h5 id="examples_7">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [3, 1, 2].sort_by(|(lhs, rhs)| lhs &gt; rhs), [3, 2, 1]) // descending
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [3, 1, 2].sort_by(|(lhs, rhs)| lhs &gt; rhs), [3, 2, 1]) // descending
 </code></pre></div>
 <h4 id="sort_stable">sort_stable</h4>
 <p>Type: <code>[a : Std::LessThan] Std::Array a -&gt; Std::Array a</code></p>
@@ -58217,9 +58217,9 @@ or truncating if the new size is smaller than the current size.</p>
 <li><code>array</code> - The array to be sorted.</li>
 </ul>
 <h5 id="examples_8">Examples</h5>
-<div class="highlight"><pre><span></span><code>let pairs = [(2, &quot;a&quot;), (1, &quot;b&quot;), (2, &quot;c&quot;), (1, &quot;d&quot;)];
+<div class="highlight"><pre><span></span><code>let pairs = [(2, "a"), (1, "b"), (2, "c"), (1, "d")];
 let sorted = pairs.sort_stable_by(|(lhs, rhs)| lhs.@0 &lt; rhs.@0);
-assert_eq(|_|&quot;&quot;, sorted, [(1, &quot;b&quot;), (1, &quot;d&quot;), (2, &quot;a&quot;), (2, &quot;c&quot;)]) // equal keys keep their order
+assert_eq(|_|"", sorted, [(1, "b"), (1, "d"), (2, "a"), (2, "c")]) // equal keys keep their order
 </code></pre></div>
 <h4 id="swap">swap</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::Array a -&gt; Std::Array a</code></p>
@@ -58561,9 +58561,9 @@ ten. The last digit is rounded to the nearest, a tie to the even one.</p>
 <li><code>v</code> - The number to write.</li>
 </ul>
 <h5 id="examples_9">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 123.456_F32.to_string_exp_precision(2_U8), &quot;1.23e2&quot;);;
-assert_eq(|_|&quot;&quot;, 0.0123_F32.to_string_exp_precision(1_U8), &quot;1.2e-2&quot;);;
-assert_eq(|_|&quot;&quot;, 123.456_F32.to_string_exp_precision(0_U8), &quot;1e2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 123.456_F32.to_string_exp_precision(2_U8), "1.23e2");;
+assert_eq(|_|"", 0.0123_F32.to_string_exp_precision(1_U8), "1.2e-2");;
+assert_eq(|_|"", 123.456_F32.to_string_exp_precision(0_U8), "1e2")
 </code></pre></div>
 <h4 id="to_string_precision">to_string_precision</h4>
 <p>Type: <code>Std::U8 -&gt; Std::F32 -&gt; Std::String</code></p>
@@ -58576,15 +58576,15 @@ rounded to the nearest, a tie to the even one.</p>
 <li><code>v</code> - The number to write.</li>
 </ul>
 <h5 id="examples_10">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 3.14159_F32.to_string_precision(2_U8), &quot;3.14&quot;);;
-assert_eq(|_|&quot;&quot;, 2.5_F32.to_string_precision(0_U8), &quot;2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 3.14159_F32.to_string_precision(2_U8), "3.14");;
+assert_eq(|_|"", 2.5_F32.to_string_precision(0_U8), "2")
 </code></pre></div>
 <h4 id="with_exp_precision">with_exp_precision</h4>
 <p>Type: <code>Std::U8 -&gt; Std::F32 -&gt; Std::Format::WithExpPrecision Std::F32</code></p>
 <p>Wraps <code>v</code> so that <code>format</code> writes it with one digit before the decimal point, <code>precision</code>
 digits after it, and a power of ten, as <code>F32::to_string_exp_precision</code> does.</p>
 <h5 id="examples_11">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((123.456_F32.with_exp_precision(2_U8),)), &quot;1.23e2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((123.456_F32.with_exp_precision(2_U8),)), "1.23e2")
 </code></pre></div>
 <h5 id="parameters_66">Parameters</h5>
 <ul>
@@ -58596,7 +58596,7 @@ digits after it, and a power of ten, as <code>F32::to_string_exp_precision</code
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F32::to_string_precision</code> does.</p>
 <h5 id="examples_12">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((3.14159_F32.with_precision(2_U8),)), &quot;3.14&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((3.14159_F32.with_precision(2_U8),)), "3.14")
 </code></pre></div>
 <h5 id="parameters_67">Parameters</h5>
 <ul>
@@ -58735,9 +58735,9 @@ ten. The last digit is rounded to the nearest, a tie to the even one.</p>
 <li><code>v</code> - The number to write.</li>
 </ul>
 <h5 id="examples_13">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 123.456.to_string_exp_precision(2_U8), &quot;1.23e2&quot;);;
-assert_eq(|_|&quot;&quot;, 0.0123.to_string_exp_precision(1_U8), &quot;1.2e-2&quot;);;
-assert_eq(|_|&quot;&quot;, 123.456.to_string_exp_precision(0_U8), &quot;1e2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 123.456.to_string_exp_precision(2_U8), "1.23e2");;
+assert_eq(|_|"", 0.0123.to_string_exp_precision(1_U8), "1.2e-2");;
+assert_eq(|_|"", 123.456.to_string_exp_precision(0_U8), "1e2")
 </code></pre></div>
 <h4 id="to_string_precision_1">to_string_precision</h4>
 <p>Type: <code>Std::U8 -&gt; Std::F64 -&gt; Std::String</code></p>
@@ -58750,15 +58750,15 @@ rounded to the nearest, a tie to the even one.</p>
 <li><code>v</code> - The number to write.</li>
 </ul>
 <h5 id="examples_14">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 3.14159.to_string_precision(2_U8), &quot;3.14&quot;);;
-assert_eq(|_|&quot;&quot;, 2.5.to_string_precision(0_U8), &quot;2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 3.14159.to_string_precision(2_U8), "3.14");;
+assert_eq(|_|"", 2.5.to_string_precision(0_U8), "2")
 </code></pre></div>
 <h4 id="with_exp_precision_1">with_exp_precision</h4>
 <p>Type: <code>Std::U8 -&gt; Std::F64 -&gt; Std::Format::WithExpPrecision Std::F64</code></p>
 <p>Wraps <code>v</code> so that <code>format</code> writes it with one digit before the decimal point, <code>precision</code>
 digits after it, and a power of ten, as <code>F64::to_string_exp_precision</code> does.</p>
 <h5 id="examples_15">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((123.456.with_exp_precision(2_U8),)), &quot;1.23e2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((123.456.with_exp_precision(2_U8),)), "1.23e2")
 </code></pre></div>
 <h5 id="parameters_72">Parameters</h5>
 <ul>
@@ -58770,7 +58770,7 @@ digits after it, and a power of ten, as <code>F64::to_string_exp_precision</code
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F64::to_string_precision</code> does.</p>
 <h5 id="examples_16">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((3.14159.with_precision(2_U8),)), &quot;3.14&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((3.14159.with_precision(2_U8),)), "3.14")
 </code></pre></div>
 <h5 id="parameters_73">Parameters</h5>
 <ul>
@@ -58847,7 +58847,7 @@ So you can get release function for a boxed type <code>T</code> even when you do
 
 main: IO ();
 main = (
-    let release = (|_| undefined(&quot;&quot;) : VoidType).get_funptr_release; // Release function of `VoidType`.
+    let release = (|_| undefined("") : VoidType).get_funptr_release; // Release function of `VoidType`.
     pure()
 );
 </code></pre></div>
@@ -58938,7 +58938,7 @@ If resource creation is done with <code>FFI_CALL</code>, it will be treated as a
 <h5 id="examples_17">Examples</h5>
 <div class="highlight"><pre><span></span><code>let ptr = *FFI_CALL_IO[Ptr malloc(CSizeT), 8.c_size_t];
 let buffer = *make(ptr, |ptr| FFI_CALL_IO[() free(Ptr), ptr];; pure(nullptr));
-assert(|_|&quot;&quot;, buffer.borrow(|ptr| ptr != nullptr))
+assert(|_|"", buffer.borrow(|ptr| ptr != nullptr))
 </code></pre></div>
 <h4 id="mutate_unique">mutate_unique</h4>
 <p>Type: <code>(a -&gt; Std::IO a) -&gt; (a -&gt; Std::IO b) -&gt; Std::FFI::Destructor a -&gt; (Std::FFI::Destructor a, b)</code></p>
@@ -58971,7 +58971,7 @@ Then, it applies <code>action</code> to the contained resource and returns the r
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the right to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_18">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((42.left_aligned_to(5),)), &quot;[42   ]&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "[{}]".format((42.left_aligned_to(5),)), "[42   ]")
 </code></pre></div>
 <h5 id="parameters_88">Parameters</h5>
 <ul>
@@ -58983,7 +58983,7 @@ points. A text that already has <code>width</code> code points or more is writte
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the left to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_19">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((42.right_aligned_to(5),)), &quot;[   42]&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "[{}]".format((42.right_aligned_to(5),)), "[   42]")
 </code></pre></div>
 <h5 id="parameters_89">Parameters</h5>
 <ul>
@@ -59005,8 +59005,8 @@ points. A text that already has <code>width</code> code points or more is writte
 zeros go after the <code>-</code> that the text starts with, if it starts with one, and before the text
 otherwise. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_20">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}:{}&quot;.format((9.zero_padded_to(2), 5.zero_padded_to(2))), &quot;09:05&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format(((-5).zero_padded_to(3),)), &quot;-05&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}:{}".format((9.zero_padded_to(2), 5.zero_padded_to(2))), "09:05");;
+assert_eq(|_|"", "{}".format(((-5).zero_padded_to(3),)), "-05")
 </code></pre></div>
 <h5 id="parameters_91">Parameters</h5>
 <ul>
@@ -59032,8 +59032,8 @@ assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format(((-5).zero_padded_to(3),)), &qu
 <li><code>str</code> - The string to be converted.</li>
 </ul>
 <h5 id="examples_21">Examples</h5>
-<div class="highlight"><pre><span></span><code>let n : Result ErrMsg I64 = &quot;-42&quot;.from_string;
-assert_eq(|_|&quot;&quot;, n, ok(-42))
+<div class="highlight"><pre><span></span><code>let n : Result ErrMsg I64 = "-42".from_string;
+assert_eq(|_|"", n, ok(-42))
 </code></pre></div>
 <h3 id="namespace-stdfunctor">namespace Std::Functor</h3>
 <h4 id="forget">forget</h4>
@@ -59971,7 +59971,7 @@ same lines as <code>loop_lines</code>, the empty string after a last newline inc
 <p>Formats <code>values</code> into <code>template</code>, as <code>format</code> does, and writes the result to the standard
 output.</p>
 <h5 id="examples_22">Examples</h5>
-<div class="highlight"><pre><span></span><code>main : IO () = &quot;{} + {} = {}\n&quot;.printf((1, 2.5, &quot;three&quot;));
+<div class="highlight"><pre><span></span><code>main : IO () = "{} + {} = {}\n".printf((1, 2.5, "three"));
 </code></pre></div>
 <h5 id="parameters_156">Parameters</h5>
 <ul>
@@ -60096,7 +60096,7 @@ line, call this function until it returns the empty string.</p>
 <p>Formats <code>values</code> into <code>template</code>, as <code>format</code> does, and writes the result to <code>handle</code>.</p>
 <p>Stops at the first write that fails, and returns its error.</p>
 <h5 id="examples_23">Examples</h5>
-<div class="highlight"><pre><span></span><code>main : IO () = write_format(stdout, (1, 2.5), &quot;{} + {}\n&quot;).try(eprintln);
+<div class="highlight"><pre><span></span><code>main : IO () = write_format(stdout, (1, 2.5), "{} + {}\n").try(eprintln);
 </code></pre></div>
 <h5 id="parameters_170">Parameters</h5>
 <ul>
@@ -60196,7 +60196,7 @@ If <code>IO::close</code> is called while using the <code>Ptr</code> obtained by
 <h5 id="examples_24">Examples</h5>
 <div class="highlight"><pre><span></span><code>let arr = [1, 2, 3];
 let arr = arr[1].iact(|x| some(x * 10));
-assert_eq(|_|&quot;&quot;, arr, some([1, 20, 3]))
+assert_eq(|_|"", arr, some([1, 20, 3]))
 </code></pre></div>
 <h5 id="parameters_181">Parameters</h5>
 <ul>
@@ -60209,7 +60209,7 @@ assert_eq(|_|&quot;&quot;, arr, some([1, 20, 3]))
 <p>Stores can be created using index syntax on <code>Indexable</code>s or structs.</p>
 <h5 id="examples_25">Examples</h5>
 <div class="highlight"><pre><span></span><code>let arr = [1, 2, 3];
-assert_eq(|_|&quot;&quot;, arr[1].iget, 2)
+assert_eq(|_|"", arr[1].iget, 2)
 </code></pre></div>
 <h5 id="parameters_182">Parameters</h5>
 <ul>
@@ -60222,7 +60222,7 @@ assert_eq(|_|&quot;&quot;, arr[1].iget, 2)
 <h5 id="examples_26">Examples</h5>
 <div class="highlight"><pre><span></span><code>let arr = [1, 2, 3];
 let arr = arr[1].imod(|x| x * 10);
-assert_eq(|_|&quot;&quot;, arr, [1, 20, 3])
+assert_eq(|_|"", arr, [1, 20, 3])
 </code></pre></div>
 <h5 id="parameters_183">Parameters</h5>
 <ul>
@@ -60236,7 +60236,7 @@ assert_eq(|_|&quot;&quot;, arr, [1, 20, 3])
 <h5 id="examples_27">Examples</h5>
 <div class="highlight"><pre><span></span><code>let arr = [1, 2, 3];
 let arr = arr[1].iset(42);
-assert_eq(|_|&quot;&quot;, arr, [1, 42, 3])
+assert_eq(|_|"", arr, [1, 42, 3])
 </code></pre></div>
 <h5 id="parameters_184">Parameters</h5>
 <ul>
@@ -60250,8 +60250,8 @@ assert_eq(|_|&quot;&quot;, arr, [1, 42, 3])
 <h5 id="examples_28">Examples</h5>
 <div class="highlight"><pre><span></span><code>let arr = [1, 2, 3];
 let (arr, x) = arr[1].ixchg(42);
-assert_eq(|_|&quot;&quot;, x, 2);;
-assert_eq(|_|&quot;&quot;, arr, [1, 42, 3])
+assert_eq(|_|"", x, 2);;
+assert_eq(|_|"", arr, [1, 42, 3])
 </code></pre></div>
 <h5 id="parameters_185">Parameters</h5>
 <ul>
@@ -60278,7 +60278,7 @@ If the iterator has no more elements, it returns <code>none()</code>.</p>
 <li><code>first</code> - The first iterator.</li>
 </ul>
 <h5 id="examples_29">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2].to_iter.append([3, 4].to_iter).to_array, [1, 2, 3, 4])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2].to_iter.append([3, 4].to_iter).to_array, [1, 2, 3, 4])
 </code></pre></div>
 <h4 id="bang">bang</h4>
 <p>Type: <code>[?out : Std::Iterator, input : Std::Iterator, Std::Iterator::Item ?out = a, Std::Iterator::Item input = a] input -&gt; ?out</code></p>
@@ -60313,8 +60313,8 @@ On the other hand, iteration may be faster by banging.</p>
 <li><code>iter</code> - The iterator of monads to be collected.</li>
 </ul>
 <h5 id="examples_30">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [some(1), some(2)].to_iter.collect_m, some([1, 2]));;
-assert_eq(|_|&quot;&quot;, [some(1), none()].to_iter.collect_m, none())
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [some(1), some(2)].to_iter.collect_m, some([1, 2]));;
+assert_eq(|_|"", [some(1), none()].to_iter.collect_m, none())
 </code></pre></div>
 <h4 id="count_up">count_up</h4>
 <p>Type: <code>[?it : Std::Iterator, Std::Iterator::Item ?it = Std::I64] Std::I64 -&gt; ?it</code></p>
@@ -60379,7 +60379,7 @@ assert_eq(|_|&quot;&quot;, [some(1), none()].to_iter.collect_m, none())
 <li><code>iter</code> - The iterator to be folded.</li>
 </ul>
 <h5 id="examples_31">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].to_iter.fold(&quot;&quot;, |x, acc| acc + x), &quot;abc&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", ["a", "b", "c"].to_iter.fold("", |x, acc| acc + x), "abc")
 </code></pre></div>
 <h4 id="fold_m">fold_m</h4>
 <p>Type: <code>[iter : Std::Iterator, m : Std::Monad, Std::Iterator::Item iter = a] s -&gt; (a -&gt; s -&gt; m s) -&gt; iter -&gt; m s</code></p>
@@ -60405,7 +60405,7 @@ assert_eq(|_|&quot;&quot;, [some(1), none()].to_iter.collect_m, none())
 <li><code>map</code> - The function that takes an index and returns the element at that index.</li>
 </ul>
 <h5 id="examples_32">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, Iterator::from_map(|i| i * i).take(4).to_array, [0, 1, 4, 9])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", Iterator::from_map(|i| i * i).take(4).to_array, [0, 1, 4, 9])
 </code></pre></div>
 <h4 id="generate">generate</h4>
 <p>Type: <code>[?it : Std::Iterator, Std::Iterator::Item ?it = a] s -&gt; (s -&gt; Std::Option (s, a)) -&gt; ?it</code></p>
@@ -60418,7 +60418,7 @@ assert_eq(|_|&quot;&quot;, [some(1), none()].to_iter.collect_m, none())
 <h5 id="examples_33">Examples</h5>
 <div class="highlight"><pre><span></span><code>// The powers of 2 up to 100.
 let powers = generate(1, |n| if n &gt; 100 { none() } else { some((n * 2, n)) });
-assert_eq(|_|&quot;&quot;, powers.to_array, [1, 2, 4, 8, 16, 32, 64])
+assert_eq(|_|"", powers.to_array, [1, 2, 4, 8, 16, 32, 64])
 </code></pre></div>
 <h4 id="get_first_1">get_first</h4>
 <p>Type: <code>[iter : Std::Iterator] iter -&gt; Std::Option (Std::Iterator::Item iter)</code></p>
@@ -60455,7 +60455,7 @@ assert_eq(|_|&quot;&quot;, powers.to_array, [1, 2, 4, 8, 16, 32, 64])
 <p>Type: <code>[?out : Std::Iterator, input : Std::Iterator, Std::Iterator::Item ?out = a, Std::Iterator::Item input = a] a -&gt; input -&gt; ?out</code></p>
 <p>Intersperse an element between elements of an iterator.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3].to_iter.intersperse(0).to_array, [1, 0, 2, 0, 3])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2, 3].to_iter.intersperse(0).to_array, [1, 0, 2, 0, 3])
 </code></pre></div></p>
 <h5 id="parameters_207">Parameters</h5>
 <ul>
@@ -60482,7 +60482,7 @@ assert_eq(|_|&quot;&quot;, powers.to_array, [1, 2, 4, 8, 16, 32, 64])
 <p>Wraps <code>elements</code> so that <code>format</code> writes them with <code>separator</code> between them, as <code>String::join</code>
 joins strings.</p>
 <h5 id="examples_34">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format(([1, 2, 3].to_iter.joined_with(&quot;, &quot;),)), &quot;1, 2, 3&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format(([1, 2, 3].to_iter.joined_with(", "),)), "1, 2, 3")
 </code></pre></div>
 <h5 id="parameters_210">Parameters</h5>
 <ul>
@@ -60502,7 +60502,7 @@ joins strings.</p>
 <h5 id="examples_35">Examples</h5>
 <div class="highlight"><pre><span></span><code>// Sum the elements until the sum would exceed 10.
 let sum = range(1, 100).loop_iter(0, |i, acc| if acc + i &gt; 10 { break $ acc } else { continue $ acc + i });
-assert_eq(|_|&quot;&quot;, sum, 10)
+assert_eq(|_|"", sum, 10)
 </code></pre></div>
 <h4 id="loop_iter_m">loop_iter_m</h4>
 <p>Type: <code>[iter : Std::Iterator, m : Std::Monad, Std::Iterator::Item iter = a] s -&gt; (a -&gt; s -&gt; m (Std::LoopState s s)) -&gt; iter -&gt; m s</code></p>
@@ -60538,7 +60538,7 @@ This allows you to return different types for <code>break</code> and <code>conti
 <h5 id="examples_36">Examples</h5>
 <div class="highlight"><pre><span></span><code>// Find the index of the first even element.
 let res = [3, 5, 8, 9].to_iter.loop_iter_s(0, |x, i| if x % 2 == 0 { break $ i } else { continue $ i + 1 });
-assert_eq(|_|&quot;&quot;, res.as_break, 2)
+assert_eq(|_|"", res.as_break, 2)
 </code></pre></div>
 <h4 id="map_1">map</h4>
 <p>Type: <code>[?out : Std::Iterator, input : Std::Iterator, Std::Iterator::Item ?out = b, Std::Iterator::Item input = a] (a -&gt; b) -&gt; input -&gt; ?out</code></p>
@@ -60562,7 +60562,7 @@ assert_eq(|_|&quot;&quot;, res.as_break, 2)
 <p>Create an iterator that yields the Cartesian product of two iterators.</p>
 <p>NOTE: Since this function is designed so that <code>iter1.product(iter2)</code> yields the Cartesian product, the elements of <code>product(iter2, iter1)</code> are in the opposite order.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, range(1, 4).product([&#39;a&#39;, &#39;b&#39;].to_iter).to_array, [(1, &#39;a&#39;), (2, &#39;a&#39;), (3, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;b&#39;), (3, &#39;b&#39;)])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", range(1, 4).product(['a', 'b'].to_iter).to_array, [(1, 'a'), (2, 'a'), (3, 'a'), (1, 'b'), (2, 'b'), (3, 'b')])
 </code></pre></div></p>
 <h5 id="parameters_217">Parameters</h5>
 <ul>
@@ -60600,7 +60600,7 @@ away from <code>b</code>. <code>s</code> must not be 0.</p>
 <li><code>step</code> - The step of the range.</li>
 </ul>
 <h5 id="examples_37">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, range_step(10, 0, -3).to_array, [10, 7, 4, 1])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", range_step(10, 0, -3).to_array, [10, 7, 4, 1])
 </code></pre></div>
 <h4 id="reverse_1">reverse</h4>
 <p>Type: <code>[?out : Std::Iterator, input : Std::Iterator, Std::Iterator::Item ?out = a, Std::Iterator::Item input = a] input -&gt; ?out</code></p>
@@ -60657,7 +60657,7 @@ away from <code>b</code>. <code>s</code> must not be 0.</p>
 <li><code>first</code> - The first iterator.</li>
 </ul>
 <h5 id="examples_38">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2].to_iter.zip([&#39;a&#39;, &#39;b&#39;].to_iter).to_array, [(1, &#39;a&#39;), (2, &#39;b&#39;)])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2].to_iter.zip(['a', 'b'].to_iter).to_array, [(1, 'a'), (2, 'b')])
 </code></pre></div>
 <h3 id="namespace-stditeratordyniterator">namespace Std::Iterator::DynIterator</h3>
 <h4 id="empty_2">empty</h4>
@@ -60869,7 +60869,7 @@ goes second in the result.</p>
 <li><code>lhs</code> - The string that goes first.</li>
 </ul>
 <h5 id="examples_39">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;ab&quot;.concat(&quot;cd&quot;), &quot;abcd&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "ab".concat("cd"), "abcd")
 </code></pre></div>
 <h4 id="concat_iter">concat_iter</h4>
 <p>Type: <code>[strs : Std::Iterator, Std::Iterator::Item strs = Std::String] strs -&gt; Std::String</code></p>
@@ -60914,8 +60914,8 @@ from <code>start_idx</code>. A negative <code>start_idx</code> searches from the
 <li><code>str</code> - The string to be searched.</li>
 </ul>
 <h5 id="examples_40">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;abcabc&quot;.find(&quot;bc&quot;, 0), some(1));;
-assert_eq(|_|&quot;&quot;, &quot;abcabc&quot;.find(&quot;bc&quot;, 2), some(4))
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "abcabc".find("bc", 0), some(1));;
+assert_eq(|_|"", "abcabc".find("bc", 2), some(4))
 </code></pre></div>
 <h4 id="format">format</h4>
 <p>Type: <code>[args : Std::FormatArgs] args -&gt; Std::String -&gt; Std::String</code></p>
@@ -60931,9 +60931,9 @@ any handle, such as a file. A wrapper such as <code>with_precision</code> or <co
 a value is written, and one wrapper can wrap another:
 <code>"[{}]".format((3.14159.with_precision(2_U8).right_aligned_to(6),))</code> is <code>"[  3.14]"</code>.</p>
 <h5 id="examples_41">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{} + {} = {}&quot;.format((1, 2.5, &quot;three&quot;)), &quot;1 + 2.5 = three&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;x = {}&quot;.format((42,)), &quot;x = 42&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;{{{}}}&quot;.format((1,)), &quot;{1}&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{} + {} = {}".format((1, 2.5, "three")), "1 + 2.5 = three");;
+assert_eq(|_|"", "x = {}".format((42,)), "x = 42");;
+assert_eq(|_|"", "{{{}}}".format((1,)), "{1}")
 </code></pre></div>
 <h5 id="parameters_253">Parameters</h5>
 <ul>
@@ -60944,8 +60944,8 @@ assert_eq(|_|&quot;&quot;, &quot;{{{}}}&quot;.format((1,)), &quot;{1}&quot;)
 <p>Type: <code>Std::U8 -&gt; Std::String</code></p>
 <p>Creates a string from a byte.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, String::from_U8(&#39;a&#39;), &quot;a&quot;);;
-assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", String::from_U8('a'), "a");;
+assert_eq(|_|"", String::from_U8('\x00'), "")
 </code></pre></div></p>
 <h5 id="parameters_254">Parameters</h5>
 <ul>
@@ -60990,7 +60990,7 @@ assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;)
 <li><code>str</code> - The string to be sliced.</li>
 </ul>
 <h5 id="examples_42">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;hello&quot;.get_sub(1, 3), &quot;el&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "hello".get_sub(1, 3), "el")
 </code></pre></div>
 <h4 id="is_empty_2">is_empty</h4>
 <p>Type: <code>Std::String -&gt; Std::Bool</code></p>
@@ -61008,7 +61008,7 @@ assert_eq(|_|&quot;&quot;, String::from_U8(&#39;\x00&#39;), &quot;&quot;)
 <li><code>iter</code> - The iterator of strings to be joined.</li>
 </ul>
 <h5 id="examples_43">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].to_iter.join(&quot;, &quot;), &quot;a, b, c&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", ["a", "b", "c"].to_iter.join(", "), "a, b, c")
 </code></pre></div>
 <h4 id="pop_back_byte">pop_back_byte</h4>
 <p>Type: <code>Std::String -&gt; Std::String</code></p>
@@ -61032,16 +61032,16 @@ types implementing <code>Format</code>.</p>
 <li><code>template</code>: The template string.</li>
 </ul>
 <h5 id="examples_44">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}, {}!&quot;.populate([&quot;Hello&quot;, &quot;world&quot;]), &quot;Hello, world!&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;{{ x = {}, y = {} }}&quot;.populate([1.to_string, 2.to_string]), &quot;{ x = 1, y = 2 }&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}, {}!".populate(["Hello", "world"]), "Hello, world!");;
+assert_eq(|_|"", "{{ x = {}, y = {} }}".populate([1.to_string, 2.to_string]), "{ x = 1, y = 2 }")
 </code></pre></div>
 <h4 id="split">split</h4>
 <p>Type: <code>[?it : Std::Iterator, Std::Iterator::Item ?it = Std::String] Std::String -&gt; Std::String -&gt; ?it</code></p>
 <p><code>str.split(sep)</code> splits <code>str</code> by <code>sep</code> into an iterator.</p>
 <p>Example:
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;Ex. 1&quot;, &quot;ab,c,&quot;.split(&quot;,&quot;).to_array, [&quot;ab&quot;, &quot;c&quot;, &quot;&quot;]);;
-assert_eq(|_|&quot;Ex. 2&quot;, &quot;abc&quot;.split(&quot;,&quot;).to_array, [&quot;abc&quot;]);;
-assert_eq(|_|&quot;Ex. 3&quot;, &quot;abc&quot;.split(&quot;&quot;).to_array, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]) // Special behavior when the separator is empty.
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"Ex. 1", "ab,c,".split(",").to_array, ["ab", "c", ""]);;
+assert_eq(|_|"Ex. 2", "abc".split(",").to_array, ["abc"]);;
+assert_eq(|_|"Ex. 3", "abc".split("").to_array, ["a", "b", "c"]) // Special behavior when the separator is empty.
 </code></pre></div></p>
 <h5 id="parameters_264">Parameters</h5>
 <ul>
@@ -62351,11 +62351,11 @@ by handling the error.</p>
 <h5 id="examples_45">Examples</h5>
 <div class="highlight"><pre><span></span><code>let parse_positive = |text : String| (
     let n : I64 = *from_result(text.from_string);
-    if n &lt;= 0 { throw(&quot;not positive: &quot; + text) };
+    if n &lt;= 0 { throw("not positive: " + text) };
     pure(n)
 );
-assert_eq(|_|&quot;&quot;, *parse_positive(&quot;42&quot;).try(|_| pure(0)), 42);;
-assert_eq(|_|&quot;&quot;, *parse_positive(&quot;-1&quot;).try(|_| pure(0)), 0)
+assert_eq(|_|"", *parse_positive("42").try(|_| pure(0)), 42);;
+assert_eq(|_|"", *parse_positive("-1").try(|_| pure(0)), 0)
 </code></pre></div>
 <h4 id="iohandle">IOHandle</h4>
 <p>Defined as: <code>type IOHandle = unbox struct { ...fields... }</code></p>
@@ -62416,8 +62416,8 @@ consider converting it to an <code>ArrayIterator</code> using <code>bang</code> 
 let evens_or_all = |only_evens| (
     if only_evens { range(0, 5).filter(|i| i % 2 == 0).to_dyn } else { range(0, 5).to_dyn }
 );
-assert_eq(|_|&quot;&quot;, evens_or_all(true).to_array, [0, 2, 4]);;
-assert_eq(|_|&quot;&quot;, evens_or_all(false).to_array, [0, 1, 2, 3, 4])
+assert_eq(|_|"", evens_or_all(true).to_array, [0, 2, 4]);;
+assert_eq(|_|"", evens_or_all(false).to_array, [0, 1, 2, 3, 4])
 </code></pre></div>
 <h5 id="field-next_1">field <code>next</code></h5>
 <p>Type: <code>() -&gt; Std::Option (Std::Iterator::DynIterator a, a)</code></p>
@@ -62586,11 +62586,11 @@ Implementing this trait manually is not allowed.</p>
 implement it, write the parts of the value one by one:</p>
 <div class="highlight"><pre><span></span><code>impl Point : Format {
     write_text = |p, out| (
-        let out = *out.write_text(&quot;(&quot;);
+        let out = *out.write_text("(");
         let out = *out.write_text(p.@x);
-        let out = *out.write_text(&quot;, &quot;);
+        let out = *out.write_text(", ");
         let out = *out.write_text(p.@y);
-        out.write_text(&quot;)&quot;)
+        out.write_text(")")
     );
 }
 </code></pre></div>
@@ -62628,8 +62628,8 @@ implement <code>Format</code>.</p>
 <li><code>str</code> - The string to be converted.</li>
 </ul>
 <h6 id="examples_47">Examples</h6>
-<div class="highlight"><pre><span></span><code>let n : Result ErrMsg I64 = &quot;-42&quot;.from_string;
-assert_eq(|_|&quot;&quot;, n, ok(-42))
+<div class="highlight"><pre><span></span><code>let n : Result ErrMsg I64 = "-42".from_string;
+assert_eq(|_|"", n, ok(-42))
 </code></pre></div>
 <h4 id="trait-f-f-functor">trait <code>[f : *-&gt;*] f : Functor</code></h4>
 <p>The trait for functors.</p>
@@ -63608,10 +63608,10 @@ threshold.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

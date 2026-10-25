@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -2916,7 +2916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -2944,7 +2944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -7762,7 +7762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -8356,7 +8356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -9463,7 +9463,7 @@
 <li><code>m</code>: 法</li>
 </ul>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, add_mod(5, 4, 7), 2)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", add_mod(5, 4, 7), 2)
 </code></pre></div>
 <h4 id="calc_gcd">calc_gcd</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
@@ -9511,8 +9511,8 @@
 <div class="highlight"><pre><span></span><code>import BoolArray;
 
 let table = calc_prime_table(10);
-assert(|_|&quot;&quot;, table.@(7));;
-assert(|_|&quot;&quot;, !table.@(9))
+assert(|_|"", table.@(7));;
+assert(|_|"", !table.@(9))
 </code></pre></div>
 <h4 id="calc_primitive_root">calc_primitive_root</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64</code></p>
@@ -9585,8 +9585,8 @@ assert(|_|&quot;&quot;, !table.@(9))
 </ul>
 <h5 id="examples_2">Examples</h5>
 <div class="highlight"><pre><span></span><code>let (d, (x, y)) = ext_gcd(12, 18);
-assert_eq(|_|&quot;&quot;, d, 6);;
-assert_eq(|_|&quot;&quot;, 12 * x + 18 * y, 6)
+assert_eq(|_|"", d, 6);;
+assert_eq(|_|"", 12 * x + 18 * y, 6)
 </code></pre></div>
 <h4 id="factorize">factorize</h4>
 <p>Type: <code>Std::I64 -&gt; Std::Array (Std::I64, Std::U8)</code></p>
@@ -9629,7 +9629,7 @@ assert_eq(|_|&quot;&quot;, 12 * x + 18 * y, 6)
 <code>n</code>が0の場合は空の配列を返す。</p>
 <h5 id="examples_3">Examples</h5>
 <div class="highlight"><pre><span></span><code>let (lp, _) = calc_lp_table(100_U32);
-assert_eq(|_|&quot;&quot;, factorize_via_lp_table(12_U32, lp), [(2_U32, 2_U8), (3_U32, 1_U8)]) // 12 = 2^2 * 3
+assert_eq(|_|"", factorize_via_lp_table(12_U32, lp), [(2_U32, 2_U8), (3_U32, 1_U8)]) // 12 = 2^2 * 3
 </code></pre></div>
 <h4 id="floor_sum">floor_sum</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
@@ -9646,7 +9646,7 @@ assert_eq(|_|&quot;&quot;, factorize_via_lp_table(12_U32, lp), [(2_U32, 2_U8), (
 </ul>
 <h5 id="examples_4">Examples</h5>
 <div class="highlight"><pre><span></span><code>// floor(1/3) + floor(3/3) + floor(5/3) + floor(7/3) = 0 + 1 + 1 + 2
-assert_eq(|_|&quot;&quot;, floor_sum(4, 3, 2, 1), 4)
+assert_eq(|_|"", floor_sum(4, 3, 2, 1), 4)
 </code></pre></div>
 <h4 id="inv_mod">inv_mod</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
@@ -9659,7 +9659,7 @@ assert_eq(|_|&quot;&quot;, floor_sum(4, 3, 2, 1), 4)
 <li><code>a</code>: 整数</li>
 </ul>
 <h5 id="examples_5">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 3.inv_mod(7), 5) // 3 * 5 = 15 = 1 mod 7
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 3.inv_mod(7), 5) // 3 * 5 = 15 = 1 mod 7
 </code></pre></div>
 <h4 id="is_prime">is_prime</h4>
 <p>Type: <code>Std::U64 -&gt; Std::Bool</code></p>
@@ -9700,9 +9700,9 @@ assert_eq(|_|&quot;&quot;, floor_sum(4, 3, 2, 1), 4)
 </ul>
 <h5 id="examples_6">Examples</h5>
 <div class="highlight"><pre><span></span><code>// x = 2 (mod 3) かつ x = 3 (mod 5) &lt;=&gt; x = 8 (mod 15)
-assert_eq(|_|&quot;&quot;, lift_crt([2, 3], [3, 5]), (8, 15));;
+assert_eq(|_|"", lift_crt([2, 3], [3, 5]), (8, 15));;
 // x = 0 (mod 2) かつ x = 1 (mod 4) には解がない
-assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
+assert_eq(|_|"", lift_crt([0, 1], [2, 4]), (0, 0))
 </code></pre></div>
 <h4 id="linear_sieve">linear_sieve</h4>
 <p><strong>Deprecated</strong>: Use <code>CPLib.Arithmetic::calc_lp_table</code> instead.</p>
@@ -9720,7 +9720,7 @@ assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
 <li><code>m</code>: 法</li>
 </ul>
 <h5 id="examples_7">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, mul_mod(5, 4, 7), 6)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", mul_mod(5, 4, 7), 6)
 </code></pre></div>
 <h4 id="pmod">pmod</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
@@ -9734,7 +9734,7 @@ assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
 <li><code>x</code>: 整数</li>
 </ul>
 <h5 id="examples_8">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, (-7).pmod(3), 2)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", (-7).pmod(3), 2)
 </code></pre></div>
 <h4 id="pow_mod">pow_mod</h4>
 <p>Type: <code>Std::I64 -&gt; Std::I64 -&gt; Std::I64 -&gt; Std::I64</code></p>
@@ -9748,7 +9748,7 @@ assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
 <li><code>x</code>: 底</li>
 </ul>
 <h5 id="examples_9">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 2.pow_mod(10, 1000), 24) // 2^10 = 1024
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 2.pow_mod(10, 1000), 24) // 2^10 = 1024
 </code></pre></div>
 <h4 id="pow_mod_u">pow_mod_u</h4>
 <p>Type: <code>Std::U64 -&gt; Std::U64 -&gt; Std::U64 -&gt; Std::U64</code></p>
@@ -9774,7 +9774,7 @@ assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
 <li><code>x</code>: 底</li>
 </ul>
 <h5 id="examples_10">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, 3.power(4), 81)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", 3.power(4), 81)
 </code></pre></div>
 <h4 id="pythagorean_triples">pythagorean_triples</h4>
 <p><strong>Deprecated</strong>: Use <code>CPLib.Arithmetic::calc_pythagorean_triples</code> instead.</p>
@@ -9792,7 +9792,7 @@ assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
 <li><code>m</code>: 法</li>
 </ul>
 <h5 id="examples_11">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, sub_mod(2, 5, 7), 4)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", sub_mod(2, 5, 7), 4)
 </code></pre></div>
 <h2 id="types-and-aliases">Types and aliases</h2>
 <h2 id="traits-and-aliases">Traits and aliases</h2>
@@ -9846,10 +9846,10 @@ assert_eq(|_|&quot;&quot;, lift_crt([0, 1], [2, 4]), (0, 0))
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -8550,7 +8550,7 @@ Anything here may change or be removed in any version. When its design settles, 
 <p>Type: <code>Std::String -&gt; Std::Array a -&gt; Std.Experimental::Format::WithSeparator a</code></p>
 <p>Wraps <code>elements</code> so that <code>format</code> writes them with <code>separator</code> between them.</p>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>&quot;{}&quot;.format(([1, 2, 3].with_separator(&quot;, &quot;),))   // &quot;1, 2, 3&quot;
+<div class="highlight"><pre><span></span><code>"{}".format(([1, 2, 3].with_separator(", "),))   // "1, 2, 3"
 </code></pre></div>
 <h5 id="parameters">Parameters</h5>
 <ul>
@@ -8563,7 +8563,7 @@ Anything here may change or be removed in any version. When its design settles, 
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F32::to_string_precision</code> does.</p>
 <h5 id="examples_1">Examples</h5>
-<div class="highlight"><pre><span></span><code>&quot;{}&quot;.format((3.14159_F32.with_precision(2_U8),))   // &quot;3.14&quot;
+<div class="highlight"><pre><span></span><code>"{}".format((3.14159_F32.with_precision(2_U8),))   // "3.14"
 </code></pre></div>
 <h5 id="parameters_1">Parameters</h5>
 <ul>
@@ -8576,7 +8576,7 @@ Anything here may change or be removed in any version. When its design settles, 
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F64::to_string_precision</code> does.</p>
 <h5 id="examples_2">Examples</h5>
-<div class="highlight"><pre><span></span><code>&quot;{}&quot;.format((3.14159.with_precision(2_U8),))   // &quot;3.14&quot;
+<div class="highlight"><pre><span></span><code>"{}".format((3.14159.with_precision(2_U8),))   // "3.14"
 </code></pre></div>
 <h5 id="parameters_2">Parameters</h5>
 <ul>
@@ -8589,7 +8589,7 @@ Anything here may change or be removed in any version. When its design settles, 
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the right to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_3">Examples</h5>
-<div class="highlight"><pre><span></span><code>&quot;[{}]&quot;.format((42.left_aligned_to(5),))   // &quot;[42   ]&quot;
+<div class="highlight"><pre><span></span><code>"[{}]".format((42.left_aligned_to(5),))   // "[42   ]"
 </code></pre></div>
 <h5 id="parameters_3">Parameters</h5>
 <ul>
@@ -8601,7 +8601,7 @@ points. A text that already has <code>width</code> code points or more is writte
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the left to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_4">Examples</h5>
-<div class="highlight"><pre><span></span><code>&quot;[{}]&quot;.format((42.right_aligned_to(5),))   // &quot;[   42]&quot;
+<div class="highlight"><pre><span></span><code>"[{}]".format((42.right_aligned_to(5),))   // "[   42]"
 </code></pre></div>
 <h5 id="parameters_4">Parameters</h5>
 <ul>
@@ -8639,9 +8639,9 @@ written as <code>{</code> and <code>}</code>.</p>
 <p>The program aborts if the number of placeholders differs from the number of values, or if the
 template has a <code>{</code> or <code>}</code> that is not part of a placeholder or an escape.</p>
 <h5 id="examples_5">Examples</h5>
-<div class="highlight"><pre><span></span><code>&quot;{} + {} = {}&quot;.format((1, 2.5, &quot;three&quot;))   // &quot;1 + 2.5 = three&quot;
-&quot;x = {}&quot;.format((42,))                      // &quot;x = 42&quot;
-&quot;{{{}}}&quot;.format((1,))                       // &quot;{1}&quot;
+<div class="highlight"><pre><span></span><code>"{} + {} = {}".format((1, 2.5, "three"))   // "1 + 2.5 = three"
+"x = {}".format((42,))                      // "x = 42"
+"{{{}}}".format((1,))                       // "{1}"
 </code></pre></div>
 <h5 id="parameters_7">Parameters</h5>
 <ul>
@@ -8685,7 +8685,7 @@ written, and the text written so far.</p>
 </code></pre></div>
 <p>Writing each part directly is faster, because it creates no intermediate string:</p>
 <div class="highlight"><pre><span></span><code>impl Point : Format {
-    write_text = |p, out| out.write_text(&quot;(&quot;).write_text(p.@x).write_text(&quot;, &quot;).write_text(p.@y).write_text(&quot;)&quot;);
+    write_text = |p, out| out.write_text("(").write_text(p.@x).write_text(", ").write_text(p.@y).write_text(")");
 }
 </code></pre></div>
 <h5 id="method-write_text">method <code>write_text</code></h5>
@@ -8816,10 +8816,10 @@ that placeholder.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

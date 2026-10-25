@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -8818,17 +8818,17 @@ Inspired by <a href="https://docs.rs/clap/3.2.0/clap/index.html"><code>clap</cod
 <p>Example:
 <div class="highlight"><pre><span></span><code>typical_command: Command;
 typical_command = (
-    Command::new(&quot;typical_tool&quot;)
-    .bin_name(&quot;typical&quot;)
-    .display_name(&quot;TypicalTool&quot;)
-    .version(&quot;1.0.0&quot;)
-    .author(&quot;somebody &lt;somebody@example.com&gt;&quot;)
-    .arg(Arg::new(&quot;TARGET&quot;).help(&quot;Target&quot;).takes_value.required)
-    .arg(Arg::new(&quot;FILE&quot;).help(&quot;Input files&quot;).takes_multiple_values)
-    .arg(Arg::new(&quot;count&quot;).short(&#39;n&#39;).long(&quot;count&quot;).help(&quot;How many times to iterate&quot;)
-        .takes_value.value_name(&quot;NUMBER&quot;).default_value(&quot;100&quot;))
-    .arg(Arg::new(&quot;output&quot;).short(&#39;o&#39;).long(&quot;output&quot;).help(&quot;An output file&quot;)
-        .takes_value.value_name(&quot;OUTFILE&quot;))
+    Command::new("typical_tool")
+    .bin_name("typical")
+    .display_name("TypicalTool")
+    .version("1.0.0")
+    .author("somebody &lt;somebody@example.com&gt;")
+    .arg(Arg::new("TARGET").help("Target").takes_value.required)
+    .arg(Arg::new("FILE").help("Input files").takes_multiple_values)
+    .arg(Arg::new("count").short('n').long("count").help("How many times to iterate")
+        .takes_value.value_name("NUMBER").default_value("100"))
+    .arg(Arg::new("output").short('o').long("output").help("An output file")
+        .takes_value.value_name("OUTFILE"))
 );
 
 main: IO ();
@@ -8836,10 +8836,10 @@ main = do {
     // Parse a command line.
     let matches: ArgMatches = *command.get_matches;
     // Get the values of the arguments from `ArgMatches`.
-    let target: String = *matches.get_one(&quot;TARGET&quot;).as_some;
-    let files: Option (Array String) = *matches.get_many(&quot;FILE&quot;);
-    let count: I64 = *matches.get_one(&quot;count&quot;).as_some.from_string.from_result;
-    let output: Option String = *matches.get_one(&quot;output&quot;);
+    let target: String = *matches.get_one("TARGET").as_some;
+    let files: Option (Array String) = *matches.get_many("FILE");
+    let count: I64 = *matches.get_one("count").as_some.from_string.from_result;
+    let output: Option String = *matches.get_one("output");
     ...
 }.try(eprintln);
 </code></pre></div></p>
@@ -9235,10 +9235,10 @@ Otherwise, it is a positional argument.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       

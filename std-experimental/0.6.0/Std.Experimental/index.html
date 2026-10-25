@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
       
 
@@ -1843,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Q/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Q/" class="md-nav__link">
         
   
   
@@ -1871,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gmp-fix/0.10.0/GMP.Z/" class="md-nav__link">
+      <a href="../../../gmp-fix/0.11.0/GMP.Z/" class="md-nav__link">
         
   
   
@@ -6689,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mpfr-fix/0.7.1/MPFR/" class="md-nav__link">
+      <a href="../../../mpfr-fix/0.8.0/MPFR/" class="md-nav__link">
         
   
   
@@ -7283,7 +7283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../time/2.0.0/Time/" class="md-nav__link">
+      <a href="../../../time/2.0.1/Time/" class="md-nav__link">
         
   
   
@@ -9782,15 +9782,15 @@ implement <code>Format</code>. <code>IO::printf</code> writes the same text to t
 <code>IO::write_format</code> writes it to any handle, such as a file. A wrapper such as
 <code>with_precision</code> or <code>right_aligned_to</code> changes how a value is written, and one wrapper can wrap
 another:</p>
-<div class="highlight"><pre><span></span><code>let name = &quot;pi&quot;.left_aligned_to(4);
+<div class="highlight"><pre><span></span><code>let name = "pi".left_aligned_to(4);
 let value = 3.14159.with_precision(2_U8).right_aligned_to(6);
-assert_eq(|_|&quot;&quot;, &quot;{}|{}&quot;.format((name, value)), &quot;pi  |  3.14&quot;)
+assert_eq(|_|"", "{}|{}".format((name, value)), "pi  |  3.14")
 </code></pre></div>
 <p><code>Format</code> and <code>FormatArgs</code> are implemented for tuples of up to 12 elements.</p>
 <p><code>Slice</code> is a part of an array, and <code>StringSlice</code> is a part of a string. Taking one does not copy
 the elements:</p>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3, 4].get_slice(1, 3).to_array, [2, 3]);;
-assert_eq(|_|&quot;&quot;, &quot;abc,def&quot;.get_slice(4, 7).to_string, &quot;def&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2, 3, 4].get_slice(1, 3).to_array, [2, 3]);;
+assert_eq(|_|"", "abc,def".get_slice(4, 7).to_string, "def")
 </code></pre></div>
 <h2 id="values">Values</h2>
 <h3 id="namespace-stdexperimentalarray">namespace Std.Experimental::Array</h3>
@@ -9800,7 +9800,7 @@ assert_eq(|_|&quot;&quot;, &quot;abc,def&quot;.get_slice(4, 7).to_string, &quot;
 <code>get_sub</code>, but does not copy the elements.</p>
 <p><code>begin</code> and <code>end</code> are clamped to <code>[0, array.@size]</code>. If <code>end &lt;= begin</code>, the slice is empty.</p>
 <h5 id="examples">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, [1, 2, 3, 4].get_slice(1, 3).to_array, [2, 3])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", [1, 2, 3, 4].get_slice(1, 3).to_array, [2, 3])
 </code></pre></div>
 <h5 id="parameters">Parameters</h5>
 <ul>
@@ -9860,7 +9860,7 @@ assert_eq(|_|&quot;&quot;, &quot;abc,def&quot;.get_slice(4, 7).to_string, &quot;
 <p>Wraps <code>v</code> so that <code>format</code> writes it with one digit before the decimal point, <code>precision</code>
 digits after it, and a power of ten, as <code>F32::to_string_exp_precision</code> does.</p>
 <h5 id="examples_1">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((123.456_F32.with_exp_precision(2_U8),)), &quot;1.23e2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((123.456_F32.with_exp_precision(2_U8),)), "1.23e2")
 </code></pre></div>
 <h5 id="parameters_6">Parameters</h5>
 <ul>
@@ -9872,7 +9872,7 @@ digits after it, and a power of ten, as <code>F32::to_string_exp_precision</code
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F32::to_string_precision</code> does.</p>
 <h5 id="examples_2">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((3.14159_F32.with_precision(2_U8),)), &quot;3.14&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((3.14159_F32.with_precision(2_U8),)), "3.14")
 </code></pre></div>
 <h5 id="parameters_7">Parameters</h5>
 <ul>
@@ -9885,7 +9885,7 @@ digits after it, and a power of ten, as <code>F32::to_string_exp_precision</code
 <p>Wraps <code>v</code> so that <code>format</code> writes it with one digit before the decimal point, <code>precision</code>
 digits after it, and a power of ten, as <code>F64::to_string_exp_precision</code> does.</p>
 <h5 id="examples_3">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((123.456.with_exp_precision(2_U8),)), &quot;1.23e2&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((123.456.with_exp_precision(2_U8),)), "1.23e2")
 </code></pre></div>
 <h5 id="parameters_8">Parameters</h5>
 <ul>
@@ -9897,7 +9897,7 @@ digits after it, and a power of ten, as <code>F64::to_string_exp_precision</code
 <p>Wraps <code>v</code> so that <code>format</code> writes it with <code>precision</code> digits after the decimal point, as
 <code>F64::to_string_precision</code> does.</p>
 <h5 id="examples_4">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format((3.14159.with_precision(2_U8),)), &quot;3.14&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format((3.14159.with_precision(2_U8),)), "3.14")
 </code></pre></div>
 <h5 id="parameters_9">Parameters</h5>
 <ul>
@@ -9910,7 +9910,7 @@ digits after it, and a power of ten, as <code>F64::to_string_exp_precision</code
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the right to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_5">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((42.left_aligned_to(5),)), &quot;[42   ]&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "[{}]".format((42.left_aligned_to(5),)), "[42   ]")
 </code></pre></div>
 <h5 id="parameters_10">Parameters</h5>
 <ul>
@@ -9922,7 +9922,7 @@ points. A text that already has <code>width</code> code points or more is writte
 <p>Wraps <code>value</code> so that <code>format</code> pads its text with spaces on the left to <code>width</code> Unicode code
 points. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_6">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((42.right_aligned_to(5),)), &quot;[   42]&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "[{}]".format((42.right_aligned_to(5),)), "[   42]")
 </code></pre></div>
 <h5 id="parameters_11">Parameters</h5>
 <ul>
@@ -9944,8 +9944,8 @@ points. A text that already has <code>width</code> code points or more is writte
 zeros go after the <code>-</code> that the text starts with, if it starts with one, and before the text
 otherwise. A text that already has <code>width</code> code points or more is written unchanged.</p>
 <h5 id="examples_7">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}:{}&quot;.format((9.zero_padded_to(2), 5.zero_padded_to(2))), &quot;09:05&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format(((-5).zero_padded_to(3),)), &quot;-05&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}:{}".format((9.zero_padded_to(2), 5.zero_padded_to(2))), "09:05");;
+assert_eq(|_|"", "{}".format(((-5).zero_padded_to(3),)), "-05")
 </code></pre></div>
 <h5 id="parameters_13">Parameters</h5>
 <ul>
@@ -9985,7 +9985,7 @@ that placeholder.</p>
 <p>Formats <code>values</code> into <code>template</code>, as <code>format</code> does, and writes the result to the standard
 output.</p>
 <h5 id="examples_8">Examples</h5>
-<div class="highlight"><pre><span></span><code>main : IO () = &quot;{} + {} = {}\n&quot;.printf((1, 2.5, &quot;three&quot;));
+<div class="highlight"><pre><span></span><code>main : IO () = "{} + {} = {}\n".printf((1, 2.5, "three"));
 </code></pre></div>
 <h5 id="parameters_17">Parameters</h5>
 <ul>
@@ -10006,7 +10006,7 @@ output.</p>
 <p>The text is written as <code>printf</code> writes it, so a long text is never held in memory as one
 text. If a write fails, the rest of the text is not written, and the error is returned.</p>
 <h5 id="examples_9">Examples</h5>
-<div class="highlight"><pre><span></span><code>main : IO () = write_format(stdout, (1, 2.5), &quot;{} + {}\n&quot;).try(eprintln);
+<div class="highlight"><pre><span></span><code>main : IO () = write_format(stdout, (1, 2.5), "{} + {}\n").try(eprintln);
 </code></pre></div>
 <h5 id="parameters_19">Parameters</h5>
 <ul>
@@ -10020,7 +10020,7 @@ text. If a write fails, the rest of the text is not written, and the error is re
 <p>Wraps <code>elements</code> so that <code>format</code> writes them with <code>separator</code> between them, as <code>String::join</code>
 joins strings.</p>
 <h5 id="examples_10">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{}&quot;.format(([1, 2, 3].to_iter.joined_with(&quot;, &quot;),)), &quot;1, 2, 3&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{}".format(([1, 2, 3].to_iter.joined_with(", "),)), "1, 2, 3")
 </code></pre></div>
 <h5 id="parameters_20">Parameters</h5>
 <ul>
@@ -10073,7 +10073,7 @@ element of <code>slice</code>.</p>
 <p><code>begin</code> and <code>end</code> are clamped to <code>[0, slice.@size]</code>. If <code>end &lt;= begin</code>, the slice is empty.</p>
 <h5 id="examples_11">Examples</h5>
 <div class="highlight"><pre><span></span><code>let slice = [1, 2, 3, 4, 5].get_slice(1, 5);   // [2, 3, 4, 5]
-assert_eq(|_|&quot;&quot;, slice.get_slice(1, 3).to_array, [3, 4])
+assert_eq(|_|"", slice.get_slice(1, 3).to_array, [3, 4])
 </code></pre></div>
 <h5 id="parameters_26">Parameters</h5>
 <ul>
@@ -10106,9 +10106,9 @@ written as <code>{</code> and <code>}</code>.</p>
 <p>The program aborts if the number of placeholders differs from the number of values, or if the
 template has a <code>{</code> or <code>}</code> that is not part of a placeholder or an escape.</p>
 <h5 id="examples_12">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;{} + {} = {}&quot;.format((1, 2.5, &quot;three&quot;)), &quot;1 + 2.5 = three&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;x = {}&quot;.format((42,)), &quot;x = 42&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;{{{}}}&quot;.format((1,)), &quot;{1}&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "{} + {} = {}".format((1, 2.5, "three")), "1 + 2.5 = three");;
+assert_eq(|_|"", "x = {}".format((42,)), "x = 42");;
+assert_eq(|_|"", "{{{}}}".format((1,)), "{1}")
 </code></pre></div>
 <h5 id="parameters_29">Parameters</h5>
 <ul>
@@ -10121,7 +10121,7 @@ assert_eq(|_|&quot;&quot;, &quot;{{{}}}&quot;.format((1,)), &quot;{1}&quot;)
 does not copy the bytes.</p>
 <p><code>begin</code> and <code>end</code> are clamped to <code>[0, str.@size]</code>. If <code>end &lt;= begin</code>, the slice is empty.</p>
 <h5 id="examples_13">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;abc,def&quot;.get_slice(4, 7).to_string, &quot;def&quot;)
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "abc,def".get_slice(4, 7).to_string, "def")
 </code></pre></div>
 <h5 id="parameters_30">Parameters</h5>
 <ul>
@@ -10148,7 +10148,7 @@ does not copy the bytes.</p>
 <p>Type: <code>Std.Experimental::StringSlice -&gt; Std.Experimental::Slice Std::U8</code></p>
 <p>The bytes of <code>slice</code> as a <code>Slice U8</code>. It does not copy the bytes.</p>
 <h5 id="examples_14">Examples</h5>
-<div class="highlight"><pre><span></span><code>assert_eq(|_|&quot;&quot;, &quot;abc,def&quot;.get_slice(4, 7).get_bytes.to_array, [&#39;d&#39;, &#39;e&#39;, &#39;f&#39;])
+<div class="highlight"><pre><span></span><code>assert_eq(|_|"", "abc,def".get_slice(4, 7).get_bytes.to_array, ['d', 'e', 'f'])
 </code></pre></div>
 <h5 id="parameters_33">Parameters</h5>
 <ul>
@@ -10160,8 +10160,8 @@ does not copy the bytes.</p>
 byte of <code>slice</code>.</p>
 <p><code>begin</code> and <code>end</code> are clamped to <code>[0, slice.@size]</code>. If <code>end &lt;= begin</code>, the slice is empty.</p>
 <h5 id="examples_15">Examples</h5>
-<div class="highlight"><pre><span></span><code>let slice = &quot;abc,def&quot;.get_slice(4, 7);   // def
-assert_eq(|_|&quot;&quot;, slice.get_slice(1, 3).to_string, &quot;ef&quot;)
+<div class="highlight"><pre><span></span><code>let slice = "abc,def".get_slice(4, 7);   // def
+assert_eq(|_|"", slice.get_slice(1, 3).to_string, "ef")
 </code></pre></div>
 <h5 id="parameters_34">Parameters</h5>
 <ul>
@@ -10197,9 +10197,9 @@ it.</p>
 the bytes.</p>
 <p>Create a string slice with <code>String::to_slice</code> or <code>String::get_slice</code>.</p>
 <p><code>to_string</code> and <code>format</code> write a string slice as its text:</p>
-<div class="highlight"><pre><span></span><code>let slice = &quot;abc,def&quot;.get_slice(4, 7);
-assert_eq(|_|&quot;&quot;, slice.to_string, &quot;def&quot;);;
-assert_eq(|_|&quot;&quot;, &quot;[{}]&quot;.format((slice.right_aligned_to(5),)), &quot;[  def]&quot;)
+<div class="highlight"><pre><span></span><code>let slice = "abc,def".get_slice(4, 7);
+assert_eq(|_|"", slice.to_string, "def");;
+assert_eq(|_|"", "[{}]".format((slice.right_aligned_to(5),)), "[  def]")
 </code></pre></div>
 <p>A string slice keeps a reference to the string it was taken from.</p>
 <h3 id="namespace-stdexperimentalformat_1">namespace Std.Experimental::Format</h3>
@@ -10243,11 +10243,11 @@ written, and the text written so far.</p>
 implement it, write the parts of the value one by one:</p>
 <div class="highlight"><pre><span></span><code>impl Point : Format {
     write_text = |p, out| (
-        let out = *out.write_text(&quot;(&quot;);
+        let out = *out.write_text("(");
         let out = *out.write_text(p.@x);
-        let out = *out.write_text(&quot;, &quot;);
+        let out = *out.write_text(", ");
         let out = *out.write_text(p.@y);
-        out.write_text(&quot;)&quot;)
+        out.write_text(")")
     );
 }
 </code></pre></div>
@@ -10421,10 +10421,10 @@ threshold.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/search-boost.js"></script>
       
