@@ -1,1 +1,1 @@
-{"tag":"0.8.0","compiler":"fix 1.6.2 (3967e2f)","date":"2026-11-17","modules":["Minilib.Encoding.Json","Minilib.Encoding.Json.JsonDecoder","Minilib.Encoding.Json.JsonEncoder"]}
+{"tag":"0.8.0","compiler":"fix 1.6.2 (d038ba3)","date":"2026-11-18","modules":["Minilib.Encoding.Json","Minilib.Encoding.Json.JsonDecoder","Minilib.Encoding.Json.JsonEncoder"]}
